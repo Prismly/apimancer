@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3351e46c64499a74f96f9406e329c34d, type: 3}
-  m_Name: New Prefab Tile
+  m_Script: {fileID: 11500000, guid: e512294279b32df409f617869288e29f, type: 3}
+  m_Name: TestTile0
   m_EditorClassIdentifier: 
   Sprite: {fileID: -2135585597343286014, guid: 54012dde7ef8b974ab28d30f3548c871, type: 3}
-  Prefab: {fileID: 0}
+  Prefab: {fileID: 1513276900747065057, guid: 99c192cb520cb8044843a501f745d40d, type: 3}
