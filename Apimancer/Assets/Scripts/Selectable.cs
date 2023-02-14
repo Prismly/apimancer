@@ -195,23 +195,34 @@ public class Selectable : MonoBehaviour
         OnUnhover();
     }
     
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnMouseEnter()
     {
-        // Debug.Log("Triggered");
-        if (other.tag == "SelectionBox")
-        {
-            SelectionManager.Instance.FocusedProspect = this;
-            SelectionManager.Instance.Hover(Root);
-        }
+        SelectionManager.Instance.FocusedProspect = this;
+        SelectionManager.Instance.Hover(Root);
     }
-    private void OnTriggerExit2D(Collider2D other)
+
+    private void OnMouseExit()
     {
-        // Debug.Log("Untriggered");
-        if (other.tag == "SelectionBox")
-        {
-            SelectionManager.Instance.Unhover(Root);
-        }
+        SelectionManager.Instance.Unhover(Root);
     }
+
+    // private void OnTriggerEnter2D(Collider2D other)
+    // {
+    //     // Debug.Log("Triggered");
+    //     if (other.tag == "SelectionBox")
+    //     {
+    //         SelectionManager.Instance.FocusedProspect = this;
+    //         SelectionManager.Instance.Hover(Root);
+    //     }
+    // }
+    // private void OnTriggerExit2D(Collider2D other)
+    // {
+    //     // Debug.Log("Untriggered");
+    //     if (other.tag == "SelectionBox")
+    //     {
+    //         SelectionManager.Instance.Unhover(Root);
+    //     }
+    // }
 
     public void KillDeadNodes()
     {

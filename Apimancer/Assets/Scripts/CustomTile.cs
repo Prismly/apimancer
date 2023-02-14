@@ -24,7 +24,7 @@ public class CustomTile : UnityEngine.Tilemaps.TileBase
         Cell cell = go.GetComponent<Cell>();
         if (cell != null)
         {
-            CellManager.Instance.AddCell(cell, (Vector2Int)position);
+            CellManager.Instance?.AddCell(cell, (Vector2Int)position);
         }
         return true;
     }

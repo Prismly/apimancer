@@ -33,7 +33,7 @@ public class CellManager : MonoBehaviour
     {
         cell.Location = location;
         _cells.Add((Vector2Int)location, cell);
-        Debug.Log("Cell " + _cells.Count + " added");
+        // Debug.Log("Cell " + _cells.Count + " added");
     }
 
     public Cell GetCell(Vector2Int location)
