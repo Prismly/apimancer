@@ -20,7 +20,7 @@ public class SelectionController : MonoBehaviour
     private Vector2 _clickLeftOrigin;
     private Vector2 _clickRightOrigin;
     private Vector2 _clickMiddleOrigin;
-    
+
     private Vector3 _focusDifference;
 
     private void Awake()
@@ -31,22 +31,10 @@ public class SelectionController : MonoBehaviour
 
     private void Update()
     {
-        _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
+        // _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
     }
     private void FixedUpdate()
     {
-        Selectable focus = SelectionManager.Instance.Focused;
-        if (focus != null)
-        {
-            Vector3 focusRelative = focus.transform.position + _focusDifference;
-
-            this.transform.position = new Vector3(focusRelative.x, focusRelative.y, this.transform.position.z);
-        }
-        else
-        {
-            _focusDifference = Vector3.zero;
-        }
-
         if (!_dragLeft && _clickLeft && _clickLeftOrigin != _cursorPosition)
             _dragLeft = true;
 

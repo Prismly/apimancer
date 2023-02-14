@@ -36,6 +36,7 @@ public class CameraController : MonoBehaviour
     private float _cameraZoom;
     private float _cameraRotation;
     private float _cameraPitch;
+    private float _cameraScale;
     
     private Vector3 _focusDifference;
 
@@ -44,12 +45,13 @@ public class CameraController : MonoBehaviour
         _controls = new Controls();
         _camera = GetComponent<Camera>();
         _cameraRotation = _defaultRotation;
-        _cameraPitch = _defaultPitch;
+        _cameraPitch = -_defaultPitch;
+        _cameraScale = 1;
     }
 
     private void Update()
     {
-        _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
+        // _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
         _cameraMovement = _controls.player.move.ReadValue<Vector2>();
         _cameraZoom = _controls.player.zoom.ReadValue<float>();
     }
@@ -65,35 +67,23 @@ public class CameraController : MonoBehaviour
             float rotationDifference = Time.deltaTime * _cameraRotateSpeed * _cameraMovement.x;
             float pitchDifference = Time.deltaTime * _cameraPitchSpeed * _cameraMovement.y;
             _cameraRotation += rotationDifference;
-            _cameraPitch = Mathf.Clamp(_cameraPitch + pitchDifference, _cameraPitchMin, _cameraPitchMax);
-            this.transform.Rotate(_cameraRotation * Vector3.back, Space.World);
-            this.transform.Rotate(_cameraPitch * Vector3.left, Space.Self);
+            // _cameraPitch = Mathf.Clamp(_cameraPitch + pitchDifference, _cameraPitchMin, _cameraPitchMax);
+            _cameraPitch = Mathf.Clamp(_cameraPitch + pitchDifference, -_cameraPitchMax, -_cameraPitchMin);
+            this.transform.Rotate(_cameraRotation * Vector3.forward, Space.World);
+            this.transform.Rotate(_cameraPitch * Vector3.right, Space.Self);
         }
         else
         {
-            Vector3 positionDifference = Time.deltaTime * _cameraMoveSpeed * _cameraMovement;
-            positionDifference = Quaternion.Euler(0, 0, -_cameraRotation) * positionDifference;
+            Vector3 positionDifference = Time.deltaTime * _cameraScale * _cameraMoveSpeed * _cameraMovement;
+            positionDifference = Quaternion.Euler(0, 0, _cameraRotation) * positionDifference;
             this.transform.Translate(positionDifference, Space.World);
         }
 
-        // if (focus != null)
-        // {
-        //     _focusDifference += cameraPositionDifference;
-        //     Vector3 focusRelative = focus.transform.position + _focusDifference;
-
-        //     this.transform.position = new Vector3(focusRelative.x, focusRelative.y, this.transform.position.z);
-        // }
-        // else
-        // {
-        //     _focusDifference = Vector3.zero;
-        //     this.transform.position = this.transform.position + cameraPositionDifference;
-        // }
-
         Vector3 cameraPosition = this.transform.position;
 
-        cameraPosition.z = Mathf.Clamp(
-            cameraPosition.z + Time.deltaTime * _cameraZoomSpeed * _cameraZoom, 
-            -_cameraZoomMax, -_cameraZoomMin);
+        float scaleDifference = Time.deltaTime * _cameraZoomSpeed * _cameraZoom;
+        _cameraScale = Mathf.Clamp(_cameraScale - scaleDifference, _cameraZoomMin, _cameraZoomMax);
+        this.transform.localScale = _cameraScale * Vector3.one;
 
         this.transform.position = cameraPosition;
 
@@ -112,6 +102,12 @@ public class CameraController : MonoBehaviour
     private void MouseLeftUp(InputAction.CallbackContext context)
     {
         _clickLeft = false;
+        Selectable focus = SelectionManager.Instance.Focused;
+        if (focus != null)
+        {
+            Vector3 focusPosition = focus.transform.position;
+            this.transform.position = new Vector3(focusPosition.x, focusPosition.y, this.transform.position.z);
+        }
     }
 
     private void MouseRightDown(InputAction.CallbackContext context)
