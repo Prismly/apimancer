@@ -3,19 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class SelectionController : MonoBehaviour
 {
-    [SerializeField] private float _cameraMoveSpeed;
-    [SerializeField] private float _cameraZoomSpeed;
-    [SerializeField] private float _cameraZoomMin;
-    [SerializeField] private float _cameraZoomMax;
-    [SerializeField] private Vector3 _focusDifference;
-    [SerializeField] private GameObject _selectionBoxPrefab;
-
     private Controls _controls;
     private Camera _camera;
-    private GameObject _selectionBox;
-    private SpriteRenderer _selectionBoxRenderer;
     private bool _clickLeft = false;
     private bool _dragLeft = false;
     private bool _clickRight = false;
@@ -29,59 +20,23 @@ public class PlayerController : MonoBehaviour
     private Vector2 _clickLeftOrigin;
     private Vector2 _clickRightOrigin;
     private Vector2 _clickMiddleOrigin;
-    private Vector2 _cameraMovement;
-    private float _cameraZoom;
+
+    private Vector3 _focusDifference;
 
     private void Awake()
     {
         _controls = new Controls();
         _camera = GetComponent<Camera>();
-        _selectionBox = Instantiate(_selectionBoxPrefab);
-        _selectionBoxRenderer = _selectionBox.GetComponent<SpriteRenderer>();
-        _selectionBoxRenderer.enabled = false;
     }
 
     private void Update()
     {
-        _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
-        _cameraMovement = _controls.player.move.ReadValue<Vector2>();
-        _cameraZoom = _controls.player.zoom.ReadValue<float>();
+        // _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
     }
     private void FixedUpdate()
     {
-        Vector3 cameraPositionDifference = (Vector3)(Time.deltaTime * _cameraMoveSpeed * _camera.orthographicSize * _cameraMovement);
-
-        Selectable focus = SelectionManager.Instance.Focused;
-        if (focus != null)
-        {
-            _focusDifference += cameraPositionDifference;
-            Vector3 focusRelative = focus.transform.position + _focusDifference;
-
-            this.transform.position = new Vector3(focusRelative.x, focusRelative.y, this.transform.position.z);
-        }
-        else
-        {
-            _focusDifference = Vector3.zero;
-            this.transform.position = this.transform.position + cameraPositionDifference;
-        }
-
-        _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize + 
-            _camera.orthographicSize * Time.deltaTime * _cameraZoomSpeed * _cameraZoom, 
-            _cameraZoomMin, _cameraZoomMax);
-
         if (!_dragLeft && _clickLeft && _clickLeftOrigin != _cursorPosition)
             _dragLeft = true;
-        if (_dragLeft)
-        {
-            Vector2 cursorDifference = _cursorPosition - _clickLeftOrigin;
-            _selectionBox.transform.localScale = (Vector3)cursorDifference + Vector3.forward;
-            _selectionBox.transform.position = (Vector3)(_clickLeftOrigin + 0.5f * cursorDifference)
-                + _selectionBox.transform.position.z * Vector3.forward;
-        }
-        else
-        {
-            _selectionBox.transform.position = _cursorPosition;;
-        }
 
         if (!_dragRight && _clickRight && _clickRightOrigin != _cursorPosition) 
             _dragRight = true;
@@ -91,9 +46,6 @@ public class PlayerController : MonoBehaviour
     {
         _clickLeft = true;
         _clickLeftOrigin = _cursorPosition;
-        _selectionBoxRenderer.enabled = true;
-        _selectionBox.transform.position = _clickLeftOrigin;
-        _selectionBox.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
     }
     private void MouseLeftUp(InputAction.CallbackContext context)
     {
@@ -121,8 +73,6 @@ public class PlayerController : MonoBehaviour
                 SelectionManager.Instance.SelectOne();
             }
         }
-        _selectionBoxRenderer.enabled = false;
-        _selectionBox.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
     }
 
     private void MouseRightDown(InputAction.CallbackContext context)
