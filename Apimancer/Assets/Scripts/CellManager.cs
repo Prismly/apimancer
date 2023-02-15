@@ -1,19 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class CellManager : MonoBehaviour
 {
     private static CellManager instance = null;
-     public static CellManager Instance {
-         get {
-              if (instance == null)
-              {
+    public static CellManager Instance {
+        get {
+            if (instance == null)
+            {
                     instance = (CellManager)FindObjectOfType(typeof(CellManager));
-              }
-              return instance;
-         }
-     }
+            }
+            return instance;
+        }
+    }
 
     private Dictionary<Vector2Int, Cell> _cells = new Dictionary<Vector2Int, Cell>();
 
@@ -32,7 +33,12 @@ public class CellManager : MonoBehaviour
     public void AddCell(Cell cell, Vector2Int location)
     {
         cell.Location = location;
-        _cells.Add((Vector2Int)location, cell);
+        try
+        {
+            _cells.Add((Vector2Int)location, cell);
+        } 
+        catch (Exception) {}
+
         // Debug.Log("Cell " + _cells.Count + " added");
     }
 

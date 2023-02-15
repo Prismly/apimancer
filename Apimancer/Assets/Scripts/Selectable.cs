@@ -13,23 +13,22 @@ public struct Task
 
 public class Selectable : MonoBehaviour
 {
+    [Header("SELECTABLE")]
+
+    [SerializeField] private SpriteRenderer _selectionRenderer;
+    [SerializeField] private Color _colorHover;
+    [SerializeField] private Color _colorSelect;
+    
     public Selectable Root;
-    public bool isRoot;
     public List<Selectable> Nodes = new List<Selectable>();
+
     public Task CurrentTask = new Task();
     public Queue<Task> Tasks = new Queue<Task>();
 
-    [SerializeField] private SpriteRenderer _renderer;
-    [SerializeField] private Color _colorHover;
-    [SerializeField] private Color _colorSelect;
-
-    // public bool isReady {get; protected set;} = false;
-    // public bool isHovered {get; private set;} = false;
-    // public bool isSelected {get; private set;} = false;
-
-    public bool isReady = false;
-    public bool isHovered = false;
-    public bool isSelected = false;
+    public bool isRoot {get; private set;}
+    public bool isReady {get; private set;} = false;
+    public bool isHovered {get; private set;} = false;
+    public bool isSelected {get; private set;} = false;
 
     private void Start()
     {
@@ -118,8 +117,12 @@ public class Selectable : MonoBehaviour
     {
         // Debug.Log("Selected");
         isSelected = true;
-        _renderer.enabled = true;
-        _renderer.color = _colorSelect;
+
+        if (_selectionRenderer != null)
+        {
+            _selectionRenderer.enabled = true;
+            _selectionRenderer.color = _colorSelect;
+        }
 
         if (Nodes.Count != 0)
         {
@@ -135,14 +138,19 @@ public class Selectable : MonoBehaviour
     {
         // Debug.Log("Deselected");
         isSelected = false;
-        if (isHovered)
+
+        if (_selectionRenderer != null)
         {
-            _renderer.color = _colorHover;
+            if (isHovered)
+            {
+                _selectionRenderer.color = _colorHover;
+            }
+            else
+            {
+                _selectionRenderer.enabled = false;
+            }
         }
-        else
-        {
-            _renderer.enabled = false;
-        }
+
         if (Nodes.Count != 0)
         {
             KillDeadNodes();
@@ -158,8 +166,12 @@ public class Selectable : MonoBehaviour
     {
         // Debug.Log("Hovered");
         isHovered = true;
-        _renderer.enabled = true;
-        _renderer.color = _colorHover;
+
+        if (_selectionRenderer != null)
+        {
+            _selectionRenderer.enabled = true;
+            _selectionRenderer.color = _colorHover;
+        }
         
         if (Nodes.Count != 0)
         {
@@ -175,15 +187,20 @@ public class Selectable : MonoBehaviour
     {
         // Debug.Log("Unovered");
         isHovered = false;
-        if (isSelected)
+
+        if (_selectionRenderer != null)
         {
-            _renderer.enabled = true;
-            _renderer.color = _colorSelect;
+            if (isSelected)
+            {
+                _selectionRenderer.enabled = true;
+                _selectionRenderer.color = _colorSelect;
+            }
+            else
+            {
+                _selectionRenderer.enabled = false;
+            }
         }
-        else
-        {
-            _renderer.enabled = false;
-        }
+
         if (Nodes.Count != 0)
         {
             KillDeadNodes();
@@ -260,4 +277,3 @@ public class Selectable : MonoBehaviour
     public virtual void OnSelect(){}
     public virtual void OnDeselect(){}
 }
-

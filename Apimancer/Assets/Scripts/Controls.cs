@@ -107,6 +107,24 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""mouseDelta"",
+                    ""type"": ""Value"",
+                    ""id"": ""d40bed8a-cae6-496a-b03a-324cf234a321"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""scroll"",
+                    ""type"": ""Value"",
+                    ""id"": ""18596bd1-a4a6-4a94-b9c0-ee4e4e777370"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -274,6 +292,28 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""alt"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""11b25b72-6124-426c-bae8-bf8b71d2b007"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""mouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""328b8f50-cce0-49ac-b566-f81ad99245cd"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""scroll"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -291,6 +331,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_player_ctrl = m_player.FindAction("ctrl", throwIfNotFound: true);
         m_player_shift = m_player.FindAction("shift", throwIfNotFound: true);
         m_player_alt = m_player.FindAction("alt", throwIfNotFound: true);
+        m_player_mouseDelta = m_player.FindAction("mouseDelta", throwIfNotFound: true);
+        m_player_scroll = m_player.FindAction("scroll", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -359,6 +401,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_player_ctrl;
     private readonly InputAction m_player_shift;
     private readonly InputAction m_player_alt;
+    private readonly InputAction m_player_mouseDelta;
+    private readonly InputAction m_player_scroll;
     public struct PlayerActions
     {
         private @Controls m_Wrapper;
@@ -372,6 +416,8 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @ctrl => m_Wrapper.m_player_ctrl;
         public InputAction @shift => m_Wrapper.m_player_shift;
         public InputAction @alt => m_Wrapper.m_player_alt;
+        public InputAction @mouseDelta => m_Wrapper.m_player_mouseDelta;
+        public InputAction @scroll => m_Wrapper.m_player_scroll;
         public InputActionMap Get() { return m_Wrapper.m_player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -408,6 +454,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @alt.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAlt;
                 @alt.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAlt;
                 @alt.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnAlt;
+                @mouseDelta.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseDelta;
+                @mouseDelta.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseDelta;
+                @mouseDelta.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMouseDelta;
+                @scroll.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @scroll.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
+                @scroll.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnScroll;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -439,6 +491,12 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @alt.started += instance.OnAlt;
                 @alt.performed += instance.OnAlt;
                 @alt.canceled += instance.OnAlt;
+                @mouseDelta.started += instance.OnMouseDelta;
+                @mouseDelta.performed += instance.OnMouseDelta;
+                @mouseDelta.canceled += instance.OnMouseDelta;
+                @scroll.started += instance.OnScroll;
+                @scroll.performed += instance.OnScroll;
+                @scroll.canceled += instance.OnScroll;
             }
         }
     }
@@ -454,5 +512,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnCtrl(InputAction.CallbackContext context);
         void OnShift(InputAction.CallbackContext context);
         void OnAlt(InputAction.CallbackContext context);
+        void OnMouseDelta(InputAction.CallbackContext context);
+        void OnScroll(InputAction.CallbackContext context);
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cell : Selectable
 {
+    [Header("CELL")]
     public Vector2Int Location;
 
     public Cell Adjacent(int side)
@@ -48,5 +49,21 @@ public class Cell : Selectable
                 return null;
             }
         }
+    }
+
+    public override void OnHover()
+    {
+        Debug.Log("Hovered");
+    }
+    public override void OnUnhover()
+    {
+        Debug.Log("Unhovered");
+    }
+    public override void OnSelect()
+    {
+        Debug.Log("Selected");}
+    public override void OnDeselect()
+    {
+        Debug.Log("Deselected");
     }
 }
