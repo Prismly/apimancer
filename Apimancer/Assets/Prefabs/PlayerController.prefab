@@ -166,14 +166,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _defaultRotation: 0
   _defaultPitch: 45
-  _cameraMoveSpeed: 5
-  _cameraRotateSpeed: 90
-  _cameraPitchSpeed: 60
-  _cameraPitchMin: 15
-  _cameraPitchMax: 75
-  _cameraZoomSpeed: 1
-  _cameraZoomMin: 0.25
-  _cameraZoomMax: 2
+  _moveSpeed: 5
+  _dragMoveSpeed: 0.25
+  _rotateSpeed: 90
+  _pitchSpeed: 60
+  _dragRotateSpeed: 45
+  _dragPitchSpeed: 30
+  _pitchMin: 15
+  _pitchMax: 75
+  _zoomSpeed: 1
+  _scrollZoomSpeed: 0.05
+  _zoomMin: 0.25
+  _zoomMax: 2
 --- !u!114 &8143852157925080661
 MonoBehaviour:
   m_ObjectHideFlags: 0
