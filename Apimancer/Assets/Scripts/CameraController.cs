@@ -5,20 +5,20 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] private float _defaultRotation;
-    [SerializeField] private float _defaultPitch;
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _dragMoveSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _pitchSpeed;
+    [SerializeField] private float _zoomSpeed;
+    [SerializeField] private float _dragMoveSpeed;
     [SerializeField] private float _dragRotateSpeed;
     [SerializeField] private float _dragPitchSpeed;
+    [SerializeField] private float _scrollZoomSpeed;
     [SerializeField] private float _pitchMin;
     [SerializeField] private float _pitchMax;
-    [SerializeField] private float _zoomSpeed;
-    [SerializeField] private float _scrollZoomSpeed;
     [SerializeField] private float _zoomMin;
     [SerializeField] private float _zoomMax;
+    [SerializeField] private float _defaultRotation;
+    [SerializeField] private float _defaultPitch;
 
     private Controls _controls;
     private Camera _camera;
@@ -78,8 +78,8 @@ public class CameraController : MonoBehaviour
         if (_clickRight)
         {
             this.transform.rotation = Quaternion.identity;
-            float rotationDifference = Time.deltaTime * _dragRotateSpeed * -_controls.player.mouseDelta.ReadValue<Vector2>().x;
-            float pitchDifference = Time.deltaTime * _dragPitchSpeed * -_controls.player.mouseDelta.ReadValue<Vector2>().y;
+            float rotationDifference = Time.deltaTime * _dragRotateSpeed * -_mouseDelta.x;
+            float pitchDifference = Time.deltaTime * _dragPitchSpeed * -_mouseDelta.y;
             _cameraRotation += rotationDifference;
             _cameraPitch = Mathf.Clamp(_cameraPitch + pitchDifference, -_pitchMax, -_pitchMin);
             this.transform.Rotate(_cameraRotation * Vector3.forward, Space.World);
