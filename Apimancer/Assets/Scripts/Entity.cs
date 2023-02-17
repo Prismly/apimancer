@@ -2,25 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Tilemaps;
 
-public class Entity : MonoBehaviour
+public class Entity : Cell
 {
+    public Tilemap grid;
 
-    // Start is called before the first frame update
-    void Start()
+    bool hasMoved;
+
+    void FixedUpdate()
     {
         
     }
 
-    public void OnMove(InputValue input)
+    public override void OnSelect()
     {
-        Vector2 inputVec = input.Get<Vector2>();
-        transform.position += new Vector3(inputVec.x, inputVec.y, 0);
+        Debug.Log("Entity selected");
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void OnDeselect()
     {
-        
+        Debug.Log("Entity deselected");
+        Selectable focused = SelectionManager.Instance.FocusedProspect;
+        if (focused)
+        {
+            transform.position = focused.transform.position;
+        }
+    }
+
+    public override void OnHover()
+    {
+        Debug.Log("Hoverin");
     }
 }
