@@ -7,12 +7,15 @@ public class Cell : Selectable
     [Header("CELL")]
     public Vector2Int Location;
 
+    public Entity occupant;
+
     public Cell Adjacent(int side)
     {
         if (Location.y % 2 == 0)
         {
             switch (side)
             {
+                // CONVENTION: 0 is RIGHT, proceeds counter-clockwise
             case 0:
                 return CellManager.Instance.GetCell(Location + Vector2Int.right);
             case 1:
