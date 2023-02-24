@@ -94,4 +94,8 @@ public abstract class Entity : MonoBehaviour
 
     // Choose a movement target from the list of entities
     public abstract Cell FindMovementTarget(List<Entity> entities);
+
+    public virtual float GetCellWeight(Cell c) {
+        return 1.0;
+    }
 }
