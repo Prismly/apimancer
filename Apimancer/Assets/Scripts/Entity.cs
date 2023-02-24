@@ -8,7 +8,9 @@ public abstract class Entity : MonoBehaviour
     [SerializeField] public Cell cell { get; set; }
     protected virtual int MovementCost(Cell c, Cell end)
     {
-        return 0;
+        Vector3 cPos = c.transform.position;
+        Vector3 ePos = end.transform.position;
+        return Mathf.RoundToInt(Mathf.Abs(cPos.x - ePos.x) + Mathf.Abs(cPos.y - cPos.y));
     }
 
     // Pathfinding from entity to target cell
