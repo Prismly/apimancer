@@ -9,7 +9,7 @@ public class ArmyAnt : Ant
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
     private float cost = 8.0f;
-    private  AntType antType = AntType.ARMY;
+    private AntType antType = AntType.ARMY;
 
     public override float MaxHealth
     {
