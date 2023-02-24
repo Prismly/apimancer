@@ -96,6 +96,6 @@ public abstract class Entity : MonoBehaviour
     public abstract Cell FindMovementTarget(List<Entity> entities);
 
     public virtual float GetCellWeight(Cell c) {
-        return 1.0;
+        return 1.0f;
     }
 }
