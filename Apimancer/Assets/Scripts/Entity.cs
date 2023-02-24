@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Tilemaps;
+using System.Linq;
 
 public abstract class Entity : MonoBehaviour
 {
@@ -101,6 +100,8 @@ public abstract class Entity : MonoBehaviour
         {
             StartCoroutine(MoveToPos(transform.position, focused.transform.position));
         }
+
+        return finalPathTiles;
     }
 
     // Pathfinding from entity to target cell
@@ -125,4 +126,5 @@ public abstract class Entity : MonoBehaviour
     public virtual float GetCellWeight(Cell c) {
         return 1.0;
     }
+
 }
