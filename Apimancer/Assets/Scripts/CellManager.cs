@@ -30,20 +30,31 @@ public class CellManager : MonoBehaviour
         }
     }
 
-    public void AddCell(Cell cell, Vector2Int location)
+    public bool AddCell(Cell cell, Vector2Int location)
     {
         cell.Location = location;
         try
         {
             _cells.Add((Vector2Int)location, cell);
+            return true;
         } 
-        catch (Exception) {}
+        catch (Exception)
+        {
+            return false;
+        }
 
         // Debug.Log("Cell " + _cells.Count + " added");
     }
 
     public Cell GetCell(Vector2Int location)
     {
-        return _cells[location];
+        try
+        {
+            return _cells[location];
+        }
+        catch (KeyNotFoundException)
+        {
+            return null;
+        }
     }
 }

@@ -18,9 +18,25 @@ public class Cell : Selectable
     public CellType Type;
     public Vector2Int Location;
     public Entity Occupant;
+    public int F;
     public int G;
     public int H;
     public bool IsOccupied => Occupant != null;
+
+    public List<Cell> GetAdjacentList()
+    {
+        List<Cell> cells = new List<Cell>();
+
+        for (int i = 0; i < 6; i++)
+        {
+            Cell cell = GetAdjacent(i);
+            if (cell != null)
+            {
+                cells.Add(cell);
+            }
+        }
+        return cells;
+    }
 
     public Cell GetAdjacent(int side)
     {
@@ -86,11 +102,11 @@ public class Cell : Selectable
     {
 
     }
-    public virtual void OnEnter()
+    protected virtual void OnEnter()
     {
 
     }
-    public virtual void OnExit()
+    protected virtual void OnExit()
     {
 
     }
