@@ -6,7 +6,9 @@ public enum CellType
 {
     DIRT,
     WATER,
-    WALL
+    WALL,
+    HONEY,
+    LAVAL
 }
 
 public class Cell : Selectable

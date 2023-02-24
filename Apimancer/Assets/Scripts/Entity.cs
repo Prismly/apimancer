@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
-public class Entity : MonoBehaviour
+public abstract class Entity : MonoBehaviour
 {
     [SerializeField] private Cell cell;
 
@@ -101,5 +101,28 @@ public class Entity : MonoBehaviour
         {
             StartCoroutine(MoveToPos(transform.position, focused.transform.position));
         }
+    }
+
+    // Pathfinding from entity to target cell
+    public static Queue<Cell> FindPath(Entity e, Cell target) {
+        return null;
+    }
+
+    // Move this entity along the given path
+    public bool MoveAlongPath(Queue<Cell> path) {
+        return false;
+    }
+
+    // Move this entity directly to the given cell
+    // probably call animation here
+    public bool MoveToCell(Cell target) {
+        return false;
+    }
+
+    // Choose a movement target from the list of entities
+    public abstract Cell FindMovementTarget(List<Entity> entities);
+
+    public virtual float GetCellWeight(Cell c) {
+        return 1.0;
     }
 }
