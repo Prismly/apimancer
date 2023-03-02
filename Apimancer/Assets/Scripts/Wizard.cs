@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Wizard : Entity
+public abstract class Wizard : Unit
 {
     // private int actionPoints = 0;
     // private int actionPointsMax = 99;
