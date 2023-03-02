@@ -2,94 +2,147 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Tilemaps;
 
 public abstract class Entity : MonoBehaviour
 {
-    [SerializeField] public Cell cell { get; set; }
+    [SerializeField]
+    public Vector2Int loc;
+
+    public void Start()
+    {
+        Init();
+    }
+
+    public void Init()
+    {
+        Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
+        Vector3Int cellPosition = new Vector3Int(loc.x, loc.y);
+        transform.position = tilemap.GetCellCenterWorld(cellPosition);
+        CellManager.Instance.GetCell(loc).Enter(this);
+    }
+
+    public void Update()
+    {
+        Debug.Log("AAA");
+    }
+
     protected virtual int MovementCost(Cell c, Cell end)
     {
         Vector3 cPos = c.transform.position;
         Vector3 ePos = end.transform.position;
-        return Mathf.RoundToInt(Mathf.Abs(cPos.x - ePos.x) + Mathf.Abs(cPos.y - cPos.y));
+        return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
     }
 
     // Pathfinding from entity to target cell
-    public static Queue<Cell> FindPath(Entity e, Cell target) {
-        List<Cell> open = new List<Cell>();
-        List<Cell> closed = new List<Cell>();
-        Cell current = e.cell;
-        current.G = 0;
-        current.H = e.MovementCost(e.cell, target);
+    public static List<Cell> PathFind(Entity e, Cell target)
+    {
+        List<Cell> openPathCells = new List<Cell>();
+        List<Cell> closedPathCells = new List<Cell>();
 
-        open.Add(current);
-        while (open.Count != 0)
+        // Prepare the start tile.
+        Cell currentCell = CellManager.Instance.GetCell(e.loc);
+
+        currentCell.G = 0;
+        currentCell.H = e.MovementCost(currentCell, target);
+
+        // Add the start tile to the open list.
+        openPathCells.Add(currentCell);
+        while (openPathCells.Count != 0)
         {
-            open = open.OrderBy(x => x.F).ThenByDescending(x => x.G).ToList();
-            current = open[0];
+            // Sorting the open list to get the tile with the lowest F.
+            openPathCells = openPathCells.OrderBy(x => x.F).ThenByDescending(x => x.G).ToList();
+            currentCell = openPathCells[0];
 
-            open.Remove(current);
-            closed.Add(current);
+            // Removing the current tile from the open list and adding it to the closed list.
+            openPathCells.Remove(currentCell);
+            closedPathCells.Add(currentCell);
 
-            int g = current.G + 1;
+            int g = currentCell.G + 1;
 
             // If there is a target tile in the closed list, we have found a path.
-            if (closed.Contains(target))
+            if (closedPathCells.Contains(target))
+            {
                 break;
+            }
 
-            foreach (Cell adjacent in current.GetAdjacentList())
+            // Investigating each adjacent tile of the current tile.
+            foreach (Cell adjacentCell in currentCell.GetAdjacentList())
             {
                 // Ignore not walkable adjacent tiles.
-                if (adjacent.IsOccupied)
+                if (adjacentCell.IsOccupied)
+                {
                     continue;
+                }
 
                 // Ignore the tile if it's already in the closed list.
-                if (closed.Contains(adjacent))
+                if (closedPathCells.Contains(adjacentCell))
+                {
                     continue;
+                }
 
                 // If it's not in the open list - add it and compute G and H.
-                if (!(open.Contains(adjacent)))
+                if (!(openPathCells.Contains(adjacentCell)))
                 {
-                    adjacent.G = g;
-                    adjacent.H = e.MovementCost(adjacent, target);
-                    open.Add(adjacent);
+                    adjacentCell.G = g;
+                    adjacentCell.H = e.MovementCost(adjacentCell, target);
+                    openPathCells.Add(adjacentCell);
                 }
                 // Otherwise check if using current G we can get a lower value of F, if so update it's value.
-                else if (adjacent.F > g + adjacent.H)
+                else if (adjacentCell.F > g + adjacentCell.H)
                 {
-                    adjacent.G = g;
+                    adjacentCell.G = g;
                 }
             }
         }
 
-        Queue<Cell> finalPathTiles = new Queue<Cell>();
+        List<Cell> finalPathCells = new List<Cell>();
 
         // Backtracking - setting the final path.
-        if (closed.Contains(target))
+        if (closedPathCells.Contains(target))
         {
-            current = target;
-            finalPathTiles.Enqueue(current);
+            currentCell = target;
+            finalPathCells.Add(currentCell);
 
             for (int i = target.G - 1; i >= 0; i--)
             {
-                current = closed.Find(x => x.G == i && current.GetAdjacentList().Contains(x));
-                finalPathTiles.Enqueue(current);
+                currentCell = closedPathCells.Find(x => x.G == i && currentCell.GetAdjacentList().Contains(x));
+                finalPathCells.Add(currentCell);
             }
 
-            finalPathTiles.Reverse();
+            finalPathCells.Reverse();
         }
 
-        return finalPathTiles;
+        return finalPathCells;
     }
 
-    // Move this entity along the given path
-    public bool MoveAlongPath(Queue<Cell> path) {
-        return false;
+    public bool MoveToCell(Cell target)
+    {
+        StartCoroutine(MoveCoroutine(PathFind(this, target)));
+        return true;
+    }
+
+    private IEnumerator MoveCoroutine(List<Cell> path)
+    {
+        foreach (Cell c in path)
+            yield return StartCoroutine(MoveToOneCell(c));
+        Cell last = path.Last();
+        loc = last.Location;
+        last.Enter(this);
     }
 
     // Move this entity directly to the given cell
     // probably call animation here
-    public bool MoveToCell(Cell target) {
-        return false;
+    public IEnumerator MoveToOneCell(Cell target)
+    {
+        var currentPos = transform.position;
+        var t = 0f;
+        while (t < 1)
+        {
+            t += Time.deltaTime / 0.25f;
+            transform.position = Vector3.Lerp(currentPos, target.transform.position, t);
+            yield return null;
+        }
     }
 
     // Choose a movement target from the list of entities
