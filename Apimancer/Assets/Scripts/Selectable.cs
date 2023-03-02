@@ -214,7 +214,7 @@ public class Selectable : MonoBehaviour
     
     private void OnMouseEnter()
     {
-        SelectionManager.Instance.FocusedProspect = this;
+        // SelectionManager.Instance.FocusedProspect = this;
         SelectionManager.Instance.Hover(Root);
     }
 

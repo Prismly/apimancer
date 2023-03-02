@@ -6,12 +6,17 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject _playerControllerPrefab;
     [SerializeField] private List<GameObject> _levelPrefabs;
+    [SerializeField] private List<GameObject> _wizardPrefabs;
+    [SerializeField] private int _minWizards;
+    [SerializeField] private int _maxWizards;
 
     private GameObject _playerController;
-    private GameObject _currentLevel;
+    private Level _currentLevel;
 
-    public int PlayerCount {get; private set;}
+    public int WizardCount {get; private set;}
     public int CurrentTurn {get; private set;}
+    public List<Wizard> Wizards {get; private set;}
+    public Wizard CurrentWizard {get; private set;}
     public bool IsRunning {get; private set;}
 
     private static GameManager _instance = null;
@@ -37,13 +42,32 @@ public class GameManager : MonoBehaviour
         { 
             _instance = this;
         }
+        LoadLevel(0);
+        SpawnWizards(1);
+        StartGame(0);
     }
 
-    public void StartGame(int playerCount)
+    private void SpawnWizards(int wizardCount)
     {
-        PlayerCount = playerCount;
-        CurrentTurn = 0;
+
+        WizardCount = Mathf.Clamp(wizardCount, _minWizards, _maxWizards);
+        Wizards = new List<Wizard>();
+        for (int i = 0; i < _maxWizards; i++)
+        {
+            Wizards[i] = Instantiate(_wizardPrefabs[i]).GetComponent<Wizard>();
+        }
+        _currentLevel.SpawnWizards(Wizards);
+    }
+
+    public void StartGame(int firstTurn)
+    {
         IsRunning = true;
+
+        CurrentTurn = firstTurn;
+
+        CurrentWizard = Wizards[CurrentTurn];
+
+        CurrentWizard.BeginTurn();
     }
 
     public void GameOver()
@@ -54,15 +78,18 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         _playerController = Instantiate(_playerControllerPrefab);
-        _currentLevel = Instantiate(_levelPrefabs[levelIndex]);
+        _currentLevel = Instantiate(_levelPrefabs[levelIndex]).GetComponent<Level>();
     }
 
     public int NextTurn()
     {
-        CurrentTurn++;
-        CurrentTurn %= PlayerCount;
+        CurrentWizard.EndTurn();
 
-        // Begin players turn
+        CurrentTurn++;
+        CurrentTurn %= WizardCount;
+        CurrentWizard = Wizards[CurrentTurn];
+        
+        CurrentWizard.BeginTurn();
         
         return CurrentTurn;
     }

@@ -33,6 +33,7 @@ public class SelectionManager
         Focused = null;
         if (Hovered.Count <= 0)
         {
+            Focused = null;
             DeselectAll();
             return;
         }
@@ -47,9 +48,17 @@ public class SelectionManager
                 break;
             }
         }
-        if (FocusedProspect != null && FocusedProspect.isSelected)
+        // if (FocusedProspect != null && FocusedProspect.isSelected)
+        // {
+        //     Focused = FocusedProspect;
+        // }
+        if (toSelect.isSelected)
         {
-            Focused = FocusedProspect;
+            Focused = toSelect;
+        }
+        else
+        {
+            Focused = null;
         }
         DeselectAll();
         Select(toSelect);
