@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3075381625163675005}
-  - component: {fileID: -1823398360827049113}
+  - component: {fileID: -889291557290520891}
   - component: {fileID: 5790144875299269826}
   - component: {fileID: 7460294770520075462}
   m_Layer: 0
-  m_Name: ObstaclePrefab
+  m_Name: WaterPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1823398360827049113
+--- !u!114 &-889291557290520891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,12 +45,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1513276900747065057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9031bc68dc1517438baee633756db51, type: 3}
+  m_Script: {fileID: 11500000, guid: 8019ac2b4f0dd36489bff9db163c54d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionRenderer: {fileID: 3459656978288467165}
-  _colorHover: {r: 0.7735849, g: 0.3247597, b: 0.3247597, a: 1}
-  _colorSelect: {r: 0.21436457, g: 0.18743324, b: 0.49056602, a: 1}
+  _colorHover: {r: 0.77254903, g: 0.3254902, b: 0.3254902, a: 1}
+  _colorSelect: {r: 0.21568628, g: 0.1882353, b: 0.49019608, a: 1}
   Root: {fileID: 0}
   Nodes: []
   Location: {x: 0, y: 0}
@@ -214,8 +214,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2135585597343286014, guid: 5aa8b770bc43046bc8d993d0d5b7f4a5, type: 3}
-  m_Color: {r: 0.19676405, g: 0.199, b: 0.199, a: 1}
+  m_Sprite: {fileID: 2016587704, guid: b0e2178b22347374ea6a5751c6b985ed, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
