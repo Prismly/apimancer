@@ -35,8 +35,8 @@ public abstract class Unit : Entity
         if (cell != null) 
         {
             Debug.Log("It worked!");
-            this.cell = cell;
-            this.transform.position = this.cell.transform.position + new Vector3(0, 0, -0.0525f);
+            this.loc = location;
+            this.transform.position = cell.transform.position + new Vector3(0, 0, -0.04f);
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }
