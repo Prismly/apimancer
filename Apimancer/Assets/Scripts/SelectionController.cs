@@ -73,6 +73,12 @@ public class SelectionController : MonoBehaviour
                 SelectionManager.Instance.SelectOne();
             }
         }
+        Selectable focus = SelectionManager.Instance.Focused;
+        if (focus != null)
+        {
+            Vector3 focusPosition = focus.transform.position;
+            this.transform.position = new Vector3(focusPosition.x, focusPosition.y, this.transform.position.z);
+        }
     }
 
     private void MouseRightDown(InputAction.CallbackContext context)
