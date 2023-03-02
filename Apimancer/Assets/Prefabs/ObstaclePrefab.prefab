@@ -45,15 +45,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1513276900747065057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc97e5ca2975134d912c6276eef017b, type: 3}
+  m_Script: {fileID: 11500000, guid: f9031bc68dc1517438baee633756db51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _selectionRenderer: {fileID: 3459656978288467165}
-  _colorHover: {r: 1, g: 0.49803922, b: 0, a: 1}
-  _colorSelect: {r: 0, g: 0.49803922, b: 0.49803922, a: 1}
+  _colorHover: {r: 0.7735849, g: 0.3247597, b: 0.3247597, a: 1}
+  _colorSelect: {r: 0.21436457, g: 0.18743324, b: 0.49056602, a: 1}
   Root: {fileID: 0}
   Nodes: []
   Location: {x: 0, y: 0}
+  Occupant: {fileID: 0}
+  F: 0
+  G: 0
+  H: 0
 --- !u!212 &5790144875299269826
 SpriteRenderer:
   m_ObjectHideFlags: 0
