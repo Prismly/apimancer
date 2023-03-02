@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SelectionManager
 {
+    public static bool canInteract = true;
+
     private static SelectionManager _instance;
     public static SelectionManager Instance
     {
@@ -121,8 +124,18 @@ public class SelectionManager
     {
         if (toDeselect == null) return;
         toDeselect.Deselect();
-        Selected.Remove(toDeselect);
+        //Selected.Remove(toDeselect);
     }
+
+    public void DeselectAll()
+    {
+        foreach (Selectable s in Selected)
+        {
+            s.Deselect();
+        }
+        Selected.Clear();
+    }
+
     public void Hover(Selectable toHover)
     {
         if (toHover == null) return;
@@ -133,16 +146,16 @@ public class SelectionManager
     {
         if (toUnhover == null) return;
         toUnhover.Unhover();
-        Hovered.Remove(toUnhover);
+        //Hovered.Remove(toUnhover);
     }
 
-    public void DeselectAll()
+    public void UnhoverAll()
     {
-        foreach (Selectable s in Selected)
+        foreach (Selectable s in Hovered)
         {
-            s.Deselect();
+            Unhover(s);
         }
-        Selected.Clear();
+        Hovered.Clear();
     }
 
     public void Assign(Task task, bool keepExisting)
