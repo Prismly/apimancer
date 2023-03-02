@@ -34,8 +34,10 @@ public abstract class Unit : Entity
         Cell cell = CellManager.Instance.GetCell(location);
         if (cell != null) 
         {
+            Debug.Log("It worked!");
             this.cell = cell;
-            this.transform.position = this.cell.transform.position;
+            this.transform.position = this.cell.transform.position + new Vector3(0, 0, -0.0525f);
+            this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }
 }

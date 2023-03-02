@@ -52,9 +52,9 @@ public class GameManager : MonoBehaviour
 
         WizardCount = Mathf.Clamp(wizardCount, _minWizards, _maxWizards);
         Wizards = new List<Wizard>();
-        for (int i = 0; i < _maxWizards; i++)
+        for (int i = 0; i < wizardCount; i++)
         {
-            Wizards[i] = Instantiate(_wizardPrefabs[i]).GetComponent<Wizard>();
+            Wizards.Add(Instantiate(_wizardPrefabs[i]).GetComponent<Wizard>());
         }
         _currentLevel.SpawnWizards(Wizards);
     }

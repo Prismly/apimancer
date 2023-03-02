@@ -47,6 +47,7 @@ MonoBehaviour:
   _playerControllerPrefab: {fileID: 5265668081669901724, guid: fa7e41e59fd9fe741a773292cfcf0176, type: 3}
   _levelPrefabs:
   - {fileID: 4836369654159272934, guid: 424af76b04c47ca4fa7595bde2b3bea0, type: 3}
-  _wizardPrefabs: []
+  _wizardPrefabs:
+  - {fileID: 3649754047789778013, guid: 9499715391fda914394b1605b67ac84f, type: 3}
   _minWizards: 1
   _maxWizards: 8

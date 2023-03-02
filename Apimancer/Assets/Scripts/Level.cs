@@ -11,7 +11,7 @@ public class Level : MonoBehaviour
         int wizardCount = Mathf.Min(wizards.Count, _spawnLocations.Count);
         for (int i = 0; i < wizardCount; i++)
         {
-            // Set wizard cell position here
+            wizards[i].setLocation(_spawnLocations[i]);
         }
     }
 
