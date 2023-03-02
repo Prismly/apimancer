@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e512294279b32df409f617869288e29f, type: 3}
-  m_Name: HoneyTile
+  m_Name: WallTile
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 1228262760, guid: b0e2178b22347374ea6a5751c6b985ed, type: 3}
-  Prefab: {fileID: 1513276900747065057, guid: de4ea2ccab1b81248a31625f164cc579, type: 3}
+  Sprite: {fileID: 1222160420, guid: b0e2178b22347374ea6a5751c6b985ed, type: 3}
+  Prefab: {fileID: 1513276900747065057, guid: 765926d87c59c7d428ea62a9c96906db, type: 3}
