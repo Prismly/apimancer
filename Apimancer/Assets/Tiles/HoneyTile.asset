@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e512294279b32df409f617869288e29f, type: 3}
   m_Name: HoneyTile
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 21300000, guid: 0d52769fc7bf6754588e5ea4a54f3584, type: 3}
+  Sprite: {fileID: 1228262760, guid: b0e2178b22347374ea6a5751c6b985ed, type: 3}
   Prefab: {fileID: 1513276900747065057, guid: de4ea2ccab1b81248a31625f164cc579, type: 3}
