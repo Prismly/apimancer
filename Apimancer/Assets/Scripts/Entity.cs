@@ -7,24 +7,16 @@ using UnityEngine.Tilemaps;
 public abstract class Entity : MonoBehaviour
 {
     [SerializeField]
-    public Vector2Int loc;
+    public Vector2Int loc { get; set; }
 
-    public void Start()
-    {
-        Init();
-    }
+    private static float zOffset = 0.04f;
 
     public void Init()
     {
         Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
         Vector3Int cellPosition = new Vector3Int(loc.x, loc.y);
-        transform.position = tilemap.GetCellCenterWorld(cellPosition);
+        transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
         CellManager.Instance.GetCell(loc).Enter(this);
-    }
-
-    public void Update()
-    {
-        Debug.Log("AAA");
     }
 
     protected virtual int MovementCost(Cell c, Cell end)
@@ -147,4 +139,9 @@ public abstract class Entity : MonoBehaviour
 
     // Choose a movement target from the list of entities
     public abstract Cell FindMovementTarget(List<Entity> entities);
+
+    public virtual float GetCellWeight(Cell c)
+    {
+        return 1.0f;
+    }
 }
