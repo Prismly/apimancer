@@ -8,14 +8,15 @@ public enum CellType
     WATER,
     WALL,
     HONEY,
-    LAVAL
+    LAVA,
+    FLOWER
 }
 
-public class Cell : Selectable
+public abstract class Cell : Selectable
 {
-    [Header("CELL")]
+    public abstract CellType Type { get; set; }
 
-    public CellType Type;
+    [Header("CELL")]
     public Vector2Int Location;
     public Entity Occupant;
     public int F;
