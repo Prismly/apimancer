@@ -185,7 +185,7 @@ public class Selectable : MonoBehaviour
     }
     public void Unhover()
     {
-         Debug.Log("Unovered");
+        Debug.Log("Unovered");
         isHovered = false;
 
         if (_selectionRenderer != null)

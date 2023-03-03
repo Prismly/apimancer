@@ -11,7 +11,7 @@ public abstract class Entity : MonoBehaviour
 
     private static float zOffset = 0.04f;
 
-    public void Init()
+    public void Start()
     {
         Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
         Vector3Int cellPosition = new Vector3Int(loc.x, loc.y);

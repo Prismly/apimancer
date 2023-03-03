@@ -33,6 +33,7 @@ public class SelectionManager
 
     public void SelectOne()
     {
+        Debug.Log("Stop");
         Focused = null;
         if (Hovered.Count <= 0)
         {
@@ -124,7 +125,7 @@ public class SelectionManager
     {
         if (toDeselect == null) return;
         toDeselect.Deselect();
-        //Selected.Remove(toDeselect);
+        Selected.Remove(toDeselect);
     }
 
     public void DeselectAll()
@@ -146,7 +147,7 @@ public class SelectionManager
     {
         if (toUnhover == null) return;
         toUnhover.Unhover();
-        //Hovered.Remove(toUnhover);
+        Hovered.Remove(toUnhover);
     }
 
     public void UnhoverAll()

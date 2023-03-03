@@ -128,7 +128,7 @@ public abstract class Cell : Selectable
     public override void OnDeselect()
     {
         Debug.Log("Deselected");
-        Cell c = (Cell)SelectionManager.Instance.Selected.Single();
+        Cell c = (Cell)SelectionManager.Instance.FocusedProspect;
         if (IsOccupied && c != this)
             Occupant.MoveToCell(c);
     }
