@@ -124,12 +124,13 @@ public abstract class Cell : Selectable
     public override void OnSelect()
     {
         Debug.Log("Selected");
+        Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
+        if (lastCell.IsOccupied && this.GetType() != CellType.WALL && lastCell != this) {
+            lastCell.Occupant.MoveToCell(this);
+        }
     }
     public override void OnDeselect()
     {
         Debug.Log("Deselected");
-        Cell c = (Cell)SelectionManager.Instance.FocusedProspect;
-        if (IsOccupied && c != this)
-            Occupant.MoveToCell(c);
     }
 }
