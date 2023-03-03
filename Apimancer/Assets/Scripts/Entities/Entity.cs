@@ -13,9 +13,10 @@ public abstract class Entity : MonoBehaviour
 
     public void Start()
     {
-        Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
-        Vector3Int cellPosition = new Vector3Int(loc.x, loc.y);
-        transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
+        //Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
+        Vector2Int cellPosition = new Vector2Int(loc.x, loc.y);
+        transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position - (Vector3.forward * zOffset);
+        // transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
         CellManager.Instance.GetCell(loc).Enter(this);
     }
 

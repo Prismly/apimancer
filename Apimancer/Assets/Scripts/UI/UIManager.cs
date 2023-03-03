@@ -74,4 +74,9 @@ public class UIManager : MonoBehaviour
         spellsMenu.SetActive(false);
         summonMenu.SetActive(!summonMenu.activeInHierarchy);
     }
+
+    public void EndPlayerTurn()
+    {
+        GameManager.Instance.NextTurn();
+    }
 }
