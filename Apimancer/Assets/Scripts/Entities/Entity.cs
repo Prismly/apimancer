@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,9 +23,12 @@ public abstract class Entity : MonoBehaviour
 
     protected virtual int MovementCost(Cell c, Cell end)
     {
-        Vector3 cPos = c.transform.position;
-        Vector3 ePos = end.transform.position;
-        return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
+        Vector2Int cPos = c.Location;
+        Vector2Int ePos = end.Location;
+        return (Math.Max(Math.Abs(cPos.x - ePos.x), Math.Abs(cPos.y - ePos.y)));
+        //Vector3 cPos = c.transform.position;
+        //Vector3 ePos = end.transform.position;
+        //return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
     }
 
     // Pathfinding from entity to target cell
