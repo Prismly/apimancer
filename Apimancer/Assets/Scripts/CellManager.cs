@@ -6,6 +6,7 @@ using System;
 public class CellManager : MonoBehaviour
 {
     private static CellManager instance = null;
+
     public static CellManager Instance {
         get {
             if (instance == null)
