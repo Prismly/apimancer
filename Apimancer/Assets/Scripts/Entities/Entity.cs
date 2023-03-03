@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,17 +14,21 @@ public abstract class Entity : MonoBehaviour
 
     public void Start()
     {
-        Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
-        Vector3Int cellPosition = new Vector3Int(loc.x, loc.y);
-        transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
+        //Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
+        Vector2Int cellPosition = new Vector2Int(loc.x, loc.y);
+        transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position - (Vector3.forward * zOffset);
+        // transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
         CellManager.Instance.GetCell(loc).Enter(this);
     }
 
     protected virtual int MovementCost(Cell c, Cell end)
     {
-        Vector3 cPos = c.transform.position;
-        Vector3 ePos = end.transform.position;
-        return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
+        Vector2Int cPos = c.Location;
+        Vector2Int ePos = end.Location;
+        return (Math.Max(Math.Abs(cPos.x - ePos.x), Math.Abs(cPos.y - ePos.y)));
+        //Vector3 cPos = c.transform.position;
+        //Vector3 ePos = end.transform.position;
+        //return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
     }
 
     // Pathfinding from entity to target cell
@@ -43,7 +48,7 @@ public abstract class Entity : MonoBehaviour
         while (openPathCells.Count != 0)
         {
             // Sorting the open list to get the tile with the lowest F.
-            openPathCells = openPathCells.OrderBy(x => x.F).ThenByDescending(x => x.G).ToList();
+            openPathCells = openPathCells.OrderBy(x => (x.G + x.H)).ThenByDescending(x => x.G).ToList();
             currentCell = openPathCells[0];
 
             // Removing the current tile from the open list and adding it to the closed list.
@@ -81,7 +86,7 @@ public abstract class Entity : MonoBehaviour
                     openPathCells.Add(adjacentCell);
                 }
                 // Otherwise check if using current G we can get a lower value of F, if so update it's value.
-                else if (adjacentCell.F > g + adjacentCell.H)
+                else if (adjacentCell.G > g)
                 {
                     adjacentCell.G = g;
                 }
@@ -110,6 +115,7 @@ public abstract class Entity : MonoBehaviour
 
     public bool MoveToCell(Cell target)
     {
+        CellManager.Instance.GetCell(loc).Exit();
         StartCoroutine(MoveCoroutine(PathFind(this, target)));
         return true;
     }

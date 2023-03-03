@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
             _instance = this;
         }
         LoadLevel(0);
-        SpawnWizards(1);
+        SpawnWizards(2);
         StartGame(0);
     }
 
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < wizardCount; i++)
         {
             Wizards.Add(Instantiate(_wizardPrefabs[i]).GetComponent<Wizard>());
+
         }
         _currentLevel.SpawnWizards(Wizards);
     }
