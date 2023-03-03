@@ -3,16 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SelectionBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tile
   - Water
   - UI
-  - 
-  - 
+  - Cell
+  - Selection
   - 
   - 
   - 
@@ -40,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tiles
+    uniqueID: 1361100273
+    locked: 0
+  - name: Selection
+    uniqueID: 1286200923
+    locked: 0
+  - name: Entities
+    uniqueID: 3898138793
+    locked: 0
+  - name: UI
+    uniqueID: 391527881
     locked: 0
