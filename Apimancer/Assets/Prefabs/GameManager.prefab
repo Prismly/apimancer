@@ -49,5 +49,6 @@ MonoBehaviour:
   - {fileID: 4836369654159272934, guid: e571eff749aadb6439d911262eeb058e, type: 3}
   _wizardPrefabs:
   - {fileID: 3649754047789778013, guid: 9499715391fda914394b1605b67ac84f, type: 3}
+  - {fileID: 3649754047789778013, guid: 0f0337d8eece40e439cab4d5ea902d42, type: 3}
   _minWizards: 1
   _maxWizards: 8

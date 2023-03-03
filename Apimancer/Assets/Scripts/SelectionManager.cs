@@ -28,6 +28,7 @@ public class SelectionManager
     public HashSet<Selectable> Hovered = new HashSet<Selectable>();
     public Selectable Focused;
     public Selectable FocusedProspect;
+    public Selectable OneSelected;
     
     private int _selectionIndex = 0;
 
@@ -64,9 +65,12 @@ public class SelectionManager
         {
             Focused = null;
         }
+        Selectable lastSelected = OneSelected;
         DeselectAll();
+        OneSelected = lastSelected;
         Select(toSelect);
         _selectionIndex++;
+        OneSelected = toSelect;
     }
 
     public void SelectAnother()
@@ -130,7 +134,13 @@ public class SelectionManager
 
     public void DeselectAll()
     {
+        List<Selectable> toDeselect = new List<Selectable>();
         foreach (Selectable s in Selected)
+        {
+            toDeselect.Add(s);
+        }
+        OneSelected = null;
+        foreach (Selectable s in toDeselect)
         {
             s.Deselect();
         }
@@ -152,7 +162,12 @@ public class SelectionManager
 
     public void UnhoverAll()
     {
+        List<Selectable> toUnhover = new List<Selectable>();
         foreach (Selectable s in Hovered)
+        {
+            toUnhover.Add(s);
+        }
+        foreach (Selectable s in toUnhover)
         {
             Unhover(s);
         }
