@@ -113,24 +113,24 @@ public abstract class Cell : Selectable
 
     }
 
-    public override void OnHover()
-    {
-        Debug.Log("Hovered");
-    }
-    public override void OnUnhover()
-    {
-        Debug.Log("Unhovered");
-    }
+    // public override void OnHover()
+    // {
+    //     Debug.Log("Hovered");
+    // }
+    // public override void OnUnhover()
+    // {
+    //     Debug.Log("Unhovered");
+    // }
     public override void OnSelect()
     {
-        Debug.Log("Selected");
+        // Debug.Log("Selected");
         Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
-        if (lastCell.IsOccupied && this.GetType() != CellType.WALL && lastCell != this) {
+        if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
             lastCell.Occupant.MoveToCell(this);
         }
     }
-    public override void OnDeselect()
-    {
-        Debug.Log("Deselected");
-    }
+    // public override void OnDeselect()
+    // {
+    //     Debug.Log("Deselected");
+    // }
 }
