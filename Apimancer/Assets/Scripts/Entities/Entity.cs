@@ -43,7 +43,7 @@ public abstract class Entity : MonoBehaviour
         while (openPathCells.Count != 0)
         {
             // Sorting the open list to get the tile with the lowest F.
-            openPathCells = openPathCells.OrderBy(x => x.F).ThenByDescending(x => x.G).ToList();
+            openPathCells = openPathCells.OrderBy(x => (x.G + x.H)).ThenByDescending(x => x.G).ToList();
             currentCell = openPathCells[0];
 
             // Removing the current tile from the open list and adding it to the closed list.
@@ -81,7 +81,7 @@ public abstract class Entity : MonoBehaviour
                     openPathCells.Add(adjacentCell);
                 }
                 // Otherwise check if using current G we can get a lower value of F, if so update it's value.
-                else if (adjacentCell.F > g + adjacentCell.H)
+                else if (adjacentCell.G > g)
                 {
                     adjacentCell.G = g;
                 }
