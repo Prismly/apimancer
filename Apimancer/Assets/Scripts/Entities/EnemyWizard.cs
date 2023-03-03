@@ -41,6 +41,7 @@ public class EnemyWizard : Wizard
                 if (randMove <= 0)
                 {
                     MoveToCell(occupying.GetAdjacent(i));
+                    GameManager.Instance.NextTurn();
                     break;
                 }
                 else

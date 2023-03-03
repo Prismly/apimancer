@@ -111,6 +111,7 @@ public abstract class Entity : MonoBehaviour
 
     public bool MoveToCell(Cell target)
     {
+        CellManager.Instance.GetCell(loc).Exit();
         StartCoroutine(MoveCoroutine(PathFind(this, target)));
         return true;
     }
