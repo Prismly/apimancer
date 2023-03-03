@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public enum CellType
 {
@@ -112,20 +113,24 @@ public abstract class Cell : Selectable
 
     }
 
-    public override void OnHover()
-    {
-        Debug.Log("Hovered");
-    }
-    public override void OnUnhover()
-    {
-        Debug.Log("Unhovered");
-    }
+    // public override void OnHover()
+    // {
+    //     Debug.Log("Hovered");
+    // }
+    // public override void OnUnhover()
+    // {
+    //     Debug.Log("Unhovered");
+    // }
     public override void OnSelect()
     {
-        Debug.Log("Selected");
+        // Debug.Log("Selected");
+        Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
+        if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
+            lastCell.Occupant.MoveToCell(this);
+        }
     }
-    public override void OnDeselect()
-    {
-        Debug.Log("Deselected");
-    }
+    // public override void OnDeselect()
+    // {
+    //     Debug.Log("Deselected");
+    // }
 }

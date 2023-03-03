@@ -212,14 +212,24 @@ public class Selectable : MonoBehaviour
         OnUnhover();
     }
     
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
+        if (!SelectionManager.canInteract)
+        {
+            return;
+        }
+
         SelectionManager.Instance.FocusedProspect = this;
         SelectionManager.Instance.Hover(Root);
     }
 
     private void OnMouseExit()
     {
+        if (!SelectionManager.canInteract)
+        {
+            return;
+        }
+
         SelectionManager.Instance.Unhover(Root);
     }
 

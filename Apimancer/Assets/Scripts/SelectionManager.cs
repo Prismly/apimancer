@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class SelectionManager
 {
+    public static bool canInteract = true;
+
     private static SelectionManager _instance;
     public static SelectionManager Instance
     {
@@ -25,14 +28,17 @@ public class SelectionManager
     public HashSet<Selectable> Hovered = new HashSet<Selectable>();
     public Selectable Focused;
     public Selectable FocusedProspect;
+    public Selectable OneSelected;
     
     private int _selectionIndex = 0;
 
     public void SelectOne()
     {
+        Debug.Log("Stop");
         Focused = null;
         if (Hovered.Count <= 0)
         {
+            Focused = null;
             DeselectAll();
             return;
         }
@@ -47,13 +53,24 @@ public class SelectionManager
                 break;
             }
         }
-        if (FocusedProspect != null && FocusedProspect.isSelected)
+        // if (FocusedProspect != null && FocusedProspect.isSelected)
+        // {
+        //     Focused = FocusedProspect;
+        // }
+        if (toSelect.isSelected)
         {
-            Focused = FocusedProspect;
+            Focused = toSelect;
         }
+        else
+        {
+            Focused = null;
+        }
+        Selectable lastSelected = OneSelected;
         DeselectAll();
+        OneSelected = lastSelected;
         Select(toSelect);
         _selectionIndex++;
+        OneSelected = toSelect;
     }
 
     public void SelectAnother()
@@ -114,6 +131,22 @@ public class SelectionManager
         toDeselect.Deselect();
         Selected.Remove(toDeselect);
     }
+
+    public void DeselectAll()
+    {
+        List<Selectable> toDeselect = new List<Selectable>();
+        foreach (Selectable s in Selected)
+        {
+            toDeselect.Add(s);
+        }
+        OneSelected = null;
+        foreach (Selectable s in toDeselect)
+        {
+            s.Deselect();
+        }
+        Selected.Clear();
+    }
+
     public void Hover(Selectable toHover)
     {
         if (toHover == null) return;
@@ -127,13 +160,18 @@ public class SelectionManager
         Hovered.Remove(toUnhover);
     }
 
-    public void DeselectAll()
+    public void UnhoverAll()
     {
-        foreach (Selectable s in Selected)
+        List<Selectable> toUnhover = new List<Selectable>();
+        foreach (Selectable s in Hovered)
         {
-            s.Deselect();
+            toUnhover.Add(s);
         }
-        Selected.Clear();
+        foreach (Selectable s in toUnhover)
+        {
+            Unhover(s);
+        }
+        Hovered.Clear();
     }
 
     public void Assign(Task task, bool keepExisting)

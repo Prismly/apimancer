@@ -17,6 +17,7 @@ public abstract class Unit : Entity
     public abstract float AttackDamage { get; set; }
     public abstract float MovementSpeed { get; set; }
 
+
     // static deal damage to target
     public static void DamageTarget(float dmg, Unit target) {
         target.ReceiveDamage(dmg);
@@ -26,5 +27,16 @@ public abstract class Unit : Entity
     protected virtual void ReceiveDamage(float dmg) 
     {
         this.Health -= dmg;
+    }
+
+    public virtual void setLocation(Vector2Int location)
+    {
+        Cell cell = CellManager.Instance.GetCell(location);
+        if (cell != null) 
+        {
+            this.loc = location;
+            this.transform.position = cell.transform.position + new Vector3(0, 0, -0.04f);
+            this.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        }
     }
 }
