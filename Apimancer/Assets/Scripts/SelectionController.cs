@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class SelectionController : MonoBehaviour
 {
@@ -44,11 +45,21 @@ public class SelectionController : MonoBehaviour
 
     private void MouseLeftDown(InputAction.CallbackContext context)
     {
+        if (!SelectionManager.canInteract)
+        {
+            return;
+        }
+
         _clickLeft = true;
         _clickLeftOrigin = _cursorPosition;
     }
     private void MouseLeftUp(InputAction.CallbackContext context)
     {
+        if (!SelectionManager.canInteract)
+        {
+            return;
+        }
+
         _clickLeft = false;
         if (_dragLeft)
         {
@@ -83,11 +94,21 @@ public class SelectionController : MonoBehaviour
 
     private void MouseRightDown(InputAction.CallbackContext context)
     {
+        if (!SelectionManager.canInteract)
+        {
+            return;
+        }
+
         _clickRight = true;
         _clickRightOrigin = _cursorPosition;
     }
     private void MouseRightUp(InputAction.CallbackContext context)
     {
+        if (!SelectionManager.canInteract)
+        {
+            return;
+        }
+
         _clickRight = false;
         HashSet<Selectable> selected = SelectionManager.Instance.Selected;
 
