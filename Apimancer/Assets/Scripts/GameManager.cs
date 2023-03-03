@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     public List<Wizard> Wizards {get; private set;}
     public Wizard CurrentWizard {get; private set;}
     public bool IsRunning {get; private set;}
+    public bool IsPaused {get; private set;}
+    public bool IsUnitMoving {get; private set;}
 
     private static GameManager _instance = null;
     public static GameManager Instance
@@ -93,5 +95,10 @@ public class GameManager : MonoBehaviour
         CurrentWizard.BeginTurn();
         
         return CurrentTurn;
+    }
+
+    public void NotifyNextUnit()
+    {
+
     }
 }
