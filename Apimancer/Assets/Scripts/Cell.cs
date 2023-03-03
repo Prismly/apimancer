@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public enum CellType
 {
@@ -127,5 +128,8 @@ public abstract class Cell : Selectable
     public override void OnDeselect()
     {
         Debug.Log("Deselected");
+        Cell c = (Cell)SelectionManager.Instance.FocusedProspect;
+        if (IsOccupied && c != this)
+            Occupant.MoveToCell(c);
     }
 }
