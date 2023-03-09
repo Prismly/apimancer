@@ -10,11 +10,12 @@ public class MenuBox : MonoBehaviour
 
     private static int optionFontSize = 8;
 
-    [SerializeField] private GameObject menuOptPref;
+    [SerializeField] private GameObject spellsOptPref;
+    [SerializeField] private GameObject summonOptPref;
 
-    public void AddOption(string optionText)
+    public void AddSpellsOption(string optionText)
     {
-        GameObject newOptObj = Instantiate(menuOptPref);
+        GameObject newOptObj = Instantiate(spellsOptPref);
 
         MenuOption newOpt = newOptObj.GetComponent<MenuOption>();
         options.Add(newOpt);
@@ -25,7 +26,30 @@ public class MenuBox : MonoBehaviour
         thisBoxRect.sizeDelta = new Vector2(thisBoxRect.sizeDelta.x, optionFontSize * (options.Count + 1) + 2);
 
         RectTransform newOptRect = newOptObj.GetComponent<RectTransform>();
-        RectTransform optPrefRect = menuOptPref.GetComponent<RectTransform>();
+        RectTransform optPrefRect = spellsOptPref.GetComponent<RectTransform>();
+        //newOptRect.offsetMin = new Vector2(optPrefRect.offsetMin.x, optPrefRect.offsetMin.y);
+        //newOptRect.offsetMax = new Vector2(optPrefRect.offsetMax.x, optPrefRect.offsetMax.y + (optionFontSize * (options.Count - 1)));
+        newOptRect.sizeDelta = new Vector2(newOptRect.sizeDelta.x, optionFontSize);
+        newOptRect.anchoredPosition = new Vector2(newOptRect.anchoredPosition.x, -optionFontSize * options.Count);
+        newOptRect.offsetMin = new Vector2(4, newOptRect.offsetMin.y);
+        newOptRect.offsetMax = new Vector2(-4, newOptRect.offsetMax.y);
+        newOptRect.localScale = optPrefRect.localScale;
+    }
+
+    public void AddSummonOption(string optionText)
+    {
+        GameObject newOptObj = Instantiate(summonOptPref);
+
+        MenuOption newOpt = newOptObj.GetComponent<MenuOption>();
+        options.Add(newOpt);
+        newOpt.SetParentBox(this);
+        newOpt.SetOptionString(optionText);
+
+        RectTransform thisBoxRect = GetComponent<RectTransform>();
+        thisBoxRect.sizeDelta = new Vector2(thisBoxRect.sizeDelta.x, optionFontSize * (options.Count + 1) + 2);
+
+        RectTransform newOptRect = newOptObj.GetComponent<RectTransform>();
+        RectTransform optPrefRect = spellsOptPref.GetComponent<RectTransform>();
         //newOptRect.offsetMin = new Vector2(optPrefRect.offsetMin.x, optPrefRect.offsetMin.y);
         //newOptRect.offsetMax = new Vector2(optPrefRect.offsetMax.x, optPrefRect.offsetMax.y + (optionFontSize * (options.Count - 1)));
         newOptRect.sizeDelta = new Vector2(newOptRect.sizeDelta.x, optionFontSize);

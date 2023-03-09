@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public enum CellType
 {
@@ -115,11 +116,22 @@ public abstract class Cell : Selectable
 
     public override void OnHover()
     {
+        if (IsOccupied)
+        {
+            Type occType = Occupant.GetType();
+            if (typeof(Unit).IsAssignableFrom(occType))
+            {
+                Unit occUnit = (Unit)Occupant;
+                UIManager.Instance.ShowHealthBox(occUnit);
+            }
+        }
+
         Debug.Log("Hovered");
     }
     public override void OnUnhover()
     {
         Debug.Log("Unhovered");
+        UIManager.Instance.HideHealthBox();
     }
     public override void OnSelect()
     {
