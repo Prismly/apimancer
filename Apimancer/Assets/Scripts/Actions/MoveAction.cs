@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move : Action
+public class MoveAction : Action
 {
     [SerializeField]
     Vector2Int target;
-    public Move(ref Unit unit, Vector2Int loc)
+    public MoveAction(ref Unit unit, Vector2Int loc)
         : base(ref unit)
     => target = loc;
 
