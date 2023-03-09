@@ -39,12 +39,6 @@ public class Flower : Resource
         set { movementSpeed = value; }
     }
 
-    public override ResourceType Type 
-    {
-        get { return resourceType; }
-        set { resourceType = value; }
-    }
-
     public override Cell FindMovementTarget(List<Entity> entities) {
         return null;
     }
