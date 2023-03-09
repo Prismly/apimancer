@@ -20,5 +20,5 @@ public abstract class Action
         this.range = range;
     }
 
-    public abstract void Execute();
+    public abstract bool Execute(Cell cell);
 }

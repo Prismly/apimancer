@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     private Level _currentLevel;
     public Dictionary<Unit.Faction, List<Unit>> Units {get; private set;} = new Dictionary<Unit.Faction, List<Unit>>();
 
+    public Action CurrentAction;
     public int WizardCount {get; private set;}
     public int CurrentTurn {get; private set;}
     public List<Wizard> Wizards {get; private set;}
@@ -125,8 +126,8 @@ public class GameManager : MonoBehaviour
         return this.SummonUnit(type, CellManager.Instance.GetCell(location));
     }
 
-    public void Execute(Action action)
+    public bool Execute(Cell cell)
     {
-        action.Execute();
+        return CurrentAction != null && CurrentAction.Execute(cell);
     }
 }

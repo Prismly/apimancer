@@ -12,6 +12,7 @@ public abstract class Wizard : Unit
 
     public Color Color;
     public bool IsTurn {get; protected set;}
+    [SerializeField] int _summonRange;
     private List<Unit> _units;
     private int _currentUnitIndex;
 
@@ -45,11 +46,15 @@ public abstract class Wizard : Unit
         _units[_currentUnitIndex].DetermineAction();
     }
 
-    public void Summon(Unit.UnitType type, Cell cell)
+    public bool Summon(Unit.UnitType type, Cell cell)
     {
+        List<Cell> path = Entity.PathFind(this, cell);
+        if (path.Count > _summonRange)
+            return false;
         Unit unit = GameManager.Instance.SummonUnit(type, cell);
         unit.UnitFaction = this.UnitFaction;
         _units.Add(unit);
+        return true;
     }
 
     public override void DetermineAction()
