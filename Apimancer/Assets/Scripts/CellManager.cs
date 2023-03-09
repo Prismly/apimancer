@@ -17,7 +17,8 @@ public class CellManager : MonoBehaviour
         }
     }
 
-    private Dictionary<Vector2Int, Cell> _cells = new Dictionary<Vector2Int, Cell>();
+    private Dictionary<Vector2Int, Cell> _cellDictionary = new Dictionary<Vector2Int, Cell>();
+    public List<Cell> CellList{get; private set;} = new List<Cell>();
 
     private void Awake()
     {
@@ -36,26 +37,22 @@ public class CellManager : MonoBehaviour
         cell.Location = location;
         try
         {
-            _cells.Add((Vector2Int)location, cell);
+            _cellDictionary.Add((Vector2Int)location, cell);
+            CellList.Add(cell);
             return true;
         } 
         catch (Exception)
         {
             return false;
         }
-
-        // Debug.Log("Cell " + _cells.Count + " added");
     }
 
     public Cell GetCell(Vector2Int location)
     {
-        try
+        if (_cellDictionary.ContainsKey(location))
         {
-            return _cells[location];
+            return _cellDictionary[location];
         }
-        catch (KeyNotFoundException)
-        {
-            return null;
-        }
+        return null;
     }
 }

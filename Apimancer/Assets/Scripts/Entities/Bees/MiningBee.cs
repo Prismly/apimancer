@@ -11,6 +11,11 @@ public class MiningBee : Bee
     private float cost = 10.0f;
     private BeeType beeType = BeeType.MINING;
 
+    public override void DetermineAction()
+    {
+        // do action
+    }
+
     public override float MaxHealth
     {
         get { return maxHealth; }
