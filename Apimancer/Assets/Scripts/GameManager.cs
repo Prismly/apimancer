@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < wizardCount; i++)
         {
             Wizards.Add(Instantiate(_wizardPrefabs[i]).GetComponent<Wizard>());
-
+            AddUnit(Wizards[i]);
         }
         _currentLevel.SpawnWizards(Wizards);
     }
