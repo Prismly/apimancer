@@ -57,6 +57,11 @@ public class CameraController : MonoBehaviour
         _cameraScale = 1;
     }
 
+    //private void Start()
+    //{
+    //    Camera.main = transform.GetChild(0).GetComponent<Camera>();
+    //}
+
     private void Update()
     {
         // _cursorPosition = _camera.ScreenToWorldPoint(_controls.player.cursor.ReadValue<Vector2>());
