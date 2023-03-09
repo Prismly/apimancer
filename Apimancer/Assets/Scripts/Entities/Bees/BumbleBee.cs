@@ -11,6 +11,11 @@ public class BumbleBee : Bee
     private float cost = 8.0f;
     private BeeType beeType = BeeType.BUMBLE;
 
+    public override void DetermineAction()
+    {
+        // do action
+    }
+
     public override float MaxHealth
     {
         get { return maxHealth; }

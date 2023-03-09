@@ -10,6 +10,11 @@ public class Flower : Resource
     private float movementSpeed = 0.0f;
     private ResourceType resourceType = ResourceType.FLOWER;
 
+    public override void DetermineAction()
+    {
+        // do action
+    }
+
     public override float MaxHealth
     {
         get { return maxHealth; }
