@@ -140,7 +140,7 @@ public abstract class Cell : Selectable
         Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
         if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
             Unit u = (Unit)lastCell.Occupant;
-            GameManager.Instance.Execute(new Move(ref u, Location));
+            GameManager.Instance.Execute(new MoveAction(ref u, Location));
         }
     }
     // public override void OnDeselect()
