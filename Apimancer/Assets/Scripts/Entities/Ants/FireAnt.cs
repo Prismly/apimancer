@@ -11,6 +11,10 @@ public class FireAnt : Ant
     private float cost = 10.0f;
     private AntType antType = AntType.FIRE;
 
+    public override void DetermineAction() {
+        // do action
+    }
+
     public override float MaxHealth
     {
         get { return maxHealth; }

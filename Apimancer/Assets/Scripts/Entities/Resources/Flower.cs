@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmyAnt : Ant
+public class Flower : Resource
 {
-    private float maxHealth = 4.0f;
-    private float health = 4.0f;
-    private float attackDamage = 2.0f;
-    private float movementSpeed = 5.0f;
-    private float cost = 8.0f;
-    private AntType antType = AntType.ARMY;
+    private float maxHealth = 5.0f;
+    private float health = 5.0f;
+    private float attackDamage = 0.0f;
+    private float movementSpeed = 0.0f;
+    private ResourceType resourceType = ResourceType.FLOWER;
 
     public override void DetermineAction()
     {
@@ -40,20 +39,13 @@ public class ArmyAnt : Ant
         set { movementSpeed = value; }
     }
 
-    public override float Cost
+    public override ResourceType Type 
     {
-        get { return cost; }
-        set { cost = value; }
+        get { return resourceType; }
+        set { resourceType = value; }
     }
 
-    public override AntType Type
-    {
-        get { return antType; }
-        set { antType = value; }
-    }
-
-    public override Cell FindMovementTarget(List<Entity> entities)
-    {
+    public override Cell FindMovementTarget(List<Entity> entities) {
         return null;
     }
 }

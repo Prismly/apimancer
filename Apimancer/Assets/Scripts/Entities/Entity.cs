@@ -67,7 +67,7 @@ public abstract class Entity : MonoBehaviour
             foreach (Cell adjacentCell in currentCell.GetAdjacentList())
             {
                 // Ignore not walkable adjacent tiles.
-                if (adjacentCell.IsOccupied)
+                if (adjacentCell.IsOccupied || adjacentCell.Type == CellType.WALL)
                 {
                     continue;
                 }
