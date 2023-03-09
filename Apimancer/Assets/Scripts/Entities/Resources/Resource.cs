@@ -7,7 +7,6 @@ public abstract class Resource : Unit
     public enum ResourceType {
         FLOWER
     }
-    public abstract ResourceType Type { get; set; }
 
     public static Resource CreateResource(ResourceType resourceType)
     {

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject _playerControllerPrefab;
     [SerializeField] private List<GameObject> _levelPrefabs;
     [SerializeField] private List<GameObject> _wizardPrefabs;
+    [SerializeField] private List<GameObject> _unitPrefabs;
     [SerializeField] private int _minWizards;
     [SerializeField] private int _maxWizards;
 
@@ -57,7 +58,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < wizardCount; i++)
         {
             Wizards.Add(Instantiate(_wizardPrefabs[i]).GetComponent<Wizard>());
-            AddUnit(Wizards[i]);
         }
         _currentLevel.SpawnWizards(Wizards);
     }
@@ -65,11 +65,8 @@ public class GameManager : MonoBehaviour
     public void StartGame(int firstTurn)
     {
         IsRunning = true;
-
         CurrentTurn = firstTurn;
-
         CurrentWizard = Wizards[CurrentTurn];
-
         CurrentWizard.BeginTurn();
     }
 
@@ -105,8 +102,9 @@ public class GameManager : MonoBehaviour
         CurrentWizard.MoveNextUnit();
     }
 
-    public void AddUnit(Unit unit)
+    public Unit Summon(Unit.UnitType type, Cell cell)
     {
+        Unit unit = Instantiate(_unitPrefabs[(int)type]).GetComponent<Unit>();
         List<Unit> factionList;
         if (Units.ContainsKey(unit.UnitFaction))
         {
@@ -118,6 +116,13 @@ public class GameManager : MonoBehaviour
             Units.Add(unit.UnitFaction, factionList);
         }
         factionList.Add(unit);
+
+        return unit;
+    }
+
+    public Unit Summon(Unit.UnitType type, Vector2Int location)
+    {
+        return this.Summon(type, CellManager.Instance.GetCell(location));
     }
 
     public void Execute(Action action)

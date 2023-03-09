@@ -45,11 +45,10 @@ public abstract class Wizard : Unit
         _units[_currentUnitIndex].DetermineAction();
     }
 
-    public void Summon(Cell cell, Unit.Faction faction, short unitType)
+    public void Summon(Unit.UnitType type, Cell cell)
     {
-        Unit unit = Unit.CreateUnit(cell, faction, unitType);
+        Unit unit = GameManager.Instance.Summon(type, cell);
         unit.UnitFaction = this.UnitFaction;
-        GameManager.Instance.AddUnit(unit);
         _units.Add(unit);
     }
 
