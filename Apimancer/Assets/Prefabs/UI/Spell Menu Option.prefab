@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 524730191316597615}
   - component: {fileID: 8586924293938837525}
   m_Layer: 5
-  m_Name: Menu Option
+  m_Name: Spell Menu Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
