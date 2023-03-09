@@ -10,11 +10,11 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject targetWorldCanvas;
 
     [SerializeField] private GameObject menuBoxPref;
-    [SerializeField] private GameObject healthBoxPref;
+    [SerializeField] private GameObject healthBox;
     
     private GameObject summonMenu;
     private GameObject spellsMenu;
-    private GameObject healthBox;
+    //private GameObject healthBox;
 
     private static UIManager _instance;
     public static UIManager Instance
@@ -107,20 +107,20 @@ public class UIManager : MonoBehaviour
     public void ShowHealthBox(Unit target)
     {
         // -- HEALTH BOX --
-        if (healthBox == null)
-        {
-            healthBox = Instantiate(healthBoxPref);
-        }
+        //if (healthBox == null)
+        //{
+        //    healthBox = Instantiate(healthBoxPref);
+        //}
 
-        healthBox.transform.SetParent(targetCanvas.transform);
+        //healthBox.transform.SetParent(targetCanvas.transform);
         RectTransform healthBoxRect = healthBox.GetComponent<RectTransform>();
         //RectTransform healthBoxPrefRect = healthBoxPref.GetComponent<RectTransform>();
-        healthBoxRect.localPosition = Camera.main.WorldToScreenPoint(target.transform.position) + (Vector3.up * 10);
+        healthBoxRect.transform.position = Camera.main.WorldToScreenPoint(target.transform.position + new Vector3(0, 0, -1)) / targetCanvas.GetComponent<CanvasScaler>().scaleFactor;
         //healthBoxRect.localScale = healthBoxPref.localScale;
         //Image healthBoxImg = healthBox.GetComponent<Image>();
         //healthBoxImg.color = new Color(0 / 255f, 0 / 255f, 0 / 255f);
         TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        healthBoxText.text = "<sprite=8> " + target.Health + "/" + target.MaxHealth;
+        healthBoxText.text = "<sprite=6> " + target.Health + "/" + target.MaxHealth;
         healthBox.SetActive(true);
     }
 
