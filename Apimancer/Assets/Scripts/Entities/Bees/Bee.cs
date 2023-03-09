@@ -4,8 +4,6 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
-    public abstract float Cost { get; set; }
-
     private Wizard commander;
     public Wizard GetCommander() {
         return commander;

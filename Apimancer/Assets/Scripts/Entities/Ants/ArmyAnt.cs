@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class ArmyAnt : Ant
 {
+    public static float Cost = 8.0f;
+
     private float maxHealth = 4.0f;
     private float health = 4.0f;
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
-    private float cost = 8.0f;
 
     public override void DetermineAction()
     {
@@ -37,12 +38,6 @@ public class ArmyAnt : Ant
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }
-    }
-
-    public override float Cost
-    {
-        get { return cost; }
-        set { cost = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)
