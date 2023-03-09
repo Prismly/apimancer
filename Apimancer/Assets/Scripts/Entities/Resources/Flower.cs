@@ -8,7 +8,6 @@ public class Flower : Resource
     private float health = 5.0f;
     private float attackDamage = 0.0f;
     private float movementSpeed = 0.0f;
-    private ResourceType resourceType = ResourceType.FLOWER;
 
     public override void DetermineAction()
     {

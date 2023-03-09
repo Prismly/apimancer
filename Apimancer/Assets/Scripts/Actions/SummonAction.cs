@@ -25,6 +25,6 @@ public class SummonAction : Action
         List<Cell> path = Entity.PathFind(w, c);
         if (path.Count > range)
             return;
-        w.Summon(c, w.UnitFaction, (short)type);
+        w.Summon(type, c);
     }
 }
