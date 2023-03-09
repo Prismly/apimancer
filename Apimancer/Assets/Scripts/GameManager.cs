@@ -119,4 +119,9 @@ public class GameManager : MonoBehaviour
         }
         factionList.Add(unit);
     }
+
+    public void Execute(Action action)
+    {
+        action.Execute();
+    }
 }
