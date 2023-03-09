@@ -172,6 +172,8 @@ MonoBehaviour:
   _dragRotateSpeed: 5
   _dragPitchSpeed: 5
   _scrollZoomSpeed: 0.05
+  _rotationMin: -60
+  _rotationMax: 60
   _pitchMin: 15
   _pitchMax: 75
   _zoomMin: 0.25

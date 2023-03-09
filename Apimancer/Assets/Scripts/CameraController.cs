@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float _dragRotateSpeed;
     [SerializeField] private float _dragPitchSpeed;
     [SerializeField] private float _scrollZoomSpeed;
+    [SerializeField] private float _rotationMin;
+    [SerializeField] private float _rotationMax;
     [SerializeField] private float _pitchMin;
     [SerializeField] private float _pitchMax;
     [SerializeField] private float _zoomMin;
@@ -80,7 +82,8 @@ public class CameraController : MonoBehaviour
             this.transform.rotation = Quaternion.identity;
             float rotationDifference = Time.deltaTime * _dragRotateSpeed * -_mouseDelta.x;
             float pitchDifference = Time.deltaTime * _dragPitchSpeed * -_mouseDelta.y;
-            _cameraRotation += rotationDifference;
+            // _cameraRotation += rotationDifference;
+            _cameraRotation = Mathf.Clamp(_cameraRotation + rotationDifference, _rotationMin, _rotationMax);
             _cameraPitch = Mathf.Clamp(_cameraPitch + pitchDifference, -_pitchMax, -_pitchMin);
             this.transform.Rotate(_cameraRotation * Vector3.forward, Space.World);
             this.transform.Rotate(_cameraPitch * Vector3.right, Space.Self);
@@ -91,7 +94,8 @@ public class CameraController : MonoBehaviour
             this.transform.rotation = Quaternion.identity;
             float rotationDifference = Time.deltaTime * _rotateSpeed * _cameraMovement.x;
             float pitchDifference = Time.deltaTime * _pitchSpeed * _cameraMovement.y;
-            _cameraRotation += rotationDifference;
+            // _cameraRotation += rotationDifference;
+            _cameraRotation = Mathf.Clamp(_cameraRotation + rotationDifference, _rotationMin, _rotationMax);
             _cameraPitch = Mathf.Clamp(_cameraPitch + pitchDifference, -_pitchMax, -_pitchMin);
             this.transform.Rotate(_cameraRotation * Vector3.forward, Space.World);
             this.transform.Rotate(_cameraPitch * Vector3.right, Space.Self);
