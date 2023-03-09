@@ -47,7 +47,7 @@ public abstract class Wizard : Unit
 
     public void Summon(Unit.UnitType type, Cell cell)
     {
-        Unit unit = GameManager.Instance.Summon(type, cell);
+        Unit unit = GameManager.Instance.SummonUnit(type, cell);
         unit.UnitFaction = this.UnitFaction;
         _units.Add(unit);
     }

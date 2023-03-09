@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
         CurrentWizard.MoveNextUnit();
     }
 
-    public Unit Summon(Unit.UnitType type, Cell cell)
+    public Unit SummonUnit(Unit.UnitType type, Cell cell)
     {
         Unit unit = Instantiate(_unitPrefabs[(int)type]).GetComponent<Unit>();
         List<Unit> factionList;
@@ -120,9 +120,9 @@ public class GameManager : MonoBehaviour
         return unit;
     }
 
-    public Unit Summon(Unit.UnitType type, Vector2Int location)
+    public Unit SummonUnit(Unit.UnitType type, Vector2Int location)
     {
-        return this.Summon(type, CellManager.Instance.GetCell(location));
+        return this.SummonUnit(type, CellManager.Instance.GetCell(location));
     }
 
     public void Execute(Action action)
