@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyWizard : Wizard
 {
-    public override Faction UnitFaction { get; set; }
     public override float MaxHealth { get; set; }
     public override float Health { get; set; }
     public override float AttackDamage { get; set; }
@@ -51,12 +50,7 @@ public class EnemyWizard : Wizard
             }
         }
     }
-
-    public override void EndTurn()
-    {
-        IsTurn = false;
-    }
-
+    
     public override Cell FindMovementTarget(List<Entity> entities)
     {
         throw new System.NotImplementedException();

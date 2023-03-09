@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,9 +23,12 @@ public abstract class Entity : MonoBehaviour
 
     protected virtual int MovementCost(Cell c, Cell end)
     {
-        Vector3 cPos = c.transform.position;
-        Vector3 ePos = end.transform.position;
-        return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
+        Vector2Int cPos = c.Location;
+        Vector2Int ePos = end.Location;
+        return (Math.Max(Math.Abs(cPos.x - ePos.x), Math.Abs(cPos.y - ePos.y)));
+        //Vector3 cPos = c.transform.position;
+        //Vector3 ePos = end.transform.position;
+        //return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
     }
 
     // Pathfinding from entity to target cell
@@ -44,7 +48,7 @@ public abstract class Entity : MonoBehaviour
         while (openPathCells.Count != 0)
         {
             // Sorting the open list to get the tile with the lowest F.
-            openPathCells = openPathCells.OrderBy(x => x.F).ThenByDescending(x => x.G).ToList();
+            openPathCells = openPathCells.OrderBy(x => (x.G + x.H)).ThenByDescending(x => x.G).ToList();
             currentCell = openPathCells[0];
 
             // Removing the current tile from the open list and adding it to the closed list.
@@ -63,7 +67,7 @@ public abstract class Entity : MonoBehaviour
             foreach (Cell adjacentCell in currentCell.GetAdjacentList())
             {
                 // Ignore not walkable adjacent tiles.
-                if (adjacentCell.IsOccupied)
+                if (adjacentCell.IsOccupied || adjacentCell.Type == CellType.WALL)
                 {
                     continue;
                 }
@@ -82,7 +86,7 @@ public abstract class Entity : MonoBehaviour
                     openPathCells.Add(adjacentCell);
                 }
                 // Otherwise check if using current G we can get a lower value of F, if so update it's value.
-                else if (adjacentCell.F > g + adjacentCell.H)
+                else if (adjacentCell.G > g)
                 {
                     adjacentCell.G = g;
                 }

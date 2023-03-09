@@ -4,7 +4,8 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
-    public enum BeeType {
+    public enum BeeType
+    {
         WORKER,
         MINING,
         BUMBLE
@@ -12,16 +13,31 @@ public abstract class Bee : Unit
     public abstract BeeType Type { get; set; }
     public abstract float Cost { get; set; }
 
-    private Faction faction = Faction.BEE;
-    public override Faction UnitFaction
+    public static Bee CreateBee(BeeType beeType)
     {
-        get
-        {
-            return faction;
+        Bee newBee;
+        switch (beeType) {
+            case BeeType.WORKER:
+                newBee = new WorkerBee();
+                break;
+            case BeeType.MINING:
+                newBee = new MiningBee();
+                break;
+            case BeeType.BUMBLE:
+                newBee = new BumbleBee();
+                break;
+            default:
+                newBee = null;
+                break;
         }
-        set
-        {
-            faction = value;
-        }
+        return newBee;
+    }
+
+    private Wizard commander;
+    public Wizard GetCommander() {
+        return commander;
+    }
+    public void SetCommander(Wizard w) {
+        commander = w;
     }
 }

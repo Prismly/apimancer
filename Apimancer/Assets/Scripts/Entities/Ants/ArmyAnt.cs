@@ -11,6 +11,11 @@ public class ArmyAnt : Ant
     private float cost = 8.0f;
     private AntType antType = AntType.ARMY;
 
+    public override void DetermineAction()
+    {
+        // do action
+    }
+
     public override float MaxHealth
     {
         get { return maxHealth; }

@@ -12,16 +12,33 @@ public abstract class Ant : Unit
     public abstract AntType Type { get; set; }
     public abstract float Cost { get; set; }
 
-    private Faction faction = Faction.ANT;
-    public override Faction UnitFaction
+    public static Ant CreateAnt(AntType antType)
     {
-        get
-        {
-            return faction;
+        Ant newAnt;
+        switch (antType) {
+            case AntType.WORKER:
+                newAnt = new WorkerAnt();
+                break;
+            case AntType.FIRE:
+                newAnt = new FireAnt();
+                break;
+            case AntType.ARMY:
+                newAnt = new ArmyAnt();
+                break;
+            default:
+                newAnt = null;
+                break;
         }
-        set
-        {
-            faction = value;
-        }
+        return newAnt;
+    }
+
+    private Wizard commander;
+    public Wizard GetCommander()
+    {
+        return commander;
+    }
+    public void SetCommander(Wizard w)
+    {
+        commander = w;
     }
 }

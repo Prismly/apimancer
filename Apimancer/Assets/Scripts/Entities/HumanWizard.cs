@@ -11,15 +11,9 @@ public class HumanWizard : Wizard
     public override float AttackDamage { get; set; }
     public override float MovementSpeed { get; set; }
 
-
     public override void BeginTurn()
     {
         IsTurn = true;
-    }
-
-    public override void EndTurn()
-    {
-        IsTurn = false;
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)

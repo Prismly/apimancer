@@ -11,6 +11,11 @@ public class WorkerAnt : Ant
     private float cost = 5.0f;
     private AntType antType = AntType.WORKER;
 
+    public override void DetermineAction()
+    {
+        // do action
+    }
+
     public override float MaxHealth
     {
         get { return maxHealth; }
