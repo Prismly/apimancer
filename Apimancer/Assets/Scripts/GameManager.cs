@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject _playerController;
     private Level _currentLevel;
+    public Dictionary<Unit.Faction, List<Unit>> Units {get; private set;} = new Dictionary<Unit.Faction, List<Unit>>();
 
     public int WizardCount {get; private set;}
     public int CurrentTurn {get; private set;}
@@ -51,7 +52,6 @@ public class GameManager : MonoBehaviour
 
     private void SpawnWizards(int wizardCount)
     {
-
         WizardCount = Mathf.Clamp(wizardCount, _minWizards, _maxWizards);
         Wizards = new List<Wizard>();
         for (int i = 0; i < wizardCount; i++)
@@ -84,10 +84,13 @@ public class GameManager : MonoBehaviour
         _currentLevel = Instantiate(_levelPrefabs[levelIndex]).GetComponent<Level>();
     }
 
+    public void EndTurn()
+    {
+        CurrentWizard.MoveUnits();
+    }
+
     public int NextTurn()
     {
-        CurrentWizard.EndTurn();
-
         CurrentTurn++;
         CurrentTurn %= WizardCount;
         CurrentWizard = Wizards[CurrentTurn];
@@ -99,6 +102,21 @@ public class GameManager : MonoBehaviour
 
     public void NotifyNextUnit()
     {
+        CurrentWizard.MoveNextUnit();
+    }
 
+    public void AddUnit(Unit unit)
+    {
+        List<Unit> factionList;
+        if (Units.ContainsKey(unit.UnitFaction))
+        {
+            factionList = Units[unit.UnitFaction];
+        }
+        else
+        {
+            factionList = new List<Unit>();
+            Units.Add(unit.UnitFaction, factionList);
+        }
+        factionList.Add(unit);
     }
 }

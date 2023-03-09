@@ -51,12 +51,7 @@ public class EnemyWizard : Wizard
             }
         }
     }
-
-    public override void EndTurn()
-    {
-        IsTurn = false;
-    }
-
+    
     public override Cell FindMovementTarget(List<Entity> entities)
     {
         throw new System.NotImplementedException();
