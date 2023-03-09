@@ -137,11 +137,12 @@ public abstract class Cell : Selectable
     public override void OnSelect()
     {
         // Debug.Log("Selected");
-        Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
-        if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
-            Unit u = (Unit)lastCell.Occupant;
-            GameManager.Instance.Execute(new MoveAction(ref u, Location));
-        }
+        // Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
+        // if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
+        //     Unit u = (Unit)lastCell.Occupant;
+        //     GameManager.Instance.Execute(new MoveAction(ref u, Location));
+        // }
+        GameManager.Instance.Execute(this);
     }
     // public override void OnDeselect()
     // {
