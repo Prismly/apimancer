@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Summon : MenuOption
+public class SummonOption : MenuOption
 {
     private Cell summonLocation { get; set; }
     private Unit.Faction factionType { get; set; }

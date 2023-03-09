@@ -28,6 +28,6 @@ public class Summon : Action
         List<Cell> path = Entity.PathFind(w, c);
         if (path.Count > range)
             return;
-        w.Summon(c, w.UnitFaction, type);
+        w.Summon(Unit.UnitType.BEE_WORKER, c);
     }
 }
