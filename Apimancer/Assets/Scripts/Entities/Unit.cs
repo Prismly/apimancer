@@ -11,33 +11,26 @@ public abstract class Unit : Entity
         ANT
     }
 
+    public enum UnitType
+    {
+        BEE_WIZARD,
+        BEE_WORKER,
+        BEE_MINING,
+        BEE_BUMBLE,
+        ANT_WIZARD,
+        ANT_WORKER,
+        ANT_FIRE,
+        ANT_ARMY,
+        RESOURCE_FLOWER
+    }
+
     public Faction UnitFaction;
+    public UnitType Type;
     public abstract float MaxHealth { get; set; }
     public abstract float Health { get; set; }
     public abstract float AttackDamage { get; set; }
     public abstract float MovementSpeed { get; set; }
     public abstract void DetermineAction();
-
-    public static Unit CreateUnit(Cell cell, Faction faction, short unitType)
-    {
-        Unit newUnit;
-        switch (faction) {
-            case Faction.BEE:
-                newUnit = Bee.CreateBee((Bee.BeeType)unitType);
-                break;
-            case Faction.ANT:
-                newUnit = Ant.CreateAnt((Ant.AntType)unitType);
-                break;
-            case Faction.RESOURCE:
-                newUnit = Resource.CreateResource((Resource.ResourceType)unitType);
-                break;
-            default:
-                newUnit = null;
-                break;
-        }
-        newUnit.setLocation(cell);
-        return newUnit;
-    }
 
     public Cell GetCell() 
     {

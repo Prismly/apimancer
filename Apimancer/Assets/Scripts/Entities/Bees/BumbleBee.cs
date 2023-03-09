@@ -9,7 +9,6 @@ public class BumbleBee : Bee
     private float attackDamage = 2.0f;
     private float movementSpeed = 4.0f;
     private float cost = 8.0f;
-    private BeeType beeType = BeeType.BUMBLE;
 
     public override void DetermineAction()
     {
@@ -44,12 +43,6 @@ public class BumbleBee : Bee
     {
         get { return cost; }
         set { cost = value; }
-    }
-
-    public override BeeType Type
-    {
-        get { return beeType; }
-        set { beeType = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)

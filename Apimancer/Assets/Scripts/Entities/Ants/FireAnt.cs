@@ -9,7 +9,6 @@ public class FireAnt : Ant
     private float attackDamage = 3.0f;
     private float movementSpeed = 5.0f;
     private float cost = 10.0f;
-    private AntType antType = AntType.FIRE;
 
     public override void DetermineAction() {
         // do action
@@ -43,12 +42,6 @@ public class FireAnt : Ant
     {
         get { return cost; }
         set { cost = value; }
-    }
-
-    public override AntType Type
-    {
-        get { return antType; }
-        set { antType = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)

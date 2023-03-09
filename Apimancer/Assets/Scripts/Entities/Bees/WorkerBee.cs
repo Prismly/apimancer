@@ -9,7 +9,6 @@ public class WorkerBee : Bee
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
     private float cost = 5.0f;
-    private BeeType beeType = BeeType.WORKER;
 
     public override void DetermineAction()
     {
@@ -68,12 +67,6 @@ public class WorkerBee : Bee
     {
         get { return cost; }
         set { cost = value; }
-    }
-
-    public override BeeType Type
-    {
-        get { return beeType; }
-        set { beeType = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities) {

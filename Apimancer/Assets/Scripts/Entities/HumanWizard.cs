@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HumanWizard : Wizard
 {
-    
-    public override Faction UnitFaction { get; set; }
     public override float MaxHealth { get; set; }
     public override float Health { get; set; }
     public override float AttackDamage { get; set; }
