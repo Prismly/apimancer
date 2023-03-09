@@ -12,6 +12,8 @@ public abstract class Wizard : Unit
 
     public Color Color;
     public bool IsTurn {get; protected set;}
+    private List<Unit> _units;
+    private int _currentUnitIndex;
 
     // private void Start()
     // {
@@ -27,5 +29,32 @@ public abstract class Wizard : Unit
     // }
 
     public abstract void BeginTurn();
-    public abstract void EndTurn();
+    public void MoveUnits()
+    {
+        _currentUnitIndex = -1;
+        MoveNextUnit();
+    }
+
+    public void MoveNextUnit()
+    {
+        _currentUnitIndex++;
+        if (_currentUnitIndex >= _units.Count)
+        {
+            GameManager.Instance.NextTurn();
+        }
+        _units[_currentUnitIndex].DetermineAction();
+    }
+
+    public void Summon(Cell cell, Unit.Faction faction, short unitType)
+    {
+        Unit unit = Unit.CreateUnit(cell, faction, unitType);
+        unit.UnitFaction = this.UnitFaction;
+        GameManager.Instance.AddUnit(unit);
+        _units.Add(unit);
+    }
+
+    public override void DetermineAction()
+    {
+        throw new System.NotImplementedException();
+    }
 }
