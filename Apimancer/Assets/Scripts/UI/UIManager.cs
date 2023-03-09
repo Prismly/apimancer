@@ -86,6 +86,11 @@ public class UIManager : MonoBehaviour
         }
         summonMenu.SetActive(false);
     }
+    
+    public void TogglePlayerMove()
+    {
+        // the move button has been clicked
+    }
 
     public void ToggleSpellsMenu()
     {
