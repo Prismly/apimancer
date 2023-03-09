@@ -107,21 +107,21 @@ public class UIManager : MonoBehaviour
     public void ShowHealthBox(Unit target)
     {
         // -- HEALTH BOX --
-        //if (healthBox == null)
-        //{
-        //    healthBox = Instantiate(healthBoxPref);
-        //}
-        
-        //healthBox.transform.SetParent(targetWorldCanvas.transform);
-        //RectTransform healthBoxRect = healthBox.GetComponent<RectTransform>();
-        ////RectTransform healthBoxPrefRect = healthBoxPref.GetComponent<RectTransform>();
-        //healthBoxRect.localPosition = target.transform.position + (Vector3.forward * -1);
-        ////healthBoxRect.localScale = healthBoxPref.localScale;
+        if (healthBox == null)
+        {
+            healthBox = Instantiate(healthBoxPref);
+        }
+
+        healthBox.transform.SetParent(targetCanvas.transform);
+        RectTransform healthBoxRect = healthBox.GetComponent<RectTransform>();
+        //RectTransform healthBoxPrefRect = healthBoxPref.GetComponent<RectTransform>();
+        healthBoxRect.localPosition = Camera.main.WorldToScreenPoint(target.transform.position) + (Vector3.up * 10);
+        //healthBoxRect.localScale = healthBoxPref.localScale;
         //Image healthBoxImg = healthBox.GetComponent<Image>();
         //healthBoxImg.color = new Color(0 / 255f, 0 / 255f, 0 / 255f);
-        //TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        //healthBoxText.text = "<sprite=8> " + target.Health + "/" + target.MaxHealth;
-        //healthBox.SetActive(true);
+        TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        healthBoxText.text = "<sprite=8> " + target.Health + "/" + target.MaxHealth;
+        healthBox.SetActive(true);
     }
 
     public void HideHealthBox()
