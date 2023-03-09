@@ -11,7 +11,7 @@ public abstract class Unit : Entity
         ANT
     }
 
-    public abstract Faction UnitFaction { get; set; }
+    public Faction UnitFaction;
     public abstract float MaxHealth { get; set; }
     public abstract float Health { get; set; }
     public abstract float AttackDamage { get; set; }
@@ -37,6 +37,11 @@ public abstract class Unit : Entity
         }
         newUnit.setLocation(cell);
         return newUnit;
+    }
+
+    public Cell GetCell() 
+    {
+        return CellManager.Instance.GetCell(this.loc);
     }
 
     // static deal damage to target

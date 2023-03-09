@@ -13,7 +13,8 @@ public class WorkerBee : Bee
 
     public override void DetermineAction()
     {
-        // do action
+        List<Cell> cells = CellManager.Instance.CellList;
+
     }
 
     public override float MaxHealth
