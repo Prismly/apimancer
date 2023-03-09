@@ -22,17 +22,4 @@ public abstract class Resource : Unit
         }
         return newResource;
     }
-
-    private Faction faction = Faction.RESOURCE;
-    public override Faction UnitFaction
-    {
-        get
-        {
-            return faction;
-        }
-        set
-        {
-            faction = value;
-        }
-    }
 }

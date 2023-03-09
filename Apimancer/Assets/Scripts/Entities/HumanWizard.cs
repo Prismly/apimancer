@@ -5,7 +5,7 @@ using UnityEngine;
 public class HumanWizard : Wizard
 {
     
-    public override Faction UnitFaction { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
     public override float MaxHealth { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public override float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public override float AttackDamage { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }

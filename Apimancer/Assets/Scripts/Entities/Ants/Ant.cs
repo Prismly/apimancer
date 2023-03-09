@@ -41,17 +41,4 @@ public abstract class Ant : Unit
     {
         commander = w;
     }
-
-    private Faction faction = Faction.ANT;
-    public override Faction UnitFaction
-    {
-        get
-        {
-            return faction;
-        }
-        set
-        {
-            faction = value;
-        }
-    }
 }

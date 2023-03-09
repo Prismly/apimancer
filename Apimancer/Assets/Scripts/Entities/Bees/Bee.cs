@@ -40,17 +40,4 @@ public abstract class Bee : Unit
     public void SetCommander(Wizard w) {
         commander = w;
     }
-
-    private Faction faction = Faction.BEE;
-    public override Faction UnitFaction
-    {
-        get
-        {
-            return faction;
-        }
-        set
-        {
-            faction = value;
-        }
-    }
 }
