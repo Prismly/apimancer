@@ -50,5 +50,14 @@ MonoBehaviour:
   _wizardPrefabs:
   - {fileID: 3649754047789778013, guid: 9499715391fda914394b1605b67ac84f, type: 3}
   - {fileID: 3649754047789778013, guid: 0f0337d8eece40e439cab4d5ea902d42, type: 3}
+  _unitPrefabs:
+  - {fileID: 3446875348891636832, guid: 5cfdbbed77461fc449825fe8f261cb50, type: 3}
+  - {fileID: 3147449871730916580, guid: 55d9dffb989bb5e4cab591ecd76f7ec6, type: 3}
+  - {fileID: 3543165017727909147, guid: b63b3166948cb504e888357a538dfd31, type: 3}
+  - {fileID: 4292872760108739457, guid: 55abf99f7ad415c459ecb8ef43ae1871, type: 3}
+  - {fileID: 661053090019019983, guid: a11158da729ffcb4da6c82097e8a5008, type: 3}
+  - {fileID: 6269272098270891733, guid: d7580d7c6ceefc9409cfdc91fb5a178f, type: 3}
+  - {fileID: 7814559185879440105, guid: a64331b72cc773c4d834f48f22894c0c, type: 3}
+  - {fileID: 7814559185879440105, guid: a64331b72cc773c4d834f48f22894c0c, type: 3}
   _minWizards: 1
   _maxWizards: 8
