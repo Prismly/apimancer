@@ -49,7 +49,7 @@ public abstract class Wizard : Unit
     public bool Summon(Unit.UnitType type, Cell cell)
     {
         List<Cell> path = Entity.PathFind(this, cell);
-        if (path.Count > _summonRange)
+        if (path.Count > _summonRange + 1)
             return false;
         Unit unit = GameManager.Instance.SummonUnit(type, cell);
         unit.UnitFaction = this.UnitFaction;
