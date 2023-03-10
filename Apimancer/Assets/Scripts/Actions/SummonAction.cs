@@ -15,6 +15,6 @@ public class SummonAction : Action
     public override bool Execute(Cell cell)
     {
         Wizard w = (Wizard)unit;
-        return w.Summon(type, cell);
+        return w.Summon(type, cell, range);
     }
 }

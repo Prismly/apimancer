@@ -13,7 +13,7 @@ public abstract class Action
     [SerializeField]
     public uint range { get; set; }
 
-    public Action(Unit unit, uint range = 0, uint cost = 0)
+    public Action(Unit unit, uint range, uint cost)
     {
         this.unit = unit;
         this.cost = cost;
