@@ -9,9 +9,16 @@ public class Flower : Resource
     private float attackDamage = 0.0f;
     private float movementSpeed = 0.0f;
 
-    public override void DetermineAction()
+    public override MoveAction DetermineMovement()
+    {
+        // do movement
+        return null;
+    }
+
+    public override Action DetermineAction()
     {
         // do action
+        return null;
     }
 
     public override float MaxHealth
