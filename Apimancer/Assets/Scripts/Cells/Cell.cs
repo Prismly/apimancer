@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public enum CellType
 {
@@ -113,21 +114,35 @@ public abstract class Cell : Selectable
 
     }
 
-    // public override void OnHover()
-    // {
-    //     Debug.Log("Hovered");
-    // }
-    // public override void OnUnhover()
-    // {
-    //     Debug.Log("Unhovered");
-    // }
+    public override void OnHover()
+    {
+        if (IsOccupied)
+        {
+            Type occType = Occupant.GetType();
+            if (typeof(Unit).IsAssignableFrom(occType))
+            {
+                Unit occUnit = (Unit)Occupant;
+                UIManager.Instance.ShowHealthBox(occUnit);
+            }
+        }
+
+        Debug.Log("Hovered");
+    }
+    public override void OnUnhover()
+    {
+        Debug.Log("Unhovered");
+        UIManager.Instance.HideHealthBox();
+    }
+
     public override void OnSelect()
     {
         // Debug.Log("Selected");
-        Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
-        if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
-            lastCell.Occupant.MoveToCell(this);
-        }
+        // Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
+        // if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
+        //     Unit u = (Unit)lastCell.Occupant;
+        //     GameManager.Instance.Execute(new MoveAction(ref u, Location));
+        // }
+        GameManager.Instance.Execute(this);
     }
     // public override void OnDeselect()
     // {

@@ -11,7 +11,21 @@ public abstract class Unit : Entity
         ANT
     }
 
+    public enum UnitType
+    {
+        BEE_WIZARD,
+        BEE_WORKER,
+        BEE_MINING,
+        BEE_BUMBLE,
+        ANT_WIZARD,
+        ANT_WORKER,
+        ANT_FIRE,
+        ANT_ARMY,
+        RESOURCE_FLOWER
+    }
+
     public Faction UnitFaction;
+    public UnitType Type;
     public abstract float MaxHealth { get; set; }
     public abstract float Health { get; set; }
     public abstract float AttackDamage { get; set; }

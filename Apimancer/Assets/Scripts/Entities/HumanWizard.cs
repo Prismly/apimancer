@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class HumanWizard : Wizard
 {
-    
-
-    public override float MaxHealth { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public override float Health { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public override float AttackDamage { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public override float MovementSpeed { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-
+    public override float MaxHealth { get; set; }
+    public override float Health { get; set; }
+    public override float AttackDamage { get; set; }
+    public override float MovementSpeed { get; set; }
 
     public override void BeginTurn()
     {

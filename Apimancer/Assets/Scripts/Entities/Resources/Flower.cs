@@ -8,7 +8,6 @@ public class Flower : Resource
     private float health = 5.0f;
     private float attackDamage = 0.0f;
     private float movementSpeed = 0.0f;
-    private ResourceType resourceType = ResourceType.FLOWER;
 
     public override void DetermineAction()
     {
@@ -37,12 +36,6 @@ public class Flower : Resource
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }
-    }
-
-    public override ResourceType Type 
-    {
-        get { return resourceType; }
-        set { resourceType = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities) {

@@ -90,7 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f9214ae5aa47b46941bced4e1ba6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuOptPref: {fileID: 4916393256625408417, guid: 0e2ebb9266e8d744883665f3422b906d, type: 3}
+  spellsOptPref: {fileID: 4916393256625408417, guid: 31ede4fcda3e7124d8d7dec13963466f, type: 3}
+  summonOptPref: {fileID: 4916393256625408417, guid: 0e2ebb9266e8d744883665f3422b906d, type: 3}
 --- !u!114 &1706207631273796776
 MonoBehaviour:
   m_ObjectHideFlags: 0
