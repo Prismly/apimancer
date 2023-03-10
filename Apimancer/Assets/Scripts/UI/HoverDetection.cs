@@ -7,7 +7,7 @@ public class HoverDetection : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("setting to false");
+        //Debug.Log("setting to false");
         SelectionManager.canInteract = false;
         SelectionManager.Instance.DeselectAll();
         SelectionManager.Instance.UnhoverAll();
@@ -15,7 +15,7 @@ public class HoverDetection : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("setting to true");
+        //Debug.Log("setting to true");
         SelectionManager.canInteract = true;
     }
 }

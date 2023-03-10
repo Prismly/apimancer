@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class SummonOption : MenuOption
 {
-    private Cell summonLocation { get; set; }
-    private Unit.Faction factionType { get; set; }
-    private short unitType { get; set; }
+    private SummonAction sumAct;
+
+    private void Start()
+    {
+        sumAct = new SummonAction(GameManager.Instance.CurrentWizard, Unit.UnitType.BEE_WORKER, 1, 0);
+    }
+
+    public void SetSummonAction(SummonAction sumAct)
+    {
+        this.sumAct = sumAct;
+    }
 
     public void MouseEnter()
     {
@@ -23,6 +31,6 @@ public class SummonOption : MenuOption
     public override void OnSelect()
     {
         // Do whatever the Summon does here
-        //GameManager.Instance.CurrentWizard.Summon
+        GameManager.Instance.CurrentAction = sumAct;
     }
 }
