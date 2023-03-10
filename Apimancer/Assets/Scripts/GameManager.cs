@@ -128,6 +128,11 @@ public class GameManager : MonoBehaviour
 
     public bool Execute(Cell cell)
     {
-        return CurrentAction != null && CurrentAction.Execute(cell);
+        if (CurrentAction != null && CurrentAction.Execute(cell))
+        {
+            CurrentAction = null;
+            return true;
+        }
+        return false;
     }
 }
