@@ -32,11 +32,6 @@ public abstract class Unit : Entity
     public abstract float MovementSpeed { get; set; }
     public abstract void DetermineAction();
 
-    public Cell GetCell() 
-    {
-        return CellManager.Instance.GetCell(this.loc);
-    }
-
     // static deal damage to target
     public static void DamageTarget(float dmg, Unit target) {
         target.ReceiveDamage(dmg);
