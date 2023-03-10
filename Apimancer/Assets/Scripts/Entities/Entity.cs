@@ -113,6 +113,25 @@ public abstract class Entity : MonoBehaviour
         return finalPathCells;
     }
 
+    public static List<Cell> PathFind(Entity e, Entity t)
+    {
+        List<Cell> path = null;
+        int dist = int.MaxValue;
+        Cell target = t.GetCell();
+        List<Cell> adjacents = target.GetAdjacentList();
+        foreach (Cell c in adjacents) {
+            if (!c.IsOccupied && c.Type != CellType.WALL) {
+                List<Cell> tempPath = PathFind(e, c);
+                int tempDist = tempPath.Count;
+                if (tempDist < dist) {
+                    dist = tempDist;
+                    path = tempPath;
+                }
+            }
+        }
+        return path;
+    }
+
     public bool MoveToCell(Cell target)
     {
         CellManager.Instance.GetCell(loc).Exit();
@@ -149,5 +168,10 @@ public abstract class Entity : MonoBehaviour
     public virtual float GetCellWeight(Cell c)
     {
         return 1.0f;
+    }
+
+    public Cell GetCell()
+    {
+        return CellManager.Instance.GetCell(this.loc);
     }
 }

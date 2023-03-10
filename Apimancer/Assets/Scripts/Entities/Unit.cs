@@ -18,32 +18,6 @@ public abstract class Unit : Entity
     public abstract float MovementSpeed { get; set; }
     public abstract void DetermineAction();
 
-    public static Unit CreateUnit(Cell cell, Faction faction, short unitType)
-    {
-        Unit newUnit;
-        switch (faction) {
-            case Faction.BEE:
-                newUnit = Bee.CreateBee((Bee.BeeType)unitType);
-                break;
-            case Faction.ANT:
-                newUnit = Ant.CreateAnt((Ant.AntType)unitType);
-                break;
-            case Faction.RESOURCE:
-                newUnit = Resource.CreateResource((Resource.ResourceType)unitType);
-                break;
-            default:
-                newUnit = null;
-                break;
-        }
-        newUnit.setLocation(cell);
-        return newUnit;
-    }
-
-    public Cell GetCell() 
-    {
-        return CellManager.Instance.GetCell(this.loc);
-    }
-
     // static deal damage to target
     public static void DamageTarget(float dmg, Unit target) {
         target.ReceiveDamage(dmg);
