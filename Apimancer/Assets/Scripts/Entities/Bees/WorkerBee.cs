@@ -11,33 +11,16 @@ public class WorkerBee : Bee
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
 
-    public override void DetermineAction()
+    public override MoveAction DetermineMovement()
     {
-        List<Cell> cells = CellManager.Instance.CellList;
-        List<Cell> path = null;
-        int dist = short.MaxValue;
+        
+        return null;
+    }
 
-        foreach (Cell c in cells) {
-            if (c.Type == CellType.FLOWER) {
-                List<Cell> tempPath = Entity.PathFind(this, c);
-                if (tempPath.Count < dist) {
-                    dist = tempPath.Count;
-                    path = tempPath;
-                }
-            }
-        }
-
-        if (path != null) {
-            float movementRemaining = movementSpeed;
-            while (movementRemaining > 0 && path.Count > 0) {
-                Cell c = path[0];
-                path.RemoveAt(0);
-                movementRemaining -= this.GetCellWeight(c);
-                if (movementRemaining > 0) {
-                    this.MoveToOneCell(c); 
-                }
-            }
-        }
+    public override Action DetermineAction()
+    {
+        // do action
+        return null;
     }
 
     public override float MaxHealth

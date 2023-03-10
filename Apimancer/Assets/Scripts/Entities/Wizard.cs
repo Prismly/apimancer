@@ -56,9 +56,4 @@ public abstract class Wizard : Unit
         _units.Add(unit);
         return true;
     }
-
-    public override void DetermineAction()
-    {
-        throw new System.NotImplementedException();
-    }
 }

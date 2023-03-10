@@ -11,9 +11,16 @@ public class BumbleBee : Bee
     private float attackDamage = 2.0f;
     private float movementSpeed = 4.0f;
 
-    public override void DetermineAction()
+    public override MoveAction DetermineMovement()
+    {
+        // do movement
+        return null;
+    }
+
+    public override Action DetermineAction()
     {
         // do action
+        return null;
     }
 
     public override float MaxHealth
