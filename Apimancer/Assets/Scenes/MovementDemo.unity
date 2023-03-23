@@ -575,7 +575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &598247872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1611,18 +1611,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
-      propertyPath: _wizardPrefabs.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
-      propertyPath: _levelPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 4836369654159272934, guid: 27f02a1affd7a96469b9fd676bf9b459, type: 3}
-    - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
-      propertyPath: _wizardPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 3649754047789778013, guid: 0f0337d8eece40e439cab4d5ea902d42, type: 3}
     - target: {fileID: 5070176161055317256, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
       propertyPath: m_Name
       value: GameManager

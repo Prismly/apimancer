@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -57,5 +58,23 @@ public abstract class Unit : Entity
             this.transform.position = cell.transform.position + new Vector3(0, 0, -0.04f);
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
+    }
+
+    protected Tuple<Unit, short, List<Cell>> FindClosestTarget(List<Unit> targets)
+    {
+        Unit t = null;
+        short dist = short.MaxValue;
+        List<Cell> path = null;
+        foreach (Unit u in targets)
+        {
+            List<Cell> tempPath = Entity.PathFind(this, u);
+            if (tempPath.Count < dist)
+            {
+                t = u;
+                dist = (short)tempPath.Count;
+                path = tempPath;
+            }
+        }
+        return new Tuple<Unit, short, List<Cell>>(t, dist, path);
     }
 }

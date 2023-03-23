@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,21 +12,13 @@ public class WorkerBee : Bee
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
 
-    public override MoveAction DetermineMovement()
+    public override Action DetermineAction()
     {
-<<<<<<< Updated upstream
-        
-=======
-        this.DetermineMovement();
->>>>>>> Stashed changes
         return null;
     }
 
-    public override Action DetermineAction()
+    public override MoveAction DetermineMovement()
     {
-<<<<<<< Updated upstream
-        // do action
-=======
         Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
         List<Unit> lUnits = null;
         float remainingMovement = movementSpeed;
@@ -39,22 +32,6 @@ public class WorkerBee : Bee
                 target = priorityTarget;
             }
         }
-        if (target == null) {
-            Tuple<Unit, short, List<Cell>> tempTarget = null;
-            if (dUnits.ContainsKey(Unit.Faction.ANT)) {
-                lUnits = dUnits[Unit.Faction.ANT];
-                tempTarget = this.FindClosestTarget(lUnits);
-                if (tempTarget.Item2 < remainingMovement) {
-                    target = tempTarget;
-                }
-            }
-        }
-        
-        if (target != null) {
-            StartCoroutine(this.MoveAlongPathByAmount(target.Item3, this.movementSpeed));
-        }
-
->>>>>>> Stashed changes
         return null;
     }
 

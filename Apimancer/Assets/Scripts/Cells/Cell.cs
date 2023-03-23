@@ -126,11 +126,11 @@ public abstract class Cell : Selectable
             }
         }
 
-        Debug.Log("Hovered");
+        //Debug.Log("Hovered");
     }
     public override void OnUnhover()
     {
-        Debug.Log("Unhovered");
+        //Debug.Log("Unhovered");
         UIManager.Instance.HideHealthBox();
     }
 

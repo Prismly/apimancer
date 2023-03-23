@@ -106,7 +106,7 @@ public class UIManager : MonoBehaviour
 
     public void EndPlayerTurn()
     {
-        GameManager.Instance.NextTurn();
+        GameManager.Instance.EndTurn();
     }
 
     public void ShowHealthBox(Unit target)
