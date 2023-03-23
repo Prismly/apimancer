@@ -17,22 +17,35 @@ public class WorkerBee : Bee
         return null;
     }
 
-    public override MoveAction DetermineMovement()
+    public override IEnumerator DetermineMovement()
     {
         Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
         List<Unit> lUnits = null;
-        float remainingMovement = movementSpeed;
         Tuple<Unit, short, List<Cell>> target = null;
         Tuple<Unit, short, List<Cell>> priorityTarget = null;
-
-        if (dUnits.ContainsKey(Unit.Faction.RESOURCE)) {
+        if (dUnits.ContainsKey(Unit.Faction.RESOURCE))
+        {
             lUnits = dUnits[Unit.Faction.RESOURCE];
             priorityTarget = this.FindClosestTarget(lUnits);
-            if (priorityTarget.Item2 < remainingMovement) {
+            if (priorityTarget.Item2 < movementSpeed)
+            {
                 target = priorityTarget;
             }
         }
-        return null;
+        if (target == null)
+        {
+            if (dUnits.ContainsKey(Unit.Faction.ANT))
+            {
+                lUnits = dUnits[Unit.Faction.ANT];
+                target = this.FindClosestTarget(lUnits);
+            }
+        }
+        if (target == null) target = priorityTarget;
+        if (target != null)
+        {
+            yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, this.movementSpeed));
+        }
+        GameManager.Instance.NotifyNextUnit();
     }
 
     public override float MaxHealth

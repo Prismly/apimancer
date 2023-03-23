@@ -19,7 +19,7 @@ public class HumanWizard : Wizard
         throw new System.NotImplementedException();
     }
 
-    public override MoveAction DetermineMovement()
+    public override IEnumerator DetermineMovement()
     {
         // do nothing
         return null;

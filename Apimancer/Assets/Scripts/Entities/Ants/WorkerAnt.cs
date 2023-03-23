@@ -11,7 +11,7 @@ public class WorkerAnt : Ant
     private float attackDamage = 1.0f;
     private float movementSpeed = 4.0f;
 
-    public override MoveAction DetermineMovement()
+    public override IEnumerator DetermineMovement()
     {
         // do movement
         return null;

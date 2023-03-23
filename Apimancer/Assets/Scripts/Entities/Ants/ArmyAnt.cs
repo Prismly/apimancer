@@ -11,7 +11,7 @@ public class ArmyAnt : Ant
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
 
-    public override MoveAction DetermineMovement()
+    public override IEnumerator DetermineMovement()
     {
         // do movement
         return null;

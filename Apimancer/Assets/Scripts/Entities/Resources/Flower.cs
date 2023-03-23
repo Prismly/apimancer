@@ -9,7 +9,7 @@ public class Flower : Resource
     private float attackDamage = 0.0f;
     private float movementSpeed = 0.0f;
 
-    public override MoveAction DetermineMovement()
+    public override IEnumerator DetermineMovement()
     {
         // do movement
         return null;

@@ -11,7 +11,7 @@ public class FireAnt : Ant
     private float attackDamage = 3.0f;
     private float movementSpeed = 5.0f;
 
-    public override MoveAction DetermineMovement()
+    public override IEnumerator DetermineMovement()
     {
         // do movement
         return null;
