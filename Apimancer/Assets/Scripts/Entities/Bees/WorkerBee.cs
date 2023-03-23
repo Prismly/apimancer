@@ -32,8 +32,6 @@ public class WorkerBee : Bee
                 target = priorityTarget;
             }
         }
-        
-
         return null;
     }
 

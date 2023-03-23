@@ -139,6 +139,16 @@ public abstract class Entity : MonoBehaviour
         return true;
     }
 
+    public IEnumerator MoveAlongPathByAmount(List<Cell> path, float amount)
+    {
+        short i = 0;
+        while (amount > 0) {
+            yield return StartCoroutine(MoveToOneCell(path[i]));
+            amount -= GetCellWeight(path[i]);
+            i++;
+        }
+    }
+
     private IEnumerator MoveCoroutine(List<Cell> path)
     {
         foreach (Cell c in path)
