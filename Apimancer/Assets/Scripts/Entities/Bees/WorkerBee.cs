@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,15 +12,28 @@ public class WorkerBee : Bee
     private float attackDamage = 2.0f;
     private float movementSpeed = 5.0f;
 
-    public override MoveAction DetermineMovement()
+    public override Action DetermineAction()
     {
-        
         return null;
     }
 
-    public override Action DetermineAction()
+    public override MoveAction DetermineMovement()
     {
-        // do action
+        Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
+        List<Unit> lUnits = null;
+        float remainingMovement = movementSpeed;
+        Tuple<Unit, short, List<Cell>> target = null;
+        Tuple<Unit, short, List<Cell>> priorityTarget = null;
+
+        if (dUnits.ContainsKey(Unit.Faction.RESOURCE)) {
+            lUnits = dUnits[Unit.Faction.RESOURCE];
+            priorityTarget = this.FindClosestTarget(lUnits);
+            if (priorityTarget.Item2 < remainingMovement) {
+                target = priorityTarget;
+            }
+        }
+        
+
         return null;
     }
 

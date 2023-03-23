@@ -7,7 +7,7 @@ public class AttackAction : Action
     public Unit target;
 
     public AttackAction(ref Unit from, ref Unit to, uint range = 1, uint cost = 0)
-        : base(ref from, range, cost)
+        : base(from, range, cost)
     {
         target = to;
     }
