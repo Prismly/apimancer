@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     public bool IsRunning {get; private set;}
     public bool IsPaused {get; private set;}
     public bool IsUnitMoving {get; private set;}
-
+ 
     private static GameManager _instance = null;
     public static GameManager Instance
     {
@@ -128,11 +128,12 @@ public class GameManager : MonoBehaviour
 
     public bool Execute(Cell cell)
     {
-        if (CurrentAction != null && CurrentAction.Execute(cell))
+        if (CurrentAction == null)
         {
-            CurrentAction = null;
-            return true;
+            CurrentAction = new MoveAction(CurrentWizard);
         }
-        return false;
+        bool success = CurrentAction.Execute(cell);
+        CurrentAction = null;
+        return success;
     }
 }
