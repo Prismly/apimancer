@@ -142,10 +142,13 @@ public abstract class Entity : MonoBehaviour
     public IEnumerator MoveAlongPathByAmount(List<Cell> path, float amount)
     {
         short i = 0;
-        while (amount > 0) {
-            yield return StartCoroutine(MoveToOneCell(path[i]));
-            amount -= GetCellWeight(path[i]);
-            i++;
+        while (amount > 0 && i < path.Count) {
+            CellManager.Instance.GetCell(loc).Exit();
+            Cell c = path[i++];
+            yield return StartCoroutine(MoveToOneCell(c));
+            amount -= GetCellWeight(c);
+            c.Enter(this);
+            loc = c.Location;
         }
     }
 

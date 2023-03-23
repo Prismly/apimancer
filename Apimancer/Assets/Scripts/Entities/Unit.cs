@@ -31,7 +31,7 @@ public abstract class Unit : Entity
     public abstract float Health { get; set; }
     public abstract float AttackDamage { get; set; }
     public abstract float MovementSpeed { get; set; }
-    public abstract MoveAction DetermineMovement();
+    public abstract IEnumerator DetermineMovement();
     public abstract Action DetermineAction();
 
     // static deal damage to target
@@ -77,4 +77,6 @@ public abstract class Unit : Entity
         }
         return new Tuple<Unit, short, List<Cell>>(t, dist, path);
     }
+
+    public virtual void OnSelection() { }
 }

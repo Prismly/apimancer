@@ -44,7 +44,7 @@ public abstract class Wizard : Unit
             GameManager.Instance.NextTurn();
             return;
         }
-        _units[_currentUnitIndex].DetermineAction();
+        StartCoroutine(_units[_currentUnitIndex].DetermineMovement());
     }
 
     public bool Summon(Unit.UnitType type, Cell cell, uint range)
