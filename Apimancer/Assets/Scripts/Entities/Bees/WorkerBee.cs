@@ -13,13 +13,48 @@ public class WorkerBee : Bee
 
     public override MoveAction DetermineMovement()
     {
+<<<<<<< Updated upstream
         
+=======
+        this.DetermineMovement();
+>>>>>>> Stashed changes
         return null;
     }
 
     public override Action DetermineAction()
     {
+<<<<<<< Updated upstream
         // do action
+=======
+        Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
+        List<Unit> lUnits = null;
+        float remainingMovement = movementSpeed;
+        Tuple<Unit, short, List<Cell>> target = null;
+        Tuple<Unit, short, List<Cell>> priorityTarget = null;
+
+        if (dUnits.ContainsKey(Unit.Faction.RESOURCE)) {
+            lUnits = dUnits[Unit.Faction.RESOURCE];
+            priorityTarget = this.FindClosestTarget(lUnits);
+            if (priorityTarget.Item2 < remainingMovement) {
+                target = priorityTarget;
+            }
+        }
+        if (target == null) {
+            Tuple<Unit, short, List<Cell>> tempTarget = null;
+            if (dUnits.ContainsKey(Unit.Faction.ANT)) {
+                lUnits = dUnits[Unit.Faction.ANT];
+                tempTarget = this.FindClosestTarget(lUnits);
+                if (tempTarget.Item2 < remainingMovement) {
+                    target = tempTarget;
+                }
+            }
+        }
+        
+        if (target != null) {
+            StartCoroutine(this.MoveAlongPathByAmount(target.Item3, this.movementSpeed));
+        }
+
+>>>>>>> Stashed changes
         return null;
     }
 
