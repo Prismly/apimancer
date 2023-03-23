@@ -42,6 +42,7 @@ public abstract class Wizard : Unit
         if (_currentUnitIndex >= _units.Count)
         {
             GameManager.Instance.NextTurn();
+            return;
         }
         _units[_currentUnitIndex].DetermineAction();
     }
