@@ -10,7 +10,7 @@ public class WorkerBee : Bee
     private float maxHealth = 2.0f;
     private float health = 2.0f;
     private float attackDamage = 2.0f;
-    private float movementSpeed = 5.0f;
+    private float movementSpeed = 4.0f;
 
     public override Action DetermineAction()
     {
@@ -44,7 +44,10 @@ public class WorkerBee : Bee
         if (target == null) target = priorityTarget;
         if (target != null)
         {
-            yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, this.movementSpeed));
+            yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
+            if (target.Item2 <= MovementSpeed + 1) {
+                Unit.DamageTarget(AttackDamage, target.Item1);
+            }
             animator.SetInteger("state", (int)BeeAnimState.IDLE);
         }
         GameManager.Instance.NotifyNextUnit();

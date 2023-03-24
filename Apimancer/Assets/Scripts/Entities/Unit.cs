@@ -5,6 +5,15 @@ using UnityEngine;
 
 public abstract class Unit : Entity
 {
+    public enum UnitState
+    {
+        SPAWN,
+        IDLE,
+        ATTACK,
+        HARVEST,
+        DEATH
+    }
+
     public enum Faction
     {
         RESOURCE,
@@ -27,6 +36,8 @@ public abstract class Unit : Entity
 
     public Faction UnitFaction;
     public UnitType Type;
+    public UnitState State = UnitState.IDLE;
+    public Wizard Wizard;
     public abstract float MaxHealth { get; set; }
     public abstract float Health { get; set; }
     public abstract float AttackDamage { get; set; }
@@ -35,7 +46,8 @@ public abstract class Unit : Entity
     public abstract Action DetermineAction();
 
     // static deal damage to target
-    public static void DamageTarget(float dmg, Unit target) {
+    public static void DamageTarget(float dmg, Unit target)
+    {
         target.ReceiveDamage(dmg);
     }
 
@@ -43,6 +55,10 @@ public abstract class Unit : Entity
     protected virtual void ReceiveDamage(float dmg) 
     {
         this.Health -= dmg;
+        if (this.Health <= 0)
+        {
+            OnDeath();
+        }
     }
 
     public virtual void setLocation(Vector2Int location)
@@ -78,5 +94,18 @@ public abstract class Unit : Entity
         return new Tuple<Unit, short, List<Cell>>(t, dist, path);
     }
 
-    public virtual void OnSelection() { }
+    public virtual void OnSelect(){}
+
+    public virtual void OnDeath()
+    {
+        GameManager.Instance.Kill(this);
+        if (Wizard != null && Wizard.Units.Contains(this))
+        {
+            Wizard.Units.Remove(this);
+        }
+        GetCell().Occupant = null;
+        Destroy(this.gameObject, 1.0f);
+
+        // End game if wizard
+    }
 }

@@ -93,6 +93,12 @@ public class GameManager : MonoBehaviour
 
     public int NextTurn()
     {
+        List<Cell> cells = CellManager.Instance.CellList;
+        foreach (Cell c in cells)
+        {
+            c.OnEndTurn();
+        }
+
         CurrentTurn++;
         CurrentTurn %= WizardCount;
         CurrentWizard = Wizards[CurrentTurn];
@@ -130,6 +136,11 @@ public class GameManager : MonoBehaviour
         return this.SummonUnit(type, CellManager.Instance.GetCell(location));
     }
 
+    public void SetCurrentAction(Action action)
+    {
+        CurrentAction = action;
+    }
+
     public bool Execute(Cell cell)
     {
         if (CurrentAction == null)
@@ -139,5 +150,22 @@ public class GameManager : MonoBehaviour
         bool success = CurrentAction.Execute(cell);
         CurrentAction = null;
         return success;
+    }
+
+    public bool Kill(Unit unit)
+    {
+        if (unit == null)
+        {
+            return false;
+        }
+        if (Units.ContainsKey(unit.UnitFaction))
+        {
+            List<Unit> factionList = Units[unit.UnitFaction];
+            if (factionList != null && factionList.Contains(unit))
+            {
+                factionList.Remove(unit);
+            }
+        }
+        return true;
     }
 }

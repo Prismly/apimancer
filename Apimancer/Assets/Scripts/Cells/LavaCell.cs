@@ -17,10 +17,15 @@ public class LavaCell : Cell
         }
     }
 
-    protected override void OnEnter() {
-        Unit u = this.Occupant as Unit;
+    public override void OnEndTurn() {
+        Unit u = Occupant as Unit;
         if (u != null) {
-            Unit.DamageTarget(1, u);
+            if (u.Type == Unit.UnitType.ANT_FIRE) {
+                Unit.DamageTarget(-1, u);
+            }
+            else {
+                Unit.DamageTarget(1, u);
+            }
         }
     }
 }

@@ -148,4 +148,6 @@ public abstract class Cell : Selectable
     // {
     //     Debug.Log("Deselected");
     // }
+
+    public virtual void OnEndTurn() { }
 }
