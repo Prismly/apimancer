@@ -48,7 +48,6 @@ public class WorkerBee : Bee
                 Unit.DamageTarget(AttackDamage, target.Item1);
             }
         }
-        CellManager.Instance.GetCell(loc).OnEndTurn();
         GameManager.Instance.NotifyNextUnit();
     }
 
