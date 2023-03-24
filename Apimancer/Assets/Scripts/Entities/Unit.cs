@@ -55,7 +55,7 @@ public abstract class Unit : Entity
     protected virtual void ReceiveDamage(float dmg) 
     {
         this.Health -= dmg;
-        if (this.Health < 0)
+        if (this.Health <= 0)
         {
             OnDeath();
         }
@@ -104,7 +104,7 @@ public abstract class Unit : Entity
             Wizard.Units.Remove(this);
         }
         GetCell().Occupant = null;
-        Destroy(this, 1.0f);
+        Destroy(this.gameObject, 1.0f);
 
         // End game if wizard
     }

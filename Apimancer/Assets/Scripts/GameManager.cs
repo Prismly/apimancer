@@ -93,6 +93,12 @@ public class GameManager : MonoBehaviour
 
     public int NextTurn()
     {
+        List<Cell> cells = CellManager.Instance.CellList;
+        foreach (Cell c in cells)
+        {
+            c.OnEndTurn();
+        }
+
         CurrentTurn++;
         CurrentTurn %= WizardCount;
         CurrentWizard = Wizards[CurrentTurn];
