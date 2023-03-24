@@ -126,6 +126,11 @@ public class GameManager : MonoBehaviour
         return this.SummonUnit(type, CellManager.Instance.GetCell(location));
     }
 
+    public void SetCurrentAction(Action action)
+    {
+        CurrentAction = action;
+    }
+
     public bool Execute(Cell cell)
     {
         if (CurrentAction == null)
