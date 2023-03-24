@@ -145,4 +145,21 @@ public class GameManager : MonoBehaviour
         CurrentAction = null;
         return success;
     }
+
+    public bool Kill(Unit unit)
+    {
+        if (unit == null)
+        {
+            return false;
+        }
+        if (Units.ContainsKey(unit.UnitFaction))
+        {
+            List<Unit> factionList = Units[unit.UnitFaction];
+            if (factionList != null && factionList.Contains(unit))
+            {
+                factionList.Remove(unit);
+            }
+        }
+        return true;
+    }
 }
