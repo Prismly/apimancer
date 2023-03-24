@@ -19,6 +19,7 @@ public class WorkerBee : Bee
 
     public override IEnumerator DetermineMovement()
     {
+        animator.SetInteger("state", (int)BeeAnimState.STING);
         Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
         List<Unit> lUnits = null;
         Tuple<Unit, short, List<Cell>> target = null;
@@ -44,6 +45,7 @@ public class WorkerBee : Bee
         if (target != null)
         {
             yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, this.movementSpeed));
+            animator.SetInteger("state", (int)BeeAnimState.IDLE);
         }
         GameManager.Instance.NotifyNextUnit();
     }

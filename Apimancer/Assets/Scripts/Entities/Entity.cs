@@ -12,6 +12,9 @@ public abstract class Entity : MonoBehaviour
 
     private static float zOffset = 0.04f;
 
+    [SerializeField]
+    protected Animator animator;
+
     public void Start()
     {
         //Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
