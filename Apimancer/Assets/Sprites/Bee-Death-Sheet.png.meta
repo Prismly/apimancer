@@ -120,10 +120,10 @@ TextureImporter:
       name: Bee-Death-Sheet_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 61
-        width: 14
-        height: 12
+        x: 0
+        y: 57
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: Bee-Death-Sheet_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 61
-        width: 14
-        height: 12
+        x: 31
+        y: 57
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: Bee-Death-Sheet_2
       rect:
         serializedVersion: 2
-        x: 70
-        y: 61
-        width: 15
-        height: 12
+        x: 62
+        y: 57
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: Bee-Death-Sheet_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 61
-        width: 15
-        height: 12
+        x: 93
+        y: 57
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: Bee-Death-Sheet_4
       rect:
         serializedVersion: 2
-        x: 133
-        y: 61
-        width: 15
-        height: 12
+        x: 124
+        y: 57
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: Bee-Death-Sheet_5
       rect:
         serializedVersion: 2
-        x: 7
-        y: 40
-        width: 16
-        height: 15
+        x: 0
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: Bee-Death-Sheet_6
       rect:
         serializedVersion: 2
-        x: 38
-        y: 39
-        width: 17
-        height: 17
+        x: 31
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,9 +267,9 @@ TextureImporter:
       name: Bee-Death-Sheet_7
       rect:
         serializedVersion: 2
-        x: 67
+        x: 62
         y: 38
-        width: 20
+        width: 31
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -288,9 +288,9 @@ TextureImporter:
       name: Bee-Death-Sheet_8
       rect:
         serializedVersion: 2
-        x: 99
+        x: 93
         y: 38
-        width: 20
+        width: 31
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -309,10 +309,10 @@ TextureImporter:
       name: Bee-Death-Sheet_9
       rect:
         serializedVersion: 2
-        x: 133
-        y: 42
-        width: 14
-        height: 12
+        x: 124
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: Bee-Death-Sheet_10
       rect:
         serializedVersion: 2
-        x: 9
-        y: 23
-        width: 14
-        height: 12
+        x: 0
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: Bee-Death-Sheet_11
       rect:
         serializedVersion: 2
-        x: 39
-        y: 25
-        width: 14
-        height: 9
+        x: 31
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,10 +372,10 @@ TextureImporter:
       name: Bee-Death-Sheet_12
       rect:
         serializedVersion: 2
-        x: 68
-        y: 24
-        width: 18
-        height: 12
+        x: 62
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -393,10 +393,10 @@ TextureImporter:
       name: Bee-Death-Sheet_13
       rect:
         serializedVersion: 2
-        x: 98
-        y: 23
-        width: 19
-        height: 13
+        x: 93
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -414,10 +414,10 @@ TextureImporter:
       name: Bee-Death-Sheet_14
       rect:
         serializedVersion: 2
-        x: 128
-        y: 22
-        width: 21
-        height: 14
+        x: 124
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -435,10 +435,10 @@ TextureImporter:
       name: Bee-Death-Sheet_15
       rect:
         serializedVersion: 2
-        x: 4
-        y: 3
-        width: 21
-        height: 14
+        x: 0
+        y: 0
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +456,10 @@ TextureImporter:
       name: Bee-Death-Sheet_16
       rect:
         serializedVersion: 2
-        x: 35
-        y: 3
-        width: 21
-        height: 14
+        x: 31
+        y: 0
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

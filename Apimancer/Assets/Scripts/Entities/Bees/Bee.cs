@@ -4,7 +4,15 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
+    public enum BeeAnimState 
+    { 
+        IDLE = 0,
+        STING,
+        DEATH
+    };
+
     private Wizard commander;
+
     public Wizard GetCommander() {
         return commander;
     }

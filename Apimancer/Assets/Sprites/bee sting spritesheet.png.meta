@@ -120,10 +120,10 @@ TextureImporter:
       name: bee sting spritesheet_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 42
-        width: 14
-        height: 12
+        x: 0
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,10 +141,10 @@ TextureImporter:
       name: bee sting spritesheet_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 42
-        width: 12
-        height: 12
+        x: 31
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +162,10 @@ TextureImporter:
       name: bee sting spritesheet_2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 42
-        width: 12
-        height: 12
+        x: 62
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: bee sting spritesheet_3
       rect:
         serializedVersion: 2
-        x: 103
-        y: 42
-        width: 14
-        height: 12
+        x: 93
+        y: 38
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,10 +204,10 @@ TextureImporter:
       name: bee sting spritesheet_4
       rect:
         serializedVersion: 2
-        x: 11
-        y: 24
-        width: 14
-        height: 12
+        x: 0
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,10 +225,10 @@ TextureImporter:
       name: bee sting spritesheet_5
       rect:
         serializedVersion: 2
-        x: 42
-        y: 24
-        width: 16
-        height: 12
+        x: 31
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -246,10 +246,10 @@ TextureImporter:
       name: bee sting spritesheet_6
       rect:
         serializedVersion: 2
-        x: 74
-        y: 24
-        width: 16
-        height: 12
+        x: 62
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -267,10 +267,10 @@ TextureImporter:
       name: bee sting spritesheet_7
       rect:
         serializedVersion: 2
-        x: 100
-        y: 23
-        width: 19
-        height: 12
+        x: 93
+        y: 19
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -288,10 +288,10 @@ TextureImporter:
       name: bee sting spritesheet_8
       rect:
         serializedVersion: 2
-        x: 5
-        y: 3
-        width: 14
-        height: 12
+        x: 0
+        y: 0
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,10 +309,10 @@ TextureImporter:
       name: bee sting spritesheet_9
       rect:
         serializedVersion: 2
-        x: 37
-        y: 3
-        width: 15
-        height: 12
+        x: 31
+        y: 0
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -330,10 +330,10 @@ TextureImporter:
       name: bee sting spritesheet_10
       rect:
         serializedVersion: 2
-        x: 72
-        y: 4
-        width: 12
-        height: 12
+        x: 62
+        y: 0
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -351,10 +351,10 @@ TextureImporter:
       name: bee sting spritesheet_11
       rect:
         serializedVersion: 2
-        x: 103
-        y: 4
-        width: 12
-        height: 12
+        x: 93
+        y: 0
+        width: 31
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

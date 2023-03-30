@@ -25,7 +25,6 @@ public class LavaCell : Cell
             }
             else {
                 Unit.DamageTarget(1, u);
-                Debug.Log("Hello");
             }
         }
     }

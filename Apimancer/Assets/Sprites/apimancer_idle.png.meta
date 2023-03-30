@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2de58a87a43b6114c8417514ce90b569
+guid: 57984720217b81348be21da148ad8a24
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -101,53 +101,17 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bee idle spritesheet_0
+      name: apimancer_idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 31
-        height: 19
+        y: 28
+        width: 25
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6163ad35ea5d4804099ed7de0e547c10
-      internalID: 1398364416
+      spriteID: 3528db3c54df8a144808dbad91752f2b
+      internalID: 2007998063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee idle spritesheet_1
+      name: apimancer_idle_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 19
-        width: 31
-        height: 19
+        x: 25
+        y: 28
+        width: 25
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -176,20 +140,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a8937bd735f81a4c8e467af99e13893
-      internalID: 120902495
+      spriteID: be2222b3a241fed498b146891038f51f
+      internalID: -856003607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee idle spritesheet_2
+      name: apimancer_idle_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 28
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cafa3be7ebbb3c84fa1f9444ab6d965c
+      internalID: -1822540277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_idle_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 19
+        width: 25
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c09f96f74d6c55d4f9779141b2056a27
-      internalID: -1650187168
+      spriteID: 494c4034a5fb30647aa28631799380c9
+      internalID: 1369317754
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bee idle spritesheet_3
+      name: apimancer_idle_4
       rect:
         serializedVersion: 2
-        x: 31
+        x: 25
         y: 0
-        width: 31
-        height: 19
+        width: 25
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,8 +203,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386a2a665b7c360408fc970f365bfa09
-      internalID: -590352255
+      spriteID: 8045a12769a07ba4abc1e8622389ca5c
+      internalID: 2003956126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_idle_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20b3bd83738d8f34fb4b1f24373929c8
+      internalID: -78860659
       vertices: []
       indices: 
       edges: []
@@ -235,10 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      bee idle spritesheet_2: -1650187168
-      bee idle spritesheet_1: 120902495
-      bee idle spritesheet_0: 1398364416
-      bee idle spritesheet_3: -590352255
+      apimancer_idle_4: 2003956126
+      apimancer_idle_5: -78860659
+      apimancer_idle_2: -1822540277
+      apimancer_idle_3: 1369317754
+      apimancer_idle_1: -856003607
+      apimancer_idle_0: 2007998063
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
