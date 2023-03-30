@@ -20,5 +20,20 @@ public abstract class Action
         this.range = range;
     }
 
+    protected bool Validate(Cell cell)
+    {
+        if (Vector2Int.Distance(unit.loc, cell.Location) <= range)
+        {
+            Wizard w = (Wizard)unit;
+            if (w.actionPoints >= cost)
+            {
+                w.actionPoints -= (int)cost;
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public abstract bool Execute(Cell cell);
 }
