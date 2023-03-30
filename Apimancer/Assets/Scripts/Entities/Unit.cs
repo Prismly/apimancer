@@ -94,8 +94,6 @@ public abstract class Unit : Entity
         return new Tuple<Unit, short, List<Cell>>(t, dist, path);
     }
 
-    public virtual void OnSelect(){}
-
     public virtual void OnDeath()
     {
         PlayDeathAnim();
@@ -110,5 +108,18 @@ public abstract class Unit : Entity
         // End game if wizard
     }
 
+    public override void OnSelect(){}
+    public override void OnDeselect(){}
+    public override void OnHover()
+    {
+        UIManager.Instance.ShowHealthBox(this);
+    }
+    public override void OnUnhover()
+    {
+        UIManager.Instance.HideHealthBox();
+    }
+
     protected virtual void PlayDeathAnim() { return; }
+
+    
 }

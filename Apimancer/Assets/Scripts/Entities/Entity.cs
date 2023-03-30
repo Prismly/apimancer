@@ -190,4 +190,9 @@ public abstract class Entity : MonoBehaviour
     {
         return CellManager.Instance.GetCell(this.loc);
     }
+
+    public virtual void OnSelect(){}
+    public virtual void OnDeselect(){}
+    public virtual void OnHover(){}
+    public virtual void OnUnhover(){}
 }
