@@ -113,41 +113,36 @@ public abstract class Cell : Selectable
     {
 
     }
-
     public override void OnHover()
     {
         if (IsOccupied)
         {
-            Type occType = Occupant.GetType();
-            if (typeof(Unit).IsAssignableFrom(occType))
-            {
-                Unit occUnit = (Unit)Occupant;
-                UIManager.Instance.ShowHealthBox(occUnit);
-            }
+            Occupant.OnHover();
         }
-
-        //Debug.Log("Hovered");
     }
     public override void OnUnhover()
     {
-        //Debug.Log("Unhovered");
-        UIManager.Instance.HideHealthBox();
+        if (IsOccupied)
+        {
+            Occupant.OnUnhover();
+        }
     }
 
     public override void OnSelect()
     {
-        // Debug.Log("Selected");
-        // Cell lastCell = (Cell)SelectionManager.Instance.OneSelected;
-        // if (lastCell != null && lastCell.IsOccupied && this.Type != CellType.WALL && !IsOccupied && lastCell != this) {
-        //     Unit u = (Unit)lastCell.Occupant;
-        //     GameManager.Instance.Execute(new MoveAction(ref u, Location));
-        // }
+        if (IsOccupied)
+        {
+            Occupant.OnSelect();
+        }
         GameManager.Instance.Execute(this);
     }
-    // public override void OnDeselect()
-    // {
-    //     Debug.Log("Deselected");
-    // }
+    public override void OnDeselect()
+    {
+        if (IsOccupied)
+        {
+            Occupant.OnDeselect();
+        }
+    }
 
-    public virtual void OnEndTurn() { }
+    public virtual void OnEndTurn(){}
 }
