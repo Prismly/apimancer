@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-public class OptionAddon
+public static class OptionAddon
 {
     public enum AddonID
     {
@@ -15,29 +15,62 @@ public class OptionAddon
         ACT_TRG,
         HP_ALLY,
         HP_ENEM,
-        HP_SHLD
+        HP_SHLD,
+        NECTAR,
+        BURNED,
+        WATERY,
+        POISON,
     }
 
-    private AddonID id;
-    public string flag;
+    public static int iconCount = 13;
+    public static string[] flagList;
 
-    public OptionAddon(AddonID id, string flag)
+    static OptionAddon()
     {
-        this.id = id;
-        this.flag = flag;
+        flagList = new string[13];
+        // Black Dot
+        flagList[0] = "[X]";
+        // Yellow Dot
+        flagList[1] = "[O]";
+        // Attack Symbol
+        flagList[2] = "[ATK]";
+        // Movement Symbol
+        flagList[3] = "[MOV]";
+        // Range Symbol
+        flagList[4] = "[RNG]";
+        // Targets Symbol
+        flagList[5] = "[TRG]";
+        // Ally HP Symbol
+        flagList[6] = "[HPA]";
+        // Enemy HP Symbol
+        flagList[7] = "[HPE]";
+        // Shielded HP Symbol
+        flagList[8] = "[HPS]";
+        // Nectar Symbol
+        flagList[9] = "[NCT]";
+        // Burned Symbol
+        flagList[10] = "[BRN]";
+        // Wet Symbol
+        flagList[11] = "[WTR]";
+        // Poison Symbol
+        flagList[12] = "[PSN]";
     }
 
     // Replaces all instances of the 'flag' string with the corresponding sprite (in text form).
-    public string Mutate(string original)
+    public static string Mutate(string original)
     {
-        return original.Replace(flag, ToString());
+        for (int i = 0; i < iconCount; i++)
+        {
+            original = original.Replace(flagList[i], IdToString(i));
+        }
+        return original;
     }
 
-    public override string ToString()
+    public static string IdToString(int id)
     {
         StringBuilder sb = new StringBuilder();
         sb.Append("<sprite=");
-        sb.Append((int)id);
+        sb.Append(id);
         sb.Append(">");
         return sb.ToString();
     }

@@ -6,7 +6,6 @@ using TMPro;
 public class MenuBox : MonoBehaviour
 {
     private List<MenuOption> options = new List<MenuOption>();
-    private List<OptionAddon> optionAddons = new List<OptionAddon>();
 
     private static int optionFontSize = 8;
 
@@ -36,11 +35,12 @@ public class MenuBox : MonoBehaviour
         newOptRect.localScale = optPrefRect.localScale;
     }
 
-    public void AddSummonOption(string optionText)
+    public void AddSummonOption(string optionText, Wizard owner, Unit.UnitType summon, uint range, uint cost)
     {
         GameObject newOptObj = Instantiate(summonOptPref);
 
-        MenuOption newOpt = newOptObj.GetComponent<MenuOption>();
+        SummonOption newOpt = newOptObj.GetComponent<SummonOption>();
+        newOpt.SetSummonAction(new SummonAction(owner, summon, range, cost));
         options.Add(newOpt);
         newOpt.SetParentBox(this);
         newOpt.SetOptionString(optionText);
@@ -57,16 +57,6 @@ public class MenuBox : MonoBehaviour
         newOptRect.offsetMin = new Vector2(4, newOptRect.offsetMin.y);
         newOptRect.offsetMax = new Vector2(-4, newOptRect.offsetMax.y);
         newOptRect.localScale = optPrefRect.localScale;
-    }
-
-    public void AddOptionAddon(OptionAddon newAddon)
-    {
-        optionAddons.Add(newAddon);
-    }
-
-    public List<OptionAddon> GetAddons()
-    {
-        return optionAddons;
     }
 
     // Update is called once per frame
