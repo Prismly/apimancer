@@ -8,7 +8,7 @@ public class SummonOption : MenuOption
 
     private void Start()
     {
-        sumAct = new SummonAction(GameManager.Instance.CurrentWizard, Unit.UnitType.BEE_WORKER, 1, 0);
+        //sumAct = new SummonAction(GameManager.Instance.CurrentWizard, Unit.UnitType.BEE_WORKER, 1, 0);
     }
 
     public void SetSummonAction(SummonAction sumAct)

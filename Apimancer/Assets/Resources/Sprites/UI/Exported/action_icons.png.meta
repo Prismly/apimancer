@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: action_icons 1_0
+      name: action_icons_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a0cc22389502fd44d813da7383216312
-      internalID: -1477902126
+      spriteID: 5e6c619282124284bb601cc1b2f872f7
+      internalID: 504289501
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_1
+      name: action_icons_1
       rect:
         serializedVersion: 2
         x: 5
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a577a1cc38df4ef4c80e83de7be74f95
-      internalID: 756770730
+      spriteID: 41a3c40479fbff6438d84c1de6b51407
+      internalID: -2140337014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_2
+      name: action_icons_2
       rect:
         serializedVersion: 2
         x: 10
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93fefb0159308564a86eaac8f9b4e765
-      internalID: 1993820653
+      spriteID: bc8ef95a0228ce74ea7c08f35e7a9075
+      internalID: 1307894476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_3
+      name: action_icons_3
       rect:
         serializedVersion: 2
         x: 15
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27eed7dfa80a498458828ba5c1c26377
-      internalID: -352699747
+      spriteID: f2a601b96520e2f4abe8e02c60b4a884
+      internalID: 906374153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_4
+      name: action_icons_4
       rect:
         serializedVersion: 2
         x: 20
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 266d6dfd49463914a913dcb80eced147
-      internalID: 1830894716
+      spriteID: 6499b55bb63f35744b462d5474f163d0
+      internalID: -1246792874
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_5
+      name: action_icons_5
       rect:
         serializedVersion: 2
         x: 25
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a96af3f11c624b64abdf00c2f29a0f91
-      internalID: -1121456442
+      spriteID: 8e54aa8136647034292fdfe6b722ee40
+      internalID: -853324702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_6
+      name: action_icons_6
       rect:
         serializedVersion: 2
         x: 30
@@ -245,14 +245,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 79371b368f2e6e341973f251cb95b66b
-      internalID: -614776878
+      spriteID: 6cc0f0e2e6e7faf49858be2c0a97c1f4
+      internalID: -201236619
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_7
+      name: action_icons_7
       rect:
         serializedVersion: 2
         x: 35
@@ -266,14 +266,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7100791adf8c4804d96b3f7e46e5ab59
-      internalID: -590752253
+      spriteID: 45dc80ef619dee14ea85e1b39377ef08
+      internalID: 1233165965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: action_icons 1_8
+      name: action_icons_8
       rect:
         serializedVersion: 2
         x: 40
@@ -287,8 +287,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e7ae7669cdfe2048a06ef91a1043b24
-      internalID: -1833454077
+      spriteID: cf56c274ed31fb544b35a6133441a67f
+      internalID: 866621829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: action_icons_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 0
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01d635178c1c8a449f0bfeb66c0371e
+      internalID: 1275762615
       vertices: []
       indices: 
       edges: []
@@ -304,15 +325,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      action_icons 1_4: 1830894716
-      action_icons 1_1: 756770730
-      action_icons 1_3: -352699747
-      action_icons 1_7: -590752253
-      action_icons 1_5: -1121456442
-      action_icons 1_2: 1993820653
-      action_icons 1_6: -614776878
-      action_icons 1_0: -1477902126
-      action_icons 1_8: -1833454077
+      action_icons_0: 504289501
+      action_icons_2: 1307894476
+      action_icons_4: -1246792874
+      action_icons_9: 1275762615
+      action_icons_7: 1233165965
+      action_icons_6: -201236619
+      action_icons_3: 906374153
+      action_icons_8: 866621829
+      action_icons_5: -853324702
+      action_icons_1: -2140337014
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
