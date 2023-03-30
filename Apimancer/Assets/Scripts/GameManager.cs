@@ -127,6 +127,7 @@ public class GameManager : MonoBehaviour
             Units.Add(unit.UnitFaction, factionList);
         }
         factionList.Add(unit);
+        unit.Wizard = CurrentWizard;
 
         return unit;
     }
