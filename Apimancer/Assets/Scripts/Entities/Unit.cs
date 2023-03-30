@@ -98,6 +98,7 @@ public abstract class Unit : Entity
 
     public virtual void OnDeath()
     {
+        PlayDeathAnim();
         GameManager.Instance.Kill(this);
         if (Wizard != null && Wizard.Units.Contains(this))
         {
@@ -108,4 +109,6 @@ public abstract class Unit : Entity
 
         // End game if wizard
     }
+
+    protected virtual void PlayDeathAnim() { return; }
 }

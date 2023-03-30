@@ -19,7 +19,6 @@ public class WorkerBee : Bee
 
     public override IEnumerator DetermineMovement()
     {
-        animator.SetInteger("state", (int)BeeAnimState.STING);
         Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
         List<Unit> lUnits = null;
         Tuple<Unit, short, List<Cell>> target = null;
@@ -46,7 +45,9 @@ public class WorkerBee : Bee
         {
             yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
             if (target.Item2 <= MovementSpeed + 1) {
+                animator.SetInteger("state", (int)BeeAnimState.STING);
                 Unit.DamageTarget(AttackDamage, target.Item1);
+                yield return new WaitForSeconds(1f);
             }
             animator.SetInteger("state", (int)BeeAnimState.IDLE);
         }
@@ -79,5 +80,9 @@ public class WorkerBee : Bee
 
     public override Cell FindMovementTarget(List<Entity> entities) {
         return null;
+    }
+
+    protected override void PlayDeathAnim() {
+        animator.SetInteger("state", (int)BeeAnimState.DEATH);
     }
 }
