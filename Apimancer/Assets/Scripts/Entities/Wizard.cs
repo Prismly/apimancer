@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Wizard : Unit
 {
-    // private int actionPoints = 0;
-    // private int actionPointsMax = 99;
+    public int actionPoints = 30;
+    public int actionPointsMax = 99;
 
     // private List<ActionCommand> summonList = new List<ActionCommand>();
     // private List<ActionCommand> spellsList = new List<ActionCommand>();
