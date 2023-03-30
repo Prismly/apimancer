@@ -38,6 +38,7 @@ public abstract class Unit : Entity
     public UnitType Type;
     public UnitState State = UnitState.IDLE;
     public Wizard Wizard;
+    public Status condition;
     public abstract float MaxHealth { get; set; }
     public abstract float Health { get; set; }
     public abstract float AttackDamage { get; set; }
@@ -121,5 +122,23 @@ public abstract class Unit : Entity
 
     protected virtual void PlayDeathAnim() { return; }
 
-    
+    public void setStatus(Status.Condition condition, short duration) {
+        switch (condition) {
+            case Status.Condition.HONEYED:
+                this.condition = new Honeyed(this, duration);
+                break;
+            case Status.Condition.BURNED:
+                this.condition = new Burned(this, duration);
+                break;
+            case Status.Condition.WET:
+                this.condition = new Wet(this, duration);
+                break;
+            default:
+                this.condition = null;
+        }
+    }
+
+    public void doStatus() {
+        condition.doStatus();
+    }
 }
