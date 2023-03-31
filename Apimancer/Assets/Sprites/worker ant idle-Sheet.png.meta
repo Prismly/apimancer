@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e24fa2526085c14a8cbc9c16c675bc8
+guid: 968e683de93dbe543815928bb8f9c9e3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03425c7486fa4624ca6d31fd248bc96c
-      internalID: 1060139462
+      spriteID: 4076cd934910b5e4899a4ffeede642ab
+      internalID: -1317727098
       vertices: []
       indices: 
       edges: []
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f01172aab8834a4dae23f9f8ece3b59
-      internalID: 662283154
+      spriteID: 18a80aa0b0a6ace478b083681110462e
+      internalID: -215617372
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8243be3ea0ad9b4687e98626f29a98b
-      internalID: 1453449220
+      spriteID: 68947741fc595674c81296f5c563bda6
+      internalID: 831734481
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      worker ant idle-Sheet_1: 662283154
-      worker ant idle-Sheet_0: 1060139462
-      worker ant idle-Sheet_2: 1453449220
+      worker ant idle-Sheet_1: -215617372
+      worker ant idle-Sheet_0: -1317727098
+      worker ant idle-Sheet_2: 831734481
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
