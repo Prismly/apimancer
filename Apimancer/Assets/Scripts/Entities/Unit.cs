@@ -135,6 +135,7 @@ public abstract class Unit : Entity
                 break;
             default:
                 this.condition = null;
+                break;
         }
     }
 
