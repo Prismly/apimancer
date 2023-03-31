@@ -108,8 +108,14 @@ public abstract class Unit : Entity
         // End game if wizard
     }
 
-    public override void OnSelect(){}
-    public override void OnDeselect(){}
+    public override void OnSelect()
+    {
+        
+    }
+    public override void OnDeselect()
+    {
+
+    }
     public override void OnHover()
     {
         UIManager.Instance.ShowHealthBox(this);
