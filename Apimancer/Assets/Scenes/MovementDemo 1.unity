@@ -843,6 +843,7 @@ MonoBehaviour:
   targetWorldCanvas: {fileID: 0}
   menuBoxPref: {fileID: 8886392885308354827, guid: fc20577f69a560547992ef59f3e070e7, type: 3}
   healthBox: {fileID: 156602392}
+  bottomMid: {fileID: 357923414}
 --- !u!4 &1165052152
 Transform:
   m_ObjectHideFlags: 0
