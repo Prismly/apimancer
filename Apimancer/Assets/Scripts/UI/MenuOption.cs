@@ -27,12 +27,9 @@ public abstract class MenuOption : MonoBehaviour
     {
         string result = optionString;
 
-        // Replace any flag sequences with their corresponding sprite.
-        List<OptionAddon> addons = parentBox.GetAddons();
-        for (int i = 0; i < addons.Count; i++)
-        {
-            result = addons[i].Mutate(result);
-        }
+        // Replace any flag sequences with their corresponding sprite string.
+        // POTENTIAL OPTIMIZATION: allow menu boxes to choose which icons they're "listening" for, rather than testing all icons
+        result = OptionAddon.Mutate(optionString);
 
         return result;
     }

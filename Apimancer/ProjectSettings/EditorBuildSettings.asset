@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/GameUITest.unity
     guid: 2c1dca66b8f53dc4682443c6fce4419d
   - enabled: 1
-    path: Assets/Scenes/MovementDemo.unity
+    path: Assets/Scenes/ThomasTest.unity
     guid: 13337bc43ac08274496e74372e06c413
   m_configObjects: {}
