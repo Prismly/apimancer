@@ -86,6 +86,26 @@ public abstract class Cell : Selectable
         }
     }
 
+    // public void GetAdjacentRange(int range)
+    // {
+    //     List<Cell> cells = new List<Cell>();
+    //     Cell xCell;
+    //     Cell yCell;
+    //     for (int i = 0; i < range; i++)
+    //     {
+    //         xCell = this.GetAdjacent(0);
+    //         cells.Add(xCell);
+    //         for (int j = 0; j < range; j++)
+    //         {
+                
+    //         }
+    //         for (int j = 0; j < range; j++)
+    //         {
+                
+    //         }
+    //     }
+    // }
+
     public bool Enter(Entity entity)
     {
         if (IsOccupied) return false;
@@ -142,6 +162,11 @@ public abstract class Cell : Selectable
         {
             Occupant.OnDeselect();
         }
+    }
+
+    public void SetColor(Color color)
+    {
+        this.GetComponent<SpriteRenderer>().color = color;
     }
 
     public virtual void OnEndTurn(){}
