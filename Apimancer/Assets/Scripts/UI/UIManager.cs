@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject menuBoxPref;
     [SerializeField] private GameObject healthBox;
+
+    [SerializeField] private RectTransform bottomMid;
     
     private GameObject summonMenu;
     private GameObject spellsMenu;
@@ -43,7 +45,7 @@ public class UIManager : MonoBehaviour
         spellsMenu.transform.SetParent(targetCanvas.transform);
         RectTransform spellsMenuRect = spellsMenu.GetComponent<RectTransform>();
         RectTransform menuPrefRect = menuBoxPref.GetComponent<RectTransform>();
-        spellsMenuRect.localPosition = new Vector3(0, -120, 0);
+        spellsMenuRect.localPosition = bottomMid.localPosition + (Vector3.up * bottomMid.sizeDelta.y * 5);
         spellsMenuRect.localScale = menuPrefRect.localScale;
         Image spellsMenuImg = spellsMenu.GetComponent<Image>();
         spellsMenuImg.color = new Color(177 / 255f, 142 / 255f, 200 / 255f);
@@ -58,7 +60,7 @@ public class UIManager : MonoBehaviour
         summonMenu = Instantiate(menuBoxPref);
         summonMenu.transform.SetParent(targetCanvas.transform);
         RectTransform summonMenuRect = summonMenu.GetComponent<RectTransform>();
-        summonMenuRect.localPosition = new Vector3(0, -120, 0);
+        summonMenuRect.localPosition = bottomMid.localPosition + (Vector3.up * bottomMid.sizeDelta.y * 5);
         summonMenuRect.localScale = menuPrefRect.localScale;
         Image summonMenuImg = summonMenu.GetComponent<Image>();
         summonMenuImg.color = new Color(200 / 255f, 144 / 255f, 143 / 255f);
@@ -119,5 +121,14 @@ public class UIManager : MonoBehaviour
             healthBox.SetActive(false);
         }
 
+    }
+
+    private void Update()
+    {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            summonMenu.SetActive(false);
+            spellsMenu.SetActive(false);
+        }
     }
 }
