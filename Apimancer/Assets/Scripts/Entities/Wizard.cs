@@ -4,8 +4,8 @@ using UnityEngine;
 
 public abstract class Wizard : Unit
 {
-    public int actionPoints = 30;
-    public int actionPointsMax = 99;
+    private int mana = 30;
+    private int maxMana = 99;
 
     // private List<ActionCommand> summonList = new List<ActionCommand>();
     // private List<ActionCommand> spellsList = new List<ActionCommand>();
@@ -57,5 +57,20 @@ public abstract class Wizard : Unit
         Units.Add(unit);
         unit.setLocation(cell);
         return true;
+    }
+
+    public int getMana() {
+        return mana;
+    }
+    public void setMana(int m) {
+        mana = (m > maxMana) ? 
+               (maxMana) :
+               (m);
+    }
+    public void addMana(int m) {
+        int d = maxMana - mana;
+        mana = m > d ? 
+               maxMana : 
+               m + mana;
     }
 }

@@ -709,6 +709,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
+      propertyPath: _levelPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
       propertyPath: _unitPrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 3649754047789778013, guid: 9499715391fda914394b1605b67ac84f, type: 3}
@@ -744,6 +748,14 @@ PrefabInstance:
       propertyPath: _unitPrefabs.Array.data[8]
       value: 
       objectReference: {fileID: 7814559185879440105, guid: a64331b72cc773c4d834f48f22894c0c, type: 3}
+    - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
+      propertyPath: _levelPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 4836369654159272934, guid: 8cadffa54a14e9541b15dc6cf4ec1cb5, type: 3}
+    - target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
+      propertyPath: _levelPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4836369654159272934, guid: 27f02a1affd7a96469b9fd676bf9b459, type: 3}
     - target: {fileID: 5070176161055317256, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
       propertyPath: m_Name
       value: GameManager
@@ -1040,6 +1052,7 @@ MonoBehaviour:
   targetWorldCanvas: {fileID: 0}
   menuBoxPref: {fileID: 8886392885308354827, guid: fc20577f69a560547992ef59f3e070e7, type: 3}
   healthBox: {fileID: 65867188}
+  bottomMid: {fileID: 310537401}
 --- !u!4 &1349885721
 Transform:
   m_ObjectHideFlags: 0

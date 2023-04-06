@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HumanWizard : Wizard
 {
-    private float maxHealth = 15.0f;
-    private float health = 15.0f;
-    private float attackDamage = 1.0f;
-    private float movementSpeed = 2.0f;
+    private int maxHealth = 15;
+    private int health = 15;
+    private int attackDamage = 1;
+    private int movementSpeed = 2;
 
     public override void BeginTurn()
     {
@@ -31,25 +31,25 @@ public class HumanWizard : Wizard
         return null;
     }
 
-    public override float MaxHealth
+    public override int MaxHealth
     {
         get { return maxHealth; }
         set { maxHealth = value; }
     }
 
-    public override float Health
+    public override int Health
     {
         get { return health; }
         set { health = value; }
     }
 
-    public override float AttackDamage
+    public override int AttackDamage
     {
         get { return attackDamage; }
         set { attackDamage = value; }
     }
 
-    public override float MovementSpeed
+    public override int MovementSpeed
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }

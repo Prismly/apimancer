@@ -37,23 +37,29 @@ public abstract class Unit : Entity
     public Faction UnitFaction;
     public UnitType Type;
     public UnitState State = UnitState.IDLE;
-    public Wizard Wizard;
+    public Wizard Commander;
     public Status condition;
-    public abstract float MaxHealth { get; set; }
-    public abstract float Health { get; set; }
-    public abstract float AttackDamage { get; set; }
-    public abstract float MovementSpeed { get; set; }
+    public abstract int MaxHealth { get; set; }
+    public abstract int Health { get; set; }
+    public abstract int AttackDamage { get; set; }
+    public abstract int MovementSpeed { get; set; }
     public abstract IEnumerator DetermineMovement();
     public abstract Action DetermineAction();
 
     // static deal damage to target
-    public static void DamageTarget(float dmg, Unit target)
+    public static void DamageTarget(int dmg, Unit target)
+    {
+        target.ReceiveDamage(dmg);
+    }
+
+    // member deal damage to target
+    public virtual void AttackTarget(int dmg, Unit target)
     {
         target.ReceiveDamage(dmg);
     }
 
     // receive damage
-    protected virtual void ReceiveDamage(float dmg) 
+    public virtual void ReceiveDamage(int dmg) 
     {
         this.Health -= dmg;
         if (this.Health <= 0)
@@ -99,9 +105,9 @@ public abstract class Unit : Entity
     {
         PlayDeathAnim();
         GameManager.Instance.Kill(this);
-        if (Wizard != null && Wizard.Units.Contains(this))
+        if (Commander != null && Commander.Units.Contains(this))
         {
-            Wizard.Units.Remove(this);
+            Commander.Units.Remove(this);
         }
         GetCell().Occupant = null;
         Destroy(this.gameObject, 1.0f);

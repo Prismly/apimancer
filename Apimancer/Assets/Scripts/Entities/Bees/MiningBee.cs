@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class MiningBee : Bee
 {
-    public static float Cost = 10.0f;
+    public static short Cost = 10;
 
-    private float maxHealth = 3.0f;
-    private float health = 3.0f;
-    private float attackDamage = 4.0f;
-    private float movementSpeed = 5.0f;
+    private int maxHealth = 3;
+    private int health = 3;
+    private int attackDamage = 4;
+    private int movementSpeed = 5;
 
     public override Action DetermineAction()
     {
@@ -47,7 +47,7 @@ public class MiningBee : Bee
             if (target.Item2 <= MovementSpeed + 1)
             {
                 animator.SetInteger("state", (int)BeeAnimState.STING);
-                Unit.DamageTarget(AttackDamage, target.Item1);
+                this.AttackTarget(AttackDamage, target.Item1);
                 yield return new WaitForSeconds(1f);
             }
             animator.SetInteger("state", (int)BeeAnimState.IDLE);
@@ -55,25 +55,25 @@ public class MiningBee : Bee
         GameManager.Instance.NotifyNextUnit();
     }
 
-    public override float MaxHealth
+    public override int MaxHealth
     {
         get { return maxHealth; }
         set { maxHealth = value; }
     }
 
-    public override float Health
+    public override int Health
     {
         get { return health; }
         set { health = value; }
     }
 
-    public override float AttackDamage
+    public override int AttackDamage
     {
         get { return attackDamage; }
         set { attackDamage = value; }
     }
 
-    public override float MovementSpeed
+    public override int MovementSpeed
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }

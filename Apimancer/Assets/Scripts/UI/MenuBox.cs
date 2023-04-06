@@ -12,7 +12,11 @@ public class MenuBox : MonoBehaviour
     [SerializeField] private GameObject spellsOptPref;
     [SerializeField] private GameObject summonOptPref;
 
+<<<<<<< Updated upstream
     public void AddSpellsOption(string optionText)
+=======
+    public void AddSpellsOption(string optionText, Wizard owner, SpellAction.SpellType type, uint range, short cost)
+>>>>>>> Stashed changes
     {
         GameObject newOptObj = Instantiate(spellsOptPref);
 
@@ -35,7 +39,7 @@ public class MenuBox : MonoBehaviour
         newOptRect.localScale = optPrefRect.localScale;
     }
 
-    public void AddSummonOption(string optionText, Wizard owner, Unit.UnitType summon, uint range, uint cost)
+    public void AddSummonOption(string optionText, Wizard owner, Unit.UnitType summon, uint range, short cost)
     {
         GameObject newOptObj = Instantiate(summonOptPref);
 

@@ -11,12 +11,13 @@ public abstract class Bee : Unit
         DEATH
     };
 
-    private Wizard commander;
-
-    public Wizard GetCommander() {
-        return commander;
-    }
-    public void SetCommander(Wizard w) {
-        commander = w;
+    public override void AttackTarget(int dmg, Unit target)
+    {
+        if (target.UnitFaction == Unit.Faction.RESOURCE) {
+            int m = (target.Health >= dmg) ?
+                      (dmg) : (target.Health);
+            Commander.addMana(m);
+        }
+        target.ReceiveDamage(dmg);
     }
 }

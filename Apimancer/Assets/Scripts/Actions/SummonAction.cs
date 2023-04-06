@@ -6,7 +6,7 @@ public class SummonAction : Action
 {
     public Unit.UnitType type;
 
-    public SummonAction(Unit summoner, Unit.UnitType type, uint range, uint cost)
+    public SummonAction(Unit summoner, Unit.UnitType type, uint range, short cost)
         : base(summoner, range, cost)
     {
         this.type = type;

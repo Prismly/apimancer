@@ -30,7 +30,7 @@ public class Selectable : MonoBehaviour
     public bool isHovered {get; private set;} = false;
     public bool isSelected {get; private set;} = false;
 
-    private void Start()
+    protected void Start()
     {
         if (Root == null)
         {

@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class WorkerAnt : Ant
 {
-    public static float Cost = 5.0f;
+    public static int Cost = 5;
 
-    private float maxHealth = 2.0f;
-    private float health = 2.0f;
-    private float attackDamage = 1.0f;
-    private float movementSpeed = 4.0f;
+    private int maxHealth = 2;
+    private int health = 2;
+    private int attackDamage = 1;
+    private int movementSpeed = 4;
 
     public override Action DetermineAction()
     {
@@ -55,25 +55,25 @@ public class WorkerAnt : Ant
         GameManager.Instance.NotifyNextUnit();
     }
 
-    public override float MaxHealth
+    public override int MaxHealth
     {
         get { return maxHealth; }
         set { maxHealth = value; }
     }
 
-    public override float Health
+    public override int Health
     {
         get { return health; }
         set { health = value; }
     }
 
-    public override float AttackDamage
+    public override int AttackDamage
     {
         get { return attackDamage; }
         set { attackDamage = value; }
     }
 
-    public override float MovementSpeed
+    public override int MovementSpeed
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }

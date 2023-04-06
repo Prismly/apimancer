@@ -7,14 +7,8 @@ public class LavaCell : Cell
     private CellType type = CellType.LAVA;
     public override CellType Type
     {
-        get
-        {
-            return type;
-        }
-        set
-        {
-            type = value;
-        }
+        get { return type; }
+        set { type = value; }
     }
 
     public override void OnEndTurn() {

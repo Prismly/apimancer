@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class HoneyBlast : SpellAction
 {
+<<<<<<< Updated upstream
     public HoneyBlast(Unit from, uint range, uint cost)
         :base(from, range, cost)
+=======
+    public HoneyBlast(Unit from, uint range, short cost)
+        : base(from, range, cost)
+>>>>>>> Stashed changes
     {
     }
 

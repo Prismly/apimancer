@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Action
 {
     [SerializeField]
-    public uint cost { get; set; }
+    public int cost { get; set; }
 
     [SerializeField]
     public Unit unit { get; set; }
@@ -13,7 +13,7 @@ public abstract class Action
     [SerializeField]
     public uint range { get; set; }
 
-    public Action(Unit unit, uint range, uint cost)
+    public Action(Unit unit, uint range, int cost)
     {
         this.unit = unit;
         this.cost = cost;
@@ -25,9 +25,9 @@ public abstract class Action
         if (Vector2Int.Distance(unit.loc, cell.Location) <= range)
         {
             Wizard w = (Wizard)unit;
-            if (w.actionPoints >= cost)
+            if (w.getMana() >= cost)
             {
-                w.actionPoints -= (int)cost;
+                w.addMana(-cost);
                 return true;
             }
         }

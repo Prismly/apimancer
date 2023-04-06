@@ -82,6 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadLevel(int levelIndex)
     {
+        Units.Add(Unit.Faction.RESOURCE, new List<Unit>());
         _playerController = Instantiate(_playerControllerPrefab);
         _currentLevel = Instantiate(_levelPrefabs[levelIndex]).GetComponent<Level>();
     }
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
             Units.Add(unit.UnitFaction, factionList);
         }
         factionList.Add(unit);
-        unit.Wizard = CurrentWizard;
+        unit.Commander = CurrentWizard;
 
         return unit;
     }

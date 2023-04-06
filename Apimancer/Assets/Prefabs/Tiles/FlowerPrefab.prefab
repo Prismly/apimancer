@@ -57,6 +57,10 @@ MonoBehaviour:
   F: 0
   G: 0
   H: 0
+  _flowerPrefabs:
+  - {fileID: 7814559185879440105, guid: e472804a3d7203e48a7485551c2a6eae, type: 3}
+  - {fileID: 7814559185879440105, guid: a64331b72cc773c4d834f48f22894c0c, type: 3}
+  - {fileID: 7814559185879440105, guid: ceb81b480e8e7a04e965687089ad434e, type: 3}
 --- !u!212 &5790144875299269826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,9 +100,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1361100273
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1622057014, guid: b0e2178b22347374ea6a5751c6b985ed, type: 3}
+  m_Sprite: {fileID: -1908321552, guid: e9207513a8f533843969d7921deade0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
