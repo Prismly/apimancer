@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SummonOption : MenuOption
 {
@@ -32,5 +33,6 @@ public class SummonOption : MenuOption
     {
         // Do whatever the Summon does here
         GameManager.Instance.CurrentAction = sumAct;
+        GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
     }
 }

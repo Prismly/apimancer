@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpellOption : MenuOption
 {
@@ -35,5 +36,6 @@ public class SpellOption : MenuOption
         // Do whatever the Summon does here
         SetOptionString("SELECT SUCCESSFUL");
         GameManager.Instance.CurrentAction = action;
+        GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
     }
 }

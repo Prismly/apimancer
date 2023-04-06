@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject menuBoxPref;
     [SerializeField] private GameObject healthBox;
 
+    [SerializeField] private List<GameObject> disabledOnPause;
+    [SerializeField] private GameObject pauseMenu;
+
     [SerializeField] private RectTransform bottomMid;
     
     private GameObject summonMenu;
@@ -121,6 +124,31 @@ public class UIManager : MonoBehaviour
             healthBox.SetActive(false);
         }
 
+    }
+
+    public void TogglePause()
+    {
+        Debug.Log("Here");
+        if (GameManager.Instance.gameIsPaused)
+        {
+            GameManager.Instance.gameIsPaused = false;
+            pauseMenu.SetActive(false);
+            Time.timeScale = 1;
+            foreach (GameObject g in disabledOnPause)
+            {
+                g.GetComponent<Button>().enabled = true;
+            }
+        }
+        else
+        {
+            GameManager.Instance.gameIsPaused = true;
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0;
+            foreach (GameObject g in disabledOnPause)
+            {
+                g.GetComponent<Button>().enabled = false;
+            }
+        }
     }
 
     private void Update()

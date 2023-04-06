@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using TMPro;
 
 public abstract class MenuOption : MonoBehaviour
@@ -14,6 +15,14 @@ public abstract class MenuOption : MonoBehaviour
     {
         this.parentBox = parentBox;
         transform.SetParent(parentBox.transform);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<Image>().color = new Color(0, 0, 0, 0);
+        }
     }
 
     public void SetOptionString(string optionString)

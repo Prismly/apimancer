@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _minWizards;
     [SerializeField] private int _maxWizards;
 
+    public bool gameIsPaused = false;
+
     private GameObject _playerController;
     private Level _currentLevel;
     public Dictionary<Unit.Faction, List<Unit>> Units {get; private set;} = new Dictionary<Unit.Faction, List<Unit>>();

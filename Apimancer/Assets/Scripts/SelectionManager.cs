@@ -34,7 +34,6 @@ public class SelectionManager
 
     public void SelectOne()
     {
-        Debug.Log("Stop");
         Focused = null;
         if (Hovered.Count <= 0)
         {
