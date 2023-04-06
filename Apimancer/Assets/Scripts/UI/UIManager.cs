@@ -88,6 +88,7 @@ public class UIManager : MonoBehaviour
 
     public void ToggleSummonMenu()
     {
+        Debug.Log("toggle summon menu");
         spellsMenu.SetActive(false);
         summonMenu.SetActive(!summonMenu.activeInHierarchy);
     }
@@ -134,6 +135,7 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.gameIsPaused = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
+            Debug.Log("enabling");
             foreach (GameObject g in disabledOnPause)
             {
                 g.GetComponent<Button>().enabled = true;
@@ -144,6 +146,7 @@ public class UIManager : MonoBehaviour
             GameManager.Instance.gameIsPaused = true;
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
+            Debug.Log("disabling");
             foreach (GameObject g in disabledOnPause)
             {
                 g.GetComponent<Button>().enabled = false;
