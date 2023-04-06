@@ -2,8 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ActionType
+{
+    MOVE,
+    SUMMON,
+    SPELL,
+    ATTACK
+}
+
 public abstract class Action
 {
+    [SerializeField]
+    public ActionType actionType { get; set; }
+
     [SerializeField]
     public uint cost { get; set; }
 
@@ -13,8 +24,9 @@ public abstract class Action
     [SerializeField]
     public uint range { get; set; }
 
-    public Action(Unit unit, uint range, uint cost)
+    public Action(ActionType type, Unit unit, uint range, uint cost)
     {
+        this.actionType = type;
         this.unit = unit;
         this.cost = cost;
         this.range = range;
