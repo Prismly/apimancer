@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class SpellAction : Action
 {
     public SpellAction(Unit from, uint range, uint cost)
-        : base(from, range, cost)
+        : base(ActionType.SPELL, from, range, cost)
     {
     }
 }

@@ -31,6 +31,6 @@ public class SummonOption : MenuOption
     public override void OnSelect()
     {
         // Do whatever the Summon does here
-        GameManager.Instance.CurrentAction = sumAct;
+        GameManager.Instance.SetCurrentAction(sumAct);
     }
 }

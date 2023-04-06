@@ -86,25 +86,48 @@ public abstract class Cell : Selectable
         }
     }
 
-    // public void GetAdjacentRange(int range)
-    // {
-    //     List<Cell> cells = new List<Cell>();
-    //     Cell xCell;
-    //     Cell yCell;
-    //     for (int i = 0; i < range; i++)
-    //     {
-    //         xCell = this.GetAdjacent(0);
-    //         cells.Add(xCell);
-    //         for (int j = 0; j < range; j++)
-    //         {
-                
-    //         }
-    //         for (int j = 0; j < range; j++)
-    //         {
-                
-    //         }
-    //     }
-    // }
+    public List<Cell> GetCellsRange(int range)
+    {
+        List<Cell> rangeCells = new List<Cell>();
+        Cell cellHorizontal = this;
+        for (int i = 0; i <= range; i++)
+        {
+            Cell cellVertical = cellHorizontal;
+            rangeCells.Add(cellHorizontal);
+            for (int j = 0; j < range; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(2);
+                rangeCells.Add(cellVertical);
+            }
+            cellVertical = cellHorizontal;
+            for (int j = 0; j < range; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(4);
+                rangeCells.Add(cellVertical);
+            }
+            cellHorizontal = cellHorizontal.GetAdjacent(0);
+        }
+        cellHorizontal = this;
+        for (int i = 0; i < range; i++)
+        {
+            cellHorizontal = cellHorizontal.GetAdjacent(3);
+            Cell cellVertical = cellHorizontal;
+            rangeCells.Add(cellHorizontal);
+            for (int j = 0; j < i; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(1);
+                rangeCells.Add(cellVertical);
+            }
+            cellVertical = cellHorizontal;
+            for (int j = 0; j < i; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(5);
+                rangeCells.Add(cellVertical);
+            }
+            cellVertical = cellHorizontal;
+        }
+        return rangeCells;
+    }
 
     public bool Enter(Entity entity)
     {
@@ -167,6 +190,11 @@ public abstract class Cell : Selectable
     public void SetColor(Color color)
     {
         this.GetComponent<SpriteRenderer>().color = color;
+    }
+    
+    public Color GetColor(Color color)
+    {
+        return this.GetComponent<SpriteRenderer>().color;
     }
 
     public virtual void OnEndTurn(){}
