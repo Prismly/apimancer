@@ -12,11 +12,24 @@ public class MenuBox : MonoBehaviour
     [SerializeField] private GameObject spellsOptPref;
     [SerializeField] private GameObject summonOptPref;
 
-    public void AddSpellsOption(string optionText)
+    public void AddSpellsOption(string optionText, Wizard owner, SpellAction.SpellType type, uint range, uint cost)
     {
+        SpellAction spellAction = null;
+        switch (type) {
+            case SpellAction.SpellType.HONEY_TRAP:
+                spellAction = new HoneyTrap(owner, range, cost);
+                break;
+            case SpellAction.SpellType.HONEY_BLAST:
+                spellAction = new HoneyBlast(owner, range, cost);
+                break;
+            case SpellAction.SpellType.TELEPORT:
+                spellAction = new Teleport(owner, range, cost);
+                break;
+        }
         GameObject newOptObj = Instantiate(spellsOptPref);
 
-        MenuOption newOpt = newOptObj.GetComponent<MenuOption>();
+        SpellOption newOpt = newOptObj.GetComponent<SpellOption>();
+        newOpt.SetSpellAction(spellAction);
         options.Add(newOpt);
         newOpt.SetParentBox(this);
         newOpt.SetOptionString(optionText);

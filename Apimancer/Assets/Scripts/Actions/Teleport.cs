@@ -2,24 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HoneyBlast : SpellAction
+public class Teleport : SpellAction
 {
-    public HoneyBlast(Unit from, uint range, uint cost)
+    public Teleport(Unit from, uint range, uint cost)
         : base(from, range, cost)
     {
     }
 
     public override bool Execute(Cell cell)
     {
-        Debug.Log("HONEY BLAAAAST!");
+        Debug.Log("TELEPORT!");
         if (!Validate(cell))
             return false;
 
-        if (!cell.IsOccupied)
+        if (cell.IsOccupied)
             return false;
 
-        Unit target = cell.Occupant as Unit;
-        GameManager.Instance.Kill(unit);
+        unit.setLocation(cell);
         return true;
     }
 }

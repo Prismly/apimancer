@@ -38,6 +38,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         _instance = this;
+        Wizard playerWiz = GameManager.Instance.Wizards[0];
 
         // -- SPELLS MENU --
         spellsMenu = Instantiate(menuBoxPref);
@@ -50,11 +51,9 @@ public class UIManager : MonoBehaviour
         spellsMenuImg.color = new Color(177 / 255f, 142 / 255f, 200 / 255f);
         MenuBox spellsMenuBox = spellsMenu.GetComponent<MenuBox>();
         // We'd get the player's Spells here
-        string[] spellOptions = { "[X]Fancy Hat [M]3 [S]2", "[X]Close Cuts [A]2 [T]2", "[X]Extra Lift [A]3 [R]5" };
-        for (int i = 0; i < spellOptions.Length; i++)
-        {
-            spellsMenuBox.AddSpellsOption(spellOptions[i]);
-        }
+        spellsMenuBox.AddSpellsOption("[X]Honey Trap [M]3 [S]2", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
+        spellsMenuBox.AddSpellsOption("[X]Honey Blast [M]3 [S]2", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
+        spellsMenuBox.AddSpellsOption("[X]Teleport [M]3 [S]2", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
         spellsMenu.SetActive(false);
 
         // -- SUMMON MENU --
@@ -67,7 +66,6 @@ public class UIManager : MonoBehaviour
         summonMenuImg.color = new Color(200 / 255f, 144 / 255f, 143 / 255f);
         MenuBox summonMenuBox = summonMenu.GetComponent<MenuBox>();
         // We'd get the player's Summons here
-        Wizard playerWiz = GameManager.Instance.Wizards[0];
         summonMenuBox.AddSummonOption("[X]Worker Bee [NCT]5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
         summonMenuBox.AddSummonOption("[X]Bumble Bee [NCT]8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
         summonMenuBox.AddSummonOption("[X]Miner Bee [NCT]10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
