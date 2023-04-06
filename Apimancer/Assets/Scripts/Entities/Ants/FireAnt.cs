@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,16 +12,47 @@ public class FireAnt : Ant
     private float attackDamage = 3.0f;
     private float movementSpeed = 5.0f;
 
-    public override IEnumerator DetermineMovement()
+    public override Action DetermineAction()
     {
-        // do movement
         return null;
     }
 
-    public override Action DetermineAction()
+    public override IEnumerator DetermineMovement()
     {
-        // do action
-        return null;
+        Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
+        List<Unit> lUnits = null;
+        Tuple<Unit, short, List<Cell>> target = null;
+        Tuple<Unit, short, List<Cell>> priorityTarget = null;
+        if (dUnits.ContainsKey(Unit.Faction.RESOURCE))
+        {
+            lUnits = dUnits[Unit.Faction.RESOURCE];
+            priorityTarget = this.FindClosestTarget(lUnits);
+            if (priorityTarget.Item2 < movementSpeed)
+            {
+                target = priorityTarget;
+            }
+        }
+        if (target == null)
+        {
+            if (dUnits.ContainsKey(Unit.Faction.BEE))
+            {
+                lUnits = dUnits[Unit.Faction.BEE];
+                target = this.FindClosestTarget(lUnits);
+            }
+        }
+        if (target == null) target = priorityTarget;
+        if (target != null)
+        {
+            yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
+            if (target.Item2 <= MovementSpeed)
+            {
+                animator.SetInteger("state", (int)AntAnimState.BITE);
+                Unit.DamageTarget(AttackDamage, target.Item1);
+                yield return new WaitForSeconds(1f);
+            }
+            animator.SetInteger("state", (int)AntAnimState.IDLE);
+        }
+        GameManager.Instance.NotifyNextUnit();
     }
 
     public override float MaxHealth
