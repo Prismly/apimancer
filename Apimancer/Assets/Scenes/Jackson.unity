@@ -939,6 +939,9 @@ MonoBehaviour:
   targetWorldCanvas: {fileID: 0}
   menuBoxPref: {fileID: 8886392885308354827, guid: fc20577f69a560547992ef59f3e070e7, type: 3}
   healthBox: {fileID: 65867188}
+  disabledOnPause: []
+  pauseMenu: {fileID: 0}
+  bottomMid: {fileID: 310537401}
 --- !u!4 &1349885721
 Transform:
   m_ObjectHideFlags: 0
@@ -1605,6 +1608,7 @@ MonoBehaviour:
   - {fileID: 7814559185879440105, guid: a64331b72cc773c4d834f48f22894c0c, type: 3}
   _minWizards: 1
   _maxWizards: 8
+  gameIsPaused: 0
 --- !u!1001 &4041891996469061638
 PrefabInstance:
   m_ObjectHideFlags: 0

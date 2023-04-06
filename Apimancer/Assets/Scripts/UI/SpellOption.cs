@@ -35,7 +35,7 @@ public class SpellOption : MenuOption
     {
         // Do whatever the Summon does here
         SetOptionString("SELECT SUCCESSFUL");
-        GameManager.Instance.CurrentAction = action;
+        GameManager.Instance.SetCurrentAction(action);
         GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
     }
 }
