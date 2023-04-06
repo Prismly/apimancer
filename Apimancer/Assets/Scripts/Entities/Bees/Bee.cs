@@ -4,14 +4,21 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
-    public enum BeeAnimState 
-    { 
+    [SerializeField] private AudioClip sndSummon;
+
+    public enum BeeAnimState
+    {
         IDLE = 0,
         STING,
         DEATH
     };
 
     private Wizard commander;
+
+    private void Awake()
+    {
+        snd.PlayOneShot(sndSummon);
+    }
 
     public Wizard GetCommander() {
         return commander;

@@ -15,6 +15,10 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected Animator animator;
 
+    [SerializeField] protected AudioSource snd;
+
+    [SerializeField] private AudioClip sndMove;
+
     public void Start()
     {
         //Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
@@ -144,6 +148,7 @@ public abstract class Entity : MonoBehaviour
 
     public IEnumerator MoveAlongPathByAmount(List<Cell> path, float amount)
     {
+        snd.PlayOneShot(sndMove);
         short i = 0;
         while (amount > 0 && i < path.Count) {
             CellManager.Instance.GetCell(loc).Exit();
