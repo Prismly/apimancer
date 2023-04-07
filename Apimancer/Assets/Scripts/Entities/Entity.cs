@@ -74,7 +74,7 @@ public abstract class Entity : MonoBehaviour
             foreach (Cell adjacentCell in currentCell.GetAdjacentList())
             {
                 // Ignore not walkable adjacent tiles.
-                if (adjacentCell.IsOccupied || adjacentCell.Type == CellType.WALL)
+                if (adjacentCell.IsOccupied)
                 {
                     continue;
                 }
@@ -127,7 +127,7 @@ public abstract class Entity : MonoBehaviour
         Cell target = t.GetCell();
         List<Cell> adjacents = target.GetAdjacentList();
         foreach (Cell c in adjacents) {
-            if (!c.IsOccupied && c.Type != CellType.WALL) {
+            if (!c.IsOccupied) {
                 List<Cell> tempPath = PathFind(e, c);
                 int tempDist = tempPath.Count;
                 if (tempDist < dist) {

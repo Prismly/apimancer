@@ -130,8 +130,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  snd: {fileID: 0}
+  sndMove: {fileID: 0}
   UnitFaction: 0
-  Type: 0
+  Type: 8
   State: 1
-  Wizard: {fileID: 0}
+  Commander: {fileID: 0}
   condition: {fileID: 0}

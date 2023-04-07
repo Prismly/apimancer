@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5790144875299269826}
   - component: {fileID: 7460294770520075462}
   m_Layer: 0
-  m_Name: WallPrefab
+  m_Name: BoulderPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,6 +57,11 @@ MonoBehaviour:
   F: 0
   G: 0
   H: 0
+  _boulderPrefabs:
+  - {fileID: 7814559185879440105, guid: c213e270772ef604ca51fd9081d05e71, type: 3}
+  - {fileID: 7814559185879440105, guid: a50db52ad39987543a4caf5b5bc3a4c4, type: 3}
+  - {fileID: 7814559185879440105, guid: 2559df31763c10748a63c68d82954e9f, type: 3}
+  - {fileID: 7814559185879440105, guid: 7e41d4a20711045498102f0472434857, type: 3}
 --- !u!212 &5790144875299269826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -96,7 +101,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1361100273
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 1222160420, guid: b0e2178b22347374ea6a5751c6b985ed, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

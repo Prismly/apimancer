@@ -18,7 +18,8 @@ public abstract class Unit : Entity
     {
         RESOURCE,
         BEE,
-        ANT
+        ANT,
+        OTHER
     }
 
     public enum UnitType
@@ -31,7 +32,8 @@ public abstract class Unit : Entity
         ANT_WORKER,
         ANT_FIRE,
         ANT_ARMY,
-        RESOURCE_FLOWER
+        RESOURCE_FLOWER,
+        OTHER_BOULDER
     }
 
     public Faction UnitFaction;
