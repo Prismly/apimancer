@@ -13,7 +13,7 @@ public class FlowerCell : Cell
         set { type = value; }
     }
 
-    public void Start()
+    public new void Start()
     {
         base.Start();
         short i = (short)Random.Range(0, 3);
