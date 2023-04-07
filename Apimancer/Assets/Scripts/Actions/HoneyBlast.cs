@@ -4,26 +4,22 @@ using UnityEngine;
 
 public class HoneyBlast : SpellAction
 {
-<<<<<<< Updated upstream
     public HoneyBlast(Unit from, uint range, uint cost)
         :base(from, range, cost)
-=======
-    public HoneyBlast(Unit from, uint range, short cost)
-        : base(from, range, cost)
->>>>>>> Stashed changes
     {
     }
 
     public override bool Execute(Cell cell)
     {
+        Debug.Log("HONEY BLAAAAST!");
         if (!Validate(cell))
             return false;
 
         if (!cell.IsOccupied)
-            cell.GetComponent<SpriteRenderer>().color += new Color(0.3f, 0.3f, 0);
+            return false;
 
-        //Unit target = cell.Occupant as Unit;
-        //target.SetSticky(true);
+        Unit target = cell.Occupant as Unit;
+        GameManager.Instance.Kill(unit);
         return true;
     }
 }

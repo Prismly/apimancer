@@ -86,6 +86,49 @@ public abstract class Cell : Selectable
         }
     }
 
+    public List<Cell> GetCellsRange(int range)
+    {
+        List<Cell> rangeCells = new List<Cell>();
+        Cell cellHorizontal = this;
+        for (int i = 0; i <= range; i++)
+        {
+            Cell cellVertical = cellHorizontal;
+            rangeCells.Add(cellHorizontal);
+            for (int j = 0; j < range; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(2);
+                rangeCells.Add(cellVertical);
+            }
+            cellVertical = cellHorizontal;
+            for (int j = 0; j < range; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(4);
+                rangeCells.Add(cellVertical);
+            }
+            cellHorizontal = cellHorizontal.GetAdjacent(0);
+        }
+        cellHorizontal = this;
+        for (int i = 0; i < range; i++)
+        {
+            cellHorizontal = cellHorizontal.GetAdjacent(3);
+            Cell cellVertical = cellHorizontal;
+            rangeCells.Add(cellHorizontal);
+            for (int j = 0; j < i; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(1);
+                rangeCells.Add(cellVertical);
+            }
+            cellVertical = cellHorizontal;
+            for (int j = 0; j < i; j++)
+            {
+                cellVertical = cellVertical.GetAdjacent(5);
+                rangeCells.Add(cellVertical);
+            }
+            cellVertical = cellHorizontal;
+        }
+        return rangeCells;
+    }
+
     public bool Enter(Entity entity)
     {
         if (IsOccupied) return false;
@@ -142,6 +185,16 @@ public abstract class Cell : Selectable
         {
             Occupant.OnDeselect();
         }
+    }
+
+    public void SetColor(Color color)
+    {
+        this.GetComponent<SpriteRenderer>().color = color;
+    }
+    
+    public Color GetColor(Color color)
+    {
+        return this.GetComponent<SpriteRenderer>().color;
     }
 
     public virtual void OnEndTurn(){}

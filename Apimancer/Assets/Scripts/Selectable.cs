@@ -116,6 +116,11 @@ public class Selectable : MonoBehaviour
     public void Select()
     {
         // Debug.Log("Selected");
+        if (GameManager.Instance.gameIsPaused)
+        {
+            return;
+        }
+
         isSelected = true;
 
         if (_selectionRenderer != null)
@@ -164,6 +169,11 @@ public class Selectable : MonoBehaviour
 
     public void Hover()
     {
+        if (GameManager.Instance.gameIsPaused)
+        {
+            return;
+        }
+
         // Debug.Log("Hovered");
         isHovered = true;
 

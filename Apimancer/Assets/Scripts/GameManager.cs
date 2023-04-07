@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _minWizards;
     [SerializeField] private int _maxWizards;
 
+    public bool gameIsPaused = false;
+
     private GameObject _playerController;
     private Level _currentLevel;
     public Dictionary<Unit.Faction, List<Unit>> Units {get; private set;} = new Dictionary<Unit.Faction, List<Unit>>();
@@ -23,6 +25,8 @@ public class GameManager : MonoBehaviour
     public bool IsRunning {get; private set;}
     public bool IsPaused {get; private set;}
     public bool IsUnitMoving {get; private set;}
+
+    private List<Cell> _actionRange = new List<Cell>();
  
     private static GameManager _instance = null;
     public static GameManager Instance
@@ -90,6 +94,7 @@ public class GameManager : MonoBehaviour
     public void EndTurn()
     {
         CurrentWizard.MoveUnits();
+        SetCurrentAction(null);
     }
 
     public int NextTurn()
@@ -140,7 +145,41 @@ public class GameManager : MonoBehaviour
 
     public void SetCurrentAction(Action action)
     {
+        foreach (Cell c in _actionRange)
+        {
+            c.SetColor(Color.white);
+        }
+
         CurrentAction = action;
+
+        if (action == null)
+        {
+            _actionRange.Clear();
+            return;
+        }
+
+        _actionRange = action.unit.GetCell().GetCellsRange((int)action.range);
+        // Debug.Log("Range: " + action.range);
+        Color color;
+        switch (action.actionType)
+        {
+        case ActionType.MOVE:
+            color = Color.green;
+            break;
+        case ActionType.SUMMON:
+            color = Color.red;
+            break;
+        case ActionType.SPELL:
+            color = Color.magenta;
+            break;
+        default:
+            return;
+        }
+
+        foreach (Cell c in _actionRange)
+        {
+            c.SetColor(color);
+        }
     }
 
     public bool Execute(Cell cell)
@@ -150,7 +189,7 @@ public class GameManager : MonoBehaviour
             CurrentAction = new MoveAction(CurrentWizard);
         }
         bool success = CurrentAction.Execute(cell);
-        CurrentAction = null;
+        SetCurrentAction(null);
         return success;
     }
 

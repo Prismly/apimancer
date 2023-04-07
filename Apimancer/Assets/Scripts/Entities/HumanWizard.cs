@@ -12,6 +12,7 @@ public class HumanWizard : Wizard
     public override void BeginTurn()
     {
         IsTurn = true;
+        GameManager.Instance.SetCurrentAction(new MoveAction(this));
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)

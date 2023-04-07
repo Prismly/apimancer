@@ -4,8 +4,10 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
-    public enum BeeAnimState 
-    { 
+    [SerializeField] private AudioClip sndSummon;
+
+    public enum BeeAnimState
+    {
         IDLE = 0,
         STING,
         DEATH
@@ -19,5 +21,18 @@ public abstract class Bee : Unit
             Commander.addMana(m);
         }
         target.ReceiveDamage(dmg);
+    }
+    private Wizard commander;
+
+    private void Awake()
+    {
+        snd.PlayOneShot(sndSummon);
+    }
+
+    public Wizard GetCommander() {
+        return commander;
+    }
+    public void SetCommander(Wizard w) {
+        commander = w;
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveAction : Action
 {
     public MoveAction(Unit unit)
-        : base(unit, 0, 0)
+        : base(ActionType.MOVE, unit, 0, 0)
     {
 
     }
