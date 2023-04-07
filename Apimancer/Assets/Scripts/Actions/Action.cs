@@ -16,7 +16,7 @@ public abstract class Action
     public ActionType actionType { get; set; }
 
     [SerializeField]
-    public uint cost { get; set; }
+    public int cost { get; set; }
 
     [SerializeField]
     public Unit unit { get; set; }
@@ -24,7 +24,7 @@ public abstract class Action
     [SerializeField]
     public uint range { get; set; }
 
-    public Action(ActionType type, Unit unit, uint range, uint cost)
+    public Action(ActionType type, Unit unit, uint range, int cost)
     {
         this.actionType = type;
         this.unit = unit;

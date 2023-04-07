@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Teleport : SpellAction
 {
-    public Teleport(Unit from, uint range, uint cost)
+    public Teleport(Unit from, uint range, int cost)
         : base(from, range, cost)
     {
     }

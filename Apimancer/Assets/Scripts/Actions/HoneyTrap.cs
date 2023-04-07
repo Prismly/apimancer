@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HoneyTrap : SpellAction
 {
-    public HoneyTrap(Unit from, uint range, uint cost)
+    public HoneyTrap(Unit from, uint range, int cost)
         :base(from, range, cost)
     {
     }

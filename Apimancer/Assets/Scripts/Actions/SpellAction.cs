@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class SpellAction : Action
 {
-    public SpellAction(Unit from, uint range, uint cost)
+    public SpellAction(Unit from, uint range, int cost)
         : base(ActionType.SPELL, from, range, cost) { }
 
     public enum SpellType { 
