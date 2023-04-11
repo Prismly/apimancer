@@ -8,6 +8,7 @@ public class Flower : Resource
     private int health = 5;
     private int attackDamage = 0;
     private int movementSpeed = 0;
+    private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
 
     public override IEnumerator DetermineMovement()
     {
@@ -43,6 +44,12 @@ public class Flower : Resource
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }
+    }
+
+    public override List<Unit.Faction> TargetPriorities
+    {
+        get { return targetPriorities; }
+        set { targetPriorities = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities) {

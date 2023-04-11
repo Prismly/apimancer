@@ -45,8 +45,10 @@ public abstract class Unit : Entity
     public abstract int Health { get; set; }
     public abstract int AttackDamage { get; set; }
     public abstract int MovementSpeed { get; set; }
+    public abstract List<Faction> TargetPriorities { get; set; }
     public abstract IEnumerator DetermineMovement();
-    public abstract Action DetermineAction();
+
+    public virtual Action DetermineAction() { return null; }
 
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)
@@ -85,24 +87,6 @@ public abstract class Unit : Entity
         }
     }
 
-    protected Tuple<Unit, short, List<Cell>> FindClosestTarget(List<Unit> targets)
-    {
-        Unit t = null;
-        short dist = short.MaxValue;
-        List<Cell> path = null;
-        foreach (Unit u in targets)
-        {
-            List<Cell> tempPath = Entity.PathFind(this, u);
-            if (tempPath.Count < dist)
-            {
-                t = u;
-                dist = (short)tempPath.Count;
-                path = tempPath;
-            }
-        }
-        return new Tuple<Unit, short, List<Cell>>(t, dist, path);
-    }
-
     public virtual void OnDeath()
     {
         PlayDeathAnim();
@@ -117,14 +101,8 @@ public abstract class Unit : Entity
         // End game if wizard
     }
 
-    public override void OnSelect()
-    {
-        
-    }
-    public override void OnDeselect()
-    {
-
-    }
+    public override void OnSelect() {}
+    public override void OnDeselect() {}
     public override void OnHover()
     {
         UIManager.Instance.ShowHealthBox(this);
@@ -155,5 +133,50 @@ public abstract class Unit : Entity
 
     public void doStatus() {
         condition.doStatus();
+    }
+
+    protected Tuple<Unit, int, List<Cell>> FindClosestTarget(List<Unit> targets)
+    {
+        Unit t = null;
+        int dist = int.MaxValue;
+        List<Cell> path = null;
+        foreach (Unit u in targets)
+        {
+            List<Cell> tempPath = Entity.PathFind(this, u);
+            if (tempPath.Count < dist)
+            {
+                t = u;
+                dist = tempPath.Count;
+                path = tempPath;
+            }
+        }
+        return new Tuple<Unit, int, List<Cell>>(t, dist, path);
+    }
+
+    public virtual Tuple<Unit, int, List<Cell>> DetermineTarget()
+    {
+        Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
+        List<Unit> lUnits = null;
+        Tuple<Unit, int, List<Cell>> target = null;
+        Tuple<Unit, int, List<Cell>> pTarget = null;
+        int n = TargetPriorities.Count;
+        for (int i = 0; i < n; i++)
+        {
+            Unit.Faction f = TargetPriorities[i];
+            if (dUnits.ContainsKey(f))
+            {
+                lUnits = dUnits[f];
+                Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);
+                if (pTarget == null) pTarget = tempTarget;
+                else if (tempTarget.Item2 < MovementSpeed)
+                {
+                    target = tempTarget;
+                    break;
+                }
+            }
+        }
+
+        if (target != null) return target;
+        else return pTarget;
     }
 }

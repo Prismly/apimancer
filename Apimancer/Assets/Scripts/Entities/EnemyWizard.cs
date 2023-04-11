@@ -8,6 +8,7 @@ public class EnemyWizard : Wizard
     private int health = 15;
     private int attackDamage = 1;
     private int movementSpeed = 2;
+    private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
 
     public override IEnumerator DetermineMovement()
     {
@@ -85,6 +86,12 @@ public class EnemyWizard : Wizard
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }
+    }
+
+    public override List<Unit.Faction> TargetPriorities
+    {
+        get { return targetPriorities; }
+        set { targetPriorities = value; }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)

@@ -8,6 +8,7 @@ public class HumanWizard : Wizard
     private int health = 15;
     private int attackDamage = 1;
     private int movementSpeed = 2;
+    private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
 
     public override void BeginTurn()
     {
@@ -54,5 +55,11 @@ public class HumanWizard : Wizard
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }
+    }
+
+    public override List<Unit.Faction> TargetPriorities
+    {
+        get { return targetPriorities; }
+        set { targetPriorities = value; }
     }
 }
