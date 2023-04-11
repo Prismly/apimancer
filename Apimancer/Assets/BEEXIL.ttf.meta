@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b033f57b4a27ddd4ebdcef71b7f812ec
+guid: f4f5808eb2c41a04888cd8cb766cf056
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - BEEXIL
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e6a75bc437f0c354f9c79f593c5ab96b, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

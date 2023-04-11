@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Wizard : Unit
 {
-    private int mana = 30;
+    [SerializeField] private int mana = 30;
     private int maxMana = 99;
 
     // private List<ActionCommand> summonList = new List<ActionCommand>();
@@ -62,6 +62,12 @@ public abstract class Wizard : Unit
     public int getMana() {
         return mana;
     }
+
+    public int getMaxMana()
+    {
+        return maxMana;
+    }
+
     public void setMana(int m) {
         mana = (m > maxMana) ? 
                (maxMana) :
