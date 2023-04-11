@@ -7,6 +7,7 @@ public class ManaDisplay : MonoBehaviour
 {
     [SerializeField] private float cycleTime;
     [SerializeField] private float cycleAmp;
+    private int manaLevels = 8;
     private float cycleProg = 0f;
     private bool isFlashing = false;
     TextMeshProUGUI tmp;
@@ -22,6 +23,8 @@ public class ManaDisplay : MonoBehaviour
 
     private void Update()
     {
+        UpdateDisplay();
+
         if (isFlashing)
         {
             float cycleSpeed = 2 * Mathf.PI / cycleTime;
@@ -37,8 +40,23 @@ public class ManaDisplay : MonoBehaviour
         }
     }
 
-    public void UpdateText()
+    public void UpdateDisplay()
     {
-        //tmp.text = GameManager.Instance.mana.ToString() + " <sprite=13>";
+        Wizard playerWiz = GameManager.Instance.Wizards[0];
+        int currentMana = playerWiz.getMana();
+        int maxMana = playerWiz.getMaxMana();
+        int manaStep = maxMana / manaLevels;
+
+        for (int i = 0; i < manaLevels; i++)
+        {
+            int threshold = (i * manaStep) + manaStep;
+            if (currentMana < threshold || i == manaLevels - 1)
+            {
+                GetComponent<Animator>().SetInteger("Mana Level", i);
+                break;
+            }
+        }
+
+        tmp.text = currentMana + " &";
     }
 }
