@@ -9,6 +9,16 @@ public class EnemyWizard : Wizard
     private int attackDamage = 1;
     private int movementSpeed = 2;
 
+    private List<Action> summons = new List<Action>();
+    private List<Action> spells = new List<Action>();
+
+    private void Awake()
+    {
+        summons.Add(new SummonAction(this, UnitType.ANT_WORKER, 1, 0));
+        summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 0));
+        summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 0));
+    }
+
     public override IEnumerator DetermineMovement()
     {
         // do movement
@@ -61,6 +71,50 @@ public class EnemyWizard : Wizard
                 }
             }
         }
+
+        Debug.Log("Enemy summoning");
+        List<Cell> adjacentCells = this.GetCell().GetAdjacentList();
+        summons[0].Execute(adjacentCells[Random.Range(0, adjacentCells.Count)]);
+    }
+
+    public override void MoveUnits()
+    {
+        _currentUnitIndex = -2;
+        MoveNextUnit();
+    }
+
+    private void CastSpells()
+    {
+        Cell currentCell = GetCell();
+        List<Cell> summonRange = currentCell.GetAdjacentList();
+        int summonIndex = Random.Range(0, summons.Count);
+        int cellIndex = Random.Range(0, summons.Count);
+
+        // Select summon based on cost here
+
+        Action castSummon = summons[summonIndex];
+
+        // Select cell based on validity here
+
+        Cell castCell = summonRange[cellIndex];
+        
+        castSummon.Execute(castCell);
+    }
+
+    public override void MoveNextUnit()
+    {
+        _currentUnitIndex++;
+        if (_currentUnitIndex < 0)
+        {
+            CastSpells();
+            return;
+        }
+        if (_currentUnitIndex >= Units.Count)
+        {
+            GameManager.Instance.NextTurn();
+            return;
+        }
+        StartCoroutine(Units[_currentUnitIndex].DetermineMovement());
     }
 
     public override int MaxHealth
