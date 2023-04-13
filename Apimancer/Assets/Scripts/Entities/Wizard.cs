@@ -30,7 +30,7 @@ public abstract class Wizard : Unit
     // }
 
     public abstract void BeginTurn();
-    public void MoveUnits()
+    public virtual void MoveUnits()
     {
         _currentUnitIndex = -1;
         MoveNextUnit();

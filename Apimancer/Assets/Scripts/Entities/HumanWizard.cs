@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HumanWizard : Wizard
@@ -14,6 +16,21 @@ public class HumanWizard : Wizard
     {
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(new MoveAction(this));
+        foreach(Unit u in Units)
+        {
+            Bee bee = u as Bee;
+            bee.BeginTurn();
+        }
+    }
+
+    public override void MoveUnits()
+    {
+        base.MoveUnits();
+        foreach (Unit u in Units)
+        {
+            Bee bee = u as Bee;
+            bee.EndTurn();
+        }
     }
 
     public override Cell FindMovementTarget(List<Entity> entities)

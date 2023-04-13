@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Unit : Entity
@@ -176,7 +177,7 @@ public abstract class Unit : Entity
             }
         }
 
-        if (target != null) return target;
-        else return pTarget;
+        Tuple<Unit, int, List<Cell>> finalTarget = target != null ? target : pTarget;
+        return finalTarget;
     }
 }
