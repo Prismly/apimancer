@@ -36,46 +36,48 @@ public class EnemyWizard : Wizard
     {
         IsTurn = true;
 
+        MoveUnits();
+
         // Randomly decide in which direction to move.
-        Cell occupying = CellManager.Instance.GetCell(loc);
-        bool[] validNeighbors = { false, false, false, false, false, false };
-        int validNeighborCount = 0;
-        for (int i = 0; i < 6; i++)
-        {
-            if (occupying.GetAdjacent(i) != null)
-            {
-                validNeighborCount++;
-                validNeighbors[i] = true;
-            }
-        }
 
-        int randMove = Random.Range(0, validNeighborCount);
+        // Cell occupying = CellManager.Instance.GetCell(loc);
+        // bool[] validNeighbors = { false, false, false, false, false, false };
+        // int validNeighborCount = 0;
+        // for (int i = 0; i < 6; i++)
+        // {
+        //     if (occupying.GetAdjacent(i) != null)
+        //     {
+        //         validNeighborCount++;
+        //         validNeighbors[i] = true;
+        //     }
+        // }
 
-        if (validNeighborCount == 0)
-        {
-            return;
-        }
+        // int randMove = Random.Range(0, validNeighborCount);
 
-        for (int i = 0; i < 6; i++)
-        {
-            if (validNeighbors[i])
-            {
-                if (randMove <= 0)
-                {
-                    MoveToCell(occupying.GetAdjacent(i));
-                    GameManager.Instance.NextTurn();
-                    break;
-                }
-                else
-                {
-                    randMove--;
-                }
-            }
-        }
+        // if (validNeighborCount == 0)
+        // {
+        //     return;
+        // }
 
-        Debug.Log("Enemy summoning");
-        List<Cell> adjacentCells = this.GetCell().GetAdjacentList();
-        summons[0].Execute(adjacentCells[Random.Range(0, adjacentCells.Count)]);
+        // for (int i = 0; i < 6; i++)
+        // {
+        //     if (validNeighbors[i])
+        //     {
+        //         if (randMove <= 0)
+        //         {
+        //             MoveToCell(occupying.GetAdjacent(i));
+        //             GameManager.Instance.NextTurn();
+        //             break;
+        //         }
+        //         else
+        //         {
+        //             randMove--;
+        //         }
+        //     }
+        // }
+
+        // List<Cell> adjacentCells = this.GetCell().GetAdjacentList();
+        // summons[0].Execute(adjacentCells[Random.Range(0, adjacentCells.Count)]);
     }
 
     public override void MoveUnits()
@@ -86,25 +88,40 @@ public class EnemyWizard : Wizard
 
     private void CastSpells()
     {
-        Cell currentCell = GetCell();
-        List<Cell> summonRange = currentCell.GetAdjacentList();
+        List<Cell> summonRange = GetCell().GetAdjacentList();
         int summonIndex = Random.Range(0, summons.Count);
-        int cellIndex = Random.Range(0, summons.Count);
+        int cellIndex = Random.Range(0, summonRange.Count);
 
         // Select summon based on cost here
 
-        Action castSummon = summons[summonIndex];
+        // Action castSummon = summons[summonIndex];
+        Action castSummon = summons[0];
+        Cell castCell = null;
 
         // Select cell based on validity here
-
-        Cell castCell = summonRange[cellIndex];
+        for (int i = 0; i < 6; i++)
+        {
+            Cell cell = summonRange[cellIndex];
+            if (cell.Type != CellType.BOULDER)
+            {
+                castCell = cell;
+                break;
+            }
+        }
         
-        castSummon.Execute(castCell);
+        if (castSummon != null && castCell != null)
+        {
+            Debug.Log("Summoning ant");
+            castSummon.Execute(castCell);
+        }
+
+        MoveNextUnit();
     }
 
     public override void MoveNextUnit()
     {
         _currentUnitIndex++;
+        Debug.Log("Current unit index" + _currentUnitIndex);
         if (_currentUnitIndex < 0)
         {
             CastSpells();
@@ -112,6 +129,7 @@ public class EnemyWizard : Wizard
         }
         if (_currentUnitIndex >= Units.Count)
         {
+            Debug.Log("NEXT TURN");
             GameManager.Instance.NextTurn();
             return;
         }

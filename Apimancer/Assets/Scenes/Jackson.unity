@@ -1563,28 +1563,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861471062}
   m_CullTransparentMesh: 1
---- !u!4 &1964916020555500295
+--- !u!4 &1964916019728890696
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5070176161286021825}
+  m_GameObject: {fileID: 5070176162087309966}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3752266026452672865
+--- !u!114 &3752266027279257902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5070176161286021825}
+  m_GameObject: {fileID: 5070176162087309966}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac80fabc9d7ca0a4a8177b016fd30b4c, type: 3}
@@ -1593,7 +1593,6 @@ MonoBehaviour:
   _playerControllerPrefab: {fileID: 5265668081669901724, guid: fa7e41e59fd9fe741a773292cfcf0176, type: 3}
   _levelPrefabs:
   - {fileID: 4836369654159272934, guid: 8cadffa54a14e9541b15dc6cf4ec1cb5, type: 3}
-  - {fileID: 4836369654159272934, guid: e571eff749aadb6439d911262eeb058e, type: 3}
   _wizardPrefabs:
   - {fileID: 3649754047789778013, guid: 9499715391fda914394b1605b67ac84f, type: 3}
   - {fileID: 3649754047789778013, guid: 0f0337d8eece40e439cab4d5ea902d42, type: 3}
@@ -1603,7 +1602,7 @@ MonoBehaviour:
   - {fileID: 3147449871730916580, guid: 55d9dffb989bb5e4cab591ecd76f7ec6, type: 3}
   - {fileID: 3543165017727909147, guid: b63b3166948cb504e888357a538dfd31, type: 3}
   - {fileID: 3649754047789778013, guid: 0f0337d8eece40e439cab4d5ea902d42, type: 3}
-  - {fileID: 4292872760108739457, guid: 55abf99f7ad415c459ecb8ef43ae1871, type: 3}
+  - {fileID: 3446875348891636832, guid: 1b2cc803cf91f2a4f9a9b11d28122a29, type: 3}
   - {fileID: 661053090019019983, guid: a11158da729ffcb4da6c82097e8a5008, type: 3}
   - {fileID: 6269272098270891733, guid: d7580d7c6ceefc9409cfdc91fb5a178f, type: 3}
   - {fileID: 7814559185879440105, guid: a64331b72cc773c4d834f48f22894c0c, type: 3}
@@ -1627,7 +1626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5265668081669901725, guid: fa7e41e59fd9fe741a773292cfcf0176, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5265668081669901725, guid: fa7e41e59fd9fe741a773292cfcf0176, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1671,7 +1670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa7e41e59fd9fe741a773292cfcf0176, type: 3}
---- !u!1 &5070176161286021825
+--- !u!1 &5070176162087309966
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1679,8 +1678,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1964916020555500295}
-  - component: {fileID: 3752266026452672865}
+  - component: {fileID: 1964916019728890696}
+  - component: {fileID: 3752266027279257902}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
