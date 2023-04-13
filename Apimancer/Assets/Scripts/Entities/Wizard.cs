@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Wizard : Unit
 {
-    [SerializeField] private int mana = 30;
+    [SerializeField] protected int mana = 30;
     private int maxMana = 99;
 
     // private List<ActionCommand> summonList = new List<ActionCommand>();
@@ -14,7 +14,7 @@ public abstract class Wizard : Unit
     public bool IsTurn {get; protected set;}
     //[SerializeField] int _summonRange;
     public List<Unit> Units = new List<Unit>();
-    private int _currentUnitIndex;
+    protected int _currentUnitIndex;
 
     // private void Start()
     // {
@@ -30,13 +30,13 @@ public abstract class Wizard : Unit
     // }
 
     public abstract void BeginTurn();
-    public void MoveUnits()
+    public virtual void MoveUnits()
     {
         _currentUnitIndex = -1;
         MoveNextUnit();
     }
 
-    public void MoveNextUnit()
+    public virtual void MoveNextUnit()
     {
         _currentUnitIndex++;
         if (_currentUnitIndex >= Units.Count)

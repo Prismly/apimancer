@@ -15,6 +15,7 @@ public class WorkerAnt : Ant
 
     public override IEnumerator DetermineMovement()
     {
+        Debug.Log("Worker and moving");
         Tuple<Unit, int, List<Cell>> target = DetermineTarget();
         if (target != null)
         {
