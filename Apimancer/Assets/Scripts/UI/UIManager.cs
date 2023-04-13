@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject menuBoxPref;
     [SerializeField] private GameObject healthBox;
+    [SerializeField] public GameObject endTurn;
 
     [SerializeField] private List<GameObject> disabledOnPause;
     [SerializeField] private GameObject pauseMenu;
@@ -38,9 +39,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         _instance = this;
+    }
+
+    private void Start()
+    {
         Wizard playerWiz = GameManager.Instance.Wizards[0];
 
         // -- SPELLS MENU --
@@ -95,6 +100,7 @@ public class UIManager : MonoBehaviour
 
     public void EndPlayerTurn()
     {
+        UIManager.Instance.endTurn.GetComponent<Button>().interactable = false;
         GameManager.Instance.EndTurn();
     }
 

@@ -1447,6 +1447,7 @@ MonoBehaviour:
   targetWorldCanvas: {fileID: 0}
   menuBoxPref: {fileID: 8886392885308354827, guid: fc20577f69a560547992ef59f3e070e7, type: 3}
   healthBox: {fileID: 156602392}
+  endTurn: {fileID: 1437925748}
   disabledOnPause:
   - {fileID: 1437925748}
   - {fileID: 222165045}
@@ -1967,7 +1968,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
+    m_DisabledColor: {r: 0.4528302, g: 0.20249198, b: 0.20249198, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:

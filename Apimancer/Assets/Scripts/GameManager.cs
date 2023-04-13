@@ -53,6 +53,11 @@ public class GameManager : MonoBehaviour
         }
         LoadLevel(0);
         SpawnWizards(2);
+    }
+
+    private void Start()
+    {
+        // this is here and not in awake because otherwise there will be a nullreference
         StartGame(0);
     }
 

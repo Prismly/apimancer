@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HumanWizard : Wizard
 {
@@ -12,6 +13,7 @@ public class HumanWizard : Wizard
 
     public override void BeginTurn()
     {
+        UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(new MoveAction(this));
     }
