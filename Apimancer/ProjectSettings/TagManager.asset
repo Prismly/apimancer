@@ -45,11 +45,11 @@ TagManager:
   - name: Tiles
     uniqueID: 1361100273
     locked: 0
-  - name: Entities
-    uniqueID: 3898138793
-    locked: 0
   - name: Selection
     uniqueID: 1286200923
+    locked: 0
+  - name: Entities
+    uniqueID: 3898138793
     locked: 0
   - name: Entities
     uniqueID: 3898138793

@@ -8,7 +8,7 @@ public enum CellType
 {
     DIRT,
     WATER,
-    WALL,
+    BOULDER,
     HONEY,
     LAVA,
     FLOWER

@@ -151,7 +151,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 9133831340074864838}
-  UnitFaction: 0
-  Type: 0
+  snd: {fileID: 0}
+  sndMove: {fileID: 0}
+  UnitFaction: 2
+  Type: 5
   State: 1
-  Wizard: {fileID: 0}
+  Commander: {fileID: 0}
+  condition: {fileID: 0}

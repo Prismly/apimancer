@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 357923415}
   - component: {fileID: 357923417}
   - component: {fileID: 357923418}
+  - component: {fileID: 357923419}
   m_Layer: 5
   m_Name: Nectar
   m_TagString: Untagged
@@ -707,6 +708,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cycleTime: 0.75
   cycleAmp: 1
+--- !u!95 &357923419
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357923413}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5dd5fa928a0f944f94b4e4c06367657, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &361908292
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,17 +2625,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50 <sprite=13>
+  m_text: 50 &
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4eb390c67e647c841bb439260f97bcad, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 66074caf7fede9446bc2188ea76029fa, type: 2}
+  m_sharedMaterial: {fileID: -7424233641893328667, guid: 4eb390c67e647c841bb439260f97bcad, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278250495
-  m_fontColor: {r: 1, g: 0.923081, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2667,7 +2688,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.0491714, y: 0.13210964, z: 0.28747177, w: 0.20162301}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

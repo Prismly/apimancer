@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         Units.Add(Unit.Faction.RESOURCE, new List<Unit>());
+        Units.Add(Unit.Faction.OTHER, new List<Unit>());
         _playerController = Instantiate(_playerControllerPrefab);
         _currentLevel = Instantiate(_levelPrefabs[levelIndex]).GetComponent<Level>();
     }

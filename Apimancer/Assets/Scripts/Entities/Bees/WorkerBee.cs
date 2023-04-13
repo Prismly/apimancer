@@ -6,45 +6,20 @@ using UnityEngine;
 public class WorkerBee : Bee
 {
     public static int Cost = 5;
-
     private int maxHealth = 2;
     private int health = 2;
     private int attackDamage = 2;
     private int movementSpeed = 4;
-
-    public override Action DetermineAction()
-    {
-        return null;
-    }
+    private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
+            { Unit.Faction.RESOURCE, Unit.Faction.ANT };
 
     public override IEnumerator DetermineMovement()
     {
-        Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
-        List<Unit> lUnits = null;
-        Tuple<Unit, short, List<Cell>> target = null;
-        Tuple<Unit, short, List<Cell>> priorityTarget = null;
-        if (dUnits.ContainsKey(Unit.Faction.RESOURCE))
-        {
-            lUnits = dUnits[Unit.Faction.RESOURCE];
-            priorityTarget = this.FindClosestTarget(lUnits);
-            if (priorityTarget.Item2 < movementSpeed)
-            {
-                target = priorityTarget;
-            }
-        }
-        if (target == null)
-        {
-            if (dUnits.ContainsKey(Unit.Faction.ANT))
-            {
-                lUnits = dUnits[Unit.Faction.ANT];
-                target = this.FindClosestTarget(lUnits);
-            }
-        }
-        if (target == null) target = priorityTarget;
+        Tuple<Unit, int, List<Cell>> target = DetermineTarget();
         if (target != null)
         {
             yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
-            if (target.Item2 <= MovementSpeed + 1) {
+            if (target.Item2 <= MovementSpeed) {
                 animator.SetInteger("state", (int)BeeAnimState.STING);
                 Unit.DamageTarget(AttackDamage, target.Item1);
                 yield return new WaitForSeconds(1f);
@@ -55,28 +30,24 @@ public class WorkerBee : Bee
     }
 
     public override int MaxHealth
-    {
-        get { return maxHealth; }
-        set { maxHealth = value; }
-    }
+    { get { return maxHealth; }
+      set { maxHealth = value; }}
 
     public override int Health
-    {
-        get { return health; }
-        set { health = value; }
-    }
+    { get { return health; }
+      set { health = value; } }
 
     public override int AttackDamage
-    {
-        get { return attackDamage; }
-        set { attackDamage = value; }
-    }
+    { get { return attackDamage; }
+      set { attackDamage = value; } }
 
     public override int MovementSpeed
-    {
-        get { return movementSpeed; }
-        set { movementSpeed = value; }
-    }
+    { get { return movementSpeed; }
+      set { movementSpeed = value; } }
+
+    public override List<Unit.Faction> TargetPriorities
+    { get { return targetPriorities; }
+      set { targetPriorities = value; } }
 
     public override Cell FindMovementTarget(List<Entity> entities) {
         return null;
