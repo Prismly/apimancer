@@ -46,10 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 758526611445161452}
+  snd: {fileID: 0}
+  sndMove: {fileID: 0}
   UnitFaction: 1
   Type: 3
   State: 1
-  Wizard: {fileID: 0}
+  Commander: {fileID: 0}
+  condition: {fileID: 0}
+  sndSummon: {fileID: 0}
 --- !u!1 &7534313914013779252
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,10 +126,10 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -396828503
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1398364416, guid: 2de58a87a43b6114c8417514ce90b569, type: 3}
-  m_Color: {r: 0.8867924, g: 0.46057785, b: 0.020078292, a: 1}
+  m_Sprite: {fileID: -2004785306, guid: 7793c981ee4e8094e94b0ee395e39e2f, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -145,7 +149,7 @@ Animator:
   m_GameObject: {fileID: 7534313914013779252}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf35b228a3eac924092b44f5e442e550, type: 2}
+  m_Controller: {fileID: 9100000, guid: a6f58f8d531e82742871d092d678bf40, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

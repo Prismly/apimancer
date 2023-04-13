@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9168c9266bf03c41992203194e74389
+guid: 3cfb835fc3987064681410b21695e6e3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,322 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bee-Death-Sheet_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 57
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5751ce8f8b0734040ba8d21075376193
-      internalID: -1172731498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 57
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe252c57940fcc340b400e4e42ca3b65
-      internalID: -964733682
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 57
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45383f68d6f1d11409e27922f555571b
-      internalID: -1830294626
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 57
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 50c288882fcf9954eb77cdfd9292be9e
-      internalID: 1087823420
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 57
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61badad6db34702428021d13415275b0
-      internalID: -681026539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6de0eab2d42150240bf63efa78670a04
-      internalID: -1028396644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd238d0b9e74a7f42822753c4a6f4668
-      internalID: 127964392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef7982df9b7b08a42a2422cfeeeea64b
-      internalID: 1531667283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba2a0ccd61441f44482e19c08c9b3e4b
-      internalID: -645545947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ab93d1c0d6b1d942a31c765e7c04e46
-      internalID: -384545653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 19
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15634fda8cb63934e9ebd1965d482dfa
-      internalID: 1507247958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 19
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a151c0c7d71244646ae4c5d25098a490
-      internalID: -633608188
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 19
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31e7c114ebac6f141839d5bb20241b92
-      internalID: -1449360986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_13
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 19
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 388c927b6fbd6814cb06c1c97351ade0
-      internalID: -156032870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_14
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 19
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d45100f111f4394db494f04aa66f16c
-      internalID: 1340742791
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_15
+      name: worker ant death_0
       rect:
         serializedVersion: 2
         x: 0
@@ -446,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9765ce2de8e6c404187826843e88dc2c
-      internalID: 1686274485
+      spriteID: 7b36ea7e01aae0c4a877e35046980b39
+      internalID: 370537973
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_16
+      name: worker ant death_1
       rect:
         serializedVersion: 2
         x: 31
@@ -467,8 +152,449 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31563fae477650647865d4e262b69bc5
-      internalID: -977768570
+      spriteID: f575be6c5ae84d844ac73548969bdaf8
+      internalID: -1170418053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_2
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e648083770de8e049a38c55742afbb3a
+      internalID: 34729408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b09d7f258de54b4188a6313756fdc68
+      internalID: 1193046321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_4
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 516905315e7759748980d92fc9afb138
+      internalID: -489006384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_5
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a3f70a801a542e4a98d7bed0471988b
+      internalID: 87740669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_6
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6efbd19e18ea0e14da12122c57c373ee
+      internalID: 1902618755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_7
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4992e4764efcf468cfcb719a4acff4
+      internalID: 1864173108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_8
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7856b7db07465fa4385d542bad67acc1
+      internalID: -1758952474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_9
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2af271734ef7e49abc800ae834349b
+      internalID: 1341178910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_10
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee5f3b2a8d74e944970cbf226cd13b9
+      internalID: 671624503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_11
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506f948e8019d0043b6240e3722d2769
+      internalID: 225103977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_12
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12cbe59abc16e0a4d836c87da9519935
+      internalID: -218693923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_13
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54429764aeb31c49bf3cef956b82b06
+      internalID: 1193070827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_14
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85adf8cb37eaf0f43a8aa67925f76722
+      internalID: 119569646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_15
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4c8fcc8a1033d4ab0f7fb34197d405
+      internalID: 1397720810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_16
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d002c52ccdbcfc842b41b8b8bba916c2
+      internalID: -1956838564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_17
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d45a2ac9ab258468cc6a1a76fedf36
+      internalID: 1086487270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_18
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0fb8a1e4f87a748a9073bf082722d1
+      internalID: -815999831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_19
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e33b8d3b69ac4c438ddbbf9cec3816c
+      internalID: -692598881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_20
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 465058d712bb61f4bbd159c95e6db8ce
+      internalID: -375918361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_21
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdccf4f1512739f4c9e47ad74e4aa249
+      internalID: -1740847474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: worker ant death_22
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 0
+        width: 31
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459cf7c59ce93c24fa77aab97103b3f1
+      internalID: -1648037543
       vertices: []
       indices: 
       edges: []
@@ -484,27 +610,29 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bee-Death-Sheet_2: -1830294626
-      Bee-Death-Sheet_19: -1729715143
-      Bee-Death-Sheet_15: 1686274485
-      Bee-Death-Sheet_14: 1340742791
-      Bee-Death-Sheet_1: -964733682
-      Bee-Death-Sheet_8: -645545947
-      Bee-Death-Sheet_13: -156032870
-      Bee-Death-Sheet_6: 127964392
-      Bee-Death-Sheet_12: -1449360986
-      Bee-Death-Sheet_5: -1028396644
-      Bee-Death-Sheet_0: -1172731498
-      Bee-Death-Sheet_18: 1334357511
-      Bee-Death-Sheet_7: 1531667283
-      Bee-Death-Sheet_20: 945709288
-      Bee-Death-Sheet_9: -384545653
-      Bee-Death-Sheet_11: -633608188
-      Bee-Death-Sheet_16: -977768570
-      Bee-Death-Sheet_17: 81265184
-      Bee-Death-Sheet_3: 1087823420
-      Bee-Death-Sheet_10: 1507247958
-      Bee-Death-Sheet_4: -681026539
+      worker ant death_6: 1902618755
+      worker ant death_10: 671624503
+      worker ant death_22: -1648037543
+      worker ant death_4: -489006384
+      worker ant death_9: 1341178910
+      worker ant death_8: -1758952474
+      worker ant death_15: 1397720810
+      worker ant death_1: -1170418053
+      worker ant death_18: -815999831
+      worker ant death_20: -375918361
+      worker ant death_3: 1193046321
+      worker ant death_17: 1086487270
+      worker ant death_13: 1193070827
+      worker ant death_21: -1740847474
+      worker ant death_7: 1864173108
+      worker ant death_19: -692598881
+      worker ant death_2: 34729408
+      worker ant death_5: 87740669
+      worker ant death_0: 370537973
+      worker ant death_16: -1956838564
+      worker ant death_12: -218693923
+      worker ant death_14: 119569646
+      worker ant death_11: 225103977
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

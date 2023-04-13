@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 968e683de93dbe543815928bb8f9c9e3
+guid: 67432618585e08c498de84f7c6972f1a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: worker ant idle-Sheet_0
+      name: army ant walk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 15
-        width: 21
-        height: 15
+        y: 29
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4076cd934910b5e4899a4ffeede642ab
-      internalID: -1317727098
+      spriteID: af549b419648ad24d878fd4814b68541
+      internalID: 798209195
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worker ant idle-Sheet_1
+      name: army ant walk_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 15
-        width: 21
-        height: 15
+        x: 36
+        y: 29
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a80aa0b0a6ace478b083681110462e
-      internalID: -215617372
+      spriteID: 2375e9e9d80814a4d99bb5cd2105eb1b
+      internalID: -709862500
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worker ant idle-Sheet_2
+      name: army ant walk_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9bbdb5e9ee14ab4293ae39692e43fe1
+      internalID: -1180761440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant walk_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 21
-        height: 15
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +194,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68947741fc595674c81296f5c563bda6
-      internalID: 831734481
+      spriteID: ad33cf819227d4b42b10c32776128b8a
+      internalID: -735863410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant walk_4
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f31e2f797893a42aa36321bc8ca19e
+      internalID: 1576673687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant walk_5
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c61e7f17fd551043bdac1823c7d9149
+      internalID: -501341711
       vertices: []
       indices: 
       edges: []
@@ -190,9 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      worker ant idle-Sheet_1: -215617372
-      worker ant idle-Sheet_0: -1317727098
-      worker ant idle-Sheet_2: 831734481
+      army ant walk_5: -501341711
+      army ant walk_3: -735863410
+      army ant walk_4: 1576673687
+      army ant walk_2: -1180761440
+      army ant walk_0: 798209195
+      army ant walk_1: -709862500
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

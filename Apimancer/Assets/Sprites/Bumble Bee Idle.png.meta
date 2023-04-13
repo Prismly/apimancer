@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 968e683de93dbe543815928bb8f9c9e3
+guid: 7793c981ee4e8094e94b0ee395e39e2f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: worker ant idle-Sheet_0
+      name: Bumble Bee Idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 15
-        width: 21
-        height: 15
+        y: 29
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4076cd934910b5e4899a4ffeede642ab
-      internalID: -1317727098
+      spriteID: 5bfe6661766438b43a41e3c1b101e976
+      internalID: 762618306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worker ant idle-Sheet_1
+      name: Bumble Bee Idle_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 15
-        width: 21
-        height: 15
+        x: 36
+        y: 29
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a80aa0b0a6ace478b083681110462e
-      internalID: -215617372
+      spriteID: a3d41c66ef2164746a05f771494cfb19
+      internalID: -2004785306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worker ant idle-Sheet_2
+      name: Bumble Bee Idle_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 21
-        height: 15
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68947741fc595674c81296f5c563bda6
-      internalID: 831734481
+      spriteID: 313fb573b95fb1042b5ab499f814d2c6
+      internalID: -1287026055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bumble Bee Idle_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8614e8ee71489240b1b2f0efaf1f6a4
+      internalID: 1928291632
       vertices: []
       indices: 
       edges: []
@@ -190,9 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      worker ant idle-Sheet_1: -215617372
-      worker ant idle-Sheet_0: -1317727098
-      worker ant idle-Sheet_2: 831734481
+      Bumble Bee Idle_1: -2004785306
+      Bumble Bee Idle_3: 1928291632
+      Bumble Bee Idle_0: 762618306
+      Bumble Bee Idle_2: -1287026055
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

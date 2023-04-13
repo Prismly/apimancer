@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 968e683de93dbe543815928bb8f9c9e3
+guid: 05edf91031bd91b44b75fffb568f0c10
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: worker ant idle-Sheet_0
+      name: army ant idle_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 15
-        width: 21
-        height: 15
+        y: 29
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4076cd934910b5e4899a4ffeede642ab
-      internalID: -1317727098
+      spriteID: 9e95f847bf5b1a24e9af893ca3abb21b
+      internalID: -1383893102
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worker ant idle-Sheet_1
+      name: army ant idle_1
       rect:
         serializedVersion: 2
-        x: 21
-        y: 15
-        width: 21
-        height: 15
+        x: 36
+        y: 29
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 18a80aa0b0a6ace478b083681110462e
-      internalID: -215617372
+      spriteID: 7f1eedcfb95ba50418e407e6a261bf0a
+      internalID: 1755738167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: worker ant idle-Sheet_2
+      name: army ant idle_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 21
-        height: 15
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68947741fc595674c81296f5c563bda6
-      internalID: 831734481
+      spriteID: f89cd136677f6c2419c2857d6b64c3b9
+      internalID: 892011542
       vertices: []
       indices: 
       edges: []
@@ -190,9 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      worker ant idle-Sheet_1: -215617372
-      worker ant idle-Sheet_0: -1317727098
-      worker ant idle-Sheet_2: 831734481
+      army ant idle_2: 892011542
+      army ant idle_0: -1383893102
+      army ant idle_1: 1755738167
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

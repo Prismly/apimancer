@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9168c9266bf03c41992203194e74389
+guid: ffe16d89d314fc7428d4c53c30dbb044
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,349 +117,370 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bee-Death-Sheet_0
+      name: army ant death_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 57
-        width: 31
-        height: 19
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5751ce8f8b0734040ba8d21075376193
-      internalID: -1172731498
+      spriteID: ab8f8fc2c5981204695b7528ea458e76
+      internalID: -2128235922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_1
+      name: army ant death_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 57
-        width: 31
-        height: 19
+        x: 36
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe252c57940fcc340b400e4e42ca3b65
-      internalID: -964733682
+      spriteID: db739326f28fd004ba62fa6aa50e8c3c
+      internalID: 773585355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_2
+      name: army ant death_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 57
-        width: 31
-        height: 19
+        x: 72
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45383f68d6f1d11409e27922f555571b
-      internalID: -1830294626
+      spriteID: 7a272f53ac3509c438fc5a2abfcca062
+      internalID: 1028779165
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_3
+      name: army ant death_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 57
-        width: 31
-        height: 19
+        x: 108
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50c288882fcf9954eb77cdfd9292be9e
-      internalID: 1087823420
+      spriteID: c712d9ccaeccb034780afc83522d0f83
+      internalID: 1875725680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_4
+      name: army ant death_4
       rect:
         serializedVersion: 2
-        x: 124
-        y: 57
-        width: 31
-        height: 19
+        x: 144
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61badad6db34702428021d13415275b0
-      internalID: -681026539
+      spriteID: e058ab2aa7ecc1e4bbbe8d668afddfa0
+      internalID: -74668397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6de0eab2d42150240bf63efa78670a04
-      internalID: -1028396644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd238d0b9e74a7f42822753c4a6f4668
-      internalID: 127964392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef7982df9b7b08a42a2422cfeeeea64b
-      internalID: 1531667283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba2a0ccd61441f44482e19c08c9b3e4b
-      internalID: -645545947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ab93d1c0d6b1d942a31c765e7c04e46
-      internalID: -384545653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_10
+      name: army ant death_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 31
-        height: 19
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15634fda8cb63934e9ebd1965d482dfa
-      internalID: 1507247958
+      spriteID: c25ed7bd2b715524a9c327c679d1a6f5
+      internalID: 20562219
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_11
+      name: army ant death_6
       rect:
         serializedVersion: 2
-        x: 31
-        y: 19
-        width: 31
-        height: 19
+        x: 36
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a151c0c7d71244646ae4c5d25098a490
-      internalID: -633608188
+      spriteID: 2460e78914549ec458aea4d551b22ba2
+      internalID: -239465337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_12
+      name: army ant death_7
       rect:
         serializedVersion: 2
-        x: 62
-        y: 19
-        width: 31
-        height: 19
+        x: 72
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e7c114ebac6f141839d5bb20241b92
-      internalID: -1449360986
+      spriteID: 55ab99f6994c59a4aa2668e2c3671fa3
+      internalID: -1506357466
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_13
+      name: army ant death_8
       rect:
         serializedVersion: 2
-        x: 93
-        y: 19
-        width: 31
-        height: 19
+        x: 108
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 388c927b6fbd6814cb06c1c97351ade0
-      internalID: -156032870
+      spriteID: fe84402a8458c4d4f9ff825115cce198
+      internalID: -536102815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_14
+      name: army ant death_9
       rect:
         serializedVersion: 2
-        x: 124
-        y: 19
-        width: 31
-        height: 19
+        x: 144
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d45100f111f4394db494f04aa66f16c
-      internalID: 1340742791
+      spriteID: 7aff888cebf82ff48931c5ebf65b8d22
+      internalID: -787212758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_15
+      name: army ant death_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c409e9b10dd1d0a40bcd8463c90cbca8
+      internalID: 324330144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant death_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79f2dcdff6efa024d85e03e7b0247d51
+      internalID: 396255534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant death_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c56a3b40b65e544594218224195871e
+      internalID: 997761823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant death_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1837fc1bf9dee4c90d9187d5e52019
+      internalID: -3928722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant death_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5208c318e0de7c40ad2548e4dad69cf
+      internalID: -2109301043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant death_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 19
+        width: 36
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9765ce2de8e6c404187826843e88dc2c
-      internalID: 1686274485
+      spriteID: 20536987cf14dcb419a054f528e92817
+      internalID: -1134646735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_16
+      name: army ant death_16
       rect:
         serializedVersion: 2
-        x: 31
+        x: 36
         y: 0
-        width: 31
-        height: 19
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c9d84117470aa4388b55c337381b10
+      internalID: 1073105759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: army ant death_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +488,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31563fae477650647865d4e262b69bc5
-      internalID: -977768570
+      spriteID: 9e9e4983cdc78504bb4cc33e27677097
+      internalID: 2023216900
       vertices: []
       indices: 
       edges: []
@@ -484,27 +505,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bee-Death-Sheet_2: -1830294626
-      Bee-Death-Sheet_19: -1729715143
-      Bee-Death-Sheet_15: 1686274485
-      Bee-Death-Sheet_14: 1340742791
-      Bee-Death-Sheet_1: -964733682
-      Bee-Death-Sheet_8: -645545947
-      Bee-Death-Sheet_13: -156032870
-      Bee-Death-Sheet_6: 127964392
-      Bee-Death-Sheet_12: -1449360986
-      Bee-Death-Sheet_5: -1028396644
-      Bee-Death-Sheet_0: -1172731498
-      Bee-Death-Sheet_18: 1334357511
-      Bee-Death-Sheet_7: 1531667283
-      Bee-Death-Sheet_20: 945709288
-      Bee-Death-Sheet_9: -384545653
-      Bee-Death-Sheet_11: -633608188
-      Bee-Death-Sheet_16: -977768570
-      Bee-Death-Sheet_17: 81265184
-      Bee-Death-Sheet_3: 1087823420
-      Bee-Death-Sheet_10: 1507247958
-      Bee-Death-Sheet_4: -681026539
+      army ant death_6: -239465337
+      army ant death_17: 2023216900
+      army ant death_16: 1073105759
+      army ant death_12: 997761823
+      army ant death_13: -3928722
+      army ant death_0: -2128235922
+      army ant death_1: 773585355
+      army ant death_3: 1875725680
+      army ant death_7: -1506357466
+      army ant death_11: 396255534
+      army ant death_5: 20562219
+      army ant death_8: -536102815
+      army ant death_15: -1134646735
+      army ant death_4: -74668397
+      army ant death_9: -787212758
+      army ant death_10: 324330144
+      army ant death_2: 1028779165
+      army ant death_14: -2109301043
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

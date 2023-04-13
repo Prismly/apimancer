@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d9168c9266bf03c41992203194e74389
+guid: 7d85ce7ed9297a84b977170f45bd2272
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bee-Death-Sheet_0
+      name: bumble bee death_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 57
-        width: 31
-        height: 19
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5751ce8f8b0734040ba8d21075376193
-      internalID: -1172731498
+      spriteID: 56ae5f4d5c4df36419beb433f8523b39
+      internalID: 754158030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_1
+      name: bumble bee death_1
       rect:
         serializedVersion: 2
-        x: 31
-        y: 57
-        width: 31
-        height: 19
+        x: 36
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe252c57940fcc340b400e4e42ca3b65
-      internalID: -964733682
+      spriteID: 2eed23df57265354e906494c262b5397
+      internalID: 211346907
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_2
+      name: bumble bee death_2
       rect:
         serializedVersion: 2
-        x: 62
-        y: 57
-        width: 31
-        height: 19
+        x: 72
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 45383f68d6f1d11409e27922f555571b
-      internalID: -1830294626
+      spriteID: 31e890bedcbbcc941af41d0ba77c6a87
+      internalID: 1934787917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_3
+      name: bumble bee death_3
       rect:
         serializedVersion: 2
-        x: 93
-        y: 57
-        width: 31
-        height: 19
+        x: 108
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50c288882fcf9954eb77cdfd9292be9e
-      internalID: 1087823420
+      spriteID: 52059c613f51ccd4698b1b88a92a1dc9
+      internalID: -1316231594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_4
+      name: bumble bee death_4
       rect:
         serializedVersion: 2
-        x: 124
-        y: 57
-        width: 31
-        height: 19
+        x: 144
+        y: 87
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,125 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 61badad6db34702428021d13415275b0
-      internalID: -681026539
+      spriteID: cbbcc64c6273bc642afa2919afcf7fcc
+      internalID: 80709626
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6de0eab2d42150240bf63efa78670a04
-      internalID: -1028396644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd238d0b9e74a7f42822753c4a6f4668
-      internalID: 127964392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 62
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef7982df9b7b08a42a2422cfeeeea64b
-      internalID: 1531667283
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 93
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba2a0ccd61441f44482e19c08c9b3e4b
-      internalID: -645545947
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 124
-        y: 38
-        width: 31
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3ab93d1c0d6b1d942a31c765e7c04e46
-      internalID: -384545653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bee-Death-Sheet_10
+      name: bumble bee death_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 19
-        width: 31
-        height: 19
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15634fda8cb63934e9ebd1965d482dfa
-      internalID: 1507247958
+      spriteID: b599544975f99f343a892d25b88ac145
+      internalID: 714078596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_11
+      name: bumble bee death_6
       rect:
         serializedVersion: 2
-        x: 31
-        y: 19
-        width: 31
-        height: 19
+        x: 36
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,20 +257,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a151c0c7d71244646ae4c5d25098a490
-      internalID: -633608188
+      spriteID: 00284aeba6aae65459beed8508937273
+      internalID: -1258304629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_12
+      name: bumble bee death_7
       rect:
         serializedVersion: 2
-        x: 62
-        y: 19
-        width: 31
-        height: 19
+        x: 72
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,20 +278,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31e7c114ebac6f141839d5bb20241b92
-      internalID: -1449360986
+      spriteID: 66a53d02d09578a4e9ebaadb4e9dd872
+      internalID: -71378847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_13
+      name: bumble bee death_8
       rect:
         serializedVersion: 2
-        x: 93
-        y: 19
-        width: 31
-        height: 19
+        x: 108
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 388c927b6fbd6814cb06c1c97351ade0
-      internalID: -156032870
+      spriteID: 397c2522c24cc814d9c01b6c331e603c
+      internalID: 1955223849
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_14
+      name: bumble bee death_9
       rect:
         serializedVersion: 2
-        x: 124
-        y: 19
-        width: 31
-        height: 19
+        x: 144
+        y: 58
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,20 +320,125 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d45100f111f4394db494f04aa66f16c
-      internalID: 1340742791
+      spriteID: 5fb16b9fdb9d7d345a6752efc6e3fb1c
+      internalID: -317676599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_15
+      name: bumble bee death_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b18b9eeb24da33c4abb9fc88d624f876
+      internalID: -77721590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bumble bee death_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeff3b193836ed845acd317fab19c870
+      internalID: 1491011474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bumble bee death_12
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f42668ad48ff744d830b9b0387ac7b7
+      internalID: 2055281444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bumble bee death_13
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f8f7cae2304cc43bf5a61da73d5ef3
+      internalID: -724379412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bumble bee death_14
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 29
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f53fa6ab23c05d64f812d6453a488e3f
+      internalID: 1730280409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bumble bee death_15
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 19
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,20 +446,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9765ce2de8e6c404187826843e88dc2c
-      internalID: 1686274485
+      spriteID: 45b6ec1b3a5e84c4ebda5b8e25859b32
+      internalID: 1555607827
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bee-Death-Sheet_16
+      name: bumble bee death_16
       rect:
         serializedVersion: 2
-        x: 31
+        x: 36
         y: 0
-        width: 31
-        height: 19
+        width: 36
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +467,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31563fae477650647865d4e262b69bc5
-      internalID: -977768570
+      spriteID: 25779c8889bad164ba8731aac91f34a9
+      internalID: 742010673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bumble bee death_17
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 36
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7783671e3930f03448d37b0b329869ab
+      internalID: 202889647
       vertices: []
       indices: 
       edges: []
@@ -484,27 +505,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bee-Death-Sheet_2: -1830294626
-      Bee-Death-Sheet_19: -1729715143
-      Bee-Death-Sheet_15: 1686274485
-      Bee-Death-Sheet_14: 1340742791
-      Bee-Death-Sheet_1: -964733682
-      Bee-Death-Sheet_8: -645545947
-      Bee-Death-Sheet_13: -156032870
-      Bee-Death-Sheet_6: 127964392
-      Bee-Death-Sheet_12: -1449360986
-      Bee-Death-Sheet_5: -1028396644
-      Bee-Death-Sheet_0: -1172731498
-      Bee-Death-Sheet_18: 1334357511
-      Bee-Death-Sheet_7: 1531667283
-      Bee-Death-Sheet_20: 945709288
-      Bee-Death-Sheet_9: -384545653
-      Bee-Death-Sheet_11: -633608188
-      Bee-Death-Sheet_16: -977768570
-      Bee-Death-Sheet_17: 81265184
-      Bee-Death-Sheet_3: 1087823420
-      Bee-Death-Sheet_10: 1507247958
-      Bee-Death-Sheet_4: -681026539
+      bumble bee death_11: 1491011474
+      bumble bee death_12: 2055281444
+      bumble bee death_9: -317676599
+      bumble bee death_13: -724379412
+      bumble bee death_15: 1555607827
+      bumble bee death_0: 754158030
+      bumble bee death_4: 80709626
+      bumble bee death_5: 714078596
+      bumble bee death_2: 1934787917
+      bumble bee death_14: 1730280409
+      bumble bee death_7: -71378847
+      bumble bee death_3: -1316231594
+      bumble bee death_10: -77721590
+      bumble bee death_16: 742010673
+      bumble bee death_1: 211346907
+      bumble bee death_8: 1955223849
+      bumble bee death_17: 202889647
+      bumble bee death_6: -1258304629
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
