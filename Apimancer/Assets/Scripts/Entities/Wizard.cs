@@ -49,6 +49,8 @@ public abstract class Wizard : Unit
 
     public bool Summon(Unit.UnitType type, Cell cell, uint range)
     {
+        animator.SetTrigger("Unit Summoned");
+
         List<Cell> path = Entity.PathFind(this, cell);
         if (path.Count > range + 1)
             return false;

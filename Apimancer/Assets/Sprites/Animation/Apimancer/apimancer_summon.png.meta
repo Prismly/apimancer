@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 57984720217b81348be21da148ad8a24
+guid: f488860fc1d65e9418a4a5152f1b7b65
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,91 +101,16 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: apimancer_idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 28
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3528db3c54df8a144808dbad91752f2b
-      internalID: 2007998063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: apimancer_idle_1
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 28
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be2222b3a241fed498b146891038f51f
-      internalID: -856003607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: apimancer_idle_2
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 28
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cafa3be7ebbb3c84fa1f9444ab6d965c
-      internalID: -1822540277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: apimancer_idle_3
+      name: apimancer_summon_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 25
+        width: 24
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -194,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 494c4034a5fb30647aa28631799380c9
-      internalID: 1369317754
+      spriteID: e9902ad0c0192af4b96f9c0b03f297be
+      internalID: 1850921461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: apimancer_idle_4
+      name: apimancer_summon_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 24
         y: 0
-        width: 25
+        width: 24
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8045a12769a07ba4abc1e8622389ca5c
-      internalID: 2003956126
+      spriteID: 71ed88f7668ec4644bd2bdb3d10e01fe
+      internalID: -380196060
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: apimancer_idle_5
+      name: apimancer_summon_2
       rect:
         serializedVersion: 2
-        x: 50
+        x: 48
         y: 0
-        width: 25
+        width: 24
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,8 +161,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20b3bd83738d8f34fb4b1f24373929c8
-      internalID: -78860659
+      spriteID: 96177ed85a23dba4fab96da5567dc988
+      internalID: -1708544394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34ccaa1d830d7024fa1d590ed24ce78a
+      internalID: 1790871905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2a68f2474c1a642938e012954700dc
+      internalID: -448245610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0faeae4eefae38e4fa5049f6f4c57e7b
+      internalID: 929209034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1af5954072a96f4492615c8e3122b4c
+      internalID: -683328804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a9da0c3b83c440469f3b71e5a791238
+      internalID: 1767927233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df1e6306a8da90743961053bfcd63699
+      internalID: 333381275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c6cf35202e4c74d8c1594869e6113a
+      internalID: -636138754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: apimancer_summon_10
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c65c2ea12ad2b9408bae79fe47d30d7
+      internalID: 270244221
       vertices: []
       indices: 
       edges: []
@@ -253,12 +346,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      apimancer_idle_4: 2003956126
-      apimancer_idle_5: -78860659
-      apimancer_idle_2: -1822540277
-      apimancer_idle_3: 1369317754
-      apimancer_idle_1: -856003607
-      apimancer_idle_0: 2007998063
+      apimancer_summon_1: -380196060
+      apimancer_summon_3: 1790871905
+      apimancer_summon_7: 1767927233
+      apimancer_summon_9: -636138754
+      apimancer_summon_4: -448245610
+      apimancer_summon_0: 1850921461
+      apimancer_summon_2: -1708544394
+      apimancer_summon_5: 929209034
+      apimancer_summon_6: -683328804
+      apimancer_summon_10: 270244221
+      apimancer_summon_8: 333381275
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -173,6 +173,7 @@ public abstract class Entity : MonoBehaviour
     // probably call animation here
     public IEnumerator MoveToOneCell(Cell target)
     {
+        animator.SetBool("Moving", true);
         var currentPos = transform.position;
         var t = 0f;
         while (t < 1)
@@ -181,6 +182,7 @@ public abstract class Entity : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, target.transform.position, t);
             yield return null;
         }
+        animator.SetBool("Moving", false);
     }
 
     // Choose a movement target from the list of entities
