@@ -17,7 +17,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
 
     [SerializeField] private RectTransform bottomMid;
-    
+
+    [SerializeField] public GameObject HEAD_HOR;
+    [SerializeField] public GameObject HEAD_DIAG;
+    [SerializeField] public GameObject BODY_DIAG;
+    [SerializeField] public GameObject BODY_HOR;
+    [SerializeField] public GameObject BODY_CURVE;
+
     private GameObject summonMenu;
     private GameObject spellsMenu;
     //private GameObject healthBox;
