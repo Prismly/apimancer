@@ -121,10 +121,12 @@ public class UIManager : MonoBehaviour
         //healthBox.transform.SetParent(targetCanvas.transform);
         RectTransform healthBoxRect = healthBox.GetComponent<RectTransform>();
         //RectTransform healthBoxPrefRect = healthBoxPref.GetComponent<RectTransform>();
-        healthBoxRect.transform.position = Camera.main.WorldToScreenPoint(target.transform.position + new Vector3(0, 0, -1)) / targetCanvas.GetComponent<CanvasScaler>().scaleFactor;
-        healthBoxRect.sizeDelta = healthBoxRect.sizeDelta;
-        Image healthBoxImg = healthBox.GetComponent<Image>();
-        healthBoxImg.color = new Color(1, 1, 1);
+        //healthBoxRect.transform.position = Camera.main.WorldToScreenPoint(target.transform.position + new Vector3(0, 0, -1)) / targetCanvas.GetComponent<CanvasScaler>().scaleFactor;
+        //healthBoxRect.sizeDelta = healthBoxRect.sizeDelta;
+        //Image healthBoxImg = healthBox.GetComponent<Image>();
+        //healthBoxImg.color = new Color(1, 1, 1);
+        TextMeshProUGUI unitNameText = healthBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        unitNameText.text = target.unitName;
         TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         healthBoxText.text = "<sprite=6>" + target.Health + "/" + target.MaxHealth;
         healthBox.SetActive(true);

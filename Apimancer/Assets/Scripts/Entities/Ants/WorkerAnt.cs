@@ -13,6 +13,11 @@ public class WorkerAnt : Ant
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.RESOURCE, Unit.Faction.BEE };
 
+    private void Awake()
+    {
+        unitName = "Worker Ant";
+    }
+
     public override IEnumerator DetermineMovement()
     {
         Debug.Log("Worker and moving");

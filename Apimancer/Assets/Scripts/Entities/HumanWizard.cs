@@ -13,6 +13,11 @@ public class HumanWizard : Wizard
     private int movementSpeed = 2;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
 
+    private void Awake()
+    {
+        unitName = "The Apimancer";        
+    }
+
     public override void BeginTurn()
     {
         UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;

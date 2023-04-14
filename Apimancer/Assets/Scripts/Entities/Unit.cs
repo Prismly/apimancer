@@ -37,6 +37,8 @@ public abstract class Unit : Entity
         OTHER_BOULDER
     }
 
+    public string unitName;
+
     public Faction UnitFaction;
     public UnitType Type;
     public UnitState State = UnitState.IDLE;
@@ -106,7 +108,10 @@ public abstract class Unit : Entity
     public override void OnDeselect() {}
     public override void OnHover()
     {
-        UIManager.Instance.ShowHealthBox(this);
+        if (UnitFaction != Faction.RESOURCE && UnitFaction != Faction.OTHER)
+        {
+            UIManager.Instance.ShowHealthBox(this);
+        }
     }
     public override void OnUnhover()
     {
