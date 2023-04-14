@@ -19,13 +19,13 @@ public class ArmyAnt : Ant
         if (target != null)
         {
             yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
-            if (target.Item2 <= MovementSpeed) {
+            if (target.Item2 <= MovementSpeed)
+            {
                 AttackTarget(AttackDamage, target.Item1);
-                yield break;
             }
+            else RelinquishControl();
         }
-        Debug.Log("Hello");
-        RelinquishControl();
+        else RelinquishControl();
     }
 
     public override int MaxHealth

@@ -19,10 +19,13 @@ public class BumbleBee : Bee
         if (target != null)
         {
             yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
-            if (target.Item2 <= MovementSpeed + 1)
-                Unit.DamageTarget(AttackDamage, target.Item1);
+            if (target.Item2 <= MovementSpeed)
+            {
+                AttackTarget(AttackDamage, target.Item1);
+            }
+            else RelinquishControl();
         }
-        GameManager.Instance.NotifyNextUnit();
+        else RelinquishControl();
     }
 
     public override int MaxHealth

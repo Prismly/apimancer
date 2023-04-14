@@ -22,10 +22,10 @@ public class WorkerAnt : Ant
             if (target.Item2 <= MovementSpeed)
             {
                 AttackTarget(AttackDamage, target.Item1);
-                yield break;
             }
+            else RelinquishControl();
         }
-        RelinquishControl();
+        else RelinquishControl();
     }
 
     public override int MaxHealth
