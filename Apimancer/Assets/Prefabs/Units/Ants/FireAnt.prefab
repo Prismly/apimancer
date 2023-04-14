@@ -49,6 +49,7 @@ MonoBehaviour:
   animator: {fileID: 891405884964530926}
   snd: {fileID: 0}
   sndMove: {fileID: 0}
+  unitName: 
   UnitFaction: 2
   Type: 6
   State: 1
@@ -115,7 +116,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 976131053, guid: 857d45fc275754040a89e6fd4c15ae24, type: 3}
+  m_Sprite: {fileID: 1750844742, guid: 857d45fc275754040a89e6fd4c15ae24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

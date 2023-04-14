@@ -8,16 +8,22 @@ public class AnimationTestScript : MonoBehaviour
 
     public void setIdle()
     {
-        ant.Play("Bumble_Bee_Idle");
+        ant.Play("Fire Ant Idle");
+        ant.SetBool("moving", false);
     }
 
     public void setAttack()
     {
-        ant.Play("Bumble_Bee_Attack");
+        ant.SetTrigger("attack");
     }
 
     public void setWalk()
     {
-        ant.Play("Bumble_Bee_Death");
+        ant.SetBool("moving", true);
+    }
+
+    public void setDeath()
+    {
+        ant.SetTrigger("death");
     }
 }
