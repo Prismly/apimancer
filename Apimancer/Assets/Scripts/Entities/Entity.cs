@@ -10,7 +10,7 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     public Vector2Int loc { get; set; }
 
-    private static float zOffset = 0.04f;
+    protected float zOffset = 0.04f;
 
     [SerializeField]
     protected Animator animator;
@@ -179,7 +179,7 @@ public abstract class Entity : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime / 0.25f;
-            transform.position = Vector3.Lerp(currentPos, target.transform.position, t);
+            transform.position = Vector3.Lerp(currentPos, target.transform.position - (Vector3.forward * zOffset), t);
             yield return null;
         }
         animator.SetBool("Moving", false);

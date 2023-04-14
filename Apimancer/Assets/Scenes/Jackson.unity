@@ -938,10 +938,26 @@ MonoBehaviour:
   targetCanvas: {fileID: 804137343}
   targetWorldCanvas: {fileID: 0}
   menuBoxPref: {fileID: 8886392885308354827, guid: fc20577f69a560547992ef59f3e070e7, type: 3}
+<<<<<<< Updated upstream
   healthBox: {fileID: 65867188}
   disabledOnPause: []
   pauseMenu: {fileID: 0}
   bottomMid: {fileID: 310537401}
+=======
+  healthBox: {fileID: 1433716965}
+  endTurn: {fileID: 1370036719}
+  disabledOnPause:
+  - {fileID: 1370036719}
+  - {fileID: 569430012}
+  - {fileID: 1773329821}
+  pauseMenu: {fileID: 157952196}
+  bottomMid: {fileID: 990115031}
+  HEAD_HOR: {fileID: 5547939795542834486, guid: a80bbe4fb19e31742a802ae118caf3c4, type: 3}
+  HEAD_DIAG: {fileID: 5547939795542834486, guid: 7f8fb3475085f4b49bd9667f24423388, type: 3}
+  BODY_DIAG: {fileID: 5547939795542834486, guid: 83a1c606b6004ee4a8eaa1f9eafc6093, type: 3}
+  BODY_HOR: {fileID: 5547939795542834486, guid: c383aebb692ca6c4b88b3206929b92f7, type: 3}
+  BODY_CURVE: {fileID: 5547939795542834486, guid: f1002b05d08a3eb4ab7c952d8288963a, type: 3}
+>>>>>>> Stashed changes
 --- !u!4 &1349885721
 Transform:
   m_ObjectHideFlags: 0

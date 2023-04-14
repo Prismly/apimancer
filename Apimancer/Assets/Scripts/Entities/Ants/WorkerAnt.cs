@@ -16,6 +16,7 @@ public class WorkerAnt : Ant
     private void Awake()
     {
         unitName = "Worker Ant";
+        OnSpawn();
     }
 
     public override IEnumerator DetermineMovement()

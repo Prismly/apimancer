@@ -15,7 +15,9 @@ public class HumanWizard : Wizard
 
     private void Awake()
     {
-        unitName = "The Apimancer";        
+        unitName = "The Apimancer";
+        zOffset = 0.04f;
+        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
     }
 
     public override void BeginTurn()

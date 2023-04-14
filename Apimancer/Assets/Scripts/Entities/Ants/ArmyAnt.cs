@@ -16,6 +16,7 @@ public class ArmyAnt : Ant
     private void Awake()
     {
         unitName = "Army Ant";
+        OnSpawn();
     }
 
     public override IEnumerator DetermineMovement()

@@ -19,6 +19,8 @@ public class EnemyWizard : Wizard
         summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 0));
         summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 0));
         unitName = "The Myrmidonist";
+        zOffset = 0.04f;
+        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
     }
 
     public override IEnumerator DetermineMovement()
