@@ -60,9 +60,16 @@ public abstract class Unit : Entity
     }
 
     // member deal damage to target
-    public virtual void AttackTarget(int dmg, Unit target)
+    public void AttackTarget(int dmg, Unit target)
     {
+        if (target.UnitFaction == Unit.Faction.RESOURCE)
+        {
+            int m = (target.Health >= dmg) ?
+                      (dmg) : (target.Health);
+            Commander.AddMana(m);
+        }
         target.ReceiveDamage(dmg);
+        PlayAnimation(Entity.AnimState.ACTION);
     }
 
     // receive damage
@@ -70,9 +77,7 @@ public abstract class Unit : Entity
     {
         this.Health -= dmg;
         if (this.Health <= 0)
-        {
-            OnDeath();
-        }
+            PlayAnimation(Entity.AnimState.DEATH);
     }
 
     public virtual void setLocation(Vector2Int location)
@@ -92,7 +97,6 @@ public abstract class Unit : Entity
 
     public virtual void OnDeath()
     {
-        PlayDeathAnim();
         GameManager.Instance.Kill(this);
         if (Commander != null && Commander.Units.Contains(this))
         {
@@ -117,8 +121,6 @@ public abstract class Unit : Entity
     {
         UIManager.Instance.HideHealthBox();
     }
-
-    protected virtual void PlayDeathAnim() { return; }
 
     public void setStatus(Status.Condition condition, short duration) {
         switch (condition) {
@@ -184,5 +186,14 @@ public abstract class Unit : Entity
 
         Tuple<Unit, int, List<Cell>> finalTarget = target != null ? target : pTarget;
         return finalTarget;
+    }
+
+    public virtual void PlayAnimation(Entity.AnimState a) {
+        animator.SetInteger("state", (int)a);
+    }
+
+    protected void RelinquishControl() {
+        PlayAnimation(Entity.AnimState.IDLE);
+        GameManager.Instance.NotifyNextUnit();
     }
 }

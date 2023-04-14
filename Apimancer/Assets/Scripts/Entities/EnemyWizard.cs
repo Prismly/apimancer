@@ -103,7 +103,7 @@ public class EnemyWizard : Wizard
         for (int i = 0; i < summonRange.Count; i++)
         {
             Cell cell = summonRange[cellIndex];
-            if (cell.IsOccupied || cell.Type != CellType.BOULDER)
+            if (!cell.IsOccupied)
             {
                 castCell = cell;
                 break;
@@ -121,7 +121,6 @@ public class EnemyWizard : Wizard
     public override void MoveNextUnit()
     {
         _currentUnitIndex++;
-        Debug.Log("Current unit index" + _currentUnitIndex);
         if (_currentUnitIndex < 0)
         {
             CastSpells();
@@ -129,7 +128,6 @@ public class EnemyWizard : Wizard
         }
         if (_currentUnitIndex >= Units.Count)
         {
-            Debug.Log("NEXT TURN");
             GameManager.Instance.NextTurn();
             return;
         }
@@ -164,10 +162,5 @@ public class EnemyWizard : Wizard
     {
         get { return targetPriorities; }
         set { targetPriorities = value; }
-    }
-
-    public override Cell FindMovementTarget(List<Entity> entities)
-    {
-        throw new System.NotImplementedException();
     }
 }
