@@ -16,6 +16,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] private List<GameObject> disabledOnPause;
     [SerializeField] private GameObject pauseMenu;
 
+    [SerializeField] private GameObject winMenu;
+    [SerializeField] private GameObject loseMenu;
+
     [SerializeField] private RectTransform bottomMid;
 
     [SerializeField] public GameObject HEAD_HOR;
@@ -139,6 +142,14 @@ public class UIManager : MonoBehaviour
             healthBox.SetActive(false);
         }
 
+    }
+
+    public void ShowGameOverMenu(bool win)
+    {
+        if (win)
+            winMenu.SetActive(true);
+        else
+            loseMenu.SetActive(true);
     }
 
     public void TogglePause()

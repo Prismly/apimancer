@@ -143,7 +143,11 @@ public class EnemyWizard : Wizard
     public override int Health
     {
         get { return health; }
-        set { health = value; }
+        set { 
+            health = value;
+            if (health <= 0)
+                GameManager.Instance.GameOver(true);
+        }
     }
 
     public override int AttackDamage

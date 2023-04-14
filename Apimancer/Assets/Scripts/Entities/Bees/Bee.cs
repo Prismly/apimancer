@@ -91,6 +91,11 @@ public abstract class Bee : Unit
 
     public void EndTurn()
     {
+        ClearArrows();
+    }
+
+    private void ClearArrows()
+    {
         foreach (GameObject arrow in arrows)
             Destroy(arrow);
         arrows.Clear();
@@ -110,6 +115,12 @@ public abstract class Bee : Unit
     public void SetCommander(Wizard w)
     {
         commander = w;
+    }
+
+    public override void OnDeath()
+    {
+        ClearArrows();
+        base.OnDeath();
     }
 
     public override void OnHover()

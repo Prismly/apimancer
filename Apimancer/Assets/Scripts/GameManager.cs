@@ -84,9 +84,10 @@ public class GameManager : MonoBehaviour
         CurrentWizard.BeginTurn();
     }
 
-    public void GameOver()
+    public void GameOver(bool win)
     {
         IsRunning = false;
+        UIManager.Instance.ShowGameOverMenu(win);
     }
 
     public void LoadLevel(int levelIndex)
