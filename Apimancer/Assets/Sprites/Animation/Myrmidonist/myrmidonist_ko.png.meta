@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ba66e10e2939ec04fa74453dd2b42894
+guid: dc746f92445788042ae02328cd19c02c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,12 +105,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: myrmidonist_idle_0
+      name: myrmidonist_ko_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
+        width: 66
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -119,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a9250b8c643e184999ece2716297aba
-      internalID: 694693548
+      spriteID: e2ce85cd5180efa439a866a58f73e681
+      internalID: 200378396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: myrmidonist_idle_1
+      name: myrmidonist_ko_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 66
         y: 0
-        width: 24
+        width: 66
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -140,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d376f07e74a4188408fd1fea0cb0f06e
-      internalID: -1444689714
+      spriteID: 2295be3da3b487848a4c189468bfeeac
+      internalID: 47937934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: myrmidonist_idle_2
+      name: myrmidonist_ko_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 132
         y: 0
-        width: 24
+        width: 66
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -161,19 +161,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8837c355f7f38d445990c5fd85ae7ae9
-      internalID: -1858381314
+      spriteID: 9aa4056f23b436f43a1c5ca06c817afa
+      internalID: -491417538
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: myrmidonist_idle_3
+      name: myrmidonist_ko_3
       rect:
         serializedVersion: 2
-        x: 72
+        x: 198
         y: 0
-        width: 24
+        width: 66
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -182,19 +182,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57c8979d06af6004286fdce0cf378be6
-      internalID: 1899396911
+      spriteID: 3a30e2180ca47d140b7542e4b6ec8f98
+      internalID: -750599292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: myrmidonist_idle_4
+      name: myrmidonist_ko_4
       rect:
         serializedVersion: 2
-        x: 96
+        x: 264
         y: 0
-        width: 24
+        width: 66
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -203,19 +203,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e84ee665ad9c4541ae7f4531b0f08ff
-      internalID: 1585708345
+      spriteID: 4d674d947b2fdce419d4296e429846ad
+      internalID: 1901796138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: myrmidonist_idle_5
+      name: myrmidonist_ko_5
       rect:
         serializedVersion: 2
-        x: 120
+        x: 330
         y: 0
-        width: 24
+        width: 66
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -224,8 +224,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d67bb6482d686ae409d79eeda6738c32
-      internalID: 1554726953
+      spriteID: 8df4b42d93bae5d488668fcde79f9919
+      internalID: 2086095359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_ko_6
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 66
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a85f931bb36eb744bb8f8cd81eb7ca31
+      internalID: 285231783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_ko_7
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 0
+        width: 66
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec44616874594a4cb0f2aee1243a617
+      internalID: -1101319322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_ko_8
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 66
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead1690f9558e434d8a47f0500ecfd94
+      internalID: -1886805770
       vertices: []
       indices: 
       edges: []
@@ -241,12 +304,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      myrmidonist_idle_0: 694693548
-      myrmidonist_idle_4: 1585708345
-      myrmidonist_idle_5: 1554726953
-      myrmidonist_idle_1: -1444689714
-      myrmidonist_idle_3: 1899396911
-      myrmidonist_idle_2: -1858381314
+      myrmidonist_ko_7: -1101319322
+      myrmidonist_ko_3: -750599292
+      myrmidonist_ko_0: 200378396
+      myrmidonist_ko_1: 47937934
+      myrmidonist_ko_6: 285231783
+      myrmidonist_ko_8: -1886805770
+      myrmidonist_ko_2: -491417538
+      myrmidonist_ko_4: 1901796138
+      myrmidonist_ko_5: 2086095359
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

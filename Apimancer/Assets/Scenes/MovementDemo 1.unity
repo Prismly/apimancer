@@ -1454,6 +1454,11 @@ MonoBehaviour:
   - {fileID: 1784579950}
   pauseMenu: {fileID: 2002395788}
   bottomMid: {fileID: 357923414}
+  HEAD_HOR: {fileID: 0}
+  HEAD_DIAG: {fileID: 0}
+  BODY_DIAG: {fileID: 0}
+  BODY_HOR: {fileID: 0}
+  BODY_CURVE: {fileID: 0}
 --- !u!4 &1165052152
 Transform:
   m_ObjectHideFlags: 0
