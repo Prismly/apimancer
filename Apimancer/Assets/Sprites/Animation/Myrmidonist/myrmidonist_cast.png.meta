@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 57984720217b81348be21da148ad8a24
+guid: 83dfe5a7720f1234ca0ae029cb821df7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,91 +101,16 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: apimancer_idle_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 28
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3528db3c54df8a144808dbad91752f2b
-      internalID: 2007998063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: apimancer_idle_1
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 28
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: be2222b3a241fed498b146891038f51f
-      internalID: -856003607
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: apimancer_idle_2
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 28
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cafa3be7ebbb3c84fa1f9444ab6d965c
-      internalID: -1822540277
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: apimancer_idle_3
+      name: myrmidonist_cast_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 25
+        width: 32
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -194,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 494c4034a5fb30647aa28631799380c9
-      internalID: 1369317754
+      spriteID: e0da0d565cb594945b685ad18dd95a38
+      internalID: 1038930594
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: apimancer_idle_4
+      name: myrmidonist_cast_1
       rect:
         serializedVersion: 2
-        x: 25
+        x: 32
         y: 0
-        width: 25
+        width: 32
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -215,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8045a12769a07ba4abc1e8622389ca5c
-      internalID: 2003956126
+      spriteID: 2d29dea9f5028f04cadef404660c9bc3
+      internalID: -1187379361
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: apimancer_idle_5
+      name: myrmidonist_cast_2
       rect:
         serializedVersion: 2
-        x: 50
+        x: 64
         y: 0
-        width: 25
+        width: 32
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -236,8 +161,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20b3bd83738d8f34fb4b1f24373929c8
-      internalID: -78860659
+      spriteID: fc43dd714ca83f543ab5e2ba80348a55
+      internalID: 292991440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_cast_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113e211ca1918c6448ab18fa6ab8bb83
+      internalID: 1770801461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_cast_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a45947ee04b3c4aa74f4c68c61d61a
+      internalID: -1977294704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_cast_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26bc38bcce33682469dc65d28528439e
+      internalID: 1310292656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: myrmidonist_cast_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b459a690713c749993e50cb04aaabb
+      internalID: -1035305737
       vertices: []
       indices: 
       edges: []
@@ -253,12 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      apimancer_idle_4: 2003956126
-      apimancer_idle_5: -78860659
-      apimancer_idle_2: -1822540277
-      apimancer_idle_3: 1369317754
-      apimancer_idle_1: -856003607
-      apimancer_idle_0: 2007998063
+      myrmidonist_cast_2: 292991440
+      myrmidonist_cast_1: -1187379361
+      myrmidonist_cast_3: 1770801461
+      myrmidonist_cast_4: -1977294704
+      myrmidonist_cast_6: -1035305737
+      myrmidonist_cast_5: 1310292656
+      myrmidonist_cast_0: 1038930594
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

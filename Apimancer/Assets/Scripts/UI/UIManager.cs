@@ -11,12 +11,19 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private GameObject menuBoxPref;
     [SerializeField] private GameObject healthBox;
+    [SerializeField] public GameObject endTurn;
 
     [SerializeField] private List<GameObject> disabledOnPause;
     [SerializeField] private GameObject pauseMenu;
 
     [SerializeField] private RectTransform bottomMid;
-    
+
+    [SerializeField] public GameObject HEAD_HOR;
+    [SerializeField] public GameObject HEAD_DIAG;
+    [SerializeField] public GameObject BODY_DIAG;
+    [SerializeField] public GameObject BODY_HOR;
+    [SerializeField] public GameObject BODY_CURVE;
+
     private GameObject summonMenu;
     private GameObject spellsMenu;
     //private GameObject healthBox;
@@ -38,9 +45,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    private void Awake()
     {
         _instance = this;
+    }
+
+    private void Start()
+    {
         Wizard playerWiz = GameManager.Instance.Wizards[0];
 
         // -- SPELLS MENU --
@@ -95,6 +106,7 @@ public class UIManager : MonoBehaviour
 
     public void EndPlayerTurn()
     {
+        UIManager.Instance.endTurn.GetComponent<Button>().interactable = false;
         GameManager.Instance.EndTurn();
     }
 
@@ -109,10 +121,12 @@ public class UIManager : MonoBehaviour
         //healthBox.transform.SetParent(targetCanvas.transform);
         RectTransform healthBoxRect = healthBox.GetComponent<RectTransform>();
         //RectTransform healthBoxPrefRect = healthBoxPref.GetComponent<RectTransform>();
-        healthBoxRect.transform.position = Camera.main.WorldToScreenPoint(target.transform.position + new Vector3(0, 0, -1)) / targetCanvas.GetComponent<CanvasScaler>().scaleFactor;
-        healthBoxRect.sizeDelta = healthBoxRect.sizeDelta;
-        Image healthBoxImg = healthBox.GetComponent<Image>();
-        healthBoxImg.color = new Color(1, 1, 1);
+        //healthBoxRect.transform.position = Camera.main.WorldToScreenPoint(target.transform.position + new Vector3(0, 0, -1)) / targetCanvas.GetComponent<CanvasScaler>().scaleFactor;
+        //healthBoxRect.sizeDelta = healthBoxRect.sizeDelta;
+        //Image healthBoxImg = healthBox.GetComponent<Image>();
+        //healthBoxImg.color = new Color(1, 1, 1);
+        TextMeshProUGUI unitNameText = healthBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        unitNameText.text = target.unitName;
         TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         healthBoxText.text = "<sprite=6>" + target.Health + "/" + target.MaxHealth;
         healthBox.SetActive(true);

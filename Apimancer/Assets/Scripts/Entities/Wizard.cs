@@ -53,6 +53,8 @@ public abstract class Wizard : Unit
         if (mana < cost)
             return false;
 
+        animator.SetTrigger("Unit Summoned");
+
         List<Cell> path = Entity.PathFind(this, cell);
 
         if (path == null || path.Count > range + 1)

@@ -18,6 +18,7 @@ public class EnemyWizard : Wizard
         summons.Add(new SummonAction(this, UnitType.ANT_WORKER, 1, 5));
         summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 8));
         summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 10));
+        unitName = "The Myrmidonist";
     }
 
     public override IEnumerator DetermineMovement()

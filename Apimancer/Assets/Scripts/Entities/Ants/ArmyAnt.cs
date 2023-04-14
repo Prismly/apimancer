@@ -13,6 +13,11 @@ public class ArmyAnt : Ant
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.BEE, Unit.Faction.RESOURCE };
 
+    private void Awake()
+    {
+        unitName = "Army Ant";
+    }
+
     public override IEnumerator DetermineMovement()
     {
         Tuple<Unit, int, List<Cell>> target = DetermineTarget();

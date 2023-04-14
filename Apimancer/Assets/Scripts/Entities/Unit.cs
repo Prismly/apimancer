@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class Unit : Entity
@@ -35,6 +36,8 @@ public abstract class Unit : Entity
         RESOURCE_FLOWER,
         OTHER_BOULDER
     }
+
+    public string unitName;
 
     public Faction UnitFaction;
     public UnitType Type;
@@ -105,7 +108,10 @@ public abstract class Unit : Entity
     public override void OnDeselect() {}
     public override void OnHover()
     {
-        UIManager.Instance.ShowHealthBox(this);
+        if (UnitFaction != Faction.RESOURCE && UnitFaction != Faction.OTHER)
+        {
+            UIManager.Instance.ShowHealthBox(this);
+        }
     }
     public override void OnUnhover()
     {
@@ -176,7 +182,7 @@ public abstract class Unit : Entity
             }
         }
 
-        if (target != null) return target;
-        else return pTarget;
+        Tuple<Unit, int, List<Cell>> finalTarget = target != null ? target : pTarget;
+        return finalTarget;
     }
 }
