@@ -121,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 184
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6db50e753ed6fd45b2206b663289b7b
-      internalID: 578097107
+      spriteID: c9dd39d644917334a92979d2b01a4be6
+      internalID: 587117025
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 184
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 177f0d31a0327d74d8ff8337727e166c
-      internalID: 1496789801
+      spriteID: a48556bf3170cb64d9dd9390681ab064
+      internalID: -226871546
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 110
-        y: 184
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55085e2127e988e40950d488c970da78
-      internalID: -1772211849
+      spriteID: c68026450ad4a41469594d6c0e163a02
+      internalID: -466848878
       vertices: []
       indices: 
       edges: []
@@ -184,7 +184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 165
-        y: 184
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b584832661e9735428a18453d3b84468
-      internalID: 1696279990
+      spriteID: 40cbd43a989e5bd4699acd109dd34598
+      internalID: -1304134886
       vertices: []
       indices: 
       edges: []
@@ -205,7 +205,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 220
-        y: 184
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 879442b42f0939940b6c877258daf357
-      internalID: 35877807
+      spriteID: 98ebf74c07f4ba14287c185786bcb58c
+      internalID: -2032529009
       vertices: []
       indices: 
       edges: []
@@ -225,8 +225,8 @@ TextureImporter:
       name: fire ant death_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 138
+        x: 275
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d8eb1cd588f75f49a99d96c505f8d10
-      internalID: -1009824197
+      spriteID: 9dfeb8c0fb3b50948907769b6f425a12
+      internalID: 1087102356
       vertices: []
       indices: 
       edges: []
@@ -246,8 +246,8 @@ TextureImporter:
       name: fire ant death_6
       rect:
         serializedVersion: 2
-        x: 55
-        y: 138
+        x: 330
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 56316e55a13504041a6749b10d9f5f9f
-      internalID: 1172161814
+      spriteID: 8c1271aaee36e5840882220f3e0959ee
+      internalID: -1074582571
       vertices: []
       indices: 
       edges: []
@@ -267,8 +267,8 @@ TextureImporter:
       name: fire ant death_7
       rect:
         serializedVersion: 2
-        x: 110
-        y: 138
+        x: 385
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dc373627f35e7f44a29c0e02faed9f3
-      internalID: -1036420740
+      spriteID: 8fbd902d3211758438ce8fae8a4d73a0
+      internalID: 1968237540
       vertices: []
       indices: 
       edges: []
@@ -288,8 +288,8 @@ TextureImporter:
       name: fire ant death_8
       rect:
         serializedVersion: 2
-        x: 165
-        y: 138
+        x: 440
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bee9b7422eff624580b206f4b16a4f6
-      internalID: 1088858081
+      spriteID: 504095276595b5c4a8846e445781f83c
+      internalID: 1770958296
       vertices: []
       indices: 
       edges: []
@@ -309,8 +309,8 @@ TextureImporter:
       name: fire ant death_9
       rect:
         serializedVersion: 2
-        x: 220
-        y: 138
+        x: 495
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f381db0b6e8b394daefe495430700ff
-      internalID: -2012964552
+      spriteID: 7651f228747e97f4090892954757838f
+      internalID: -60965160
       vertices: []
       indices: 
       edges: []
@@ -330,8 +330,8 @@ TextureImporter:
       name: fire ant death_10
       rect:
         serializedVersion: 2
-        x: 0
-        y: 92
+        x: 550
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7ff350f2458d774d865e565e866ce92
-      internalID: 1264745201
+      spriteID: 1dbc9c7bd6070a346bbbfda14cc35220
+      internalID: -1098846070
       vertices: []
       indices: 
       edges: []
@@ -351,8 +351,8 @@ TextureImporter:
       name: fire ant death_11
       rect:
         serializedVersion: 2
-        x: 55
-        y: 92
+        x: 605
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -362,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2549d82d16579e64a9b878710800db3a
-      internalID: 549482449
+      spriteID: e79f9944d5c3c6747a6d5d06c653acad
+      internalID: -968345964
       vertices: []
       indices: 
       edges: []
@@ -372,8 +372,8 @@ TextureImporter:
       name: fire ant death_12
       rect:
         serializedVersion: 2
-        x: 110
-        y: 92
+        x: 660
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -383,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4f761da40aa72f846ab8f31000399de1
-      internalID: -1267108054
+      spriteID: 3baec5b85d55a214b9148b3239eaae68
+      internalID: 359708382
       vertices: []
       indices: 
       edges: []
@@ -393,8 +393,8 @@ TextureImporter:
       name: fire ant death_13
       rect:
         serializedVersion: 2
-        x: 165
-        y: 92
+        x: 715
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -404,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46069b66fa60acb40baece517e12087a
-      internalID: -195073180
+      spriteID: 1339cee421884d44ba096481f2d4cd0c
+      internalID: -2144096953
       vertices: []
       indices: 
       edges: []
@@ -414,8 +414,8 @@ TextureImporter:
       name: fire ant death_14
       rect:
         serializedVersion: 2
-        x: 220
-        y: 92
+        x: 770
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -425,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 983415e70944f014cb2f1194d13cefc0
-      internalID: 599065700
+      spriteID: 308361c6a5c38be48b0e58fcb44de149
+      internalID: -323481434
       vertices: []
       indices: 
       edges: []
@@ -435,8 +435,8 @@ TextureImporter:
       name: fire ant death_15
       rect:
         serializedVersion: 2
-        x: 0
-        y: 46
+        x: 825
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -446,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91c283e71c7682940bf36673a951bb37
-      internalID: 366047534
+      spriteID: d56ba019b562d814d92e14021a73686f
+      internalID: 778014490
       vertices: []
       indices: 
       edges: []
@@ -456,8 +456,8 @@ TextureImporter:
       name: fire ant death_16
       rect:
         serializedVersion: 2
-        x: 55
-        y: 46
+        x: 880
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -467,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5d296bca5d673304387bd9a393c41823
-      internalID: -1835139470
+      spriteID: 04a7aca4249c9074b882e81c7d423159
+      internalID: 209657610
       vertices: []
       indices: 
       edges: []
@@ -477,8 +477,8 @@ TextureImporter:
       name: fire ant death_17
       rect:
         serializedVersion: 2
-        x: 110
-        y: 46
+        x: 935
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -488,8 +488,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a34f58081b4f274eb3dbe3f75d9e10c
-      internalID: 929968193
+      spriteID: 4917c638f250bf34db1afdbd3d8527c9
+      internalID: 1589058489
       vertices: []
       indices: 
       edges: []
@@ -498,8 +498,8 @@ TextureImporter:
       name: fire ant death_18
       rect:
         serializedVersion: 2
-        x: 165
-        y: 46
+        x: 990
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -509,8 +509,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27cabca23184dd24da3d82950d4dedd5
-      internalID: 609590744
+      spriteID: e61c7314b0c9827429f3b48980be97b3
+      internalID: 1487588967
       vertices: []
       indices: 
       edges: []
@@ -519,8 +519,8 @@ TextureImporter:
       name: fire ant death_19
       rect:
         serializedVersion: 2
-        x: 220
-        y: 46
+        x: 1045
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -530,8 +530,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: def79d20b1b386b43bc4284ab745de33
-      internalID: 2016160766
+      spriteID: c9a21319b6a69b84082f18b293c9d2de
+      internalID: -1024418906
       vertices: []
       indices: 
       edges: []
@@ -540,7 +540,7 @@ TextureImporter:
       name: fire ant death_20
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1100
         y: 0
         width: 55
         height: 46
@@ -551,8 +551,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47b3457f6edfaea429e5958787b135da
-      internalID: -1169665648
+      spriteID: cd709f4e3145c524e88fbd0cafca193b
+      internalID: 1029679971
       vertices: []
       indices: 
       edges: []
@@ -561,7 +561,7 @@ TextureImporter:
       name: fire ant death_21
       rect:
         serializedVersion: 2
-        x: 55
+        x: 1155
         y: 0
         width: 55
         height: 46
@@ -572,8 +572,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d7c6987dfbb73f4469d3594418309849
-      internalID: -1682933287
+      spriteID: f99409f19fc771e409827820ae4c30f8
+      internalID: -682314080
       vertices: []
       indices: 
       edges: []
@@ -582,7 +582,7 @@ TextureImporter:
       name: fire ant death_22
       rect:
         serializedVersion: 2
-        x: 110
+        x: 1210
         y: 0
         width: 55
         height: 46
@@ -593,8 +593,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a227c0c60d1ab147801a0858992c2f3
-      internalID: 1264070160
+      spriteID: cdb4fbe716b1bd945b4ab367df59ab14
+      internalID: 3251921
       vertices: []
       indices: 
       edges: []
@@ -603,7 +603,7 @@ TextureImporter:
       name: fire ant death_23
       rect:
         serializedVersion: 2
-        x: 165
+        x: 1265
         y: 0
         width: 55
         height: 46
@@ -614,8 +614,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d3786bf73f9bde42a724273f4269737
-      internalID: 1278279541
+      spriteID: 70ca03ba825ce094c9d07598fbcb0650
+      internalID: 156623600
       vertices: []
       indices: 
       edges: []
@@ -631,30 +631,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire ant death_0: 578097107
-      fire ant death_19: 2016160766
-      fire ant death_9: -2012964552
-      fire ant death_22: 1264070160
-      fire ant death_13: -195073180
-      fire ant death_14: 599065700
-      fire ant death_7: -1036420740
-      fire ant death_5: -1009824197
-      fire ant death_4: 35877807
-      fire ant death_16: -1835139470
-      fire ant death_1: 1496789801
-      fire ant death_11: 549482449
-      fire ant death_20: -1169665648
-      fire ant death_10: 1264745201
-      fire ant death_21: -1682933287
-      fire ant death_12: -1267108054
-      fire ant death_18: 609590744
-      fire ant death_8: 1088858081
-      fire ant death_2: -1772211849
-      fire ant death_6: 1172161814
-      fire ant death_15: 366047534
-      fire ant death_17: 929968193
-      fire ant death_3: 1696279990
-      fire ant death_23: 1278279541
+      fire ant death_0: 587117025
+      fire ant death_19: -1024418906
+      fire ant death_9: -60965160
+      fire ant death_22: 3251921
+      fire ant death_13: -2144096953
+      fire ant death_14: -323481434
+      fire ant death_7: 1968237540
+      fire ant death_5: 1087102356
+      fire ant death_4: -2032529009
+      fire ant death_16: 209657610
+      fire ant death_1: -226871546
+      fire ant death_11: -968345964
+      fire ant death_20: 1029679971
+      fire ant death_10: -1098846070
+      fire ant death_21: -682314080
+      fire ant death_12: 359708382
+      fire ant death_18: 1487588967
+      fire ant death_8: 1770958296
+      fire ant death_2: -466848878
+      fire ant death_6: -1074582571
+      fire ant death_15: 778014490
+      fire ant death_17: 1589058489
+      fire ant death_3: -1304134886
+      fire ant death_23: 156623600
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

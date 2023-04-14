@@ -184,7 +184,7 @@ public abstract class Entity : MonoBehaviour
     // probably call animation here
     public IEnumerator MoveToOneCell(Cell target)
     {
-        animator.SetBool("Moving", true);
+        animator.SetInteger("state", (int)AnimState.WALK);
         var currentPos = transform.position;
         var t = 0f;
         while (t < 1)
@@ -193,7 +193,7 @@ public abstract class Entity : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, target.transform.position, t);
             yield return null;
         }
-        animator.SetBool("Moving", false);
+        animator.SetInteger("state", (int)AnimState.IDLE);
     }
 
     public virtual float GetCellWeight(Cell c)
