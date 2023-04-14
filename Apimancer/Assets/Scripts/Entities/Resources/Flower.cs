@@ -51,8 +51,4 @@ public class Flower : Resource
         get { return targetPriorities; }
         set { targetPriorities = value; }
     }
-
-    public override Cell FindMovementTarget(List<Entity> entities) {
-        return null;
-    }
 }
