@@ -49,17 +49,26 @@ public abstract class Wizard : Unit
 
     public bool Summon(Unit.UnitType type, Cell cell, uint range)
     {
-        List<Cell> path = Entity.PathFind(this, cell);
-        if (path.Count > range + 1)
+        int cost = GameManager.Instance.GetUnitCost(type);
+        if (mana < cost)
             return false;
+
+        List<Cell> path = Entity.PathFind(this, cell);
+
+        if (path == null || path.Count > range + 1)
+            return false;
+        
         Unit unit = GameManager.Instance.SummonUnit(type, cell);
         unit.UnitFaction = this.UnitFaction;
-        Units.Add(unit);
         unit.setLocation(cell);
+        Units.Add(unit);
+
+        AddMana(-cost);
         return true;
     }
 
-    public int getMana() {
+    public int getMana()
+    {
         return mana;
     }
 
@@ -73,7 +82,7 @@ public abstract class Wizard : Unit
                (maxMana) :
                (m);
     }
-    public void addMana(int m) {
+    public void AddMana(int m) {
         int d = maxMana - mana;
         mana = m > d ? 
                maxMana : 

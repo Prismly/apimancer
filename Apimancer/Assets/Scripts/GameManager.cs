@@ -120,6 +120,26 @@ public class GameManager : MonoBehaviour
         CurrentWizard.MoveNextUnit();
     }
 
+    public int GetUnitCost(Unit.UnitType type)
+    {
+        switch (type)
+        {
+        case Unit.UnitType.BEE_WORKER:
+            return WorkerBee.Cost;
+        case Unit.UnitType.BEE_BUMBLE:
+            return BumbleBee.Cost;
+        case Unit.UnitType.BEE_MINING:
+            return MiningBee.Cost;
+        case Unit.UnitType.ANT_WORKER:
+            return WorkerAnt.Cost;
+        case Unit.UnitType.ANT_ARMY:
+            return ArmyAnt.Cost;
+        case Unit.UnitType.ANT_FIRE:
+            return FireAnt.Cost;
+        }
+        return -1;
+    }
+
     public Unit SummonUnit(Unit.UnitType type, Cell cell)
     {
         Unit unit = Instantiate(_unitPrefabs[(int)type]).GetComponent<Unit>();

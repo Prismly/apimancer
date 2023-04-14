@@ -18,10 +18,11 @@ public abstract class Bee : Unit
         if (target.UnitFaction == Unit.Faction.RESOURCE) {
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
-            Commander.addMana(m);
+            Commander.AddMana(m);
         }
         target.ReceiveDamage(dmg);
     }
+    
     private Wizard commander;
 
     private void Awake()
