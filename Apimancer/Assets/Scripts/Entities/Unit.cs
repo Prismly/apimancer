@@ -66,7 +66,7 @@ public abstract class Unit : Entity
         {
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
-            Commander.addMana(m);
+            Commander.AddMana(m);
         }
         target.ReceiveDamage(dmg);
         PlayAnimation(Entity.AnimState.ACTION);
