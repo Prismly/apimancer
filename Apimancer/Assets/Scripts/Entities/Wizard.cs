@@ -49,7 +49,11 @@ public abstract class Wizard : Unit
 
     public bool Summon(Unit.UnitType type, Cell cell, uint range)
     {
+        if (cell.IsOccupied || cell.Type == CellType.BOULDER)
+            return false;
+
         int cost = GameManager.Instance.GetUnitCost(type);
+
         if (mana < cost)
             return false;
 
