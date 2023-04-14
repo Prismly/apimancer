@@ -39,7 +39,7 @@ public abstract class Action
             Wizard w = (Wizard)unit;
             if (w.getMana() >= cost)
             {
-                w.addMana(-cost);
+                w.AddMana(-cost);
                 return true;
             }
         }

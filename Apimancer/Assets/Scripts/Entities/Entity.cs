@@ -150,7 +150,7 @@ public abstract class Entity : MonoBehaviour
     {
         snd.PlayOneShot(sndMove);
         short i = 0;
-        while (amount > 0 && i < path.Count) {
+        while (amount > 0 && i < path?.Count) {
             CellManager.Instance.GetCell(loc).Exit();
             Cell c = path[i++];
             yield return StartCoroutine(MoveToOneCell(c));

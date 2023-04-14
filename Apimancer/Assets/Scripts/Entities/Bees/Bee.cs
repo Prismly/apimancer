@@ -108,10 +108,11 @@ public abstract class Bee : Unit
         {
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
-            Commander.addMana(m);
+            Commander.AddMana(m);
         }
         target.ReceiveDamage(dmg);
     }
+    
     private Wizard commander;
 
     private void Awake()

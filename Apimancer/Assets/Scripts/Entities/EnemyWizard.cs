@@ -15,9 +15,10 @@ public class EnemyWizard : Wizard
 
     private void Awake()
     {
-        summons.Add(new SummonAction(this, UnitType.ANT_WORKER, 1, 0));
-        summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 0));
-        summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 0));
+        summons.Add(new SummonAction(this, UnitType.ANT_WORKER, 1, 5));
+        summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 8));
+        summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 10));
+        unitName = "The Myrmidonist";
     }
 
     public override IEnumerator DetermineMovement()
@@ -95,14 +96,14 @@ public class EnemyWizard : Wizard
         // Select summon based on cost here
 
         // Action castSummon = summons[summonIndex];
-        Action castSummon = summons[0];
+        Action castSummon = mana > summons[0].cost ? summons[0] : null;
         Cell castCell = null;
 
         // Select cell based on validity here
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < summonRange.Count; i++)
         {
             Cell cell = summonRange[cellIndex];
-            if (cell.Type != CellType.BOULDER)
+            if (cell.IsOccupied || cell.Type != CellType.BOULDER)
             {
                 castCell = cell;
                 break;
@@ -111,7 +112,6 @@ public class EnemyWizard : Wizard
         
         if (castSummon != null && castCell != null)
         {
-            Debug.Log("Summoning ant");
             castSummon.Execute(castCell);
         }
 
