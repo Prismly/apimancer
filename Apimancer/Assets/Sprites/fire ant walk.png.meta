@@ -121,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 46
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99e771b4a1c93b44089d9e9f03e91269
-      internalID: -754035705
+      spriteID: 573a12f966129bf44a6e9eda68ad83f4
+      internalID: 1468945349
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 46
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 830998b9cb15ef84a809f9ef7e197646
-      internalID: 832381665
+      spriteID: a0015a35abee931448a2c93f5ddeb8e4
+      internalID: -1601708423
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 110
-        y: 46
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 810900c806931974e8115abdbf476c66
-      internalID: 2041420421
+      spriteID: 977254931b954134c97b656e01b56439
+      internalID: -1603106904
       vertices: []
       indices: 
       edges: []
@@ -183,7 +183,7 @@ TextureImporter:
       name: fire ant walk_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 165
         y: 0
         width: 55
         height: 46
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92bacf4d01372224292cc6a360576433
-      internalID: 1259044145
+      spriteID: a81761bf1524bef4aacf0179c808f05e
+      internalID: -1620076171
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
       name: fire ant walk_4
       rect:
         serializedVersion: 2
-        x: 55
+        x: 220
         y: 0
         width: 55
         height: 46
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569f44acdc46d734bbec9744265e7d46
-      internalID: 1413228537
+      spriteID: 79794fe5736bf2845bec96fde0d82206
+      internalID: -1976708725
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
       name: fire ant walk_5
       rect:
         serializedVersion: 2
-        x: 110
+        x: 275
         y: 0
         width: 55
         height: 46
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 11bf3cce09607fb4c8f8f81e03ed81f0
-      internalID: -85692015
+      spriteID: 2b5ca043b0841944b921539e6695203e
+      internalID: 312275832
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire ant walk_0: -754035705
-      fire ant walk_2: 2041420421
-      fire ant walk_1: 832381665
-      fire ant walk_3: 1259044145
-      fire ant walk_5: -85692015
-      fire ant walk_4: 1413228537
+      fire ant walk_0: 1468945349
+      fire ant walk_2: -1603106904
+      fire ant walk_1: -1601708423
+      fire ant walk_3: -1620076171
+      fire ant walk_5: 312275832
+      fire ant walk_4: -1976708725
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

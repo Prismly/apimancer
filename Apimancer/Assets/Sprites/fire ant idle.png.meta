@@ -121,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 46
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1888d6029a790644da816c618cc74f39
-      internalID: 976131053
+      spriteID: cc4a3c99ca4ec3f4499546db21e421c1
+      internalID: 1750844742
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 55
-        y: 46
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d089abff7e1b794b96e5cac54c0ee56
-      internalID: -1980211504
+      spriteID: 200a61bbf697ac641b2a46271efddc47
+      internalID: 1096652065
       vertices: []
       indices: 
       edges: []
@@ -163,7 +163,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 110
-        y: 46
+        y: 0
         width: 55
         height: 46
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e465c4b835b714d49bb4dd4b224d8632
-      internalID: 1625160538
+      spriteID: 6a1fdcf9a59088b4aaa6dc430f1cedee
+      internalID: -2135977146
       vertices: []
       indices: 
       edges: []
@@ -183,7 +183,7 @@ TextureImporter:
       name: fire ant idle_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 165
         y: 0
         width: 55
         height: 46
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c8f77a381f94acf41ae0920316a69a7a
-      internalID: 1872203369
+      spriteID: ceb086e0f8f2acf4bb2547dee3fcd3a1
+      internalID: -1476385854
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
       name: fire ant idle_4
       rect:
         serializedVersion: 2
-        x: 55
+        x: 220
         y: 0
         width: 55
         height: 46
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1cd19402931c73f4fa642cf69256c462
-      internalID: -1378895002
+      spriteID: 72909eb7860d379409234eb572b1f93f
+      internalID: -1752029924
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
       name: fire ant idle_5
       rect:
         serializedVersion: 2
-        x: 110
+        x: 275
         y: 0
         width: 55
         height: 46
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: deb6e8d51a24447419983ab00bf7520d
-      internalID: 1665879029
+      spriteID: e6cf3751eb3e260468416169508083fd
+      internalID: -870911181
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire ant idle_3: 1872203369
-      fire ant idle_5: 1665879029
-      fire ant idle_0: 976131053
-      fire ant idle_4: -1378895002
-      fire ant idle_2: 1625160538
-      fire ant idle_1: -1980211504
+      fire ant idle_3: -1476385854
+      fire ant idle_5: -870911181
+      fire ant idle_0: 1750844742
+      fire ant idle_4: -1752029924
+      fire ant idle_2: -2135977146
+      fire ant idle_1: 1096652065
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -103,7 +103,7 @@ public class EnemyWizard : Wizard
         for (int i = 0; i < summonRange.Count; i++)
         {
             Cell cell = summonRange[cellIndex];
-            if (cell.IsOccupied || cell.Type != CellType.BOULDER)
+            if (!cell.IsOccupied)
             {
                 castCell = cell;
                 break;
