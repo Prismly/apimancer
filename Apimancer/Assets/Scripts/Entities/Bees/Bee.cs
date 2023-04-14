@@ -7,12 +7,6 @@ public abstract class Bee : Unit
 {
     [SerializeField] private AudioClip sndSummon;
     private List<GameObject> arrows = new List<GameObject>();
-    public enum BeeAnimState
-    {
-        IDLE = 0,
-        STING,
-        DEATH
-    };
 
     public void BeginTurn()
     {
@@ -102,17 +96,6 @@ public abstract class Bee : Unit
         arrows.Clear();
     }
 
-    public override void AttackTarget(int dmg, Unit target)
-    {
-        if (target.UnitFaction == Unit.Faction.RESOURCE)
-        {
-            int m = (target.Health >= dmg) ?
-                      (dmg) : (target.Health);
-            Commander.AddMana(m);
-        }
-        target.ReceiveDamage(dmg);
-    }
-    
     private Wizard commander;
 
     private void Awake()
