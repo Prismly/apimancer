@@ -65,9 +65,9 @@ public class UIManager : MonoBehaviour
         spellsMenuImg.color = new Color(177 / 255f, 142 / 255f, 200 / 255f);
         MenuBox spellsMenuBox = spellsMenu.GetComponent<MenuBox>();
         // We'd get the player's Spells here
-        spellsMenuBox.AddSpellsOption("[X]Honey Trap [M]3 [S]2", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
-        spellsMenuBox.AddSpellsOption("[X]Honey Blast [M]3 [S]2", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
-        spellsMenuBox.AddSpellsOption("[X]Teleport [M]3 [S]2", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
+        spellsMenuBox.AddSpellsOption("[X]Honey Trap [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
+        spellsMenuBox.AddSpellsOption("[X]Honey Blast [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
+        spellsMenuBox.AddSpellsOption("[X]Teleport [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
         spellsMenu.SetActive(false);
 
         // -- SUMMON MENU --

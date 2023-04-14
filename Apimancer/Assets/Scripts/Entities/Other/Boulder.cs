@@ -45,8 +45,4 @@ public class Boulder : Other
         get { return targetPriorities; }
         set { targetPriorities = value; }
     }
-
-    public override Cell FindMovementTarget(List<Entity> entities) {
-        return null;
-    }
 }

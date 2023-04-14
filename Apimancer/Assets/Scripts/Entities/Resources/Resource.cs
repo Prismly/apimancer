@@ -21,4 +21,10 @@ public abstract class Resource : Unit
         }
         return newResource;
     }
+
+    public override void ReceiveDamage(int dmg) {
+        this.Health -= dmg;
+        if (this.Health <= 0)
+            OnDeath();
+    }
 }

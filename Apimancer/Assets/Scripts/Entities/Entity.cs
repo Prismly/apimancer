@@ -15,9 +15,20 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected Animator animator;
 
-    [SerializeField] protected AudioSource snd;
+    [SerializeField] 
+    protected AudioSource snd;
 
-    [SerializeField] private AudioClip sndMove;
+    [SerializeField] 
+    private AudioClip sndMove;
+
+    public enum AnimState
+    {
+        IDLE = 0,
+        WALK = 1,
+        DEATH = 2,
+        ACTION = 3,
+        ACTION2 = 4
+    }
 
     public void Start()
     {
@@ -184,9 +195,6 @@ public abstract class Entity : MonoBehaviour
         }
         animator.SetBool("Moving", false);
     }
-
-    // Choose a movement target from the list of entities
-    public abstract Cell FindMovementTarget(List<Entity> entities);
 
     public virtual float GetCellWeight(Cell c)
     {
