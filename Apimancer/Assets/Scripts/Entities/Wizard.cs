@@ -57,7 +57,7 @@ public abstract class Wizard : Unit
         if (mana < cost)
             return false;
 
-        animator.SetInteger("state", 3);
+        //SetAnimState();
 
         List<Cell> path = Entity.PathFind(this, cell);
 

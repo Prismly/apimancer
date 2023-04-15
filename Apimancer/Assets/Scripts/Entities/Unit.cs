@@ -70,7 +70,7 @@ public abstract class Unit : Entity
             Commander.AddMana(m);
         }
         target.ReceiveDamage(dmg);
-        PlayAnimation(Entity.AnimState.ACTION);
+        SetAnimState(AnimState.UNIT_ACTION);
     }
 
     // receive damage
@@ -78,7 +78,7 @@ public abstract class Unit : Entity
     {
         this.Health -= dmg;
         if (this.Health <= 0)
-            PlayAnimation(Entity.AnimState.DEATH);
+            SetAnimState(AnimState.DEATH);
     }
 
     public virtual void setLocation(Vector2Int location)
@@ -189,13 +189,9 @@ public abstract class Unit : Entity
         return finalTarget;
     }
 
-    public virtual void PlayAnimation(Entity.AnimState a) {
-        animator.SetInteger("state", (int)a);
-    }
-
     protected void RelinquishControl() {
         Debug.Log("Relinquishing Control");
-        PlayAnimation(Entity.AnimState.IDLE);
+        SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }
 }
