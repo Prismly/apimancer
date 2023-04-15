@@ -194,6 +194,7 @@ public abstract class Unit : Entity
     }
 
     protected void RelinquishControl() {
+        Debug.Log("Relinquishing Control");
         PlayAnimation(Entity.AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }

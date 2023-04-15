@@ -210,4 +210,10 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnDeselect(){}
     public virtual void OnHover(){}
     public virtual void OnUnhover(){}
+
+    public void SetAnimState(int val)
+    {
+        //Debug.Log("setting state to " + val);
+        animator.SetInteger("state", val);
+    }
 }
