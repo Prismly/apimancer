@@ -78,7 +78,21 @@ public abstract class Unit : Entity
     {
         this.Health -= dmg;
         if (this.Health <= 0)
+        {
             SetAnimState(AnimState.DEATH);
+
+            
+            GameManager.Instance.Kill(this);
+            GetCell().Occupant = null;
+            Destroy(this.gameObject, 1.0f);
+
+            OnDeath();
+
+            if (Commander != null && Commander.Units.Contains(this))
+            {
+                Commander.Units.Remove(this);
+            }
+        }
     }
 
     public virtual void setLocation(Vector2Int location)
@@ -98,13 +112,9 @@ public abstract class Unit : Entity
 
     public virtual void OnDeath()
     {
-        GameManager.Instance.Kill(this);
-        if (Commander != null && Commander.Units.Contains(this))
-        {
-            Commander.Units.Remove(this);
-        }
-        GetCell().Occupant = null;
-        Destroy(this.gameObject, 1.0f);
+        // GameManager.Instance.Kill(this);
+        // GetCell().Occupant = null;
+        // Destroy(this.gameObject, 1.0f);
 
         // End game if wizard
     }

@@ -100,7 +100,6 @@ public abstract class Bee : Unit
         foreach (GameObject arrow in arrows)
             Destroy(arrow);
         arrows.Clear();
-        RelinquishControl();
     }
 
     private Wizard commander;
