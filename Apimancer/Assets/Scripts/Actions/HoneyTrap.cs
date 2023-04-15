@@ -12,6 +12,7 @@ public class HoneyTrap : SpellAction
     public override bool Execute(Cell cell)
     {
         Debug.Log("HONEY TRAP!");
+        GameManager.Instance.Wizards[0].setMana(GameManager.Instance.Wizards[0].getMana() - cost);
         if (!Validate(cell) && cell.Type != CellType.DIRT)
             return false;
 

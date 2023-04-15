@@ -12,6 +12,7 @@ public class Teleport : SpellAction
     public override bool Execute(Cell cell)
     {
         Debug.Log("TELEPORT!");
+        GameManager.Instance.Wizards[0].setMana(GameManager.Instance.Wizards[0].getMana() - cost);
         if (!Validate(cell))
             return false;
 

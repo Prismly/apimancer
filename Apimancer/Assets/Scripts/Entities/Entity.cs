@@ -15,9 +15,20 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     protected Animator animator;
 
-    [SerializeField] protected AudioSource snd;
+    [SerializeField] 
+    protected AudioSource snd;
 
-    [SerializeField] private AudioClip sndMove;
+    [SerializeField] 
+    private AudioClip sndMove;
+
+    public enum AnimState
+    {
+        IDLE = 0,
+        WALK = 1,
+        DEATH = 2,
+        ACTION = 3,
+        ACTION2 = 4
+    }
 
     public void Start()
     {
@@ -150,7 +161,7 @@ public abstract class Entity : MonoBehaviour
     {
         snd.PlayOneShot(sndMove);
         short i = 0;
-        while (amount > 0 && i < path.Count) {
+        while (amount > 0 && i < path?.Count) {
             CellManager.Instance.GetCell(loc).Exit();
             Cell c = path[i++];
             yield return StartCoroutine(MoveToOneCell(c));
@@ -173,7 +184,7 @@ public abstract class Entity : MonoBehaviour
     // probably call animation here
     public IEnumerator MoveToOneCell(Cell target)
     {
-        animator.SetBool("Moving", true);
+        animator.SetInteger("state", (int)AnimState.WALK);
         var currentPos = transform.position;
         var t = 0f;
         while (t < 1)
@@ -182,11 +193,8 @@ public abstract class Entity : MonoBehaviour
             transform.position = Vector3.Lerp(currentPos, target.transform.position - (Vector3.forward * zOffset), t);
             yield return null;
         }
-        animator.SetBool("Moving", false);
+        animator.SetInteger("state", (int)AnimState.IDLE);
     }
-
-    // Choose a movement target from the list of entities
-    public abstract Cell FindMovementTarget(List<Entity> entities);
 
     public virtual float GetCellWeight(Cell c)
     {

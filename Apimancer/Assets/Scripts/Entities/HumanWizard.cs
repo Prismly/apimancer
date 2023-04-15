@@ -42,11 +42,6 @@ public class HumanWizard : Wizard
         }
     }
 
-    public override Cell FindMovementTarget(List<Entity> entities)
-    {
-        throw new System.NotImplementedException();
-    }
-
     public override IEnumerator DetermineMovement()
     {
         // do nothing

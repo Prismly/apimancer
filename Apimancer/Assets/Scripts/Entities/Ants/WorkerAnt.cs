@@ -21,20 +21,17 @@ public class WorkerAnt : Ant
 
     public override IEnumerator DetermineMovement()
     {
-        Debug.Log("Worker and moving");
         Tuple<Unit, int, List<Cell>> target = DetermineTarget();
         if (target != null)
         {
             yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
             if (target.Item2 <= MovementSpeed)
             {
-                animator.SetInteger("state", (int)AntAnimState.BITE);
-                Unit.DamageTarget(AttackDamage, target.Item1);
-                yield return new WaitForSeconds(1f);
+                AttackTarget(AttackDamage, target.Item1);
             }
-            animator.SetInteger("state", (int)AntAnimState.IDLE);
+            else RelinquishControl();
         }
-        GameManager.Instance.NotifyNextUnit();
+        else RelinquishControl();
     }
 
     public override int MaxHealth
@@ -56,9 +53,4 @@ public class WorkerAnt : Ant
     public override List<Unit.Faction> TargetPriorities
     { get { return targetPriorities; }
       set { targetPriorities = value; } }
-
-    public override Cell FindMovementTarget(List<Entity> entities)
-    {
-        return null;
-    }
 }

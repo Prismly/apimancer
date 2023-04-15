@@ -4,13 +4,6 @@ using UnityEngine;
 
 public abstract class Ant : Unit
 {
-    public enum AntAnimState
-    {
-        IDLE = 0,
-        BITE,
-        DEATH
-    };
-
     private Wizard commander;
 
     public void OnSpawn()
