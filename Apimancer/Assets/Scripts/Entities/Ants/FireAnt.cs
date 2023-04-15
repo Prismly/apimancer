@@ -16,6 +16,7 @@ public class FireAnt : Ant
     private void Awake()
     {
         unitName = "Fire Ant";
+        OnSpawn();
     }
 
     public override IEnumerator DetermineMovement()

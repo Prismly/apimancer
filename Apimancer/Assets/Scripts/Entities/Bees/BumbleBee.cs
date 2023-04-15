@@ -16,6 +16,7 @@ public class BumbleBee : Bee
     private void Awake()
     {
         unitName = "Bumble Bee";
+        OnSpawn();
     }
 
     public override IEnumerator DetermineMovement()

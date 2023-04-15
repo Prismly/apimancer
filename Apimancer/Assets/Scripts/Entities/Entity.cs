@@ -10,7 +10,7 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     public Vector2Int loc { get; set; }
 
-    private static float zOffset = 0.04f;
+    protected float zOffset = 0.04f;
 
     [SerializeField]
     protected Animator animator;
@@ -24,10 +24,11 @@ public abstract class Entity : MonoBehaviour
     public enum AnimState
     {
         IDLE = 0,
-        WALK = 1,
+        MOVE = 1,
         DEATH = 2,
-        ACTION = 3,
-        ACTION2 = 4
+        UNIT_ACTION = 3,
+        WIZ_SUMMON = 3,
+        WIZ_SPELLCAST = 4,
     }
 
     public void Start()
@@ -184,16 +185,16 @@ public abstract class Entity : MonoBehaviour
     // probably call animation here
     public IEnumerator MoveToOneCell(Cell target)
     {
-        animator.SetInteger("state", (int)AnimState.WALK);
+        SetAnimState(AnimState.MOVE);
         var currentPos = transform.position;
         var t = 0f;
         while (t < 1)
         {
             t += Time.deltaTime / 0.25f;
-            transform.position = Vector3.Lerp(currentPos, target.transform.position, t);
+            transform.position = Vector3.Lerp(currentPos, target.transform.position - (Vector3.forward * zOffset), t);
             yield return null;
         }
-        animator.SetInteger("state", (int)AnimState.IDLE);
+        SetAnimState(AnimState.IDLE);
     }
 
     public virtual float GetCellWeight(Cell c)
@@ -210,4 +211,9 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnDeselect(){}
     public virtual void OnHover(){}
     public virtual void OnUnhover(){}
+
+    public virtual void SetAnimState(AnimState state)
+    {
+        animator.SetInteger("State", (int)state);
+    }
 }

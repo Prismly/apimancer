@@ -19,13 +19,13 @@ public class SummonOption : MenuOption
 
     public void MouseEnter()
     {
-        Debug.Log("MouseEnter!");
+        //Debug.Log("MouseEnter!");
         SetOptionString(optionString.Replace("[X]", "[O]"));
     }
 
     public void MouseExit()
     {
-        Debug.Log("MouseExit!");
+        //Debug.Log("MouseExit!");
         SetOptionString(optionString.Replace("[O]", "[X]"));
     }
 

@@ -16,6 +16,7 @@ public class MiningBee : Bee
     private void Awake()
     {
         unitName = "Mining Bee";
+        OnSpawn();
     }
 
     public override IEnumerator DetermineMovement()

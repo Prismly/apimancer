@@ -8,6 +8,12 @@ public abstract class Bee : Unit
     [SerializeField] private AudioClip sndSummon;
     private List<GameObject> arrows = new List<GameObject>();
 
+    public void OnSpawn()
+    {
+        zOffset = 0.44f;
+        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
+    }
+
     public void BeginTurn()
     {
         Cell prevCell = GetCell();
