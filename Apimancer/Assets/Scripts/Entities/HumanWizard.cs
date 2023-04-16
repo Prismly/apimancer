@@ -11,6 +11,7 @@ public class HumanWizard : Wizard
     private int health = 15;
     private int attackDamage = 1;
     private int movementSpeed = 2;
+    private int movementCounter = 2;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
 
     private void Awake()
@@ -23,6 +24,7 @@ public class HumanWizard : Wizard
     public override void BeginTurn()
     {
         PlaySound(Sounds.Warcry);
+        movementCounter = movementSpeed;
         UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(new MoveAction(this));
@@ -83,5 +85,17 @@ public class HumanWizard : Wizard
     {
         get { return targetPriorities; }
         set { targetPriorities = value; }
+    }
+
+    public override void OnSelect()
+    {
+        if (GameManager.Instance.CurrentAction?.actionType != ActionType.MOVE)
+        {
+            GameManager.Instance.SetCurrentAction(new MoveAction(this));
+        }
+        else
+        {
+            GameManager.Instance.SetCurrentAction(null);
+        }
     }
 }
