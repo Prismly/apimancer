@@ -204,6 +204,7 @@ public abstract class Entity : MonoBehaviour
             yield return null;
         }
         SetAnimState(AnimState.IDLE);
+        StopSound();
     }
 
     public virtual float GetCellWeight(Cell c)
@@ -221,7 +222,7 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnHover(){}
     public virtual void OnUnhover(){}
 
-    public virtual void PlaySound(List<AudioClip> sounds)
+    public void PlaySound(List<AudioClip> sounds)
     {
         int n = sounds.Count();
         if (n > 0)
@@ -230,7 +231,12 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    public virtual void SetAnimState(AnimState state)
+    public void StopSound()
+    {
+        audioSource.Stop();
+    }
+
+    public void SetAnimState(AnimState state)
     {
         animator.SetInteger("State", (int)state);
     }

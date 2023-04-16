@@ -54,7 +54,7 @@ MonoBehaviour:
     Death:
     - {fileID: 8300000, guid: fad64ecf282cbb24b98933a2e5066890, type: 3}
     Walk:
-    - {fileID: 8300000, guid: 2924db501e00ba047b6368a34a51f3d8, type: 3}
+    - {fileID: 8300000, guid: 5406dfc5537930941a4ed5559eea9f6f, type: 3}
     Summon:
     - {fileID: 8300000, guid: 01d0d6dfb868fa74c8138d1f2a7c38d1, type: 3}
     Attack:

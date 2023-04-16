@@ -54,13 +54,13 @@ MonoBehaviour:
     Death:
     - {fileID: 8300000, guid: fad64ecf282cbb24b98933a2e5066890, type: 3}
     Walk:
-    - {fileID: 8300000, guid: ffeae52fd8f72c544bb9312b7b660f1e, type: 3}
+    - {fileID: 8300000, guid: 3fa784595f0a6204787e36bef2285217, type: 3}
     Summon:
     - {fileID: 8300000, guid: 01d0d6dfb868fa74c8138d1f2a7c38d1, type: 3}
     Attack:
-    - {fileID: 8300000, guid: df0a78b3ead61354d810f48264a762a4, type: 3}
+    - {fileID: 8300000, guid: 70d16cc5961d8564ea3c0db7936d5458, type: 3}
     Harvest:
-    - {fileID: 8300000, guid: df0a78b3ead61354d810f48264a762a4, type: 3}
+    - {fileID: 8300000, guid: 70d16cc5961d8564ea3c0db7936d5458, type: 3}
     Warcry:
     - {fileID: 8300000, guid: 25b6937c04f77a24ebf1d8636e2c178d, type: 3}
     - {fileID: 8300000, guid: 9c6d91815640f79458d2bf7a92386c0a, type: 3}
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_Size: {x: 2.2916667, y: 1.9166666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3697168618500510779
