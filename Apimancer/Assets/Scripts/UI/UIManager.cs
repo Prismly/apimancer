@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
 
     [SerializeField] private RectTransform bottomMid;
+    [SerializeField] private GameObject damageIndic;
 
     [SerializeField] public GameObject HEAD_HOR;
     [SerializeField] public GameObject HEAD_DIAG;
@@ -166,6 +167,17 @@ public class UIManager : MonoBehaviour
                 g.GetComponent<Button>().enabled = false;
             }
         }
+    }
+
+    public void SpawnDamageIndicator(int dmgVal, Vector3 worldPos)
+    {
+        Debug.Log("Spawning DamageIndicator");
+        GameObject newDamageIndic = Instantiate(damageIndic);
+        newDamageIndic.transform.SetParent(targetCanvas.transform);
+        RectTransform indicRect = newDamageIndic.GetComponent<RectTransform>();
+        indicRect.anchoredPosition = Camera.main.WorldToScreenPoint(worldPos);
+        TextMeshProUGUI indicText = newDamageIndic.GetComponent<TextMeshProUGUI>();
+        indicText.text = dmgVal.ToString() + "!";
     }
 
     private void Update()

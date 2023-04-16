@@ -71,6 +71,7 @@ public abstract class Unit : Entity
         }
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
+        UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
     }
 
     // receive damage
