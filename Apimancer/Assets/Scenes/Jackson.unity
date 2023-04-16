@@ -2063,6 +2063,7 @@ MonoBehaviour:
   - {fileID: 1773329821}
   pauseMenu: {fileID: 157952196}
   bottomMid: {fileID: 990115031}
+  damageIndic: {fileID: 3774479830569032399, guid: 431e81dc830ce214d9d1393c28837210, type: 3}
   HEAD_HOR: {fileID: 5547939795542834486, guid: a80bbe4fb19e31742a802ae118caf3c4, type: 3}
   HEAD_DIAG: {fileID: 5547939795542834486, guid: 7f8fb3475085f4b49bd9667f24423388, type: 3}
   BODY_DIAG: {fileID: 5547939795542834486, guid: 83a1c606b6004ee4a8eaa1f9eafc6093, type: 3}
