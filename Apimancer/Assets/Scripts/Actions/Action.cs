@@ -32,18 +32,20 @@ public abstract class Action
         this.range = range;
     }
 
-    protected bool Validate(Cell cell)
+    protected virtual bool Validate(Cell cell)
     {
-        if (Vector2Int.Distance(unit.loc, cell.Location) <= range)
+        List<Cell> inRange = unit.GetCell().GetCellsRange(3);
+        foreach (Cell c in inRange)
         {
-            Wizard w = (Wizard)unit;
-            if (w.getMana() >= cost)
+            if (c.Location == cell.Location)
             {
-                w.AddMana(-cost);
-                return true;
+                Wizard w = (Wizard)unit;
+                if (w.SpendMana(cost))
+                {
+                    return true;
+                }
             }
         }
-
         return false;
     }
 

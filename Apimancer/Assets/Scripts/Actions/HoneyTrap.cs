@@ -11,16 +11,18 @@ public class HoneyTrap : SpellAction
 
     public override bool Execute(Cell cell)
     {
-        Debug.Log("HONEY TRAP!");
-        GameManager.Instance.Wizards[0].setMana(GameManager.Instance.Wizards[0].getMana() - cost);
-        if (!Validate(cell) && cell.Type != CellType.DIRT)
-            return false;
+        // TEMPORARILY DISABLED FOR ECGC!!
 
-        if (!cell.IsOccupied)
-            cell.SetColor(new Color(1.0f, 0.3f, 0));
+        //Debug.Log("HONEY TRAP!");
+        //GameManager.Instance.Wizards[0].setMana(GameManager.Instance.Wizards[0].getMana() - cost);
+        //if (!Validate(cell) && cell.Type != CellType.DIRT)
+        //    return false;
 
-        //Unit target = cell.Occupant as Unit;
-        //target.SetSticky(true);
+        //if (!cell.IsOccupied)
+        //    cell.SetColor(new Color(1.0f, 0.3f, 0));
+
+        ////Unit target = cell.Occupant as Unit;
+        ////target.SetSticky(true);
         return true;
     }
 }
