@@ -88,6 +88,7 @@ public abstract class Unit : Entity
         else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
+        UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
     }
 
     // receive damage
@@ -144,7 +145,7 @@ public abstract class Unit : Entity
     public override void OnDeselect() {}
     public override void OnHover()
     {
-        if (UnitFaction != Faction.RESOURCE && UnitFaction != Faction.OTHER)
+        if (UnitFaction != Faction.OTHER)
         {
             UIManager.Instance.ShowHealthBox(this);
         }
