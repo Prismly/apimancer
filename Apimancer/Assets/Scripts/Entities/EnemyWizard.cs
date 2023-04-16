@@ -87,7 +87,7 @@ public class EnemyWizard : Wizard
 
     public override void MoveUnits()
     {
-        _currentUnitIndex = -2;
+        _currentUnitIndex = -3;
         MoveNextUnit();
     }
 
@@ -125,6 +125,11 @@ public class EnemyWizard : Wizard
     public override void MoveNextUnit()
     {
         _currentUnitIndex++;
+        if (_currentUnitIndex < -1)
+        {
+            Movement();
+            return;
+        }
         if (_currentUnitIndex < 0)
         {
             CastSpells();
@@ -136,6 +141,11 @@ public class EnemyWizard : Wizard
             return;
         }
         StartCoroutine(Units[_currentUnitIndex].DetermineMovement());
+    }
+
+    private void Movement()
+    {
+        
     }
 
     public override int MaxHealth
