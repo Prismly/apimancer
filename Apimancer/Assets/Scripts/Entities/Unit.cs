@@ -49,10 +49,24 @@ public abstract class Unit : Entity
     public abstract int AttackDamage { get; set; }
     public abstract int MovementSpeed { get; set; }
     public abstract List<Faction> TargetPriorities { get; set; }
-    public abstract IEnumerator DetermineMovement();
 
     public GameObject myShadow;
     public virtual Action DetermineAction() { return null; }
+
+    public virtual IEnumerator DetermineMovement()
+    {
+        Tuple<Unit, int, List<Cell>> target = DetermineTarget();
+        if (target != null)
+        {
+            yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, MovementSpeed));
+            if (target.Item2 <= MovementSpeed)
+            {
+                AttackTarget(AttackDamage, target.Item1);
+            }
+            else RelinquishControl();
+        }
+        else RelinquishControl();
+    }
 
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)

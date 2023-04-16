@@ -19,21 +19,6 @@ public class WorkerBee : Bee
         OnSpawn();
     }
 
-    public override IEnumerator DetermineMovement()
-    {
-        Tuple<Unit, int, List<Cell>> target = DetermineTarget();
-        if (target != null)
-        {
-            yield return StartCoroutine(this.MoveAlongPathByAmount(target.Item3, MovementSpeed));
-            if (target.Item2 <= MovementSpeed)
-            {
-                AttackTarget(AttackDamage, target.Item1);
-            }
-            else RelinquishControl();
-        }
-        else RelinquishControl();
-    }
-
     public override int MaxHealth
     { get { return maxHealth; }
       set { maxHealth = value; }}
