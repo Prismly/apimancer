@@ -9,16 +9,34 @@ public class Teleport : SpellAction
     {
     }
 
-    public override bool Execute(Cell cell)
+    protected override bool Validate(Cell cell)
     {
-        Debug.Log("TELEPORT!");
-        GameManager.Instance.Wizards[0].setMana(GameManager.Instance.Wizards[0].getMana() - cost);
-        if (!Validate(cell))
-            return false;
-
         if (cell.IsOccupied)
             return false;
 
+        List<Cell> inRange = unit.GetCell().GetCellsRange(3);
+        foreach (Cell c in inRange)
+        {
+            if (c.Location == cell.Location)
+            {
+                Wizard w = (Wizard)unit;
+                if (w.SpendMana(cost))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public override bool Execute(Cell cell)
+    {
+        Debug.Log("TELEPORT!");
+
+        if (!Validate(cell))
+            return false;
+
+        unit.GetCell().Occupant = null;
         unit.setLocation(cell);
         return true;
     }

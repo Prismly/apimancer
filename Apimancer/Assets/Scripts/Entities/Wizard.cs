@@ -54,10 +54,10 @@ public abstract class Wizard : Unit
 
         int cost = GameManager.Instance.GetUnitCost(type);
 
-        if (mana < cost)
+        if (!SpendMana(cost))
+        {
             return false;
-
-        //SetAnimState();
+        }
 
         List<Cell> path = Entity.PathFind(this, cell);
 
@@ -69,29 +69,55 @@ public abstract class Wizard : Unit
         unit.setLocation(cell);
         Units.Add(unit);
 
-        AddMana(-cost);
         return true;
     }
 
-    public int getMana()
+    public int GetMana()
     {
         return mana;
     }
 
-    public int getMaxMana()
+    public int GetMaxMana()
     {
         return maxMana;
     }
 
-    public void setMana(int m) {
+    public void SetMana(int m) {
         mana = (m > maxMana) ? 
                (maxMana) :
                (m);
     }
-    public void AddMana(int m) {
-        int d = maxMana - mana;
-        mana = m > d ? 
-               maxMana : 
-               m + mana;
+
+    // Attempts to reduce 'mana' by the value of 'cost'. If this would bring 'mana' below 0, returns false and does not decrement. If successful, returns true.
+    public bool SpendMana(int cost)
+    {
+        if (cost < 0)
+        {
+            Debug.LogError("Oops! You tried to spend negative mana. Classic blunder");
+            return false;
+        }
+
+        if (cost > mana)
+        {
+            // Insufficient mana
+            return false;
+        }
+        else
+        {
+            mana -= cost;
+            return true;
+        }
+    }
+
+    public void AddMana(int deposit) {
+        if (deposit < 0)
+        {
+            Debug.LogError("Oops! You tried to add negative mana. Classic blunder");
+            return;
+        }
+
+        int addedVal = mana + deposit;
+        // Assign to 'mana', cap value at 'maxMana'
+        mana = addedVal < maxMana ? addedVal : maxMana;
     }
 }

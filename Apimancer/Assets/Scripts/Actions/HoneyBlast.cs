@@ -11,16 +11,18 @@ public class HoneyBlast : SpellAction
 
     public override bool Execute(Cell cell)
     {
-        Debug.Log("HONEY BLAAAAST!");
-        GameManager.Instance.Wizards[0].AddMana(-cost);
-        if (!Validate(cell))
-            return false;
+        // TEMPORARILY DISABLED FOR ECGC!!
 
-        if (!cell.IsOccupied)
-            return false;
+        //Debug.Log("HONEY BLAAAAST!");
+        //GameManager.Instance.Wizards[0].AddMana(-cost);
+        //if (!Validate(cell))
+        //    return false;
 
-        Unit target = cell.Occupant as Unit;
-        GameManager.Instance.Kill(unit);
+        //if (!cell.IsOccupied)
+        //    return false;
+
+        //Unit target = cell.Occupant as Unit;
+        //GameManager.Instance.Kill(unit);
         return true;
     }
 }

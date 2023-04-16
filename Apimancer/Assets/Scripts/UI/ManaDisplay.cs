@@ -43,8 +43,8 @@ public class ManaDisplay : MonoBehaviour
     public void UpdateDisplay()
     {
         Wizard playerWiz = GameManager.Instance.Wizards[0];
-        int currentMana = playerWiz.getMana();
-        int maxMana = playerWiz.getMaxMana();
+        int currentMana = playerWiz.GetMana();
+        int maxMana = playerWiz.GetMaxMana();
         int manaStep = maxMana / manaLevels;
 
         for (int i = 0; i < manaLevels; i++)
