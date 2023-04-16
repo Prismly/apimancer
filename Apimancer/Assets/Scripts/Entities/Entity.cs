@@ -167,6 +167,11 @@ public abstract class Entity : MonoBehaviour
         return true;
     }
 
+    public IEnumerator MoveToCellCoroutine(Cell target) {
+        CellManager.Instance.GetCell(loc).Exit();
+        yield return StartCoroutine(MoveCoroutine(PathFind(this, target)));
+    }
+
     public IEnumerator MoveAlongPathByAmount(List<Cell> path, float amount)
     {
         short i = 0;
@@ -180,7 +185,7 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveCoroutine(List<Cell> path)
+    protected IEnumerator MoveCoroutine(List<Cell> path)
     {
         foreach (Cell c in path)
             yield return StartCoroutine(MoveToOneCell(c));
