@@ -12,6 +12,11 @@ public class SummonAction : Action
         this.type = type;
     }
 
+    public override bool Validate(Cell cell)
+    {
+        return !cell.IsOccupied;
+    }
+
     public override bool Execute(Cell cell)
     {
         Wizard w = (Wizard)unit;

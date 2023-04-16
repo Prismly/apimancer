@@ -31,7 +31,16 @@ public class SummonOption : MenuOption
 
     public override void OnSelect()
     {
-        GameManager.Instance.SetCurrentAction(sumAct);
-        GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
+        // Do whatever the Summon does here
+        if (GameManager.Instance.CurrentAction != sumAct)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
+            GameManager.Instance.SetCurrentAction(sumAct);
+        }
+        else
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 0f);
+            GameManager.Instance.SetCurrentAction(null);
+        }
     }
 }
