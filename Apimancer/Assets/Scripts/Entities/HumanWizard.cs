@@ -27,7 +27,7 @@ public class HumanWizard : Wizard
         movementCounter = movementSpeed;
         UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
         IsTurn = true;
-        GameManager.Instance.SetCurrentAction(new MoveAction(this));
+        // GameManager.Instance.SetCurrentAction(new MoveAction(this));
         foreach(Unit u in Units)
         {
             Bee bee = u as Bee;
