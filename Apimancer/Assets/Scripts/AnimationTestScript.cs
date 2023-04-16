@@ -5,25 +5,31 @@ using UnityEngine;
 public class AnimationTestScript : MonoBehaviour
 {
     [SerializeField] private Animator ant;
+    [SerializeField] private string idleName;
 
     public void setIdle()
     {
-        ant.Play("Fire Ant Idle");
-        ant.SetBool("moving", false);
+        ant.SetInteger("State", 0);
+    }
+
+    public void reset()
+    {
+        ant.Play(idleName);
+        ant.SetInteger("State", 0);
     }
 
     public void setAttack()
     {
-        ant.SetTrigger("attack");
+        ant.SetInteger("State", 3);
     }
 
     public void setWalk()
     {
-        ant.SetBool("moving", true);
+        ant.SetInteger("State", 1);
     }
 
     public void setDeath()
     {
-        ant.SetTrigger("death");
+        ant.SetInteger("State", 2);
     }
 }
