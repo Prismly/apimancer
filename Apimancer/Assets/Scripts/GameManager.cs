@@ -210,11 +210,6 @@ public class GameManager : MonoBehaviour
 
     public bool Execute(Cell cell)
     {
-        if (CurrentAction == null)
-        {
-            CurrentAction = new MoveAction(CurrentWizard);
-        }
-
         if (CellInActionRange(cell))
         {
             bool success = CurrentAction.Execute(cell);

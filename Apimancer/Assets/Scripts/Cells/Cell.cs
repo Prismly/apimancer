@@ -146,7 +146,6 @@ public abstract class Cell : Selectable
             {
                 locationVertical = Cell.GetAdjactent(locationVertical, 2);
                 cellVertical = CellManager.Instance.GetCell(locationVertical);
-                //rangeCells.Add(cellVertical);
                 if (cellVertical != null && action.Validate(cellVertical))
                 {
                     rangeCells.Add(cellVertical);
