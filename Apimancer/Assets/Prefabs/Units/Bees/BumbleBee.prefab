@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6823995618026333914}
   - component: {fileID: -5267784193780540893}
+  - component: {fileID: 1989617915353871446}
   - component: {fileID: 3520741925294003418}
   - component: {fileID: 1507046649906583468}
   m_Layer: 0
@@ -48,16 +49,129 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1507046649906583468}
-  snd: {fileID: 0}
-  sndMove: {fileID: 0}
-  unitName: 
+  audioSource: {fileID: 1989617915353871446}
+  Sounds:
+    Death:
+    - {fileID: 8300000, guid: 067c55c7f71be5f4b8f68545b6068343, type: 3}
+    Walk:
+    - {fileID: 8300000, guid: 32c150a258174ad4ab5d92e9c7c49f5b, type: 3}
+    Summon:
+    - {fileID: 8300000, guid: 01d0d6dfb868fa74c8138d1f2a7c38d1, type: 3}
+    Attack:
+    - {fileID: 8300000, guid: 7d8ded97b211720468e49a3874c0ae9e, type: 3}
+    Harvest:
+    - {fileID: 8300000, guid: 58566eabbe45d414b9589039bc9b5dbe, type: 3}
+    Warcry:
+    - {fileID: 8300000, guid: 0ec5c40d0c1944d4caa7057a8e91ddbf, type: 3}
+    - {fileID: 8300000, guid: b8b08093409a0594eaf22aaaf7240eb8, type: 3}
+    - {fileID: 8300000, guid: 44c44ccf2eaae8c46a20f5f87862ec8d, type: 3}
+    - {fileID: 8300000, guid: 66314f455de50a541a3ce43c06bbc161, type: 3}
+    - {fileID: 8300000, guid: 0d92098e5a0aa414d996e279ae3e1894, type: 3}
+    Selected:
+    - {fileID: 8300000, guid: 238171d84e1073d46b9a0830cd5bb1a0, type: 3}
+  unitName: Bumble Bee
   UnitFaction: 1
   Type: 3
   State: 1
   Commander: {fileID: 0}
   condition: {fileID: 0}
   myShadow: {fileID: 6407683954884887910}
-  sndSummon: {fileID: 0}
+--- !u!82 &1989617915353871446
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3543165017727909147}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!212 &3520741925294003418
 SpriteRenderer:
   m_ObjectHideFlags: 0

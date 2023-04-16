@@ -55,6 +55,7 @@ public abstract class Unit : Entity
 
     public virtual IEnumerator DetermineMovement()
     {
+        PlaySound(Sounds.Warcry);
         Tuple<Unit, int, List<Cell>> target = DetermineTarget();
         if (target != null)
         {
@@ -67,7 +68,7 @@ public abstract class Unit : Entity
         }
         else RelinquishControl();
     }
-
+    
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)
     {
@@ -82,7 +83,9 @@ public abstract class Unit : Entity
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
             Commander.AddMana(m);
+            PlaySound(Sounds.Harvest);
         }
+        else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
     }
@@ -126,6 +129,7 @@ public abstract class Unit : Entity
 
     public virtual void OnDeath()
     {
+        PlaySound(Sounds.Death);
         // GameManager.Instance.Kill(this);
         // GetCell().Occupant = null;
         // Destroy(this.gameObject, 1.0f);
@@ -133,7 +137,10 @@ public abstract class Unit : Entity
         // End game if wizard
     }
 
-    public override void OnSelect() {}
+    public override void OnSelect() 
+    {
+        PlaySound(Sounds.Selected);
+    }
     public override void OnDeselect() {}
     public override void OnHover()
     {

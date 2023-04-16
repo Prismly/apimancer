@@ -21,7 +21,7 @@ public class WorkerBee : Bee
 
     public override int MaxHealth
     { get { return maxHealth; }
-      set { maxHealth = value; }}
+      set { maxHealth = value; } }
 
     public override int Health
     { get { return health; }

@@ -16,10 +16,22 @@ public abstract class Entity : MonoBehaviour
     protected Animator animator;
 
     [SerializeField] 
-    protected AudioSource snd;
+    protected AudioSource audioSource;
 
-    [SerializeField] 
-    private AudioClip sndMove;
+    [Serializable]
+    public struct SoundStruct
+    {
+        public List<AudioClip> Death;
+        public List<AudioClip> Walk;
+        public List<AudioClip> Summon;
+        public List<AudioClip> Attack;
+        public List<AudioClip> Harvest;
+        public List<AudioClip> Warcry;
+        public List<AudioClip> Selected;
+    }
+
+    [SerializeField]
+    public SoundStruct Sounds;
 
     public enum AnimState
     {
@@ -157,7 +169,6 @@ public abstract class Entity : MonoBehaviour
 
     public IEnumerator MoveAlongPathByAmount(List<Cell> path, float amount)
     {
-        snd.PlayOneShot(sndMove);
         short i = 0;
         while (amount > 0 && i < path?.Count) {
             CellManager.Instance.GetCell(loc).Exit();
@@ -183,6 +194,7 @@ public abstract class Entity : MonoBehaviour
     public IEnumerator MoveToOneCell(Cell target)
     {
         SetAnimState(AnimState.MOVE);
+        PlaySound(Sounds.Walk);
         var currentPos = transform.position;
         var t = 0f;
         while (t < 1)
@@ -208,6 +220,15 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnDeselect(){}
     public virtual void OnHover(){}
     public virtual void OnUnhover(){}
+
+    public virtual void PlaySound(List<AudioClip> sounds)
+    {
+        int n = sounds.Count();
+        if (n > 0)
+        {
+            audioSource.PlayOneShot(sounds[UnityEngine.Random.Range(0, n)]);
+        }
+    }
 
     public virtual void SetAnimState(AnimState state)
     {

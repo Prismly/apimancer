@@ -49,16 +49,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 5161454403900887182}
-  snd: {fileID: 1077015348531125801}
-  sndMove: {fileID: 8300000, guid: 32c150a258174ad4ab5d92e9c7c49f5b, type: 3}
-  unitName: 
+  audioSource: {fileID: 1077015348531125801}
+  Sounds:
+    Death:
+    - {fileID: 8300000, guid: 067c55c7f71be5f4b8f68545b6068343, type: 3}
+    Walk:
+    - {fileID: 8300000, guid: 32c150a258174ad4ab5d92e9c7c49f5b, type: 3}
+    Summon:
+    - {fileID: 8300000, guid: 01d0d6dfb868fa74c8138d1f2a7c38d1, type: 3}
+    Attack:
+    - {fileID: 8300000, guid: 7d8ded97b211720468e49a3874c0ae9e, type: 3}
+    Harvest:
+    - {fileID: 8300000, guid: 58566eabbe45d414b9589039bc9b5dbe, type: 3}
+    Warcry:
+    - {fileID: 8300000, guid: 0ec5c40d0c1944d4caa7057a8e91ddbf, type: 3}
+    - {fileID: 8300000, guid: b8b08093409a0594eaf22aaaf7240eb8, type: 3}
+    - {fileID: 8300000, guid: 44c44ccf2eaae8c46a20f5f87862ec8d, type: 3}
+    - {fileID: 8300000, guid: 66314f455de50a541a3ce43c06bbc161, type: 3}
+    - {fileID: 8300000, guid: 0d92098e5a0aa414d996e279ae3e1894, type: 3}
+    Selected:
+    - {fileID: 8300000, guid: 238171d84e1073d46b9a0830cd5bb1a0, type: 3}
+  unitName: Worker Bee
   UnitFaction: 1
   Type: 1
   State: 1
   Commander: {fileID: 0}
   condition: {fileID: 0}
   myShadow: {fileID: 5352734807228462796}
-  sndSummon: {fileID: 8300000, guid: 01d0d6dfb868fa74c8138d1f2a7c38d1, type: 3}
 --- !u!82 &1077015348531125801
 AudioSource:
   m_ObjectHideFlags: 0
