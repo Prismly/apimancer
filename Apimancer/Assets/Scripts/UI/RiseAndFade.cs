@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RiseAndFade : MonoBehaviour
 {
@@ -10,7 +11,6 @@ public class RiseAndFade : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     void Update()
@@ -23,7 +23,14 @@ public class RiseAndFade : MonoBehaviour
         else
         {
             RectTransform rect = GetComponent<RectTransform>();
-            rect.position += Vector3.up * Time.deltaTime * riseDist;
+            rect.position += Vector3.back * Time.deltaTime * riseDist;
+            rect.rotation = Quaternion.LookRotation(rect.localPosition - Camera.main.transform.position, Vector3.back);
+            TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
+            float alphaRatio = Mathf.Pow(progress / riseTime, 2);
+            Debug.Log(alphaRatio);
+            Vector4 newColor = text.color;
+            newColor.w = 1 - alphaRatio;
+            text.color = newColor;
         }
     }
 }

@@ -124,7 +124,7 @@ public abstract class Unit : Entity
     public override void OnDeselect() {}
     public override void OnHover()
     {
-        if (UnitFaction != Faction.RESOURCE && UnitFaction != Faction.OTHER)
+        if (UnitFaction != Faction.OTHER)
         {
             UIManager.Instance.ShowHealthBox(this);
         }

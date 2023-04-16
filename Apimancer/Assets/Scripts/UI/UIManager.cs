@@ -173,9 +173,12 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Spawning DamageIndicator");
         GameObject newDamageIndic = Instantiate(damageIndic);
-        newDamageIndic.transform.SetParent(targetCanvas.transform);
+        newDamageIndic.transform.SetParent(targetWorldCanvas.transform);
         RectTransform indicRect = newDamageIndic.GetComponent<RectTransform>();
-        indicRect.anchoredPosition = Camera.main.WorldToScreenPoint(worldPos);
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(worldPos);
+
+        indicRect.localPosition = worldPos;
+        //indicRect.localPosition = new Vector3(screenPoint.x - (targetCanvas.GetComponent<Canvas>().pixelRect.width / 2), screenPoint.y - (targetCanvas.GetComponent<Canvas>().pixelRect.height / 2), 0);
         TextMeshProUGUI indicText = newDamageIndic.GetComponent<TextMeshProUGUI>();
         indicText.text = dmgVal.ToString() + "!";
     }
