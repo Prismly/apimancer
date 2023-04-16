@@ -128,8 +128,9 @@ public abstract class Cell : Selectable
         }
     }
 
-    public List<Cell> GetCellsRange(int range)
+    public List<Cell> GetCellsRange(Action action)
     {
+        int range = (int)action.range;
         List<Cell> rangeCells = new List<Cell>();
         Vector2Int locationHorizontal = this.Location;
         Cell cellHorizontal = this;
@@ -137,7 +138,7 @@ public abstract class Cell : Selectable
         {
             Vector2Int locationVertical = locationHorizontal;
             Cell cellVertical = cellHorizontal;
-            if (cellHorizontal != null)
+            if (cellHorizontal != null && action.Validate(cellHorizontal))
             {
                 rangeCells.Add(cellHorizontal);
             }
@@ -146,7 +147,7 @@ public abstract class Cell : Selectable
                 locationVertical = Cell.GetAdjactent(locationVertical, 2);
                 cellVertical = CellManager.Instance.GetCell(locationVertical);
                 //rangeCells.Add(cellVertical);
-                if (cellVertical != null)
+                if (cellVertical != null && action.Validate(cellVertical))
                 {
                     rangeCells.Add(cellVertical);
                 }
@@ -156,7 +157,7 @@ public abstract class Cell : Selectable
             {
                 locationVertical = Cell.GetAdjactent(locationVertical, 4);
                 cellVertical = CellManager.Instance.GetCell(locationVertical);
-                if (cellVertical != null)
+                if (cellVertical != null && action.Validate(cellVertical))
                 {
                     rangeCells.Add(cellVertical);
                 }
@@ -172,7 +173,7 @@ public abstract class Cell : Selectable
             cellHorizontal = CellManager.Instance.GetCell(locationHorizontal);
             Vector2Int locationVertical = locationHorizontal;
             Cell cellVertical = cellHorizontal;
-            if (cellHorizontal != null)
+            if (cellHorizontal != null && action.Validate(cellHorizontal))
             {
                 rangeCells.Add(cellHorizontal);
             }
@@ -180,7 +181,7 @@ public abstract class Cell : Selectable
             {
                 locationVertical = Cell.GetAdjactent(locationVertical, 1);
                 cellVertical = CellManager.Instance.GetCell(locationVertical);
-                if (cellVertical != null)
+                if (cellVertical != null && action.Validate(cellVertical))
                 {
                     rangeCells.Add(cellVertical);
                 }
@@ -191,7 +192,7 @@ public abstract class Cell : Selectable
             {
                 locationVertical = Cell.GetAdjactent(locationVertical, 5);
                 cellVertical = CellManager.Instance.GetCell(locationVertical);
-                if (cellVertical != null)
+                if (cellVertical != null && action.Validate(cellVertical))
                 {
                     rangeCells.Add(cellVertical);
                 }

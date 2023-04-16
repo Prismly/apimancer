@@ -34,7 +34,15 @@ public class SpellOption : MenuOption
     public override void OnSelect()
     {
         // Do whatever the Spell does here
-        GameManager.Instance.SetCurrentAction(action);
-        GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
+        if (GameManager.Instance.CurrentAction != action)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
+            GameManager.Instance.SetCurrentAction(action);
+        }
+        else
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 0f);
+            GameManager.Instance.SetCurrentAction(null);
+        }
     }
 }
