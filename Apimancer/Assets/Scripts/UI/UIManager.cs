@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,6 +28,18 @@ public class UIManager : MonoBehaviour
     private GameObject summonMenu;
     private GameObject spellsMenu;
     //private GameObject healthBox;
+
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public SoundStruct Sounds;
+
+    [Serializable] 
+    public struct SoundStruct 
+    {
+        public AudioClip ValidClick;
+        public AudioClip InvalidClick;
+        public AudioClip SummonMenu;
+        public AudioClip SpellsMenu;
+    }
 
     private static UIManager _instance;
     public static UIManager Instance
@@ -94,18 +107,32 @@ public class UIManager : MonoBehaviour
     public void ToggleSpellsMenu()
     {
         summonMenu.SetActive(false);
-        spellsMenu.SetActive(!spellsMenu.activeInHierarchy);
+        if (spellsMenu.activeInHierarchy) {
+            spellsMenu.SetActive(false);
+            PlaySound(Sounds.ValidClick);
+        }
+        else {
+            spellsMenu.SetActive(true);
+            PlaySound(Sounds.SpellsMenu);
+        }
     }
 
     public void ToggleSummonMenu()
     {
-        Debug.Log("toggle summon menu");
         spellsMenu.SetActive(false);
-        summonMenu.SetActive(!summonMenu.activeInHierarchy);
+        if (summonMenu.activeInHierarchy) {
+            summonMenu.SetActive(false);
+            PlaySound(Sounds.ValidClick);
+        }
+        else {
+            summonMenu.SetActive(true);
+            PlaySound(Sounds.SummonMenu);
+        }
     }
 
     public void EndPlayerTurn()
     {
+        PlaySound(Sounds.ValidClick);
         UIManager.Instance.endTurn.GetComponent<Button>().interactable = false;
         GameManager.Instance.EndTurn();
     }
@@ -143,13 +170,12 @@ public class UIManager : MonoBehaviour
 
     public void TogglePause()
     {
-        Debug.Log("Here");
+        PlaySound(Sounds.ValidClick);
         if (GameManager.Instance.gameIsPaused)
         {
             GameManager.Instance.gameIsPaused = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
-            Debug.Log("enabling");
             foreach (GameObject g in disabledOnPause)
             {
                 g.GetComponent<Button>().enabled = true;
@@ -175,5 +201,9 @@ public class UIManager : MonoBehaviour
             summonMenu.SetActive(false);
             spellsMenu.SetActive(false);
         }
+    }
+
+    public void PlaySound(AudioClip sound) {
+        audioSource.PlayOneShot(sound);
     }
 }
