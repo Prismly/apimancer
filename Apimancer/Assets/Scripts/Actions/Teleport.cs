@@ -9,24 +9,26 @@ public class Teleport : SpellAction
     {
     }
 
-    protected override bool Validate(Cell cell)
+    public override bool Validate(Cell cell)
     {
-        if (cell.IsOccupied)
-            return false;
+        return !cell.IsOccupied;
 
-        List<Cell> inRange = unit.GetCell().GetCellsRange(3);
-        foreach (Cell c in inRange)
-        {
-            if (c.Location == cell.Location)
-            {
-                Wizard w = (Wizard)unit;
-                if (w.SpendMana(cost))
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
+        //if (cell.IsOccupied)
+        //    return false;
+
+        //List<Cell> inRange = unit.GetCell().GetCellsRange(3);
+        //foreach (Cell c in inRange)
+        //{
+        //    if (c.Location == cell.Location)
+        //    {
+        //        Wizard w = (Wizard)unit;
+        //        if (w.SpendMana(cost))
+        //        {
+        //            return true;
+        //        }
+        //    }
+        //}
+        //return false;
     }
 
     public override bool Execute(Cell cell)
@@ -35,6 +37,12 @@ public class Teleport : SpellAction
 
         if (!Validate(cell))
             return false;
+
+        Wizard w = (Wizard)unit;
+        if (!w.SpendMana(cost))
+        {
+            return false;
+        }
 
         unit.GetCell().Occupant = null;
         unit.setLocation(cell);
