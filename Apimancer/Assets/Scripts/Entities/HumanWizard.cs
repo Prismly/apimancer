@@ -22,6 +22,7 @@ public class HumanWizard : Wizard
 
     public override void BeginTurn()
     {
+        PlaySound(Sounds.Warcry);
         UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(new MoveAction(this));

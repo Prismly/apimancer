@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +39,7 @@ public class EnemyWizard : Wizard
     public override void BeginTurn()
     {
         IsTurn = true;
+        PlaySound(Sounds.Warcry);
 
         MoveUnits();
 
@@ -98,7 +100,7 @@ public class EnemyWizard : Wizard
         // Select summon based on cost here
 
         // Action castSummon = summons[summonIndex];
-        Action castSummon = mana > summons[0].cost ? summons[0] : null;
+        Action castSummon = mana > summons[summonIndex].cost ? summons[summonIndex] : null;
         Cell castCell = null;
 
         // Select cell based on validity here

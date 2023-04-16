@@ -5,13 +5,13 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
-    [SerializeField] private AudioClip sndSummon;
     private List<GameObject> arrows = new List<GameObject>();
 
     public void OnSpawn()
     {
         zOffset = 0.44f;
         myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
+        PlaySound(Sounds.Summon);
     }
 
     public void BeginTurn()
@@ -103,11 +103,6 @@ public abstract class Bee : Unit
     }
 
     private Wizard commander;
-
-    private void Awake()
-    {
-        snd.PlayOneShot(sndSummon);
-    }
 
     public Wizard GetCommander()
     {

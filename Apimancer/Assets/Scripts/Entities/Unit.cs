@@ -49,11 +49,26 @@ public abstract class Unit : Entity
     public abstract int AttackDamage { get; set; }
     public abstract int MovementSpeed { get; set; }
     public abstract List<Faction> TargetPriorities { get; set; }
-    public abstract IEnumerator DetermineMovement();
 
     public GameObject myShadow;
     public virtual Action DetermineAction() { return null; }
 
+    public virtual IEnumerator DetermineMovement()
+    {
+        PlaySound(Sounds.Warcry);
+        Tuple<Unit, int, List<Cell>> target = DetermineTarget();
+        if (target != null)
+        {
+            yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, MovementSpeed));
+            if (target.Item2 <= MovementSpeed)
+            {
+                AttackTarget(AttackDamage, target.Item1);
+            }
+            else RelinquishControl();
+        }
+        else RelinquishControl();
+    }
+    
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)
     {
@@ -68,7 +83,9 @@ public abstract class Unit : Entity
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
             Commander.AddMana(m);
+            PlaySound(Sounds.Harvest);
         }
+        else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
     }
@@ -112,6 +129,7 @@ public abstract class Unit : Entity
 
     public virtual void OnDeath()
     {
+        PlaySound(Sounds.Death);
         // GameManager.Instance.Kill(this);
         // GetCell().Occupant = null;
         // Destroy(this.gameObject, 1.0f);
@@ -119,7 +137,10 @@ public abstract class Unit : Entity
         // End game if wizard
     }
 
-    public override void OnSelect() {}
+    public override void OnSelect() 
+    {
+        PlaySound(Sounds.Selected);
+    }
     public override void OnDeselect() {}
     public override void OnHover()
     {
