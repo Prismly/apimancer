@@ -183,7 +183,7 @@ public abstract class Unit : Entity
         foreach (Unit u in targets)
         {
             List<Cell> tempPath = Entity.PathFind(this, u);
-            if (tempPath != null && tempPath.Count < dist)
+            if (tempPath != null && tempPath.Count < dist && tempPath.Count != 0)
             {
                 t = u;
                 dist = tempPath.Count;
