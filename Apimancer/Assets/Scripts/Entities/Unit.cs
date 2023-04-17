@@ -124,7 +124,7 @@ public abstract class Unit : Entity
             cell.Occupant = this;
             this.loc = cell.Location;
             this.transform.position = cell.transform.position + worldOffset;
-            Debug.Log(this.transform.position + " boulder");
+            //Debug.Log(this.transform.position + " boulder");
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }
@@ -244,7 +244,7 @@ public abstract class Unit : Entity
     }
 
     protected void RelinquishControl() {
-        Debug.Log("Relinquishing Control");
+        //Debug.Log("Relinquishing Control");
         SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }

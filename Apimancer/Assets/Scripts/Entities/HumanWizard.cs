@@ -11,7 +11,7 @@ public class HumanWizard : Wizard
     private int health = 15;
     private int attackDamage = 1;
     private int movementSpeed = 2;
-    private int movementCounter = 2;
+    public bool hasMoved = false;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
 
     private void Awake()
@@ -22,10 +22,11 @@ public class HumanWizard : Wizard
     public override void BeginTurn()
     {
         PlaySound(Sounds.Warcry);
-        movementCounter = movementSpeed;
-        UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
+        hasMoved = false;
+        UIManager.Instance.TogglePlayerTurnUI(true);
+
         IsTurn = true;
-        // GameManager.Instance.SetCurrentAction(new MoveAction(this));
+        GameManager.Instance.SetCurrentAction(null);
         foreach(Unit u in Units)
         {
             Bee bee = u as Bee;
@@ -93,9 +94,9 @@ public class HumanWizard : Wizard
 
     public override void OnSelect()
     {
-        if (GameManager.Instance.CurrentAction?.actionType != ActionType.MOVE)
+        if (!hasMoved && GameManager.Instance.CurrentAction?.actionType != ActionType.MOVE)
         {
-            GameManager.Instance.SetCurrentAction(new MoveAction(this));
+            GameManager.Instance.SetCurrentAction(new MoveAction(this, (uint)movementSpeed));
         }
         else
         {
