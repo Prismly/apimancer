@@ -225,7 +225,7 @@ public abstract class Unit : Entity
             {
                 lUnits = dUnits[f];
                 Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);
-                if (pTarget == null) pTarget = tempTarget;
+                if (pTarget == null && tempTarget.Item1 != null) pTarget = tempTarget;
                 if (tempTarget.Item2 < MovementSpeed)
                 {
                     target = tempTarget;
