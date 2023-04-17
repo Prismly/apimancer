@@ -5,8 +5,11 @@ using UnityEngine;
 public class FlowerCell : Cell
 {
     [SerializeField] private List<GameObject> _flowerPrefabs;
+    private int _flowerSpawnRate = 4;
 
     private CellType type = CellType.FLOWER;
+
+    private int _turnsEmpty = 0;
     public override CellType Type
     {
         get { return type; }
@@ -16,6 +19,26 @@ public class FlowerCell : Cell
     public new void Start()
     {
         base.Start();
+        SpawnFlower();
+    }
+
+    public override void OnEndTurn() {
+        if (IsOccupied)
+        {
+            _turnsEmpty = 0;
+            return;
+        }
+        if (_turnsEmpty >= _flowerSpawnRate)
+        {
+            SpawnFlower();
+            _turnsEmpty = 0;
+            return;
+        }
+        _turnsEmpty++;
+    }
+
+    private void SpawnFlower()
+    {
         short i = (short)Random.Range(0, 3);
         float r = (float)Random.Range(-1, 2);
         Flower f = Instantiate(_flowerPrefabs[i]).GetComponent<Flower>();

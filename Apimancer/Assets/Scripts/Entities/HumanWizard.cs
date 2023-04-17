@@ -87,6 +87,12 @@ public class HumanWizard : Wizard
         set { targetPriorities = value; }
     }
 
+    public override void OnDeath()
+    {
+        base.OnDeath();
+        GameManager.Instance.GameOver(false);
+    }
+
     public override void OnSelect()
     {
         if (GameManager.Instance.CurrentAction?.actionType != ActionType.MOVE)

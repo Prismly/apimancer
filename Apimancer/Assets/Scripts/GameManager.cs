@@ -78,14 +78,17 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(int firstTurn)
     {
+        
+        SelectionManager.canInteract = true;
         IsRunning = true;
         CurrentTurn = firstTurn;
         CurrentWizard = Wizards[CurrentTurn];
         CurrentWizard.BeginTurn();
     }
 
-    public void GameOver()
+    public void GameOver(bool playerWin)
     {
+        SelectionManager.canInteract = false;
         IsRunning = false;
     }
 
@@ -122,7 +125,10 @@ public class GameManager : MonoBehaviour
 
     public void NotifyNextUnit()
     {
-        CurrentWizard.MoveNextUnit();
+        if (IsRunning)
+        {
+            CurrentWizard.MoveNextUnit();
+        }
     }
 
     public int GetUnitCost(Unit.UnitType type)
