@@ -50,7 +50,6 @@ public abstract class Unit : Entity
     public abstract int MovementSpeed { get; set; }
     public abstract List<Faction> TargetPriorities { get; set; }
 
-    public GameObject myShadow;
     public virtual Action DetermineAction() { return null; }
 
     public virtual IEnumerator DetermineMovement()
@@ -92,12 +91,13 @@ public abstract class Unit : Entity
         else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
-        UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
     }
 
     // receive damage
     public virtual void ReceiveDamage(int dmg) 
     {
+        UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
+
         this.Health -= dmg;
         if (this.Health <= 0)
         {
@@ -127,7 +127,8 @@ public abstract class Unit : Entity
         if (cell != null && !cell.IsOccupied) {
             cell.Occupant = this;
             this.loc = cell.Location;
-            this.transform.position = cell.transform.position + new Vector3(0, 0, -zOffset);
+            this.transform.position = cell.transform.position + worldOffset;
+            //Debug.Log(this.transform.position + " boulder");
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }
@@ -243,7 +244,7 @@ public abstract class Unit : Entity
     }
 
     protected void RelinquishControl() {
-        Debug.Log("Relinquishing Control");
+        //Debug.Log("Relinquishing Control");
         SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }

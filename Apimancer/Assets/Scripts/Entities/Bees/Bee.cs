@@ -9,8 +9,6 @@ public abstract class Bee : Unit
 
     public void OnSpawn()
     {
-        zOffset = 0.44f;
-        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
         PlaySound(Sounds.Summon);
     }
 

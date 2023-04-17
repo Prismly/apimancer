@@ -16,11 +16,11 @@ public class BoulderCell : Cell
     public new void Start()
     {
         base.Start();
-        short i = (short)Random.Range(0, 4);
-        float r = (float)Random.Range(-1, 2);
-        Boulder b = Instantiate(_boulderPrefabs[i]).GetComponent<Boulder>();
+        short i = (short)Random.Range(0, _boulderPrefabs.Count);
+        //float r = (float)Random.Range(-1, 2);
+        Boulder b = Instantiate(_boulderPrefabs[0]).GetComponent<Boulder>();
         b.setLocation(this);
-        b.GetComponent<Transform>().Rotate(0f, r * 30f, 0f);
+        //b.GetComponent<Transform>().Rotate(0f, r * 30f, 0f);
         GameManager.Instance.Units[Unit.Faction.OTHER].Add(b);
     }
 }

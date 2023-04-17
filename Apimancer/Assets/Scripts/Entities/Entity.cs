@@ -10,13 +10,16 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     public Vector2Int loc { get; set; }
 
-    protected float zOffset = 0.04f;
+    [SerializeField] protected Vector3 worldOffset = new Vector3(0, 0, -0.04f);
 
     [SerializeField]
     protected Animator animator;
 
     [SerializeField] 
     protected AudioSource audioSource;
+
+    [SerializeField]
+    private GameObject myShadow;
 
     [Serializable]
     public struct SoundStruct
@@ -47,9 +50,14 @@ public abstract class Entity : MonoBehaviour
     {
         //Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
         Vector2Int cellPosition = new Vector2Int(loc.x, loc.y);
-        transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position - (Vector3.forward * zOffset);
+        transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position + worldOffset;
         // transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
-        CellManager.Instance.GetCell(loc).Enter(this);
+        Cell occupiedCell = CellManager.Instance.GetCell(loc);
+        occupiedCell.Enter(this);
+        if (myShadow != null)
+        {
+            myShadow.transform.position = occupiedCell.transform.position + (Vector3.forward * -0.04f);
+        }
 
         // Give the Entity an AudioVolume component, to sync with global settings.
         gameObject.AddComponent<AudioVolume>();
@@ -209,7 +217,7 @@ public abstract class Entity : MonoBehaviour
         while (t < 1)
         {
             t += Time.deltaTime / 0.25f;
-            transform.position = Vector3.Lerp(currentPos, target.transform.position - (Vector3.forward * zOffset), t);
+            transform.position = Vector3.Lerp(currentPos, target.transform.position + worldOffset, t);
             yield return null;
         }
         SetAnimState(AnimState.IDLE);
