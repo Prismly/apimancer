@@ -7,26 +7,34 @@ public class AudioVolume : MonoBehaviour
 {
     // Start is called before the first frame update
     public static int audioLevel = 50;
-    public static UnityEvent levelChanged = null;
-
-    private void Start()
-    {
-        if (levelChanged == null)
-        {
-            levelChanged = new UnityEvent();
-            levelChanged.AddListener(UpdateVolume);
-        }
-    }
+    private int cachedAudioLevel = 100;
 
     public static void ChangeVolume(int amt)
     {
         audioLevel += amt;
         audioLevel = Mathf.Clamp(audioLevel, 0, 100);
-        levelChanged.Invoke();
+    }
+
+    private void Start()
+    {
+        UpdateVolume();
+    }
+
+    private void Update()
+    {
+        UpdateVolume();
     }
 
     private void UpdateVolume()
     {
-        GetComponent<AudioSource>().volume = audioLevel / 100f;
+        if (cachedAudioLevel != audioLevel)
+        {
+            cachedAudioLevel = audioLevel;
+            AudioSource src = GetComponent<AudioSource>();
+            if (src != null)
+            {
+                src.volume = audioLevel / 100f;
+            }
+        }
     }
 }
