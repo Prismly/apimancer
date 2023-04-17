@@ -50,7 +50,6 @@ public abstract class Unit : Entity
     public abstract int MovementSpeed { get; set; }
     public abstract List<Faction> TargetPriorities { get; set; }
 
-    public GameObject myShadow;
     public virtual Action DetermineAction() { return null; }
 
     public virtual IEnumerator DetermineMovement()
@@ -123,7 +122,8 @@ public abstract class Unit : Entity
         if (cell != null && !cell.IsOccupied) {
             cell.Occupant = this;
             this.loc = cell.Location;
-            this.transform.position = cell.transform.position + new Vector3(0, 0, -zOffset);
+            this.transform.position = cell.transform.position + worldOffset;
+            Debug.Log(this.transform.position + " boulder");
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }

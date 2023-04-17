@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d20b03cddf361304d8e8b0e3c53e6f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldOffset: {x: 0, y: 0, z: -0.57}
   animator: {fileID: 5202668542672110088}
   audioSource: {fileID: 3723233154500856886}
   Sounds:
@@ -62,7 +63,7 @@ MonoBehaviour:
     Warcry:
     - {fileID: 8300000, guid: 74fdbfe190ce3894eae52bb6961da32c, type: 3}
     Selected: []
-  unitName: 
+  unitName: The Apimancer
   UnitFaction: 1
   Type: 0
   State: 1

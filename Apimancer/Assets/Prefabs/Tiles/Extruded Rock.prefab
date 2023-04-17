@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 847825955966307414}
+  m_Father: {fileID: 4774044077662931058}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &6286046910021679275
@@ -108,12 +108,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2842337525967833800}
-  m_LocalRotation: {x: 0, y: -0.051203046, z: 0, w: 0.9986883}
+  m_LocalRotation: {x: -0, y: -0.051203046, z: -0, w: 0.9986883}
   m_LocalPosition: {x: -0.209, y: 0.08, z: -0.245}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 847825955966307414}
+  m_Father: {fileID: 4774044077662931058}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -5.87, z: 0}
 --- !u!212 &8702972978440137482
@@ -154,8 +154,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -396828503
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1643746139, guid: a532fb7c248b6a7478180ed10ac57b28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -192,12 +192,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3156211860020019866}
-  m_LocalRotation: {x: 0, y: 0.067579925, z: 0, w: 0.99771386}
+  m_LocalRotation: {x: -0, y: 0.067579925, z: -0, w: 0.99771386}
   m_LocalPosition: {x: 0.07999787, y: 0.085, z: -0.020007938}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 847825955966307414}
+  m_Father: {fileID: 4774044077662931058}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 7.75, z: 0}
 --- !u!212 &6404622926304844170
@@ -238,8 +238,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -396828503
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 338020563, guid: a532fb7c248b6a7478180ed10ac57b28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -261,8 +261,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 847825955966307414}
+  - component: {fileID: 8123271380053448717}
   m_Layer: 0
-  m_Name: 3d rock
+  m_Name: Extruded Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,19 +277,44 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740848720279807405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 72.838875, y: 0.12316978, z: -212.0937}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2697613273761161943}
-  - {fileID: 1335380156168671190}
-  - {fileID: 764306413131632747}
-  - {fileID: 1716360324552083125}
-  - {fileID: 3839757586377929972}
-  - {fileID: 7311797429636238723}
+  - {fileID: 4774044077662931058}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8123271380053448717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4740848720279807405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2529e26bb3b65be42b666c21b7998dd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldOffset: {x: 0.084, y: 0.03125, z: -0.104}
+  animator: {fileID: 0}
+  audioSource: {fileID: 0}
+  myShadow: {fileID: 0}
+  Sounds:
+    Death: []
+    Walk: []
+    Summon: []
+    Attack: []
+    Harvest: []
+    Warcry: []
+    Selected: []
+  unitName: Boulder
+  UnitFaction: 3
+  Type: 9
+  State: 1
+  Commander: {fileID: 0}
+  condition: {fileID: 0}
 --- !u!1 &6082921349505461939
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,12 +339,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6082921349505461939}
-  m_LocalRotation: {x: 0, y: 0.034812283, z: 0, w: 0.9993939}
+  m_LocalRotation: {x: -0, y: 0.034812283, z: -0, w: 0.9993939}
   m_LocalPosition: {x: 0.085, y: 0.061, z: -0.15000793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 847825955966307414}
+  m_Father: {fileID: 4774044077662931058}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 3.99, z: 0}
 --- !u!212 &5532279290559609257
@@ -359,8 +385,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -396828503
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1182740003, guid: a532fb7c248b6a7478180ed10ac57b28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -373,6 +399,43 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &6412167754862851742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4774044077662931058}
+  m_Layer: 0
+  m_Name: Rock Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4774044077662931058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412167754862851742}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2697613273761161943}
+  - {fileID: 1335380156168671190}
+  - {fileID: 764306413131632747}
+  - {fileID: 1716360324552083125}
+  - {fileID: 3839757586377929972}
+  - {fileID: 7311797429636238723}
+  m_Father: {fileID: 847825955966307414}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6473074989260571244
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,12 +460,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6473074989260571244}
-  m_LocalRotation: {x: 0, y: -0.218569, z: 0, w: 0.97582155}
+  m_LocalRotation: {x: -0, y: -0.218569, z: -0, w: 0.97582155}
   m_LocalPosition: {x: -0.21, y: 0.129, z: 0.032}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 847825955966307414}
+  m_Father: {fileID: 4774044077662931058}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -25.25, z: 0}
 --- !u!212 &6967674937488285160
@@ -443,8 +506,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -396828503
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -489319121, guid: a532fb7c248b6a7478180ed10ac57b28, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -462,7 +525,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 847825955966307414}
+    m_TransformParent: {fileID: 4774044077662931058}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a29f054d0883261489b7f3d849d37d21, type: 3}
       propertyPath: m_RootOrder
@@ -510,7 +573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a29f054d0883261489b7f3d849d37d21, type: 3}
       propertyPath: m_Name
-      value: rock model
+      value: hex model
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29f054d0883261489b7f3d849d37d21, type: 3}
