@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -86,10 +87,11 @@ public class GameManager : MonoBehaviour
         CurrentWizard.BeginTurn();
     }
 
-    public void GameOver(bool playerWin)
+    public void GameOver(bool win)
     {
         SelectionManager.canInteract = false;
         IsRunning = false;
+        UIManager.Instance.ShowGameOverMenu(win);
     }
 
     public void LoadLevel(int levelIndex)
@@ -257,5 +259,15 @@ public class GameManager : MonoBehaviour
     public bool IsPlayersTurn()
     {
         return CurrentWizard == Wizards[0];
+    }
+
+    public void OpenScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }

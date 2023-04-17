@@ -213,6 +213,10 @@ public abstract class Unit : Entity
                 path = tempPath;
             }
         }
+
+        if (path == null)
+            Debug.Log("Path is null!");
+
         return new Tuple<Unit, int, List<Cell>>(t, dist, path);
     }
 
@@ -226,7 +230,7 @@ public abstract class Unit : Entity
         for (int i = 0; i < n; i++)
         {
             Unit.Faction f = TargetPriorities[i];
-            if (dUnits.ContainsKey(f))
+            if (dUnits.ContainsKey(f) && dUnits[f].Count > 0)
             {
                 lUnits = dUnits[f];
                 Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);

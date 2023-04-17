@@ -606,16 +606,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 992495848}
-        m_TargetAssemblyTypeName: LevelBtn, Assembly-CSharp
-        m_MethodName: OpenLevel
-        m_Mode: 1
+      - m_Target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OpenScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: ECGC Level
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &992495846
@@ -668,7 +668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2e9f5ce7f3c3540bd831835456acfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: ECGC Level
 --- !u!1 &1016148547
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2e9f5ce7f3c3540bd831835456acfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Quit
 --- !u!114 &1022754507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,9 +868,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1022754506}
-        m_TargetAssemblyTypeName: LevelBtn, Assembly-CSharp
-        m_MethodName: OpenLevel
+      - m_Target: {fileID: 3752266026280689320, guid: 18a6ae0c988e6f54cbcb620583f43778, type: 3}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: CloseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

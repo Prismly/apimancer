@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,6 +16,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private List<GameObject> disabledOnPause;
     [SerializeField] private GameObject pauseMenu;
+
+    [SerializeField] private GameObject winMenu;
+    [SerializeField] private GameObject loseMenu;
 
     [SerializeField] private RectTransform bottomMid;
     [SerializeField] private GameObject damageIndic;
@@ -31,6 +33,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject spellsMenuButton = null;
     private GameObject summonMenu = null;
     private GameObject spellsMenu = null;
+    private bool summonMenuVis = false;
+    private bool spellsMenuVis = false;
     //private GameObject healthBox;
 
     [SerializeField] public AudioSource audioSource;
@@ -184,6 +188,14 @@ public class UIManager : MonoBehaviour
 
     }
 
+    public void ShowGameOverMenu(bool win)
+    {
+        if (win)
+            winMenu.SetActive(true);
+        else
+            loseMenu.SetActive(true);
+    }
+
     public void TogglePause()
     {
         PlaySound(Sounds.ValidClick);
@@ -200,6 +212,8 @@ public class UIManager : MonoBehaviour
         else
         {
             GameManager.Instance.gameIsPaused = true;
+            summonMenu.SetActive(false);
+            spellsMenu.SetActive(false);
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
             Debug.Log("disabling");
@@ -242,7 +256,8 @@ public class UIManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        TogglePause();
+        GameManager.Instance.OpenScene("MainMenu");
     }
 
     public void IncrementSound(bool goingUp)
