@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -222,5 +223,16 @@ public class UIManager : MonoBehaviour
 
     public void PlaySound(AudioClip sound) {
         audioSource.PlayOneShot(sound);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void IncrementSound(bool goingUp)
+    {
+        Debug.Log(goingUp);
+        AudioVolume.ChangeVolume(goingUp ? 25 : -25);
     }
 }

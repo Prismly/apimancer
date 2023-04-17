@@ -21,7 +21,7 @@ public class GrowTextOnHover : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("PointerExit");
+        //Debug.Log("PointerExit");
         TextMeshProUGUI tmp = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         if (tmp != null)
         {
