@@ -255,10 +255,13 @@ public class GameManager : MonoBehaviour
         return CurrentWizard == Wizards[0];
     }
 
-    public void OpenLevel(string name)
+    public void OpenScene(string name)
     {
-        if(name == "quit")
-            Application.Quit();
         SceneManager.LoadScene(name);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
     }
 }

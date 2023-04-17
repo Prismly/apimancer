@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -257,7 +256,8 @@ public class UIManager : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        TogglePause();
+        GameManager.Instance.OpenScene("MainMenu");
     }
 
     public void IncrementSound(bool goingUp)
