@@ -58,10 +58,7 @@ MonoBehaviour:
   G: 0
   H: 0
   _boulderPrefabs:
-  - {fileID: 7814559185879440105, guid: c213e270772ef604ca51fd9081d05e71, type: 3}
-  - {fileID: 7814559185879440105, guid: a50db52ad39987543a4caf5b5bc3a4c4, type: 3}
-  - {fileID: 7814559185879440105, guid: 2559df31763c10748a63c68d82954e9f, type: 3}
-  - {fileID: 7814559185879440105, guid: 7e41d4a20711045498102f0472434857, type: 3}
+  - {fileID: 4740848720279807405, guid: 951cbe582137d1e4288a69b120460907, type: 3}
 --- !u!212 &5790144875299269826
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -166,7 +163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6309405555288260618, guid: 40523b3f3f19f3444aff6e154dba893f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 6309405555288260618, guid: 40523b3f3f19f3444aff6e154dba893f, type: 3}
       propertyPath: m_LocalRotation.w

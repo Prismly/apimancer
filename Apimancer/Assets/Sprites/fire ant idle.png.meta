@@ -122,8 +122,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc4a3c99ca4ec3f4499546db21e421c1
-      internalID: 1750844742
+      spriteID: 426fae47ef015a5499394e4ce405b29d
+      internalID: 2052771505
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: fire ant idle_1
       rect:
         serializedVersion: 2
-        x: 55
+        x: 56
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 200a61bbf697ac641b2a46271efddc47
-      internalID: 1096652065
+      spriteID: 0c83a55d7d300414198286c53a08b365
+      internalID: 1009936977
       vertices: []
       indices: 
       edges: []
@@ -162,10 +162,10 @@ TextureImporter:
       name: fire ant idle_2
       rect:
         serializedVersion: 2
-        x: 110
+        x: 112
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a1fdcf9a59088b4aaa6dc430f1cedee
-      internalID: -2135977146
+      spriteID: d2cbf4984a875f4479d1a182c79cd81b
+      internalID: 494237050
       vertices: []
       indices: 
       edges: []
@@ -183,10 +183,10 @@ TextureImporter:
       name: fire ant idle_3
       rect:
         serializedVersion: 2
-        x: 165
+        x: 168
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ceb086e0f8f2acf4bb2547dee3fcd3a1
-      internalID: -1476385854
+      spriteID: 06f21f166c3f7d741b9b30542c0edf95
+      internalID: 2106891921
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
       name: fire ant idle_4
       rect:
         serializedVersion: 2
-        x: 220
+        x: 224
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72909eb7860d379409234eb572b1f93f
-      internalID: -1752029924
+      spriteID: 40a08ba2d0fc9054f97905731dd15898
+      internalID: -333313437
       vertices: []
       indices: 
       edges: []
@@ -225,10 +225,10 @@ TextureImporter:
       name: fire ant idle_5
       rect:
         serializedVersion: 2
-        x: 275
+        x: 280
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6cf3751eb3e260468416169508083fd
-      internalID: -870911181
+      spriteID: b03b2619bd85e1a429eb262ad3df2cc8
+      internalID: -538874269
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire ant idle_3: -1476385854
-      fire ant idle_5: -870911181
-      fire ant idle_0: 1750844742
-      fire ant idle_4: -1752029924
-      fire ant idle_2: -2135977146
-      fire ant idle_1: 1096652065
+      fire ant idle_3: 2106891921
+      fire ant idle_5: -538874269
+      fire ant idle_0: 2052771505
+      fire ant idle_4: -333313437
+      fire ant idle_2: 494237050
+      fire ant idle_1: 1009936977
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

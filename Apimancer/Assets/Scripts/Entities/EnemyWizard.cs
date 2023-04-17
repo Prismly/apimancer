@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,7 @@ public class EnemyWizard : Wizard
     private int health = 15;
     private int attackDamage = 1;
     private int movementSpeed = 2;
-    private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
+    private List<Unit.Faction> targetPriorities = new List<Unit.Faction> { Unit.Faction.BEE };
 
     private List<Action> summons = new List<Action>();
     private List<Action> spells = new List<Action>();
@@ -18,85 +19,78 @@ public class EnemyWizard : Wizard
         summons.Add(new SummonAction(this, UnitType.ANT_WORKER, 1, 5));
         summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 8));
         summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 10));
-        unitName = "The Myrmidonist";
     }
 
     public override IEnumerator DetermineMovement()
     {
-        // do movement
-        return null;
-    }
+        Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
+        List<Unit> lUnits = null;
+        Tuple<Unit, int, List<Cell>> target = null;
+        HashSet<Cell> possibleMoves = new HashSet<Cell>();
+        List<Cell> adjList = CellManager.Instance.GetCell(loc).GetAdjacentList();
+        foreach (Cell c in adjList) {
+            if (!c.IsOccupied)
+                possibleMoves.Add(c);
+        }
 
-    public override Action DetermineAction()
-    {
-        // do action
-        return null;
+        List<HashSet<Cell>> adjListSet = new List<HashSet<Cell>>();
+        int i = 0;
+        foreach (Cell c in possibleMoves) {
+            adjListSet.Add(new HashSet<Cell>());
+            adjList = c.GetAdjacentList();
+            foreach (Cell d in adjList) {
+                if (!d.IsOccupied)
+                    adjListSet[i].Add(d);
+            }
+            i++;
+        }
+
+        foreach (HashSet<Cell> h in adjListSet) {
+            possibleMoves.UnionWith(h);
+        }
+
+        i = TargetPriorities.Count;
+        Unit.Faction f = TargetPriorities[0];
+        if (dUnits.ContainsKey(f)) {
+            lUnits = dUnits[f];
+            foreach (Cell c in possibleMoves) {
+                Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits, c);
+                if (target == null || tempTarget.Item2 > target.Item2)
+                    target = tempTarget;
+            }
+        }
+
+        if (target != null) {
+            yield return StartCoroutine(MoveToCellCoroutine(target.Item3[target.Item2 - 1]));
+        }
+
+        RelinquishControl();
     }
 
     public override void BeginTurn()
     {
         IsTurn = true;
+        PlaySound(Sounds.Warcry);
 
         MoveUnits();
-
-        // Randomly decide in which direction to move.
-
-        // Cell occupying = CellManager.Instance.GetCell(loc);
-        // bool[] validNeighbors = { false, false, false, false, false, false };
-        // int validNeighborCount = 0;
-        // for (int i = 0; i < 6; i++)
-        // {
-        //     if (occupying.GetAdjacent(i) != null)
-        //     {
-        //         validNeighborCount++;
-        //         validNeighbors[i] = true;
-        //     }
-        // }
-
-        // int randMove = Random.Range(0, validNeighborCount);
-
-        // if (validNeighborCount == 0)
-        // {
-        //     return;
-        // }
-
-        // for (int i = 0; i < 6; i++)
-        // {
-        //     if (validNeighbors[i])
-        //     {
-        //         if (randMove <= 0)
-        //         {
-        //             MoveToCell(occupying.GetAdjacent(i));
-        //             GameManager.Instance.NextTurn();
-        //             break;
-        //         }
-        //         else
-        //         {
-        //             randMove--;
-        //         }
-        //     }
-        // }
-
-        // List<Cell> adjacentCells = this.GetCell().GetAdjacentList();
-        // summons[0].Execute(adjacentCells[Random.Range(0, adjacentCells.Count)]);
     }
 
     public override void MoveUnits()
     {
-        _currentUnitIndex = -2;
+        _currentUnitIndex = -3;
         MoveNextUnit();
     }
 
     private void CastSpells()
     {
         List<Cell> summonRange = GetCell().GetAdjacentList();
-        int summonIndex = Random.Range(0, summons.Count);
-        int cellIndex = Random.Range(0, summonRange.Count);
+        int summonIndex = UnityEngine.Random.Range(0, summons.Count);
+        int cellIndex = UnityEngine.Random.Range(0, summonRange.Count);
 
         // Select summon based on cost here
 
         // Action castSummon = summons[summonIndex];
-        Action castSummon = mana > summons[0].cost ? summons[0] : null;
+        Action castSummon = mana > summons[summonIndex].cost ? summons[summonIndex] : null;
         Cell castCell = null;
 
         // Select cell based on validity here
@@ -109,7 +103,7 @@ public class EnemyWizard : Wizard
                 break;
             }
         }
-        
+
         if (castSummon != null && castCell != null)
         {
             castSummon.Execute(castCell);
@@ -121,6 +115,11 @@ public class EnemyWizard : Wizard
     public override void MoveNextUnit()
     {
         _currentUnitIndex++;
+        if (_currentUnitIndex < -1)
+        {
+            StartCoroutine(DetermineMovement());
+            return;
+        }
         if (_currentUnitIndex < 0)
         {
             CastSpells();

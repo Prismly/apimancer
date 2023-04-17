@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -20,6 +22,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject loseMenu;
 
     [SerializeField] private RectTransform bottomMid;
+    [SerializeField] private GameObject damageIndic;
 
     [SerializeField] public GameObject HEAD_HOR;
     [SerializeField] public GameObject HEAD_DIAG;
@@ -30,6 +33,18 @@ public class UIManager : MonoBehaviour
     private GameObject summonMenu;
     private GameObject spellsMenu;
     //private GameObject healthBox;
+
+    [SerializeField] public AudioSource audioSource;
+    [SerializeField] public SoundStruct Sounds;
+
+    [Serializable] 
+    public struct SoundStruct 
+    {
+        public AudioClip ValidClick;
+        public AudioClip InvalidClick;
+        public AudioClip SummonMenu;
+        public AudioClip SpellsMenu;
+    }
 
     private static UIManager _instance;
     public static UIManager Instance
@@ -68,8 +83,10 @@ public class UIManager : MonoBehaviour
         spellsMenuImg.color = new Color(177 / 255f, 142 / 255f, 200 / 255f);
         MenuBox spellsMenuBox = spellsMenu.GetComponent<MenuBox>();
         // We'd get the player's Spells here
-        spellsMenuBox.AddSpellsOption("[X]Honey Trap [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
-        spellsMenuBox.AddSpellsOption("[X]Honey Blast [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
+        spellsMenuBox.AddSpellsOption("COMING SOON ;)", playerWiz, SpellAction.SpellType.HONEY_TRAP, 0, 0);
+        spellsMenuBox.AddSpellsOption("COMING SOON ;)", playerWiz, SpellAction.SpellType.HONEY_BLAST, 0, 0);
+        //spellsMenuBox.AddSpellsOption("[X]Honey Trap [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
+        //spellsMenuBox.AddSpellsOption("[X]Honey Blast [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
         spellsMenuBox.AddSpellsOption("[X]Teleport [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
         spellsMenu.SetActive(false);
 
@@ -97,18 +114,32 @@ public class UIManager : MonoBehaviour
     public void ToggleSpellsMenu()
     {
         summonMenu.SetActive(false);
-        spellsMenu.SetActive(!spellsMenu.activeInHierarchy);
+        if (spellsMenu.activeInHierarchy) {
+            spellsMenu.SetActive(false);
+            PlaySound(Sounds.ValidClick);
+        }
+        else {
+            spellsMenu.SetActive(true);
+            PlaySound(Sounds.SpellsMenu);
+        }
     }
 
     public void ToggleSummonMenu()
     {
-        Debug.Log("toggle summon menu");
         spellsMenu.SetActive(false);
-        summonMenu.SetActive(!summonMenu.activeInHierarchy);
+        if (summonMenu.activeInHierarchy) {
+            summonMenu.SetActive(false);
+            PlaySound(Sounds.ValidClick);
+        }
+        else {
+            summonMenu.SetActive(true);
+            PlaySound(Sounds.SummonMenu);
+        }
     }
 
     public void EndPlayerTurn()
     {
+        PlaySound(Sounds.ValidClick);
         UIManager.Instance.endTurn.GetComponent<Button>().interactable = false;
         GameManager.Instance.EndTurn();
     }
@@ -154,13 +185,12 @@ public class UIManager : MonoBehaviour
 
     public void TogglePause()
     {
-        Debug.Log("Here");
+        PlaySound(Sounds.ValidClick);
         if (GameManager.Instance.gameIsPaused)
         {
             GameManager.Instance.gameIsPaused = false;
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
-            Debug.Log("enabling");
             foreach (GameObject g in disabledOnPause)
             {
                 g.GetComponent<Button>().enabled = true;
@@ -179,6 +209,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void SpawnDamageIndicator(int dmgVal, Vector3 worldPos)
+    {
+        Debug.Log("Spawning DamageIndicator");
+        GameObject newDamageIndic = Instantiate(damageIndic);
+        newDamageIndic.transform.SetParent(targetWorldCanvas.transform);
+        RectTransform indicRect = newDamageIndic.GetComponent<RectTransform>();
+        Vector3 screenPoint = Camera.main.WorldToScreenPoint(worldPos);
+
+        indicRect.localPosition = worldPos;
+        //indicRect.localPosition = new Vector3(screenPoint.x - (targetCanvas.GetComponent<Canvas>().pixelRect.width / 2), screenPoint.y - (targetCanvas.GetComponent<Canvas>().pixelRect.height / 2), 0);
+        TextMeshProUGUI indicText = newDamageIndic.GetComponent<TextMeshProUGUI>();
+        indicText.text = dmgVal.ToString() + "!";
+    }
+
     private void Update()
     {
         if(Input.GetKey(KeyCode.Escape))
@@ -186,5 +230,20 @@ public class UIManager : MonoBehaviour
             summonMenu.SetActive(false);
             spellsMenu.SetActive(false);
         }
+    }
+
+    public void PlaySound(AudioClip sound) {
+        audioSource.PlayOneShot(sound);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void IncrementSound(bool goingUp)
+    {
+        Debug.Log(goingUp);
+        AudioVolume.ChangeVolume(goingUp ? 25 : -25);
     }
 }

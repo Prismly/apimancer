@@ -49,10 +49,25 @@ public abstract class Unit : Entity
     public abstract int AttackDamage { get; set; }
     public abstract int MovementSpeed { get; set; }
     public abstract List<Faction> TargetPriorities { get; set; }
-    public abstract IEnumerator DetermineMovement();
 
     public virtual Action DetermineAction() { return null; }
 
+    public virtual IEnumerator DetermineMovement()
+    {
+        PlaySound(Sounds.Warcry);
+        Tuple<Unit, int, List<Cell>> target = DetermineTarget();
+        if (target != null)
+        {
+            yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, MovementSpeed));
+            if (target.Item2 <= MovementSpeed)
+            {
+                AttackTarget(AttackDamage, target.Item1);
+            }
+            else RelinquishControl();
+        }
+        else RelinquishControl();
+    }
+    
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)
     {
@@ -67,17 +82,35 @@ public abstract class Unit : Entity
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
             Commander.AddMana(m);
+            PlaySound(Sounds.Harvest);
         }
+        else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
-        PlayAnimation(Entity.AnimState.ACTION);
+        SetAnimState(AnimState.UNIT_ACTION);
     }
 
     // receive damage
     public virtual void ReceiveDamage(int dmg) 
     {
+        UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
+
         this.Health -= dmg;
         if (this.Health <= 0)
-            PlayAnimation(Entity.AnimState.DEATH);
+        {
+            SetAnimState(AnimState.DEATH);
+
+            
+            GameManager.Instance.Kill(this);
+            GetCell().Occupant = null;
+            Destroy(this.gameObject, 1.0f);
+
+            OnDeath();
+
+            if (Commander != null && Commander.Units.Contains(this))
+            {
+                Commander.Units.Remove(this);
+            }
+        }
     }
 
     public virtual void setLocation(Vector2Int location)
@@ -90,29 +123,30 @@ public abstract class Unit : Entity
         if (cell != null && !cell.IsOccupied) {
             cell.Occupant = this;
             this.loc = cell.Location;
-            this.transform.position = cell.transform.position + new Vector3(0, 0, -0.04f);
+            this.transform.position = cell.transform.position + worldOffset;
+            Debug.Log(this.transform.position + " boulder");
             this.transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }
 
     public virtual void OnDeath()
     {
-        GameManager.Instance.Kill(this);
-        if (Commander != null && Commander.Units.Contains(this))
-        {
-            Commander.Units.Remove(this);
-        }
-        GetCell().Occupant = null;
-        Destroy(this.gameObject, 1.0f);
+        PlaySound(Sounds.Death);
+        // GameManager.Instance.Kill(this);
+        // GetCell().Occupant = null;
+        // Destroy(this.gameObject, 1.0f);
 
         // End game if wizard
     }
 
-    public override void OnSelect() {}
+    public override void OnSelect() 
+    {
+        PlaySound(Sounds.Selected);
+    }
     public override void OnDeselect() {}
     public override void OnHover()
     {
-        if (UnitFaction != Faction.RESOURCE && UnitFaction != Faction.OTHER)
+        if (UnitFaction != Faction.OTHER)
         {
             UIManager.Instance.ShowHealthBox(this);
         }
@@ -151,7 +185,24 @@ public abstract class Unit : Entity
         foreach (Unit u in targets)
         {
             List<Cell> tempPath = Entity.PathFind(this, u);
-            if (tempPath != null && tempPath.Count < dist)
+            if (tempPath != null && tempPath.Count < dist && tempPath.Count != 0)
+            {
+                t = u;
+                dist = tempPath.Count;
+                path = tempPath;
+            }
+        }
+        return new Tuple<Unit, int, List<Cell>>(t, dist, path);
+    }
+
+    protected Tuple<Unit, int, List<Cell>> FindClosestTarget(List<Unit> targets, Cell c) {
+        Unit t = null;
+        int dist = int.MaxValue;
+        List<Cell> path = null;
+        foreach (Unit u in targets)
+        {
+            List<Cell> tempPath = Entity.PathFind(u, c);
+            if (tempPath != null && tempPath.Count < dist && tempPath.Count != 0)
             {
                 t = u;
                 dist = tempPath.Count;
@@ -179,7 +230,7 @@ public abstract class Unit : Entity
             {
                 lUnits = dUnits[f];
                 Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);
-                if (pTarget == null) pTarget = tempTarget;
+                if (pTarget == null && tempTarget.Item1 != null) pTarget = tempTarget;
                 if (tempTarget.Item2 < MovementSpeed)
                 {
                     target = tempTarget;
@@ -192,12 +243,9 @@ public abstract class Unit : Entity
         return finalTarget;
     }
 
-    public virtual void PlayAnimation(Entity.AnimState a) {
-        animator.SetInteger("state", (int)a);
-    }
-
     protected void RelinquishControl() {
-        PlayAnimation(Entity.AnimState.IDLE);
+        Debug.Log("Relinquishing Control");
+        SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }
 }

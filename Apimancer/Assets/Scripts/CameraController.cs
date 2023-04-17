@@ -48,6 +48,8 @@ public class CameraController : MonoBehaviour
     
     private Vector3 _focusDifference;
 
+    [SerializeField] private AudioSource audioSource;
+
     private void Awake()
     {
         _controls = new Controls();
@@ -55,6 +57,8 @@ public class CameraController : MonoBehaviour
         _cameraRotation = _defaultRotation;
         _cameraPitch = -_defaultPitch;
         _cameraScale = 1;
+
+        audioSource.Play();
     }
 
     //private void Start()

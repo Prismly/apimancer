@@ -122,8 +122,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a30df9776a4162439117b1ab4e9f900
-      internalID: 2131187798
+      spriteID: 6c5d58dfe762f8e409d53451f3789981
+      internalID: 1418994847
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: fire ant attack_1
       rect:
         serializedVersion: 2
-        x: 55
+        x: 56
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bae025b64edaa774d85ad20bf06d9e4a
-      internalID: 745252181
+      spriteID: 440ed3d2c0b8843498001d40c9cffb74
+      internalID: 359012417
       vertices: []
       indices: 
       edges: []
@@ -162,10 +162,10 @@ TextureImporter:
       name: fire ant attack_2
       rect:
         serializedVersion: 2
-        x: 110
+        x: 112
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f33a064bd3bf1aa41a121b8097b882f9
-      internalID: 378011474
+      spriteID: 3c89027eb60f914449b134c5bcf4dd03
+      internalID: 2100294819
       vertices: []
       indices: 
       edges: []
@@ -183,10 +183,10 @@ TextureImporter:
       name: fire ant attack_3
       rect:
         serializedVersion: 2
-        x: 165
+        x: 168
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 976eaf34f0f2b354c90d6dc1ed01cb2a
-      internalID: -454921736
+      spriteID: ef30bddac3ad68c469bc853b0d6a6871
+      internalID: 1182636388
       vertices: []
       indices: 
       edges: []
@@ -204,10 +204,10 @@ TextureImporter:
       name: fire ant attack_4
       rect:
         serializedVersion: 2
-        x: 220
+        x: 224
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +215,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92f9edc942822434997884fcdd549b9b
-      internalID: 219811145
+      spriteID: 7a901c8f00759a641b287a052068c9d7
+      internalID: -884092620
       vertices: []
       indices: 
       edges: []
@@ -225,10 +225,10 @@ TextureImporter:
       name: fire ant attack_5
       rect:
         serializedVersion: 2
-        x: 275
+        x: 280
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c825b0b786f7d9147928da05647ecf64
-      internalID: 1717660689
+      spriteID: 3add919c5b1e40b4ea25525a60aed270
+      internalID: 582542098
       vertices: []
       indices: 
       edges: []
@@ -246,10 +246,10 @@ TextureImporter:
       name: fire ant attack_6
       rect:
         serializedVersion: 2
-        x: 330
+        x: 336
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,8 +257,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21f0d8f0f10ce64488922aafd67cc2ab
-      internalID: -1162378040
+      spriteID: e6b753bcdca23654c9c47d224dc8dffd
+      internalID: 985804787
       vertices: []
       indices: 
       edges: []
@@ -267,10 +267,10 @@ TextureImporter:
       name: fire ant attack_7
       rect:
         serializedVersion: 2
-        x: 385
+        x: 392
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,8 +278,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21b32ec58d8d35948a710c4e3f261b8d
-      internalID: -356235703
+      spriteID: bd2d406dcdb31da4a855b067a709636c
+      internalID: 1144117619
       vertices: []
       indices: 
       edges: []
@@ -288,10 +288,10 @@ TextureImporter:
       name: fire ant attack_8
       rect:
         serializedVersion: 2
-        x: 440
+        x: 448
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -299,8 +299,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 179bc1b2b03ea65469c8dd9149964da2
-      internalID: -968687204
+      spriteID: d548fe72dcee63a4abe6e84a5b44347d
+      internalID: 523527923
       vertices: []
       indices: 
       edges: []
@@ -309,10 +309,10 @@ TextureImporter:
       name: fire ant attack_9
       rect:
         serializedVersion: 2
-        x: 495
+        x: 504
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -320,8 +320,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd5a571c07ddfc441b09d97b87522726
-      internalID: -813751406
+      spriteID: ce0474b427570a340a14429fce7c1398
+      internalID: -352043406
       vertices: []
       indices: 
       edges: []
@@ -330,10 +330,10 @@ TextureImporter:
       name: fire ant attack_10
       rect:
         serializedVersion: 2
-        x: 550
+        x: 560
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -341,8 +341,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e14f7a20b44b70743a1636d2103aab33
-      internalID: -810641469
+      spriteID: 6ee32b73c6af28d4196df36c129ea528
+      internalID: 1161895790
       vertices: []
       indices: 
       edges: []
@@ -351,10 +351,10 @@ TextureImporter:
       name: fire ant attack_11
       rect:
         serializedVersion: 2
-        x: 605
+        x: 616
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -362,8 +362,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f2e2ca0bbf4f6f3489f4292a01ea0a24
-      internalID: 1219661360
+      spriteID: e4d119586734e4645932c43ffd133134
+      internalID: 1375422030
       vertices: []
       indices: 
       edges: []
@@ -372,10 +372,10 @@ TextureImporter:
       name: fire ant attack_12
       rect:
         serializedVersion: 2
-        x: 660
+        x: 672
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -383,8 +383,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d181d4425b39474cad1a3a034c6f891
-      internalID: -846752537
+      spriteID: cff5aef55de006444895ec6737da4cf0
+      internalID: -942464578
       vertices: []
       indices: 
       edges: []
@@ -393,10 +393,10 @@ TextureImporter:
       name: fire ant attack_13
       rect:
         serializedVersion: 2
-        x: 715
+        x: 728
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -404,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 383659a18c7ddcf4baa206241c07afa4
-      internalID: 1889280425
+      spriteID: beb158f37950fb54d958a31dc3fe6e10
+      internalID: -1159646723
       vertices: []
       indices: 
       edges: []
@@ -414,10 +414,10 @@ TextureImporter:
       name: fire ant attack_14
       rect:
         serializedVersion: 2
-        x: 770
+        x: 784
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -425,8 +425,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 160d07dfccfcf0e43a92d0c55351b0e1
-      internalID: 1461044611
+      spriteID: 0f693e8bcce4ba1469f53cbaa4ff8605
+      internalID: -103464
       vertices: []
       indices: 
       edges: []
@@ -435,10 +435,10 @@ TextureImporter:
       name: fire ant attack_15
       rect:
         serializedVersion: 2
-        x: 825
+        x: 840
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -446,8 +446,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a26b73980b556fd4aa40758bb94cd09e
-      internalID: -979702437
+      spriteID: fda54068963bc414dbaad104e40da19a
+      internalID: 381426509
       vertices: []
       indices: 
       edges: []
@@ -456,10 +456,10 @@ TextureImporter:
       name: fire ant attack_16
       rect:
         serializedVersion: 2
-        x: 880
+        x: 896
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -467,8 +467,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 186e3fd952f51a948a7e4a563ee0bad2
-      internalID: 102142659
+      spriteID: 7099d57ad43ce5048a44aa4406b91c03
+      internalID: -2112223010
       vertices: []
       indices: 
       edges: []
@@ -477,10 +477,10 @@ TextureImporter:
       name: fire ant attack_17
       rect:
         serializedVersion: 2
-        x: 935
+        x: 952
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -488,8 +488,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddd61dda5ee95664e9802ee8d32af721
-      internalID: -1042471241
+      spriteID: 08e5309188f23014d8336ea20bc65f3d
+      internalID: -1489916015
       vertices: []
       indices: 
       edges: []
@@ -498,10 +498,10 @@ TextureImporter:
       name: fire ant attack_18
       rect:
         serializedVersion: 2
-        x: 990
+        x: 1008
         y: 0
-        width: 55
-        height: 46
+        width: 56
+        height: 65
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -509,8 +509,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d93bfff4462f55a429c9c2fc2a84cf98
-      internalID: -160574131
+      spriteID: aa242db0c46d02544b7e502178416461
+      internalID: 1646366397
       vertices: []
       indices: 
       edges: []
@@ -526,25 +526,25 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      fire ant attack_10: -810641469
-      fire ant attack_0: 2131187798
-      fire ant attack_4: 219811145
-      fire ant attack_6: -1162378040
-      fire ant attack_13: 1889280425
-      fire ant attack_14: 1461044611
-      fire ant attack_18: -160574131
-      fire ant attack_8: -968687204
-      fire ant attack_7: -356235703
-      fire ant attack_9: -813751406
-      fire ant attack_16: 102142659
-      fire ant attack_1: 745252181
-      fire ant attack_12: -846752537
-      fire ant attack_11: 1219661360
-      fire ant attack_2: 378011474
-      fire ant attack_3: -454921736
-      fire ant attack_5: 1717660689
-      fire ant attack_17: -1042471241
-      fire ant attack_15: -979702437
+      fire ant attack_10: 1161895790
+      fire ant attack_0: 1418994847
+      fire ant attack_4: -884092620
+      fire ant attack_6: 985804787
+      fire ant attack_13: -1159646723
+      fire ant attack_14: -103464
+      fire ant attack_18: 1646366397
+      fire ant attack_8: 523527923
+      fire ant attack_7: 1144117619
+      fire ant attack_9: -352043406
+      fire ant attack_16: -2112223010
+      fire ant attack_1: 359012417
+      fire ant attack_12: -942464578
+      fire ant attack_11: 1375422030
+      fire ant attack_2: 2100294819
+      fire ant attack_3: 1182636388
+      fire ant attack_5: 582542098
+      fire ant attack_17: -1489916015
+      fire ant attack_15: 381426509
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

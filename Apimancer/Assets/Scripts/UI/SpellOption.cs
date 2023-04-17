@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class SpellOption : MenuOption
 {
     
-    private SpellAction action;
+    private SpellAction spellAct;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class SpellOption : MenuOption
 
     public void SetSpellAction(SpellAction action)
     {
-        this.action = action;
+        this.spellAct = action;
     }
 
     public void MouseEnter()
@@ -34,7 +34,15 @@ public class SpellOption : MenuOption
     public override void OnSelect()
     {
         // Do whatever the Spell does here
-        GameManager.Instance.SetCurrentAction(action);
-        GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
+        if (GameManager.Instance.CurrentAction != spellAct)
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 0.25f);
+            GameManager.Instance.SetCurrentAction(spellAct);
+        }
+        else
+        {
+            GetComponent<Image>().color = new Color(1, 1, 1, 0f);
+            GameManager.Instance.SetCurrentAction(null);
+        }
     }
 }

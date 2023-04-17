@@ -10,33 +10,57 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     public Vector2Int loc { get; set; }
 
-    private static float zOffset = 0.04f;
+    [SerializeField] protected Vector3 worldOffset = new Vector3(0, 0, -0.04f);
 
     [SerializeField]
     protected Animator animator;
 
     [SerializeField] 
-    protected AudioSource snd;
+    protected AudioSource audioSource;
 
-    [SerializeField] 
-    private AudioClip sndMove;
+    [SerializeField]
+    private GameObject myShadow;
+
+    [Serializable]
+    public struct SoundStruct
+    {
+        public List<AudioClip> Death;
+        public List<AudioClip> Walk;
+        public List<AudioClip> Summon;
+        public List<AudioClip> Attack;
+        public List<AudioClip> Harvest;
+        public List<AudioClip> Warcry;
+        public List<AudioClip> Selected;
+    }
+
+    [SerializeField]
+    public SoundStruct Sounds;
 
     public enum AnimState
     {
         IDLE = 0,
-        WALK = 1,
+        MOVE = 1,
         DEATH = 2,
-        ACTION = 3,
-        ACTION2 = 4
+        UNIT_ACTION = 3,
+        WIZ_SUMMON = 3,
+        WIZ_SPELLCAST = 4,
     }
 
     public void Start()
     {
         //Tilemap tilemap = transform.parent.GetChild(0).GetComponent<Tilemap>();
         Vector2Int cellPosition = new Vector2Int(loc.x, loc.y);
-        transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position - (Vector3.forward * zOffset);
+        transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position + worldOffset;
         // transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
-        CellManager.Instance.GetCell(loc).Enter(this);
+        Cell occupiedCell = CellManager.Instance.GetCell(loc);
+        occupiedCell.Enter(this);
+        if (myShadow != null)
+        {
+            myShadow.transform.position = occupiedCell.transform.position + (Vector3.forward * -0.04f);
+        }
+
+        // Give the Entity an AudioVolume component, to sync with global settings.
+        gameObject.AddComponent<AudioVolume>();
     }
 
     protected virtual int MovementCost(Cell c, Cell end)
@@ -44,9 +68,6 @@ public abstract class Entity : MonoBehaviour
         Vector2Int cPos = c.Location;
         Vector2Int ePos = end.Location;
         return (Math.Max(Math.Abs(cPos.x - ePos.x), Math.Abs(cPos.y - ePos.y)));
-        //Vector3 cPos = c.transform.position;
-        //Vector3 ePos = end.transform.position;
-        //return Mathf.RoundToInt(Mathf.Max(Mathf.Abs(cPos.z - ePos.z), Mathf.Max(Mathf.Abs(cPos.x - ePos.x), Mathf.Abs(cPos.y - ePos.y))));
     }
 
     // Pathfinding from entity to target cell
@@ -157,9 +178,13 @@ public abstract class Entity : MonoBehaviour
         return true;
     }
 
+    public IEnumerator MoveToCellCoroutine(Cell target) {
+        CellManager.Instance.GetCell(loc).Exit();
+        yield return StartCoroutine(MoveCoroutine(PathFind(this, target)));
+    }
+
     public IEnumerator MoveAlongPathByAmount(List<Cell> path, float amount)
     {
-        snd.PlayOneShot(sndMove);
         short i = 0;
         while (amount > 0 && i < path?.Count) {
             CellManager.Instance.GetCell(loc).Exit();
@@ -171,7 +196,7 @@ public abstract class Entity : MonoBehaviour
         }
     }
 
-    private IEnumerator MoveCoroutine(List<Cell> path)
+    protected IEnumerator MoveCoroutine(List<Cell> path)
     {
         foreach (Cell c in path)
             yield return StartCoroutine(MoveToOneCell(c));
@@ -184,16 +209,18 @@ public abstract class Entity : MonoBehaviour
     // probably call animation here
     public IEnumerator MoveToOneCell(Cell target)
     {
-        animator.SetInteger("state", (int)AnimState.WALK);
+        SetAnimState(AnimState.MOVE);
+        PlaySound(Sounds.Walk);
         var currentPos = transform.position;
         var t = 0f;
         while (t < 1)
         {
             t += Time.deltaTime / 0.25f;
-            transform.position = Vector3.Lerp(currentPos, target.transform.position, t);
+            transform.position = Vector3.Lerp(currentPos, target.transform.position + worldOffset, t);
             yield return null;
         }
-        animator.SetInteger("state", (int)AnimState.IDLE);
+        SetAnimState(AnimState.IDLE);
+        StopSound();
     }
 
     public virtual float GetCellWeight(Cell c)
@@ -210,4 +237,23 @@ public abstract class Entity : MonoBehaviour
     public virtual void OnDeselect(){}
     public virtual void OnHover(){}
     public virtual void OnUnhover(){}
+
+    public void PlaySound(List<AudioClip> sounds)
+    {
+        int n = sounds.Count();
+        if (n > 0)
+        {
+            audioSource.PlayOneShot(sounds[UnityEngine.Random.Range(0, n)]);
+        }
+    }
+
+    public void StopSound()
+    {
+        audioSource.Stop();
+    }
+
+    public void SetAnimState(AnimState state)
+    {
+        animator.SetInteger("State", (int)state);
+    }
 }

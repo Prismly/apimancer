@@ -121,7 +121,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 27
+        y: 0
         width: 40
         height: 27
       alignment: 0
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5947adaa4e09702468ae8b9658ae8a77
-      internalID: -308444658
+      spriteID: ff9258a2e9a436741a153a93d02b2d01
+      internalID: -1190065147
       vertices: []
       indices: 
       edges: []
@@ -142,7 +142,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 40
-        y: 27
+        y: 0
         width: 40
         height: 27
       alignment: 0
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8afce27138ce72043a0d8ea18e83049b
-      internalID: 1917330004
+      spriteID: 097e1b7f420de77439e80ab5ff913a20
+      internalID: -582128012
       vertices: []
       indices: 
       edges: []
@@ -162,7 +162,7 @@ TextureImporter:
       name: mining bee idle_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 80
         y: 0
         width: 40
         height: 27
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82209210ceffb5e48933b4bae53413f7
-      internalID: 1400731330
+      spriteID: fa02f76e67d78274ebe2e16bd24747ad
+      internalID: 677750990
       vertices: []
       indices: 
       edges: []
@@ -183,7 +183,7 @@ TextureImporter:
       name: mining bee idle_3
       rect:
         serializedVersion: 2
-        x: 40
+        x: 120
         y: 0
         width: 40
         height: 27
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7112ca87571e49043a65d016691abb30
-      internalID: 1361324983
+      spriteID: 07457add34f9dc54b97bf1c9504f28b4
+      internalID: 633646809
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      mining bee idle_3: 1361324983
-      mining bee idle_1: 1917330004
-      mining bee idle_2: 1400731330
-      mining bee idle_0: -308444658
+      mining bee idle_3: 633646809
+      mining bee idle_1: -582128012
+      mining bee idle_2: 677750990
+      mining bee idle_0: -1190065147
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

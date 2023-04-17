@@ -6,10 +6,16 @@ public abstract class Ant : Unit
 {
     private Wizard commander;
 
+    public void OnSpawn()
+    {
+        // Summon sound here
+    }
+
     public Wizard GetCommander()
     {
         return commander;
     }
+
     public void SetCommander(Wizard w)
     {
         commander = w;

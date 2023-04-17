@@ -5,13 +5,20 @@ using UnityEngine;
 
 public abstract class Bee : Unit
 {
-    [SerializeField] private AudioClip sndSummon;
     private List<GameObject> arrows = new List<GameObject>();
+
+    public void OnSpawn()
+    {
+        PlaySound(Sounds.Summon);
+    }
 
     public void BeginTurn()
     {
         Cell prevCell = GetCell();
         List<Cell> cells = DetermineTarget().Item3;
+        if (cells == null)  {
+            return;
+        }
         foreach (Cell c in cells)
         {
             Vector3 dist = c.transform.position - prevCell.transform.position;
@@ -99,15 +106,9 @@ public abstract class Bee : Unit
         foreach (GameObject arrow in arrows)
             Destroy(arrow);
         arrows.Clear();
-        RelinquishControl();
     }
 
     private Wizard commander;
-
-    private void Awake()
-    {
-        snd.PlayOneShot(sndSummon);
-    }
 
     public Wizard GetCommander()
     {

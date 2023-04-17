@@ -23,8 +23,14 @@ public abstract class Resource : Unit
     }
 
     public override void ReceiveDamage(int dmg) {
+        UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
+
         this.Health -= dmg;
         if (this.Health <= 0)
-            OnDeath();
+        {
+            GameManager.Instance.Kill(this);
+            GetCell().Occupant = null;
+            Destroy(this.gameObject, 1.0f);
+        }
     }
 }

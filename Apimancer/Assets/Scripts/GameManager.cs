@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        _actionRange = action.unit.GetCell().GetCellsRange((int)action.range);
+        _actionRange = action.unit.GetCell().GetCellsRange(action);
         // Debug.Log("Range: " + action.range);
         Color color;
         switch (action.actionType)
@@ -211,13 +211,25 @@ public class GameManager : MonoBehaviour
 
     public bool Execute(Cell cell)
     {
-        if (CurrentAction == null)
+        if (CellInActionRange(cell))
         {
-            CurrentAction = new MoveAction(CurrentWizard);
+            bool success = CurrentAction.Execute(cell);
+            SetCurrentAction(null);
+            return success;
         }
-        bool success = CurrentAction.Execute(cell);
-        SetCurrentAction(null);
-        return success;
+        return false;
+    }
+
+    public bool CellInActionRange(Cell cell)
+    {
+        foreach (Cell c in _actionRange)
+        {
+            if (c.Location == cell.Location)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public bool Kill(Unit unit)

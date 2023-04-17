@@ -41,6 +41,48 @@ public abstract class Cell : Selectable
         return cells;
     }
 
+    public static Vector2Int GetAdjactent(Vector2Int location, int side)
+    {
+        if (location.y % 2 == 0)
+        {
+            switch (side)
+            {
+                // CONVENTION: 0 is RIGHT, proceeds counter-clockwise
+            case 0:
+                return location + Vector2Int.right;
+            case 1:
+                return location + Vector2Int.up;
+            case 2:
+                return location + Vector2Int.up + Vector2Int.left;
+            case 3:
+                return location + Vector2Int.left;
+            case 4:
+                return location + Vector2Int.down + Vector2Int.left;
+            case 5:
+                return location + Vector2Int.down;
+            }
+        }
+        else
+        {
+            switch (side)
+            {
+            case 0:
+                return location + Vector2Int.right;
+            case 1:
+                return location + Vector2Int.up + Vector2Int.right;
+            case 2:
+                return location + Vector2Int.up;
+            case 3:
+                return location + Vector2Int.left;
+            case 4:
+                return location + Vector2Int.down;
+            case 5:
+                return location + Vector2Int.down + Vector2Int.right;
+            }
+        }
+        return location;
+    }
+
     public Cell GetAdjacent(int side)
     {
         if (Location.y % 2 == 0)
@@ -86,44 +128,75 @@ public abstract class Cell : Selectable
         }
     }
 
-    public List<Cell> GetCellsRange(int range)
+    public List<Cell> GetCellsRange(Action action)
     {
+        int range = (int)action.range;
         List<Cell> rangeCells = new List<Cell>();
+        Vector2Int locationHorizontal = this.Location;
         Cell cellHorizontal = this;
         for (int i = 0; i <= range; i++)
         {
+            Vector2Int locationVertical = locationHorizontal;
             Cell cellVertical = cellHorizontal;
-            rangeCells.Add(cellHorizontal);
+            if (cellHorizontal != null && action.Validate(cellHorizontal))
+            {
+                rangeCells.Add(cellHorizontal);
+            }
             for (int j = 0; j < range; j++)
             {
-                cellVertical = cellVertical.GetAdjacent(2);
-                rangeCells.Add(cellVertical);
+                locationVertical = Cell.GetAdjactent(locationVertical, 2);
+                cellVertical = CellManager.Instance.GetCell(locationVertical);
+                if (cellVertical != null && action.Validate(cellVertical))
+                {
+                    rangeCells.Add(cellVertical);
+                }
             }
-            cellVertical = cellHorizontal;
+            locationVertical = locationHorizontal;
             for (int j = 0; j < range; j++)
             {
-                cellVertical = cellVertical.GetAdjacent(4);
-                rangeCells.Add(cellVertical);
+                locationVertical = Cell.GetAdjactent(locationVertical, 4);
+                cellVertical = CellManager.Instance.GetCell(locationVertical);
+                if (cellVertical != null && action.Validate(cellVertical))
+                {
+                    rangeCells.Add(cellVertical);
+                }
             }
-            cellHorizontal = cellHorizontal.GetAdjacent(0);
+            locationHorizontal = Cell.GetAdjactent(locationHorizontal, 0);
+            cellHorizontal = CellManager.Instance.GetCell(locationHorizontal);
         }
+        locationHorizontal = this.Location;
         cellHorizontal = this;
         for (int i = 0; i < range; i++)
         {
-            cellHorizontal = cellHorizontal.GetAdjacent(3);
+            locationHorizontal = Cell.GetAdjactent(locationHorizontal, 3);
+            cellHorizontal = CellManager.Instance.GetCell(locationHorizontal);
+            Vector2Int locationVertical = locationHorizontal;
             Cell cellVertical = cellHorizontal;
-            rangeCells.Add(cellHorizontal);
+            if (cellHorizontal != null && action.Validate(cellHorizontal))
+            {
+                rangeCells.Add(cellHorizontal);
+            }
             for (int j = 0; j < i; j++)
             {
-                cellVertical = cellVertical.GetAdjacent(1);
-                rangeCells.Add(cellVertical);
+                locationVertical = Cell.GetAdjactent(locationVertical, 1);
+                cellVertical = CellManager.Instance.GetCell(locationVertical);
+                if (cellVertical != null && action.Validate(cellVertical))
+                {
+                    rangeCells.Add(cellVertical);
+                }
             }
+            locationVertical = locationHorizontal;
             cellVertical = cellHorizontal;
             for (int j = 0; j < i; j++)
             {
-                cellVertical = cellVertical.GetAdjacent(5);
-                rangeCells.Add(cellVertical);
+                locationVertical = Cell.GetAdjactent(locationVertical, 5);
+                cellVertical = CellManager.Instance.GetCell(locationVertical);
+                if (cellVertical != null && action.Validate(cellVertical))
+                {
+                    rangeCells.Add(cellVertical);
+                }
             }
+            locationVertical = locationHorizontal;
             cellVertical = cellHorizontal;
         }
         return rangeCells;

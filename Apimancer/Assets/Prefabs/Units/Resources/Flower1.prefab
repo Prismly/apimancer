@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -396828503
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1214419518, guid: e9207513a8f533843969d7921deade0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -130,10 +130,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
-  snd: {fileID: 0}
-  sndMove: {fileID: 0}
+  audioSource: {fileID: 0}
+  Sounds:
+    Death: []
+    Walk: []
+    Summon: []
+    Attack: []
+    Harvest: []
+    Warcry: []
+    Selected: []
+  unitName: Flower
   UnitFaction: 0
   Type: 8
   State: 1
   Commander: {fileID: 0}
   condition: {fileID: 0}
+  myShadow: {fileID: 0}
