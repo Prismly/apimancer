@@ -212,7 +212,7 @@ public class UIManager : MonoBehaviour
 
     public void SpawnDamageIndicator(int dmgVal, Vector3 worldPos)
     {
-        Debug.Log("Spawning DamageIndicator");
+        //Debug.Log("Spawning DamageIndicator");
         GameObject newDamageIndic = Instantiate(damageIndic);
         newDamageIndic.transform.SetParent(targetWorldCanvas.transform);
         RectTransform indicRect = newDamageIndic.GetComponent<RectTransform>();

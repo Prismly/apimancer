@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c2e9f5ce7f3c3540bd831835456acfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: Jackson
+  level: ECGC Level
 --- !u!1 &1016148547
 GameObject:
   m_ObjectHideFlags: 0
