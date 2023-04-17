@@ -247,4 +247,9 @@ public class GameManager : MonoBehaviour
         }
         return true;
     }
+
+    public bool IsPlayersTurn()
+    {
+        return CurrentWizard == Wizards[0];
+    }
 }

@@ -27,8 +27,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject BODY_HOR;
     [SerializeField] public GameObject BODY_CURVE;
 
-    private GameObject summonMenu;
-    private GameObject spellsMenu;
+    [SerializeField] public GameObject summonMenuButton = null;
+    [SerializeField] public GameObject spellsMenuButton = null;
+    private GameObject summonMenu = null;
+    private GameObject spellsMenu = null;
     //private GameObject healthBox;
 
     [SerializeField] public AudioSource audioSource;
@@ -110,6 +112,11 @@ public class UIManager : MonoBehaviour
 
     public void ToggleSpellsMenu()
     {
+        if (!GameManager.Instance.IsPlayersTurn())
+        {
+            return;
+        }
+
         summonMenu.SetActive(false);
         if (spellsMenu.activeInHierarchy) {
             spellsMenu.SetActive(false);
@@ -123,6 +130,11 @@ public class UIManager : MonoBehaviour
 
     public void ToggleSummonMenu()
     {
+        if (!GameManager.Instance.IsPlayersTurn())
+        {
+            return;
+        }
+
         spellsMenu.SetActive(false);
         if (summonMenu.activeInHierarchy) {
             summonMenu.SetActive(false);
@@ -137,7 +149,7 @@ public class UIManager : MonoBehaviour
     public void EndPlayerTurn()
     {
         PlaySound(Sounds.ValidClick);
-        UIManager.Instance.endTurn.GetComponent<Button>().interactable = false;
+        TogglePlayerTurnUI(false);
         GameManager.Instance.EndTurn();
     }
 
@@ -237,5 +249,27 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log(goingUp);
         AudioVolume.ChangeVolume(goingUp ? 25 : -25);
+    }
+
+    public void TogglePlayerTurnUI(bool val)
+    {
+        if (!val)
+        {
+            summonMenu.SetActive(false);
+            spellsMenu.SetActive(false);
+        }
+
+        if (endTurn != null)
+        {
+            endTurn.GetComponent<Button>().interactable = val;
+        }
+        if (summonMenuButton != null)
+        {
+            summonMenuButton.GetComponent<Button>().interactable = val;
+        }
+        if (spellsMenuButton != null)
+        {
+            spellsMenuButton.GetComponent<Button>().interactable = val;
+        }
     }
 }

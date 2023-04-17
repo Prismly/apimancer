@@ -23,7 +23,8 @@ public class HumanWizard : Wizard
     {
         PlaySound(Sounds.Warcry);
         hasMoved = false;
-        UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
+        UIManager.Instance.TogglePlayerTurnUI(true);
+
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(null);
         foreach(Unit u in Units)
