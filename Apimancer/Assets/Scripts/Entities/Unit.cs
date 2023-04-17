@@ -87,12 +87,13 @@ public abstract class Unit : Entity
         else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
-        UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
     }
 
     // receive damage
     public virtual void ReceiveDamage(int dmg) 
     {
+        UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
+
         this.Health -= dmg;
         if (this.Health <= 0)
         {
