@@ -34,6 +34,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject spellsMenuButton = null;
     private GameObject summonMenu = null;
     private GameObject spellsMenu = null;
+    private bool summonMenuVis = false;
+    private bool spellsMenuVis = false;
     //private GameObject healthBox;
 
     [SerializeField] public AudioSource audioSource;
@@ -211,6 +213,8 @@ public class UIManager : MonoBehaviour
         else
         {
             GameManager.Instance.gameIsPaused = true;
+            summonMenu.SetActive(false);
+            spellsMenu.SetActive(false);
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
             Debug.Log("disabling");
