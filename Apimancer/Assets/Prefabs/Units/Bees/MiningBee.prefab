@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a4c06ff7aa0dd4a923c47a217a2eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldOffset: {x: 0, y: 0, z: -0.44}
   animator: {fileID: 687861165856245546}
   audioSource: {fileID: 5082898061740882044}
   Sounds:
@@ -305,7 +306,7 @@ SpriteRenderer:
   m_Size: {x: 1.6666666, y: 1.125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &687861165856245546
