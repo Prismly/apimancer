@@ -201,6 +201,7 @@ public abstract class Entity : MonoBehaviour
     // probably call animation here
     public IEnumerator MoveToOneCell(Cell target)
     {
+        UpdateDirection(target);
         SetAnimState(AnimState.MOVE);
         PlaySound(Sounds.Walk);
         var currentPos = transform.position;
@@ -247,5 +248,19 @@ public abstract class Entity : MonoBehaviour
     public void SetAnimState(AnimState state)
     {
         animator.SetInteger("State", (int)state);
+    }
+    
+    public void UpdateDirection(Cell target)
+    {
+        Vector3 scale = this.transform.localScale;
+        if (this.transform.position.x < target.transform.position.x)
+        {
+            scale.x = -Math.Abs(scale.x);
+        }
+        else
+        {
+            scale.x = Math.Abs(scale.x);
+        }
+        this.transform.localScale = scale;
     }
 }

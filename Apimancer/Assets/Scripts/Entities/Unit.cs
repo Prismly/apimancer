@@ -95,20 +95,6 @@ public abstract class Unit : Entity
         UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
     }
 
-    public void UpdateDirection(Cell target)
-    {
-        Vector3 scale = this.transform.localScale;
-        if (this.transform.position.x < target.transform.position.x)
-        {
-            scale.x = -Math.Abs(scale.x);
-        }
-        else
-        {
-            scale.x = Math.Abs(scale.x);
-        }
-        this.transform.localScale = scale;
-    }
-
     // receive damage
     public virtual void ReceiveDamage(int dmg) 
     {
