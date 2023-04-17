@@ -65,13 +65,13 @@ public class HumanWizard : Wizard
     public override int Health
     {
         get { return health; }
-        set { 
-            health = value;
-            if(health <= 0)
-            {
-                GameManager.Instance.GameOver(false);
-            }
-        }
+        set { health = value; }
+    }
+
+    public override void OnDeath()
+    {
+        base.OnDeath();
+        GameManager.Instance.GameOver(false);
     }
 
     public override int AttackDamage

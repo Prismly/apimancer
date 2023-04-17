@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -252,5 +253,12 @@ public class GameManager : MonoBehaviour
     public bool IsPlayersTurn()
     {
         return CurrentWizard == Wizards[0];
+    }
+
+    public void OpenLevel(string name)
+    {
+        if(name == "quit")
+            Application.Quit();
+        SceneManager.LoadScene(name);
     }
 }
