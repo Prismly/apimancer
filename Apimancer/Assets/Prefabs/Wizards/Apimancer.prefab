@@ -61,6 +61,7 @@ MonoBehaviour:
     Harvest: []
     Warcry:
     - {fileID: 8300000, guid: 74fdbfe190ce3894eae52bb6961da32c, type: 3}
+    Selected: []
   unitName: 
   UnitFaction: 1
   Type: 0

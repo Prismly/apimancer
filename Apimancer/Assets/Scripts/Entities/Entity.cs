@@ -50,6 +50,9 @@ public abstract class Entity : MonoBehaviour
         transform.position = CellManager.Instance.GetCell(cellPosition).gameObject.transform.position - (Vector3.forward * zOffset);
         // transform.position = tilemap.GetCellCenterWorld(cellPosition) - new Vector3(0, 0, zOffset);
         CellManager.Instance.GetCell(loc).Enter(this);
+
+        // Give the Entity an AudioVolume component, to sync with global settings.
+        gameObject.AddComponent<AudioVolume>();
     }
 
     protected virtual int MovementCost(Cell c, Cell end)
