@@ -208,8 +208,11 @@ public class UIManager : MonoBehaviour
 
         indicRect.localPosition = worldPos;
         //indicRect.localPosition = new Vector3(screenPoint.x - (targetCanvas.GetComponent<Canvas>().pixelRect.width / 2), screenPoint.y - (targetCanvas.GetComponent<Canvas>().pixelRect.height / 2), 0);
-        TextMeshProUGUI indicText = newDamageIndic.GetComponent<TextMeshProUGUI>();
-        indicText.text = dmgVal.ToString() + "!";
+        for (int i = 0; i < newDamageIndic.transform.childCount; i++)
+        {
+            TextMeshProUGUI indicText = newDamageIndic.transform.GetChild(i).GetComponent<TextMeshProUGUI>();
+            indicText.text = dmgVal.ToString() + "!";
+        }
     }
 
     private void Update()
