@@ -18,6 +18,9 @@ public abstract class Bee : Unit
     {
         Cell prevCell = GetCell();
         List<Cell> cells = DetermineTarget().Item3;
+        if (cells == null)  {
+            return;
+        }
         foreach (Cell c in cells)
         {
             Vector3 dist = c.transform.position - prevCell.transform.position;

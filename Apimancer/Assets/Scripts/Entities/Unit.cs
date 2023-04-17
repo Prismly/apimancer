@@ -194,6 +194,23 @@ public abstract class Unit : Entity
         return new Tuple<Unit, int, List<Cell>>(t, dist, path);
     }
 
+    protected Tuple<Unit, int, List<Cell>> FindClosestTarget(List<Unit> targets, Cell c) {
+        Unit t = null;
+        int dist = int.MaxValue;
+        List<Cell> path = null;
+        foreach (Unit u in targets)
+        {
+            List<Cell> tempPath = Entity.PathFind(u, c);
+            if (tempPath != null && tempPath.Count < dist && tempPath.Count != 0)
+            {
+                t = u;
+                dist = tempPath.Count;
+                path = tempPath;
+            }
+        }
+        return new Tuple<Unit, int, List<Cell>>(t, dist, path);
+    }
+
     public virtual Tuple<Unit, int, List<Cell>> DetermineTarget()
     {
         Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
@@ -208,7 +225,7 @@ public abstract class Unit : Entity
             {
                 lUnits = dUnits[f];
                 Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);
-                if (pTarget == null) pTarget = tempTarget;
+                if (pTarget == null && tempTarget.Item1 != null) pTarget = tempTarget;
                 if (tempTarget.Item2 < MovementSpeed)
                 {
                     target = tempTarget;
