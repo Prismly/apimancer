@@ -167,10 +167,4 @@ public class EnemyWizard : Wizard
         get { return targetPriorities; }
         set { targetPriorities = value; }
     }
-
-    public override void OnDeath()
-    {
-        base.OnDeath();
-        GameManager.Instance.GameOver(true);
-    }
 }
