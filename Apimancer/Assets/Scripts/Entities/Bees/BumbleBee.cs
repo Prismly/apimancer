@@ -11,7 +11,7 @@ public class BumbleBee : Bee
     private int attackDamage = 2;
     private int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
-            { Unit.Faction.ANT, Unit.Faction.RESOURCE };
+            { Unit.Faction.ANT };
 
     private void Awake()
     {

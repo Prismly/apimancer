@@ -11,7 +11,7 @@ public class ArmyAnt : Ant
     private int attackDamage = 2;
     private int movementSpeed = 5;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
-            { Unit.Faction.BEE, Unit.Faction.RESOURCE };
+            { Unit.Faction.BEE };
 
     private void Awake()
     {
