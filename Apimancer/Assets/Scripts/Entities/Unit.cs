@@ -72,12 +72,16 @@ public abstract class Unit : Entity
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)
     {
+        Debug.Log("Damagingtarget");
         target.ReceiveDamage(dmg);
     }
 
     // member deal damage to target
     public void AttackTarget(int dmg, Unit target)
     {
+        Debug.Log("Flipping");
+        UpdateDirection(target.GetCell());
+
         if (target.UnitFaction == Unit.Faction.RESOURCE)
         {
             int m = (target.Health >= dmg) ?
@@ -89,6 +93,20 @@ public abstract class Unit : Entity
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
         UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
+    }
+
+    public void UpdateDirection(Cell target)
+    {
+        Vector3 scale = this.transform.localScale;
+        if (this.transform.position.x < target.transform.position.x)
+        {
+            scale.x = -Math.Abs(scale.x);
+        }
+        else
+        {
+            scale.x = Math.Abs(scale.x);
+        }
+        this.transform.localScale = scale;
     }
 
     // receive damage

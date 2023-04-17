@@ -30,7 +30,7 @@ public class RiseAndFade : MonoBehaviour
             rect.rotation = Quaternion.LookRotation(rect.localPosition - Camera.main.transform.position, Vector3.back);
 
             float alphaRatio = Mathf.Pow(progress / riseTime, 2);
-            Debug.Log(alphaRatio);
+            // Debug.Log(alphaRatio);
             for (int i = 0; i < transform.childCount; i++)
             {
                 TextMeshProUGUI text = transform.GetChild(i).GetComponent<TextMeshProUGUI>();
