@@ -270,4 +270,34 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PanicEndTurnButton()
+    {
+        List<Unit> bees = new List<Unit>();
+        Units.TryGetValue(Unit.Faction.BEE, out bees);
+        foreach (Unit u in bees)
+        {
+            u.SetAnimState(Entity.AnimState.IDLE);
+        }
+        List<Unit> ants = new List<Unit>();
+        Units.TryGetValue(Unit.Faction.ANT, out ants);
+        foreach (Unit u in ants)
+        {
+            u.SetAnimState(Entity.AnimState.IDLE);
+        }
+        foreach (Wizard w in Wizards)
+        {
+            w.SetAnimState(Entity.AnimState.IDLE);
+        }
+
+        NextTurn();
+    }
+
+    private void Update()
+    {
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.B))
+        {
+            PanicEndTurnButton();
+        }
+    }
 }

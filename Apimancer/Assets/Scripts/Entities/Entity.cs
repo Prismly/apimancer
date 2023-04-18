@@ -159,7 +159,7 @@ public abstract class Entity : MonoBehaviour
         Cell target = t.GetCell();
         List<Cell> adjacents = target.GetAdjacentList();
         foreach (Cell c in adjacents) {
-            if (!c.IsOccupied) {
+            if (!c.IsOccupied || c.Occupant == e) {
                 List<Cell> tempPath = PathFind(e, c);
                 int tempDist = tempPath.Count;
                 if (tempDist < dist) {

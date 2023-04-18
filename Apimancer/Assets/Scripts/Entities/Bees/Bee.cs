@@ -15,10 +15,15 @@ public abstract class Bee : Unit
     public void BeginTurn()
     {
         Cell prevCell = GetCell();
-        List<Cell> cells = DetermineTarget().Item3;
-        if (cells == null)  {
+
+        System.Tuple<Unit, int, List<Cell>> targetData = DetermineTarget();
+        if (targetData == null || targetData.Item3 == null)
+        {
             return;
         }
+
+        List<Cell> cells = targetData.Item3;
+
         foreach (Cell c in cells)
         {
             Vector3 dist = c.transform.position - prevCell.transform.position;
