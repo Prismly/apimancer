@@ -94,7 +94,13 @@ public class HumanWizard : Wizard
 
     public override void OnSelect()
     {
-        if (!hasMoved && GameManager.Instance.CurrentAction?.actionType != ActionType.MOVE)
+        GameManager man = GameManager.Instance;
+        if (!man.IsPlayersTurn())
+        {
+            return;
+        }
+
+        if (!hasMoved && man.CurrentAction?.actionType != ActionType.MOVE)
         {
             GameManager.Instance.SetCurrentAction(new MoveAction(this, (uint)movementSpeed));
         }
