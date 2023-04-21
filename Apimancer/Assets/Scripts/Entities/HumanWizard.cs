@@ -9,10 +9,9 @@ public class HumanWizard : Wizard
 {
     private int maxHealth = 15;
     private int health = 15;
-    private int attackDamage = 1;
     private int movementSpeed = 2;
     private int movementCounter = 2;
-    private List<Unit.Faction> targetPriorities = new List<Unit.Faction>();
+    public bool hasMoved = false;
 
     private void Awake()
     {
@@ -69,22 +68,15 @@ public class HumanWizard : Wizard
         set { health = value; }
     }
 
-    public override int AttackDamage
-    {
-        get { return attackDamage; }
-        set { attackDamage = value; }
-    }
-
     public override int MovementSpeed
     {
         get { return movementSpeed; }
         set { movementSpeed = value; }
     }
-
-    public override List<Unit.Faction> TargetPriorities
+    public override void OnDeath()
     {
-        get { return targetPriorities; }
-        set { targetPriorities = value; }
+        base.OnDeath();
+        GameManager.Instance.GameOver();
     }
 
     public override void OnSelect()

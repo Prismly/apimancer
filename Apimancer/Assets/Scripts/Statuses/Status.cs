@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public abstract class Status : MonoBehaviour
+public abstract class Status
 {
     public enum Condition {
+        NONE,
         HONEYED,
         BURNED,
         WET
     }
 
-    protected Unit unit;
-    protected short duration;
-    protected Condition condition;
+    public abstract Unit unit { get; set; }
+    public abstract int duration { get; set; }
+    public abstract Condition condition { get; set; }
 
     public abstract void doStatus();
+
+    public void UpdateStatus() {
+        duration--;
+        if (duration <= 0)
+            unit.setStatus(Condition.NONE, 0);
+    }
 }

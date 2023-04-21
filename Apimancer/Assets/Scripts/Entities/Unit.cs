@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public abstract class Unit : Entity
@@ -46,17 +45,45 @@ public abstract class Unit : Entity
     public Status condition;
     public abstract int MaxHealth { get; set; }
     public abstract int Health { get; set; }
-    public abstract int AttackDamage { get; set; }
-    public abstract int MovementSpeed { get; set; }
-    public abstract List<Faction> TargetPriorities { get; set; }
-
+    public virtual int AttackDamage { get; set; }
+    public virtual int MovementSpeed { get; set; }
+    public virtual List<Faction> TargetPriorities { get; set; }
     public GameObject myShadow;
+
     public virtual Action DetermineAction() { return null; }
 
     public virtual IEnumerator DetermineMovement()
     {
         PlaySound(Sounds.Warcry);
-        Tuple<Unit, int, List<Cell>> target = DetermineTarget();
+        int speed = MovementSpeed;
+        if (condition != null)
+        {
+            switch (condition.condition)
+            {
+                case Status.Condition.HONEYED:
+                    {
+                        switch (Type)
+                        {
+                            case UnitType.ANT_ARMY:
+                            case UnitType.ANT_FIRE:
+                            case UnitType.ANT_WORKER:
+                            case UnitType.ANT_WIZARD:
+                            case UnitType.BEE_WIZARD:
+                                speed = 1;
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
+                    }
+                case Status.Condition.WET:
+                    speed--;
+                    break;
+                default:
+                    break;
+            }
+        }
+        Tuple<Unit, int, List<Cell>> target = DetermineTarget(speed);
         if (target != null)
         {
             yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, MovementSpeed));
@@ -94,11 +121,12 @@ public abstract class Unit : Entity
     // receive damage
     public virtual void ReceiveDamage(int dmg) 
     {
+
+        UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
         this.Health -= dmg;
         if (this.Health <= 0)
         {
             SetAnimState(AnimState.DEATH);
-
             
             GameManager.Instance.Kill(this);
             GetCell().Occupant = null;
@@ -113,6 +141,12 @@ public abstract class Unit : Entity
         }
     }
 
+    public void Heal(int h) {
+        if (h + Health > MaxHealth)
+            Health = MaxHealth;
+        else Health += h;
+    }
+
     public virtual void setLocation(Vector2Int location)
     {
         this.setLocation(CellManager.Instance.GetCell(location));
@@ -122,20 +156,15 @@ public abstract class Unit : Entity
     {
         if (cell != null && !cell.IsOccupied) {
             cell.Occupant = this;
-            this.loc = cell.Location;
-            this.transform.position = cell.transform.position + new Vector3(0, 0, -zOffset);
-            this.transform.rotation = Quaternion.Euler(-90, 0, 0);
+            loc = cell.Location;
+            transform.position = cell.transform.position + worldOffset;
+            transform.rotation = Quaternion.Euler(-90, 0, 0);
         }
     }
 
     public virtual void OnDeath()
     {
         PlaySound(Sounds.Death);
-        // GameManager.Instance.Kill(this);
-        // GetCell().Occupant = null;
-        // Destroy(this.gameObject, 1.0f);
-
-        // End game if wizard
     }
 
     public override void OnSelect() 
@@ -155,7 +184,7 @@ public abstract class Unit : Entity
         UIManager.Instance.HideHealthBox();
     }
 
-    public void setStatus(Status.Condition condition, short duration) {
+    public void setStatus(Status.Condition condition, int duration = 1) {
         switch (condition) {
             case Status.Condition.HONEYED:
                 this.condition = new Honeyed(this, duration);
@@ -173,7 +202,8 @@ public abstract class Unit : Entity
     }
 
     public void doStatus() {
-        condition.doStatus();
+        if (condition != null)
+            condition.doStatus();
     }
 
     protected Tuple<Unit, int, List<Cell>> FindClosestTarget(List<Unit> targets)
@@ -211,7 +241,7 @@ public abstract class Unit : Entity
         return new Tuple<Unit, int, List<Cell>>(t, dist, path);
     }
 
-    public virtual Tuple<Unit, int, List<Cell>> DetermineTarget()
+    public virtual Tuple<Unit, int, List<Cell>> DetermineTarget(int speed)
     {
         Dictionary<Unit.Faction, List<Unit>> dUnits = GameManager.Instance.Units;
         List<Unit> lUnits = null;
@@ -225,8 +255,8 @@ public abstract class Unit : Entity
             {
                 lUnits = dUnits[f];
                 Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);
-                if (pTarget == null) pTarget = tempTarget;
-                if (tempTarget.Item2 < MovementSpeed)
+                if (pTarget == null && tempTarget.Item1 != null) pTarget = tempTarget;
+                if (tempTarget.Item2 < speed)
                 {
                     target = tempTarget;
                     break;
@@ -239,7 +269,8 @@ public abstract class Unit : Entity
     }
 
     protected void RelinquishControl() {
-        Debug.Log("Relinquishing Control");
+        //Debug.Log("Relinquishing Control");
+        doStatus();
         SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }

@@ -222,7 +222,7 @@ public abstract class Cell : Selectable
     {
 
     }
-    protected virtual void OnEnter()
+    public virtual void OnEnter()
     {
 
     }

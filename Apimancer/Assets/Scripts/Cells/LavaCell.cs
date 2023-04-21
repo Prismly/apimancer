@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class LavaCell : Cell
 {
     private CellType type = CellType.LAVA;
@@ -11,15 +7,12 @@ public class LavaCell : Cell
         set { type = value; }
     }
 
-    public override void OnEndTurn() {
+    public override void OnEnter() {
         Unit u = Occupant as Unit;
         if (u != null) {
-            if (u.Type == Unit.UnitType.ANT_FIRE) {
-                Unit.DamageTarget(-1, u);
-            }
-            else {
-                Unit.DamageTarget(1, u);
-            }
+            if (u.condition == null || u.condition.condition == Status.Condition.BURNED)
+                u.setStatus(Status.Condition.BURNED, 1);
+            else u.setStatus(Status.Condition.NONE);
         }
     }
 }

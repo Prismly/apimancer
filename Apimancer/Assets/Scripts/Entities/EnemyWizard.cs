@@ -7,7 +7,6 @@ public class EnemyWizard : Wizard
 {
     private int maxHealth = 15;
     private int health = 15;
-    private int attackDamage = 1;
     private int movementSpeed = 2;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction> { Unit.Faction.BEE };
 
@@ -146,12 +145,6 @@ public class EnemyWizard : Wizard
     {
         get { return health; }
         set { health = value; }
-    }
-
-    public override int AttackDamage
-    {
-        get { return attackDamage; }
-        set { attackDamage = value; }
     }
 
     public override int MovementSpeed

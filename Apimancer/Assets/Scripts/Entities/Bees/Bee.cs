@@ -17,7 +17,19 @@ public abstract class Bee : Unit
     public void BeginTurn()
     {
         Cell prevCell = GetCell();
-        List<Cell> cells = DetermineTarget().Item3;
+
+        int speed = MovementSpeed;
+        if (condition != null && condition.condition == Status.Condition.WET)
+            speed--;
+
+        System.Tuple<Unit, int, List<Cell>> targetData = DetermineTarget(speed);
+        if (targetData == null || targetData.Item3 == null)
+        {
+            return;
+        }
+
+        List<Cell> cells = targetData.Item3;
+
         foreach (Cell c in cells)
         {
             Vector3 dist = c.transform.position - prevCell.transform.position;
