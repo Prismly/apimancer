@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35d93265073b8945a58baeb0e198bc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldOffset: {x: 0, y: 0, z: -0.28}
   animator: {fileID: 891405884964530926}
   audioSource: {fileID: -7114720083222403490}
   Sounds:

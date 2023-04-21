@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -78,15 +79,19 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(int firstTurn)
     {
+        
+        SelectionManager.canInteract = true;
         IsRunning = true;
         CurrentTurn = firstTurn;
         CurrentWizard = Wizards[CurrentTurn];
         CurrentWizard.BeginTurn();
     }
 
-    public void GameOver()
+    public void GameOver(bool win)
     {
+        SelectionManager.canInteract = false;
         IsRunning = false;
+        UIManager.Instance.ShowGameOverMenu(win);
     }
 
     public void LoadLevel(int levelIndex)
@@ -122,7 +127,10 @@ public class GameManager : MonoBehaviour
 
     public void NotifyNextUnit()
     {
-        CurrentWizard.MoveNextUnit();
+        if (IsRunning)
+        {
+            CurrentWizard.MoveNextUnit();
+        }
     }
 
     public int GetUnitCost(Unit.UnitType type)
@@ -210,11 +218,6 @@ public class GameManager : MonoBehaviour
 
     public bool Execute(Cell cell)
     {
-        if (CurrentAction == null)
-        {
-            CurrentAction = new MoveAction(CurrentWizard);
-        }
-
         if (CellInActionRange(cell))
         {
             bool success = CurrentAction.Execute(cell);
@@ -251,5 +254,50 @@ public class GameManager : MonoBehaviour
             }
         }
         return true;
+    }
+
+    public bool IsPlayersTurn()
+    {
+        return CurrentWizard == Wizards[0];
+    }
+
+    public void OpenScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
+    public void PanicEndTurnButton()
+    {
+        List<Unit> bees = new List<Unit>();
+        Units.TryGetValue(Unit.Faction.BEE, out bees);
+        foreach (Unit u in bees)
+        {
+            u.SetAnimState(Entity.AnimState.IDLE);
+        }
+        List<Unit> ants = new List<Unit>();
+        Units.TryGetValue(Unit.Faction.ANT, out ants);
+        foreach (Unit u in ants)
+        {
+            u.SetAnimState(Entity.AnimState.IDLE);
+        }
+        foreach (Wizard w in Wizards)
+        {
+            w.SetAnimState(Entity.AnimState.IDLE);
+        }
+
+        NextTurn();
+    }
+
+    private void Update()
+    {
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && Input.GetKeyDown(KeyCode.B))
+        {
+            PanicEndTurnButton();
+        }
     }
 }

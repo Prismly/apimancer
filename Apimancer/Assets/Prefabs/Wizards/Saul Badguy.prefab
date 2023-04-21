@@ -49,8 +49,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e87843c759dfd84083636638bb0e2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldOffset: {x: 0, y: 0, z: -0.57}
   animator: {fileID: 4750985066670061128}
   audioSource: {fileID: 8099461609681969519}
+  myShadow: {fileID: 4068153661264574291}
   Sounds:
     Death: []
     Walk: []
@@ -61,13 +63,13 @@ MonoBehaviour:
     Harvest: []
     Warcry:
     - {fileID: 8300000, guid: 022365fcabc390a43b59b787d4be353e, type: 3}
-  unitName: 
+    Selected: []
+  unitName: The Myrmidonist
   UnitFaction: 2
   Type: 0
   State: 1
   Commander: {fileID: 0}
   condition: {fileID: 0}
-  myShadow: {fileID: 4068153661264574291}
   mana: 30
   Color: {r: 1, g: 1, b: 1, a: 1}
   Units: []

@@ -11,7 +11,7 @@ public class MiningBee : Bee
     private int attackDamage = 4;
     private int movementSpeed = 5;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
-            { Unit.Faction.ANT, Unit.Faction.RESOURCE };
+            { Unit.Faction.ANT };
 
     private void Awake()
     {

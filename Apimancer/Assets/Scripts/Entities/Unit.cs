@@ -99,12 +99,16 @@ public abstract class Unit : Entity
     // static deal damage to target
     public static void DamageTarget(int dmg, Unit target)
     {
+        Debug.Log("Damagingtarget");
         target.ReceiveDamage(dmg);
     }
 
     // member deal damage to target
     public void AttackTarget(int dmg, Unit target)
     {
+        Debug.Log("Flipping");
+        UpdateDirection(target.GetCell());
+
         if (target.UnitFaction == Unit.Faction.RESOURCE)
         {
             int m = (target.Health >= dmg) ?
@@ -115,13 +119,11 @@ public abstract class Unit : Entity
         else PlaySound(Sounds.Attack);
         target.ReceiveDamage(dmg);
         SetAnimState(AnimState.UNIT_ACTION);
-        UIManager.Instance.SpawnDamageIndicator(dmg, target.transform.position);
     }
 
     // receive damage
     public virtual void ReceiveDamage(int dmg) 
     {
-
         UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
         this.Health -= dmg;
         if (this.Health <= 0)
@@ -238,6 +240,10 @@ public abstract class Unit : Entity
                 path = tempPath;
             }
         }
+
+        if (path == null)
+            Debug.Log("Path is null!");
+
         return new Tuple<Unit, int, List<Cell>>(t, dist, path);
     }
 
@@ -251,7 +257,7 @@ public abstract class Unit : Entity
         for (int i = 0; i < n; i++)
         {
             Unit.Faction f = TargetPriorities[i];
-            if (dUnits.ContainsKey(f))
+            if (dUnits.ContainsKey(f) && dUnits[f].Count > 0)
             {
                 lUnits = dUnits[f];
                 Tuple<Unit, int, List<Cell>> tempTarget = FindClosestTarget(lUnits);

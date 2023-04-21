@@ -18,9 +18,6 @@ public class EnemyWizard : Wizard
         summons.Add(new SummonAction(this, UnitType.ANT_WORKER, 1, 5));
         summons.Add(new SummonAction(this, UnitType.ANT_ARMY, 1, 8));
         summons.Add(new SummonAction(this, UnitType.ANT_FIRE, 1, 10));
-        unitName = "The Myrmidonist";
-        zOffset = 0.57f;
-        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
     }
 
     public override IEnumerator DetermineMovement()
@@ -145,6 +142,11 @@ public class EnemyWizard : Wizard
     {
         get { return health; }
         set { health = value; }
+    }
+    public override void OnDeath()
+    {
+        base.OnDeath();
+        GameManager.Instance.GameOver(true);
     }
 
     public override int MovementSpeed

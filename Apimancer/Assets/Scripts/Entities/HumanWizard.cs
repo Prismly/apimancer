@@ -15,18 +15,17 @@ public class HumanWizard : Wizard
 
     private void Awake()
     {
-        unitName = "The Apimancer";
-        zOffset = 0.57f;
-        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
+        
     }
 
     public override void BeginTurn()
     {
         PlaySound(Sounds.Warcry);
-        movementCounter = movementSpeed;
-        UIManager.Instance.endTurn.GetComponent<Button>().interactable = true;
+        hasMoved = false;
+        UIManager.Instance.TogglePlayerTurnUI(true);
+
         IsTurn = true;
-        GameManager.Instance.SetCurrentAction(new MoveAction(this));
+        GameManager.Instance.SetCurrentAction(null);
         foreach(Unit u in Units)
         {
             Bee bee = u as Bee;
@@ -73,17 +72,24 @@ public class HumanWizard : Wizard
         get { return movementSpeed; }
         set { movementSpeed = value; }
     }
+
     public override void OnDeath()
     {
         base.OnDeath();
-        GameManager.Instance.GameOver();
+        GameManager.Instance.GameOver(false);
     }
 
     public override void OnSelect()
     {
-        if (GameManager.Instance.CurrentAction?.actionType != ActionType.MOVE)
+        GameManager man = GameManager.Instance;
+        if (!man.IsPlayersTurn())
         {
-            GameManager.Instance.SetCurrentAction(new MoveAction(this));
+            return;
+        }
+
+        if (!hasMoved && man.CurrentAction?.actionType != ActionType.MOVE)
+        {
+            GameManager.Instance.SetCurrentAction(new MoveAction(this, (uint)movementSpeed));
         }
         else
         {

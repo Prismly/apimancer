@@ -9,8 +9,6 @@ public abstract class Bee : Unit
 
     public void OnSpawn()
     {
-        zOffset = 0.44f;
-        myShadow.transform.position = new Vector3(myShadow.transform.position.x, myShadow.transform.position.y, zOffset - 0.01f);
         PlaySound(Sounds.Summon);
     }
 
@@ -109,6 +107,11 @@ public abstract class Bee : Unit
 
     public void EndTurn()
     {
+        ClearArrows();
+    }
+
+    private void ClearArrows()
+    {
         foreach (GameObject arrow in arrows)
             Destroy(arrow);
         arrows.Clear();
@@ -123,6 +126,12 @@ public abstract class Bee : Unit
     public void SetCommander(Wizard w)
     {
         commander = w;
+    }
+
+    public override void OnDeath()
+    {
+        ClearArrows();
+        base.OnDeath();
     }
 
     public override void OnHover()
