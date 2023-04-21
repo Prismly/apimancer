@@ -48,7 +48,6 @@ public abstract class Unit : Entity
     public virtual int AttackDamage { get; set; }
     public virtual int MovementSpeed { get; set; }
     public virtual List<Faction> TargetPriorities { get; set; }
-    public GameObject myShadow;
 
     public virtual Action DetermineAction() { return null; }
 
