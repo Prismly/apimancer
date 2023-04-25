@@ -15,4 +15,15 @@ public class LavaCell : Cell
             else u.setStatus(Status.Condition.NONE);
         }
     }
+
+    public override void OnEndTurn()
+    {
+        Unit u = Occupant as Unit;
+        if (u != null)
+        {
+            if (u.condition == null || u.condition.condition == Status.Condition.BURNED)
+                u.setStatus(Status.Condition.BURNED, 1);
+            else u.setStatus(Status.Condition.NONE);
+        }
+    }
 }

@@ -21,6 +21,9 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     private GameObject myShadow;
 
+    [SerializeField]
+    protected SpriteRenderer spriteRenderer;
+
     [Serializable]
     public struct SoundStruct
     {

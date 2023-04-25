@@ -17,7 +17,18 @@ public class HoneyCell : Cell
         if (u != null)
         {
             if (u.condition == null || u.condition.condition == Status.Condition.HONEYED)
-                u.setStatus(Status.Condition.HONEYED, 2);
+                u.setStatus(Status.Condition.HONEYED, 1);
+            else u.setStatus(Status.Condition.NONE);
+        }
+    }
+
+    public override void OnEndTurn()
+    {
+        Unit u = Occupant as Unit;
+        if (u != null)
+        {
+            if (u.condition == null || u.condition.condition == Status.Condition.HONEYED)
+                u.setStatus(Status.Condition.HONEYED, 1);
             else u.setStatus(Status.Condition.NONE);
         }
     }

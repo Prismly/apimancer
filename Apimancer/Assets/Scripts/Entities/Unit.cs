@@ -189,15 +189,19 @@ public abstract class Unit : Entity
         switch (condition) {
             case Status.Condition.HONEYED:
                 this.condition = new Honeyed(this, duration);
+                spriteRenderer.color = new Color(0.6f, 0.4f, 0.1f, 1);
                 break;
             case Status.Condition.BURNED:
                 this.condition = new Burned(this, duration);
+                spriteRenderer.color = new Color(0.75f, 0.2f, 0.1f, 1);
                 break;
             case Status.Condition.WET:
                 this.condition = new Wet(this, duration);
+                spriteRenderer.color = new Color(0.3f, 0.5f, 0.9f, 1);
                 break;
             default:
                 this.condition = null;
+                spriteRenderer.color = new Color(1, 1, 1, 1);
                 break;
         }
     }

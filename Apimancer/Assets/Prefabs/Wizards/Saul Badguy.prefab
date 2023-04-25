@@ -53,6 +53,7 @@ MonoBehaviour:
   animator: {fileID: 4750985066670061128}
   audioSource: {fileID: 8099461609681969519}
   myShadow: {fileID: 4068153661264574291}
+  spriteRenderer: {fileID: 5138549314872730181}
   Sounds:
     Death: []
     Walk: []
@@ -69,7 +70,6 @@ MonoBehaviour:
   Type: 0
   State: 1
   Commander: {fileID: 0}
-  condition: {fileID: 0}
   mana: 30
   Color: {r: 1, g: 1, b: 1, a: 1}
   Units: []

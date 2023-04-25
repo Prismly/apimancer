@@ -52,6 +52,8 @@ MonoBehaviour:
   worldOffset: {x: 0, y: 0, z: -0.57}
   animator: {fileID: 5202668542672110088}
   audioSource: {fileID: 3723233154500856886}
+  myShadow: {fileID: 5368651608774615490}
+  spriteRenderer: {fileID: 666134688748490492}
   Sounds:
     Death: []
     Walk: []
@@ -68,11 +70,10 @@ MonoBehaviour:
   Type: 0
   State: 1
   Commander: {fileID: 0}
-  condition: {fileID: 0}
-  myShadow: {fileID: 5368651608774615490}
   mana: 30
   Color: {r: 1, g: 1, b: 1, a: 1}
   Units: []
+  hasMoved: 0
 --- !u!82 &3723233154500856886
 AudioSource:
   m_ObjectHideFlags: 0

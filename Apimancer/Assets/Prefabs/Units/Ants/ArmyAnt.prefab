@@ -135,6 +135,8 @@ MonoBehaviour:
   worldOffset: {x: 0, y: 0, z: -0.28}
   animator: {fileID: 7538400523691333496}
   audioSource: {fileID: 991141206171013847}
+  myShadow: {fileID: 1672814949489416369}
+  spriteRenderer: {fileID: 15501829888385491}
   Sounds:
     Death:
     - {fileID: 8300000, guid: fad64ecf282cbb24b98933a2e5066890, type: 3}
@@ -159,8 +161,6 @@ MonoBehaviour:
   Type: 7
   State: 1
   Commander: {fileID: 0}
-  condition: {fileID: 0}
-  myShadow: {fileID: 1672814949489416369}
 --- !u!82 &991141206171013847
 AudioSource:
   m_ObjectHideFlags: 0
