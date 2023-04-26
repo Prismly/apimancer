@@ -176,6 +176,28 @@ public class UIManager : MonoBehaviour
         unitNameText.text = target.unitName;
         TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         healthBoxText.text = "<sprite=6>" + target.Health + "/" + target.MaxHealth;
+        if (target.condition != null)
+        {
+            switch (target.condition.condition)
+            {
+                case Status.Condition.HONEYED:
+                    {
+                        healthBoxText.text += "  [NCT]";
+                        break;
+                    }
+                case Status.Condition.BURNED:
+                    {
+                        healthBoxText.text += "  [BRN]";
+                        break;
+                    }
+                case Status.Condition.WET:
+                    {
+                        healthBoxText.text += "  [WTR]";
+                        break;
+                    }
+            }
+        }
+        healthBoxText.text = OptionAddon.Mutate(healthBoxText.text);
         healthBox.SetActive(true);
     }
 
