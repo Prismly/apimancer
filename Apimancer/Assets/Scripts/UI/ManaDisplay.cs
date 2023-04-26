@@ -57,6 +57,6 @@ public class ManaDisplay : MonoBehaviour
             }
         }
 
-        tmp.text = currentMana + " &";
+        tmp.text = currentMana + " *";
     }
 }
