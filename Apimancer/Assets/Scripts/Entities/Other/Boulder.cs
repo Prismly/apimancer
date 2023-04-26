@@ -1,3 +1,4 @@
+using UnityEngine;
 using System.Collections;
 
 public class Boulder : Other
@@ -21,5 +22,13 @@ public class Boulder : Other
     {
         get { return health; }
         set { health = value; }
+    }
+
+    public override void OnDeath()
+    {
+        Cell c = CellManager.Instance.GetCell(loc);
+        Transform t = c.GetComponent<Transform>();
+        Transform st = t.GetChild(0);
+        st.localPosition = new Vector3(0, 0, -0.01f);
     }
 }

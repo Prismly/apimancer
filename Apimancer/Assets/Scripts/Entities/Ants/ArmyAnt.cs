@@ -10,7 +10,7 @@ public class ArmyAnt : Ant
     private int health = 4;
     private int attackDamage = 2;
     private int attackRange = 3;
-    private int movementSpeed = 5;
+    private int movementSpeed = 3;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.BEE };
 

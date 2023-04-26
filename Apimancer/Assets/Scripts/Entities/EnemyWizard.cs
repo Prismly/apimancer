@@ -93,9 +93,10 @@ public class EnemyWizard : Wizard
         Cell castCell = null;
 
         // Select cell based on validity here
-        for (int i = 0; i < summonRange.Count; i++)
+        int n = summonRange.Count;
+        for (int i = 0; i < n; i++)
         {
-            Cell cell = summonRange[cellIndex];
+            Cell cell = summonRange[(cellIndex + i) % n];
             if (!cell.IsOccupied)
             {
                 castCell = cell;
@@ -126,6 +127,7 @@ public class EnemyWizard : Wizard
         }
         if (_currentUnitIndex >= Units.Count)
         {
+            doStatus();
             GameManager.Instance.NextTurn();
             return;
         }

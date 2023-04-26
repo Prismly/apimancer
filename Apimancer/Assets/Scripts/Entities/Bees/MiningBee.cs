@@ -9,9 +9,9 @@ public class MiningBee : Bee
     public static int Cost = 10;
     private int maxHealth = 3;
     private int health = 3;
-    private int attackDamage = 4;
+    private int attackDamage = 3;
     private int attackRange = 1;
-    private int movementSpeed = 5;
+    private int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.ANT };
 
@@ -190,7 +190,6 @@ public class MiningBee : Bee
             Unit actualTarget = null;
             List<Cell> actualPath = new List<Cell>();
             foreach(Cell c in target.Item3) {
-                actualPath.Add(c);
                 if (c.IsOccupied) {
                     Unit u = c.Occupant as Unit;
                     if (u == this)
@@ -200,6 +199,7 @@ public class MiningBee : Bee
                         break;
                     }
                 }
+                actualPath.Add(c);
             }
 
             yield return StartCoroutine(MoveAlongPathByAmount(actualPath, speed));

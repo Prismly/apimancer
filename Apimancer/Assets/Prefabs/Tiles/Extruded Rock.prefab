@@ -301,6 +301,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   audioSource: {fileID: 0}
   myShadow: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   Sounds:
     Death: []
     Walk: []
@@ -314,7 +315,6 @@ MonoBehaviour:
   Type: 9
   State: 1
   Commander: {fileID: 0}
-  condition: {fileID: 0}
 --- !u!1 &6082921349505461939
 GameObject:
   m_ObjectHideFlags: 0

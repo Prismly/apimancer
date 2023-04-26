@@ -86,15 +86,23 @@ public abstract class Unit : Entity
         Tuple<Unit, int, List<Cell>> target = DetermineTarget(speed);
         if (target != null)
         {
-            yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, speed));
-            if (target.Item2 < speed + AttackRange)
+            int slack = (speed + AttackRange) - target.Item2;
+            if (slack > 0) {
+                yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, speed - slack + 1));
+            }
+            else {
+                yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, speed));
+            }
+                
+            if (slack > 0)
             {
                 if (Type == UnitType.ANT_FIRE) {
                     List<Cell> aoe = CellManager.Instance.GetCell(loc).GetAdjacentList();
                     foreach(Cell c in aoe) {
                         Unit t = c.Occupant as Unit;
                         if (t != null) {
-                            AttackTarget(AttackDamage, t);
+                            if (t.Type != UnitType.ANT_FIRE)
+                                AttackTarget(AttackDamage, t);
                             t.setStatus(Status.Condition.BURNED, 2);
                         }
                     }
@@ -107,18 +115,10 @@ public abstract class Unit : Entity
         }
         else RelinquishControl();
     }
-    
-    // static deal damage to target
-    public static void DamageTarget(int dmg, Unit target)
-    {
-        Debug.Log("Damagingtarget");
-        target.ReceiveDamage(dmg);
-    }
 
     // member deal damage to target
     public void AttackTarget(int dmg, Unit target)
     {
-        Debug.Log("Flipping");
         UpdateDirection(target.GetCell());
 
         if (target.UnitFaction == Unit.Faction.RESOURCE && Type != UnitType.ANT_FIRE)
@@ -140,7 +140,8 @@ public abstract class Unit : Entity
         this.Health -= dmg;
         if (this.Health <= 0)
         {
-            SetAnimState(AnimState.DEATH);
+            if (animator != null)
+                SetAnimState(AnimState.DEATH);
             
             GameManager.Instance.Kill(this);
             GetCell().Occupant = null;
@@ -307,7 +308,6 @@ public abstract class Unit : Entity
     }
 
     protected void RelinquishControl() {
-        //Debug.Log("Relinquishing Control");
         doStatus();
         SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
