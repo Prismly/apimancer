@@ -13,6 +13,8 @@ public class Level : MonoBehaviour
         {
             wizards[i].setLocation(_spawnLocations[i]);
         }
+
+        CameraController.CameraTransform.position = CellManager.Instance.GetCell(_spawnLocations[0]).transform.position;
     }
 
     public int getMaxWizards()

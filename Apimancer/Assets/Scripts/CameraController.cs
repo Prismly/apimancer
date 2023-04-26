@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
+    public static Transform CameraTransform;
+
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _rotateSpeed;
     [SerializeField] private float _pitchSpeed;
@@ -59,6 +61,8 @@ public class CameraController : MonoBehaviour
         _cameraScale = 1;
 
         audioSource.Play();
+
+        CameraController.CameraTransform = this.transform;
     }
 
     //private void Start()
