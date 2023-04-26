@@ -90,7 +90,7 @@ public class UIManager : MonoBehaviour
         spellsMenuBox.AddSpellsOption("COMING SOON ;)", playerWiz, SpellAction.SpellType.HONEY_BLAST, 0, 0);
         //spellsMenuBox.AddSpellsOption("[X]Honey Trap [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
         //spellsMenuBox.AddSpellsOption("[X]Honey Blast [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
-        spellsMenuBox.AddSpellsOption("[X]Teleport [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
+        spellsMenuBox.AddSpellsOption("[X]Teleport * 3 [RNG]3", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
         spellsMenu.SetActive(false);
 
         // -- SUMMON MENU --
@@ -103,9 +103,9 @@ public class UIManager : MonoBehaviour
         summonMenuImg.color = new Color(200 / 255f, 144 / 255f, 143 / 255f);
         MenuBox summonMenuBox = summonMenu.GetComponent<MenuBox>();
         // We'd get the player's Summons here
-        summonMenuBox.AddSummonOption("[X]Worker Bee [NCT]5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
-        summonMenuBox.AddSummonOption("[X]Bumble Bee [NCT]8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
-        summonMenuBox.AddSummonOption("[X]Miner Bee [NCT]10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
+        summonMenuBox.AddSummonOption("[X]Worker Bee * 5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
+        summonMenuBox.AddSummonOption("[X]Bumble Bee * 8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
+        summonMenuBox.AddSummonOption("[X]Miner Bee * 10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
         summonMenu.SetActive(false);
     }
     
