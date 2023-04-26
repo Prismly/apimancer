@@ -6,9 +6,10 @@ using UnityEngine;
 public class FireAnt : Ant
 {
     public static int Cost = 10;
-    private int maxHealth = 3;
-    private int health = 3;
-    private int attackDamage = 3;
+    private int maxHealth = 4;
+    private int health = 4;
+    private int attackDamage = 1;
+    private int attackRange = 1;
     private int movementSpeed = 5;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.BEE };
@@ -30,6 +31,10 @@ public class FireAnt : Ant
     public override int AttackDamage
     { get { return attackDamage; }
       set { attackDamage = value; } }
+
+    public override int AttackRange 
+    { get { return attackRange; }
+      set { attackRange = value; } }
 
     public override int MovementSpeed
     { get { return movementSpeed; }

@@ -9,6 +9,7 @@ public class BumbleBee : Bee
     private int maxHealth = 5;
     private int health = 5;
     private int attackDamage = 2;
+    private int attackRange = 1;
     private int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.ANT };
@@ -29,6 +30,10 @@ public class BumbleBee : Bee
     public override int AttackDamage
     { get { return attackDamage; }
       set { attackDamage = value; } }
+
+    public override int AttackRange 
+    { get { return attackRange; }
+      set { attackRange = value; } }
 
     public override int MovementSpeed
     { get { return movementSpeed; }

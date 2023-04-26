@@ -10,9 +10,7 @@ public class LavaCell : Cell
     public override void OnEnter() {
         Unit u = Occupant as Unit;
         if (u != null) {
-            if (u.condition == null || u.condition.condition == Status.Condition.BURNED)
-                u.setStatus(Status.Condition.BURNED, 1);
-            else u.setStatus(Status.Condition.NONE);
+            u.setStatus(Status.Condition.BURNED, 1);
         }
     }
 
@@ -21,9 +19,7 @@ public class LavaCell : Cell
         Unit u = Occupant as Unit;
         if (u != null)
         {
-            if (u.condition == null || u.condition.condition == Status.Condition.BURNED)
-                u.setStatus(Status.Condition.BURNED, 1);
-            else u.setStatus(Status.Condition.NONE);
+            u.setStatus(Status.Condition.BURNED, 1);
         }
     }
 }
