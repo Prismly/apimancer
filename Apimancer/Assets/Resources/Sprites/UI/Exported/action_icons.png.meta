@@ -101,6 +101,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -110,8 +122,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,10 +141,10 @@ TextureImporter:
       name: action_icons_1
       rect:
         serializedVersion: 2
-        x: 5
+        x: 10
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,10 +162,10 @@ TextureImporter:
       name: action_icons_2
       rect:
         serializedVersion: 2
-        x: 10
+        x: 20
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,10 +183,10 @@ TextureImporter:
       name: action_icons_3
       rect:
         serializedVersion: 2
-        x: 15
+        x: 30
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +204,10 @@ TextureImporter:
       name: action_icons_4
       rect:
         serializedVersion: 2
-        x: 20
+        x: 40
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,10 +225,10 @@ TextureImporter:
       name: action_icons_5
       rect:
         serializedVersion: 2
-        x: 25
+        x: 50
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,10 +246,10 @@ TextureImporter:
       name: action_icons_6
       rect:
         serializedVersion: 2
-        x: 30
+        x: 60
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,10 +267,10 @@ TextureImporter:
       name: action_icons_7
       rect:
         serializedVersion: 2
-        x: 35
+        x: 70
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,10 +288,10 @@ TextureImporter:
       name: action_icons_8
       rect:
         serializedVersion: 2
-        x: 40
+        x: 80
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,10 +309,10 @@ TextureImporter:
       name: action_icons_9
       rect:
         serializedVersion: 2
-        x: 45
+        x: 90
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,10 +330,10 @@ TextureImporter:
       name: action_icons_10
       rect:
         serializedVersion: 2
-        x: 50
+        x: 100
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,10 +351,10 @@ TextureImporter:
       name: action_icons_11
       rect:
         serializedVersion: 2
-        x: 55
+        x: 110
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,10 +372,10 @@ TextureImporter:
       name: action_icons_12
       rect:
         serializedVersion: 2
-        x: 60
+        x: 120
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,10 +393,10 @@ TextureImporter:
       name: action_icons_13
       rect:
         serializedVersion: 2
-        x: 65
+        x: 130
         y: 0
-        width: 5
-        height: 5
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -392,8 +404,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3523df8163676348874b0084294d537
-      internalID: -505294893
+      spriteID: 97d725e83dab1a646b4b7923f207dff6
+      internalID: -403261561
       vertices: []
       indices: 
       edges: []
@@ -414,7 +426,7 @@ TextureImporter:
       action_icons_4: -1246792874
       action_icons_11: 1230252872
       action_icons_12: -41856623
-      action_icons_13: -505294893
+      action_icons_13: -403261561
       action_icons_9: 1275762615
       action_icons_7: 1233165965
       action_icons_6: -201236619

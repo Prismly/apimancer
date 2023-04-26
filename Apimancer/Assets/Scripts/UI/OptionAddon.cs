@@ -20,14 +20,15 @@ public static class OptionAddon
         BURNED,
         WATERY,
         POISON,
+        STAR
     }
 
-    public static int iconCount = 13;
+    public static int iconCount = 14;
     public static string[] flagList;
 
     static OptionAddon()
     {
-        flagList = new string[13];
+        flagList = new string[iconCount];
         // Black Dot
         flagList[0] = "[X]";
         // Yellow Dot
@@ -54,6 +55,8 @@ public static class OptionAddon
         flagList[11] = "[WTR]";
         // Poison Symbol
         flagList[12] = "[PSN]";
+        // Star Symbol
+        flagList[13] = "[STR]";
     }
 
     // Replaces all instances of the 'flag' string with the corresponding sprite (in text form).

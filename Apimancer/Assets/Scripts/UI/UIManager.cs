@@ -103,9 +103,9 @@ public class UIManager : MonoBehaviour
         summonMenuImg.color = new Color(200 / 255f, 144 / 255f, 143 / 255f);
         MenuBox summonMenuBox = summonMenu.GetComponent<MenuBox>();
         // We'd get the player's Summons here
-        summonMenuBox.AddSummonOption("[X]Worker Bee * 5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
-        summonMenuBox.AddSummonOption("[X]Bumble Bee * 8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
-        summonMenuBox.AddSummonOption("[X]Miner Bee * 10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
+        summonMenuBox.AddSummonOption("[X]Worker Bee [STR]5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
+        summonMenuBox.AddSummonOption("[X]Bumble Bee [STR]8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
+        summonMenuBox.AddSummonOption("[X]Miner Bee [STR]10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
         summonMenu.SetActive(false);
     }
     
@@ -175,7 +175,32 @@ public class UIManager : MonoBehaviour
         TextMeshProUGUI unitNameText = healthBox.transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         unitNameText.text = target.unitName;
         TextMeshProUGUI healthBoxText = healthBox.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-        healthBoxText.text = "<sprite=6>" + target.Health + "/" + target.MaxHealth;
+        if (target.condition != null)
+        {
+            switch (target.condition.condition)
+            {
+                case Status.Condition.HONEYED:
+                    {
+                        healthBoxText.text = "[NCT]" + "<sprite=6>" + target.Health + "/" + target.MaxHealth;
+                        break;
+                    }
+                case Status.Condition.BURNED:
+                    {
+                        healthBoxText.text = "[BRN]" + "<sprite=6>" + target.Health + "/" + target.MaxHealth;
+                        break;
+                    }
+                case Status.Condition.WET:
+                    {
+                        healthBoxText.text = "[WTR]" + "<sprite=6>" + target.Health + "/" + target.MaxHealth;
+                        break;
+                    }
+            }
+        }
+        else
+        {
+            healthBoxText.text = "<sprite=6>" + target.Health + "/" + target.MaxHealth;
+        }
+        healthBoxText.text = OptionAddon.Mutate(healthBoxText.text);
         healthBox.SetActive(true);
     }
 
