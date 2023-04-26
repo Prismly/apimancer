@@ -32,8 +32,7 @@ public class Burned : Status
     }
 
     public override void doStatus() {
-        // do the thing
-        if (unit.Type == Unit.UnitType.ANT_FIRE)
+        if (unit.Type == Unit.UnitType.ANT_FIRE || unit.Type == Unit.UnitType.ANT_WIZARD)
             unit.Heal(1);
         else unit.ReceiveDamage(1);
         UpdateStatus();
