@@ -46,6 +46,7 @@ public abstract class Unit : Entity
     public abstract int MaxHealth { get; set; }
     public abstract int Health { get; set; }
     public virtual int AttackDamage { get; set; }
+    public virtual int AttackRange { get; set; }
     public virtual int MovementSpeed { get; set; }
     public virtual List<Faction> TargetPriorities { get; set; }
 
@@ -85,10 +86,22 @@ public abstract class Unit : Entity
         Tuple<Unit, int, List<Cell>> target = DetermineTarget(speed);
         if (target != null)
         {
-            yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, MovementSpeed));
-            if (target.Item2 <= MovementSpeed)
+            yield return StartCoroutine(MoveAlongPathByAmount(target.Item3, speed));
+            if (target.Item2 < speed + AttackRange)
             {
-                AttackTarget(AttackDamage, target.Item1);
+                if (Type == UnitType.ANT_FIRE) {
+                    List<Cell> aoe = CellManager.Instance.GetCell(loc).GetAdjacentList();
+                    foreach(Cell c in aoe) {
+                        Unit t = c.Occupant as Unit;
+                        if (t != null) {
+                            AttackTarget(AttackDamage, t);
+                            t.setStatus(Status.Condition.BURNED, 2);
+                        }
+                    }
+                }
+                else {
+                    AttackTarget(AttackDamage, target.Item1);
+                }
             }
             else RelinquishControl();
         }
@@ -108,7 +121,7 @@ public abstract class Unit : Entity
         Debug.Log("Flipping");
         UpdateDirection(target.GetCell());
 
-        if (target.UnitFaction == Unit.Faction.RESOURCE)
+        if (target.UnitFaction == Unit.Faction.RESOURCE && Type != UnitType.ANT_FIRE)
         {
             int m = (target.Health >= dmg) ?
                       (dmg) : (target.Health);
@@ -186,23 +199,33 @@ public abstract class Unit : Entity
     }
 
     public void setStatus(Status.Condition condition, int duration = 1) {
-        switch (condition) {
-            case Status.Condition.HONEYED:
-                this.condition = new Honeyed(this, duration);
-                spriteRenderer.color = new Color(0.6f, 0.4f, 0.1f, 1);
-                break;
-            case Status.Condition.BURNED:
-                this.condition = new Burned(this, duration);
-                spriteRenderer.color = new Color(0.75f, 0.2f, 0.1f, 1);
-                break;
-            case Status.Condition.WET:
-                this.condition = new Wet(this, duration);
-                spriteRenderer.color = new Color(0.3f, 0.5f, 0.9f, 1);
-                break;
-            default:
-                this.condition = null;
+        if (this.condition == null) {
+            switch (condition)
+            {
+                case Status.Condition.HONEYED:
+                    this.condition = new Honeyed(this, duration);
+                    if (spriteRenderer != null)
+                        spriteRenderer.color = new Color(0.6f, 0.4f, 0.1f, 1);
+                    break;
+                case Status.Condition.BURNED:
+                    this.condition = new Burned(this, duration);
+                    if (spriteRenderer != null)
+                        spriteRenderer.color = new Color(0.8f, 0.4f, 0.2f, 1);
+                    break;
+                case Status.Condition.WET:
+                    this.condition = new Wet(this, duration);
+                    if (spriteRenderer != null)
+                        spriteRenderer.color = new Color(0.3f, 0.5f, 0.9f, 1);
+                    break;
+            }
+        }
+        else if (this.condition.condition == condition) { 
+            this.condition.duration += duration;
+        }
+        else {
+            this.condition = null;
+            if (spriteRenderer != null)
                 spriteRenderer.color = new Color(1, 1, 1, 1);
-                break;
         }
     }
 
@@ -218,7 +241,13 @@ public abstract class Unit : Entity
         List<Cell> path = null;
         foreach (Unit u in targets)
         {
-            List<Cell> tempPath = Entity.PathFind(this, u);
+            List<Cell> tempPath;
+            if (Type == UnitType.BEE_MINING) {
+                tempPath = MiningBee.PathFind(this, u);
+            }
+            else {
+                tempPath = Entity.PathFind(this, u);
+            }
             if (tempPath != null && tempPath.Count < dist && tempPath.Count != 0)
             {
                 t = u;
@@ -236,7 +265,7 @@ public abstract class Unit : Entity
         foreach (Unit u in targets)
         {
             List<Cell> tempPath = Entity.PathFind(u, c);
-            if (tempPath != null && tempPath.Count < dist && tempPath.Count != 0)
+            if (tempPath != null && tempPath.Count < dist)
             {
                 t = u;
                 dist = tempPath.Count;

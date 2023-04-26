@@ -66,7 +66,7 @@ public abstract class Entity : MonoBehaviour
         gameObject.AddComponent<AudioVolume>();
     }
 
-    protected virtual int MovementCost(Cell c, Cell end)
+    public virtual int MovementCost(Cell c, Cell end)
     {
         Vector2Int cPos = c.Location;
         Vector2Int ePos = end.Location;

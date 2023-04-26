@@ -9,6 +9,7 @@ public class ArmyAnt : Ant
     private int maxHealth = 4;
     private int health = 4;
     private int attackDamage = 2;
+    private int attackRange = 3;
     private int movementSpeed = 5;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.BEE };
@@ -30,6 +31,10 @@ public class ArmyAnt : Ant
     public override int AttackDamage
     { get { return attackDamage; }
       set { attackDamage = value; } }
+
+    public override int AttackRange 
+    { get { return attackRange; }
+      set { attackRange = value; } }
 
     public override int MovementSpeed
     { get { return movementSpeed; }
