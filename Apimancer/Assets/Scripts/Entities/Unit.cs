@@ -308,7 +308,6 @@ public abstract class Unit : Entity
     }
 
     protected void RelinquishControl() {
-        doStatus();
         SetAnimState(AnimState.IDLE);
         GameManager.Instance.NotifyNextUnit();
     }

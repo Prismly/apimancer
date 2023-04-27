@@ -127,7 +127,6 @@ public class EnemyWizard : Wizard
         }
         if (_currentUnitIndex >= Units.Count)
         {
-            doStatus();
             GameManager.Instance.NextTurn();
             return;
         }

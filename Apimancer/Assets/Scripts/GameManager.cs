@@ -116,6 +116,18 @@ public class GameManager : MonoBehaviour
             c.OnEndTurn();
         }
 
+        List<Unit> currentWizardUnits = Units[CurrentWizard.UnitFaction];
+        int unitCount = currentWizardUnits.Count;
+        for (int i = 0; i < unitCount; i++)
+        {
+            currentWizardUnits[i].doStatus();
+            if (currentWizardUnits.Count < unitCount)
+            {
+                unitCount = currentWizardUnits.Count;
+                i--;
+            }
+        }
+
         CurrentTurn++;
         CurrentTurn %= WizardCount;
         CurrentWizard = Wizards[CurrentTurn];
