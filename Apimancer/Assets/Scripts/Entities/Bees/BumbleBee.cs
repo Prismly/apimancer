@@ -6,11 +6,12 @@ using UnityEngine;
 public class BumbleBee : Bee
 {
     public static int Cost = 8;
-    private int maxHealth = 5;
+    public static string Name = "Bumble Bee";
+    public static int maxHealth = 5;
     private int health = 5;
-    private int attackDamage = 2;
-    private int attackRange = 1;
-    private int movementSpeed = 4;
+    public static int attackDamage = 2;
+    public static int attackRange = 1;
+    public static int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.ANT };
 

@@ -7,11 +7,12 @@ using System.Linq;
 public class MiningBee : Bee
 {
     public static int Cost = 10;
-    private int maxHealth = 3;
+    public static string Name = "Mining Bee";
+    public static int maxHealth = 3;
     private int health = 3;
-    private int attackDamage = 3;
-    private int attackRange = 1;
-    private int movementSpeed = 4;
+    public static int attackDamage = 3;
+    public static int attackRange = 1;
+    public static int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.ANT };
 

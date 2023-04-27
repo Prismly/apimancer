@@ -165,6 +165,151 @@ public class GameManager : MonoBehaviour
         return -1;
     }
 
+    public int GetUnitHealth(Unit.UnitType type)
+    {
+        switch (type)
+        {
+            case Unit.UnitType.BEE_WORKER:
+                return WorkerBee.maxHealth;
+            case Unit.UnitType.BEE_BUMBLE:
+                return BumbleBee.maxHealth;
+            case Unit.UnitType.BEE_MINING:
+                return MiningBee.maxHealth;
+            case Unit.UnitType.ANT_WORKER:
+                return WorkerAnt.maxHealth;
+            case Unit.UnitType.ANT_ARMY:
+                return ArmyAnt.maxHealth;
+            case Unit.UnitType.ANT_FIRE:
+                return FireAnt.maxHealth;
+        }
+        return -1;
+    }
+
+    public int GetUnitAttack(Unit.UnitType type)
+    {
+        switch (type)
+        {
+            case Unit.UnitType.BEE_WORKER:
+                return WorkerBee.attackDamage;
+            case Unit.UnitType.BEE_BUMBLE:
+                return BumbleBee.attackDamage;
+            case Unit.UnitType.BEE_MINING:
+                return MiningBee.attackDamage;
+            case Unit.UnitType.ANT_WORKER:
+                return WorkerAnt.attackDamage;
+            case Unit.UnitType.ANT_ARMY:
+                return ArmyAnt.attackDamage;
+            case Unit.UnitType.ANT_FIRE:
+                return FireAnt.attackDamage;
+        }
+        return -1;
+    }
+
+    public int GetUnitMove(Unit.UnitType type)
+    {
+        switch (type)
+        {
+            case Unit.UnitType.BEE_WORKER:
+                return WorkerBee.movementSpeed;
+            case Unit.UnitType.BEE_BUMBLE:
+                return BumbleBee.movementSpeed;
+            case Unit.UnitType.BEE_MINING:
+                return MiningBee.movementSpeed;
+            case Unit.UnitType.ANT_WORKER:
+                return WorkerAnt.movementSpeed;
+            case Unit.UnitType.ANT_ARMY:
+                return ArmyAnt.movementSpeed;
+            case Unit.UnitType.ANT_FIRE:
+                return FireAnt.movementSpeed;
+        }
+        return -1;
+    }
+
+    public int GetUnitRange(Unit.UnitType type)
+    {
+        switch (type)
+        {
+            case Unit.UnitType.BEE_WORKER:
+                return WorkerBee.attackRange;
+            case Unit.UnitType.BEE_BUMBLE:
+                return BumbleBee.attackRange;
+            case Unit.UnitType.BEE_MINING:
+                return MiningBee.attackRange;
+            case Unit.UnitType.ANT_WORKER:
+                return WorkerAnt.attackRange;
+            case Unit.UnitType.ANT_ARMY:
+                return ArmyAnt.attackRange;
+            case Unit.UnitType.ANT_FIRE:
+                return FireAnt.attackRange;
+        }
+        return -1;
+    }
+
+    public string GetUnitName(Unit.UnitType type)
+    {
+        switch (type)
+        {
+            case Unit.UnitType.BEE_WORKER:
+                return WorkerBee.Name;
+            case Unit.UnitType.BEE_BUMBLE:
+                return BumbleBee.Name;
+            case Unit.UnitType.BEE_MINING:
+                return MiningBee.Name;
+            case Unit.UnitType.ANT_WORKER:
+                return WorkerAnt.Name;
+            case Unit.UnitType.ANT_ARMY:
+                return ArmyAnt.Name;
+            case Unit.UnitType.ANT_FIRE:
+                return FireAnt.Name;
+        }
+        return "NaN";
+    }
+
+    // TODO: terrible. change later
+    public string GetSpellName(SpellAction.SpellType type)
+    {
+        switch (type)
+        {
+            case SpellAction.SpellType.HONEY_BLAST:
+                return HoneyBlast.sName;
+            case SpellAction.SpellType.HONEY_TRAP:
+                return HoneyTrap.sName;
+            case SpellAction.SpellType.TELEPORT:
+                return Teleport.sName;
+        }
+        return "";
+    }
+
+    // TODO: terrible. change later
+    public int GetSpellCost(SpellAction.SpellType type)
+    {
+        switch (type)
+        {
+            case SpellAction.SpellType.HONEY_BLAST:
+                return HoneyBlast.sCost;
+            case SpellAction.SpellType.HONEY_TRAP:
+                return HoneyTrap.sCost;
+            case SpellAction.SpellType.TELEPORT:
+                return Teleport.sCost;
+        }
+        return -1;
+    }
+
+    // TODO: terrible. change later
+    public uint GetSpellRange(SpellAction.SpellType type)
+    {
+        switch (type)
+        {
+            case SpellAction.SpellType.HONEY_BLAST:
+                return HoneyBlast.sRange;
+            case SpellAction.SpellType.HONEY_TRAP:
+                return HoneyTrap.sRange;
+            case SpellAction.SpellType.TELEPORT:
+                return Teleport.sRange;
+        }
+        return 0;
+    }
+
     public Unit SummonUnit(Unit.UnitType type, Cell cell)
     {
         Unit unit = Instantiate(_unitPrefabs[(int)type]).GetComponent<Unit>();

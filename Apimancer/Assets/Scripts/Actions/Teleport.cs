@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Teleport : SpellAction
 {
-    public Teleport(Unit from, uint range, int cost)
-        : base(from, range, cost)
+    public static string sName = "Teleport";
+    public static uint sRange = 3;
+    public static int sCost = 3;
+
+    public Teleport(Unit from)
+        : base(from, sRange, sCost)
     {
     }
 

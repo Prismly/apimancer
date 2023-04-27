@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Text;
 
 public class UIManager : MonoBehaviour
 {
@@ -86,11 +87,24 @@ public class UIManager : MonoBehaviour
         spellsMenuImg.color = new Color(177 / 255f, 142 / 255f, 200 / 255f);
         MenuBox spellsMenuBox = spellsMenu.GetComponent<MenuBox>();
         // We'd get the player's Spells here
-        //spellsMenuBox.AddSpellsOption("COMING SOON ;)", playerWiz, SpellAction.SpellType.HONEY_TRAP, 0, 0);
-        //spellsMenuBox.AddSpellsOption("COMING SOON ;)", playerWiz, SpellAction.SpellType.HONEY_BLAST, 0, 0);
-        spellsMenuBox.AddSpellsOption("[X]Honey Trap [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
-        spellsMenuBox.AddSpellsOption("[X]Honey Blast [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
-        spellsMenuBox.AddSpellsOption("[X]Teleport * 3 [RNG]3", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
+        //spellsMenuBox.AddSpellsOption("[X]Honey Trap [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_TRAP, 3, 3);
+        //spellsMenuBox.AddSpellsOption("[X]Honey Blast [NCT]3 [RNG]3", playerWiz, SpellAction.SpellType.HONEY_BLAST, 3, 3);
+        //spellsMenuBox.AddSpellsOption("[X]Teleport * 3 [RNG]3", playerWiz, SpellAction.SpellType.TELEPORT, 3, 3);
+        SpellAction.SpellType[] spellTypes = { SpellAction.SpellType.HONEY_TRAP, SpellAction.SpellType.HONEY_BLAST, SpellAction.SpellType.TELEPORT };
+        for (int i = 0; i < spellTypes.Length; i++)
+        {
+            StringBuilder spellStr = new StringBuilder();
+            string uName = GameManager.Instance.GetSpellName(spellTypes[i]);
+            int uCost = GameManager.Instance.GetSpellCost(spellTypes[i]);
+            uint uRng = (uint)GameManager.Instance.GetSpellRange(spellTypes[i]);
+            spellStr.Append("[X]");
+            spellStr.Append(uName);
+            spellStr.Append(" [STR]");
+            spellStr.Append(uCost);
+            spellStr.Append(" [RNG]");
+            spellStr.Append(uRng);
+            spellsMenuBox.AddSpellsOption(spellStr.ToString(), playerWiz, spellTypes[i], uRng, uCost);
+        }
         spellsMenu.SetActive(false);
 
         // -- SUMMON MENU --
@@ -103,9 +117,33 @@ public class UIManager : MonoBehaviour
         summonMenuImg.color = new Color(200 / 255f, 144 / 255f, 143 / 255f);
         MenuBox summonMenuBox = summonMenu.GetComponent<MenuBox>();
         // We'd get the player's Summons here
-        summonMenuBox.AddSummonOption("[X]Worker Bee [STR]5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
-        summonMenuBox.AddSummonOption("[X]Bumble Bee [STR]8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
-        summonMenuBox.AddSummonOption("[X]Miner Bee [STR]10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
+        Unit.UnitType[] unitSummons = { Unit.UnitType.BEE_WORKER, Unit.UnitType.BEE_BUMBLE, Unit.UnitType.BEE_MINING };
+        for (int i = 0; i < unitSummons.Length; i++)
+        {
+            StringBuilder summonStr = new StringBuilder();
+            string uName = GameManager.Instance.GetUnitName(unitSummons[i]);
+            int uCost = GameManager.Instance.GetUnitCost(unitSummons[i]);
+            int uHP = GameManager.Instance.GetUnitHealth(unitSummons[i]);
+            int uAtk = GameManager.Instance.GetUnitAttack(unitSummons[i]);
+            uint uRng = (uint) GameManager.Instance.GetUnitRange(unitSummons[i]);
+            int uMov = GameManager.Instance.GetUnitMove(unitSummons[i]);
+            summonStr.Append("[X]");
+            summonStr.Append(uName);
+            summonStr.Append(" [STR]");
+            summonStr.Append(uCost);
+            summonStr.Append(" [HPA]");
+            summonStr.Append(uHP);
+            summonStr.Append(" [ATK]");
+            summonStr.Append(uAtk);
+            summonStr.Append(" [RNG]");
+            summonStr.Append(uRng);
+            summonStr.Append(" [MOV]");
+            summonStr.Append(uMov);
+            summonMenuBox.AddSummonOption(summonStr.ToString(), playerWiz, unitSummons[i], uRng, uCost);
+        }
+        //summonMenuBox.AddSummonOption("[X]Worker Bee [STR]5 [HPA]2 [ATK]2 [MOV]5", playerWiz, Unit.UnitType.BEE_WORKER, 1, 5);
+        //summonMenuBox.AddSummonOption("[X]Bumble Bee [STR]8 [HPA]5 [ATK]2 [MOV]3", playerWiz, Unit.UnitType.BEE_BUMBLE, 1, 8);
+        //summonMenuBox.AddSummonOption("[X]Miner Bee [STR]10 [HPA]3 [ATK]4 [MOV]5", playerWiz, Unit.UnitType.BEE_MINING, 1, 10);
         summonMenu.SetActive(false);
     }
     
