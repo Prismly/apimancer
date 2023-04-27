@@ -46,7 +46,7 @@ public class HoneyTrap : SpellAction
         {
             return false;
         }
-
+        w.SetAnimState(Entity.AnimState.WIZ_SPELLCAST);
         CellManager.Instance.ReplaceCell(cell.Location, CellType.HONEY);
         CellManager.Instance.GetCell(cell.Location).SetColor(new Color(1, 1, 1, 1));
         return true;

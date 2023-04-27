@@ -329,6 +329,7 @@ public class GameManager : MonoBehaviour
         }
         factionList.Add(unit);
         unit.Commander = CurrentWizard;
+        CurrentWizard.SetAnimState(Entity.AnimState.WIZ_SUMMON);
         CurrentWizard.PlaySound(CurrentWizard.Sounds.Harvest);
         return unit;
     }

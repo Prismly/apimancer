@@ -43,6 +43,7 @@ public class HoneyBlast : SpellAction
             return false;
         }
 
+        w.SetAnimState(Entity.AnimState.WIZ_SPELLCAST);
         ((Unit)cell.Occupant).setStatus(Status.Condition.HONEYED, 2);
         return true;
     }
