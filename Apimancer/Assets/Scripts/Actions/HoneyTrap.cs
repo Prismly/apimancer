@@ -15,6 +15,24 @@ public class HoneyTrap : SpellAction
 
     public override bool Validate(Cell cell)
     {
+        Unit u = cell.Occupant as Unit;
+        if (u != null)
+        {
+            Unit.UnitType t = u.Type;
+            switch (t)
+            {
+                case Unit.UnitType.BEE_WORKER:
+                case Unit.UnitType.BEE_MINING:
+                case Unit.UnitType.BEE_BUMBLE:
+                case Unit.UnitType.ANT_WIZARD:
+                case Unit.UnitType.ANT_ARMY:
+                case Unit.UnitType.ANT_FIRE:
+                case Unit.UnitType.ANT_WORKER:
+                    return true;
+                default:
+                    return false;
+            }
+        }
         return true;
     }
 

@@ -5,7 +5,7 @@ using UnityEngine;
 public class HoneyBlast : SpellAction
 {
     public static string sName = "Honey Blast";
-    public static uint sRange = 3;
+    public static uint sRange = 4;
     public static int sCost = 3;
 
     public HoneyBlast(Unit from)
@@ -15,7 +15,21 @@ public class HoneyBlast : SpellAction
 
     public override bool Validate(Cell cell)
     {
-        return cell.IsOccupied && cell.Occupant is Unit;
+        Unit u = cell.Occupant as Unit;
+        if (u != null) {
+            Unit.UnitType t = u.Type;
+            switch (t) {
+                case Unit.UnitType.BEE_WORKER:
+                case Unit.UnitType.BEE_MINING:
+                case Unit.UnitType.BEE_BUMBLE:
+                case Unit.UnitType.ANT_WIZARD:
+                case Unit.UnitType.ANT_ARMY:
+                case Unit.UnitType.ANT_FIRE:
+                case Unit.UnitType.ANT_WORKER:
+                    return true;
+            }
+        }
+        return false;
     }
 
     public override bool Execute(Cell cell)
