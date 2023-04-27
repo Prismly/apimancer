@@ -13,22 +13,23 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _maxWizards;
 
     public bool gameIsPaused = false;
+    public static int LevelIndex = 0;
 
     private GameObject _playerController;
     private Level _currentLevel;
-    public Dictionary<Unit.Faction, List<Unit>> Units {get; private set;} = new Dictionary<Unit.Faction, List<Unit>>();
+    public Dictionary<Unit.Faction, List<Unit>> Units { get; private set; } = new Dictionary<Unit.Faction, List<Unit>>();
 
     public Action CurrentAction;
-    public int WizardCount {get; private set;}
-    public int CurrentTurn {get; private set;}
-    public List<Wizard> Wizards {get; private set;}
-    public Wizard CurrentWizard {get; private set;}
-    public bool IsRunning {get; private set;}
-    public bool IsPaused {get; private set;}
-    public bool IsUnitMoving {get; private set;}
+    public int WizardCount { get; private set; }
+    public int CurrentTurn { get; private set; }
+    public List<Wizard> Wizards { get; private set; }
+    public Wizard CurrentWizard { get; private set; }
+    public bool IsRunning { get; private set; }
+    public bool IsPaused { get; private set; }
+    public bool IsUnitMoving { get; private set; }
 
     private List<Cell> _actionRange = new List<Cell>();
- 
+
     private static GameManager _instance = null;
     public static GameManager Instance
     {
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
         {
             if (_instance == null)
             {
-                    _instance = (GameManager)FindObjectOfType(typeof(GameManager));
+                _instance = (GameManager)FindObjectOfType(typeof(GameManager));
             }
             return _instance;
         }
@@ -44,15 +45,15 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) 
-        { 
-            Destroy(this); 
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
         }
-        else 
-        { 
+        else
+        {
             _instance = this;
         }
-        LoadLevel(0);
+        LoadLevel();
         SpawnWizards(2);
     }
 
@@ -79,7 +80,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(int firstTurn)
     {
-        
         SelectionManager.canInteract = true;
         IsRunning = true;
         CurrentTurn = firstTurn;
@@ -91,15 +91,19 @@ public class GameManager : MonoBehaviour
     {
         SelectionManager.canInteract = false;
         IsRunning = false;
+        if (win) LevelIndex++;
         UIManager.Instance.ShowGameOverMenu(win);
     }
-
-    public void LoadLevel(int levelIndex)
+    public void LoadLevel()
     {
+        if (LevelIndex >= _levelPrefabs.Count) {
+            // role credits
+            return;
+        }
         Units.Add(Unit.Faction.RESOURCE, new List<Unit>());
         Units.Add(Unit.Faction.OTHER, new List<Unit>());
         _playerController = Instantiate(_playerControllerPrefab);
-        _currentLevel = Instantiate(_levelPrefabs[levelIndex]).GetComponent<Level>();
+        _currentLevel = Instantiate(_levelPrefabs[LevelIndex]).GetComponent<Level>();
     }
 
     public void EndTurn()

@@ -10,7 +10,6 @@ public class HumanWizard : Wizard
     private int maxHealth = 15;
     private int health = 15;
     private int movementSpeed = 2;
-    private int movementCounter = 2;
     public bool hasMoved = false;
 
     private void Awake()
