@@ -9,20 +9,25 @@ public class HoneyTrap : SpellAction
     {
     }
 
+    public override bool Validate(Cell cell)
+    {
+        return true;
+    }
+
     public override bool Execute(Cell cell)
     {
-        // TEMPORARILY DISABLED FOR ECGC!!
+        Debug.Log("HONEY TRAAAAAAAAAAAAAAP!");
 
-        //Debug.Log("HONEY TRAP!");
-        //GameManager.Instance.Wizards[0].setMana(GameManager.Instance.Wizards[0].getMana() - cost);
-        //if (!Validate(cell) && cell.Type != CellType.DIRT)
-        //    return false;
+        if (!Validate(cell))
+            return false;
 
-        //if (!cell.IsOccupied)
-        //    cell.SetColor(new Color(1.0f, 0.3f, 0));
+        Wizard w = (Wizard)unit;
+        if (!w.SpendMana(cost))
+        {
+            return false;
+        }
 
-        ////Unit target = cell.Occupant as Unit;
-        ////target.SetSticky(true);
+        CellManager.Instance.ReplaceCell(cell.Location, CellType.HONEY);
         return true;
     }
 }

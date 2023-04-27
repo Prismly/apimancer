@@ -9,20 +9,27 @@ public class HoneyBlast : SpellAction
     {
     }
 
+    public override bool Validate(Cell cell)
+    {
+        return cell.IsOccupied && cell.Occupant is Unit;
+    }
+
     public override bool Execute(Cell cell)
     {
-        // TEMPORARILY DISABLED FOR ECGC!!
+        Debug.Log("HONEY BLAAAAAAAAAAAST!");
 
-        //Debug.Log("HONEY BLAAAAST!");
-        //GameManager.Instance.Wizards[0].AddMana(-cost);
-        //if (!Validate(cell))
-        //    return false;
+        if (!Validate(cell))
+            return false;
 
-        //if (!cell.IsOccupied)
-        //    return false;
+        Wizard w = (Wizard)unit;
+        if (!w.SpendMana(cost))
+        {
+            return false;
+        }
 
-        //Unit target = cell.Occupant as Unit;
-        //GameManager.Instance.Kill(unit);
+
+        //w.AttackTarget(dmg, (Unit)cell.Occupant);
+        ((Unit)cell.Occupant).setStatus(Status.Condition.HONEYED);
         return true;
     }
 }
