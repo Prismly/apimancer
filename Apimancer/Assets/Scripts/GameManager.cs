@@ -420,6 +420,7 @@ public class GameManager : MonoBehaviour
 
     public void OpenScene(string name)
     {
+        Debug.Log("Opening Scene " + name);
         SceneManager.LoadScene(name);
     }
 
