@@ -325,7 +325,6 @@ public class UIManager : MonoBehaviour
 
     public void IncrementSound(bool goingUp)
     {
-        Debug.Log(goingUp);
         AudioVolume.ChangeVolume(goingUp ? 25 : -25);
     }
 
@@ -349,5 +348,9 @@ public class UIManager : MonoBehaviour
         {
             spellsMenuButton.GetComponent<Button>().interactable = val;
         }
+    }
+
+    public void LoadNextLevel() {
+        GameManager.Instance.OpenScene("ECGC Level");
     }
 }

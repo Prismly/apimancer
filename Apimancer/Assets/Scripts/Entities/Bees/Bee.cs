@@ -12,7 +12,7 @@ public abstract class Bee : Unit
         PlaySound(Sounds.Summon);
     }
 
-    public void BeginTurn()
+    /*public void BeginTurn()
     {
         Cell prevCell = GetCell();
 
@@ -103,7 +103,7 @@ public abstract class Bee : Unit
             arrows.Add(addedArrow);
             prevCell = c;
         }
-    }
+    }*/
 
     public void EndTurn()
     {

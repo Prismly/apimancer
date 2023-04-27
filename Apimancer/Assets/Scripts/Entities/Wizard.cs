@@ -28,7 +28,6 @@ public abstract class Wizard : Unit
             GameManager.Instance.NextTurn();
             return;
         }
-        Debug.Log("Moving unit " + _currentUnitIndex);
         StartCoroutine(Units[_currentUnitIndex].DetermineMovement());
     }
 

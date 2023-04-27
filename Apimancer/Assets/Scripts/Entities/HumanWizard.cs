@@ -10,7 +10,6 @@ public class HumanWizard : Wizard
     private int maxHealth = 15;
     private int health = 15;
     private int movementSpeed = 2;
-    private int movementCounter = 2;
     public bool hasMoved = false;
 
     private void Awake()
@@ -30,11 +29,6 @@ public class HumanWizard : Wizard
 
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(null);
-        foreach(Unit u in Units)
-        {
-            Bee bee = u as Bee;
-            bee.BeginTurn();
-        }
     }
 
     public override void MoveUnits()
