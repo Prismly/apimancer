@@ -42,4 +42,27 @@ public class BumbleBee : Bee
     public override List<Unit.Faction> TargetPriorities
     { get { return targetPriorities; }
       set { targetPriorities = value; } }
+
+    public override void ReceiveDamage(int dmg)
+    {
+        UIManager.Instance.SpawnDamageIndicator(dmg, transform.position);
+        this.Health -= dmg;
+        if (this.Health <= 0)
+        {
+            if (animator != null)
+                SetAnimState(AnimState.DEATH);
+
+            GameManager.Instance.Kill(this);
+            GetCell().Occupant = null;
+            CellManager.Instance.ReplaceCell(GetCell().Location, CellType.HONEY);
+            Destroy(this.gameObject, 1.0f);
+
+            OnDeath();
+
+            if (Commander != null && Commander.Units.Contains(this))
+            {
+                Commander.Units.Remove(this);
+            }
+        }
+    }
 }

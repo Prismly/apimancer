@@ -59,7 +59,7 @@ public class EnemyWizard : Wizard
             }
         }
 
-        if (target != null) {
+        if (target != null && target.Item3.Count > 0) {
             int idx = target.Item2 > 0 ? target.Item2 - 1 : 0;
             yield return StartCoroutine(MoveToCellCoroutine(target.Item3[target.Item2 - 1]));
         }
