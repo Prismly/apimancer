@@ -17,13 +17,13 @@ public class MenuBox : MonoBehaviour
         SpellAction spellAction = null;
         switch (type) {
             case SpellAction.SpellType.HONEY_TRAP:
-                spellAction = new HoneyTrap(owner, range, cost);
+                spellAction = new HoneyTrap(owner);
                 break;
             case SpellAction.SpellType.HONEY_BLAST:
-                spellAction = new HoneyBlast(owner, range, cost);
+                spellAction = new HoneyBlast(owner);
                 break;
             case SpellAction.SpellType.TELEPORT:
-                spellAction = new Teleport(owner, range, cost);
+                spellAction = new Teleport(owner);
                 break;
         }
         GameObject newOptObj = Instantiate(spellsOptPref);

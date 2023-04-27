@@ -6,11 +6,12 @@ using UnityEngine;
 public class WorkerAnt : Ant
 {
     public static int Cost = 5;
-    private int maxHealth = 2;
+    public static string Name = "Worker Ant";
+    public static int maxHealth = 2;
     private int health = 2;
-    private int attackDamage = 1;
-    private int attackRange = 1;
-    private int movementSpeed = 4;
+    public static int attackDamage = 1;
+    public static int attackRange = 1;
+    public static int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.RESOURCE, Unit.Faction.BEE };
 

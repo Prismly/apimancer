@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class HoneyTrap : SpellAction
 {
-    public HoneyTrap(Unit from, uint range, int cost)
-        :base(from, range, cost)
+    public static string sName = "Honey Trap";
+    public static uint sRange = 4;
+    public static int sCost = 3;
+
+    public HoneyTrap(Unit from)
+        :base(from, sRange, sCost)
     {
     }
 

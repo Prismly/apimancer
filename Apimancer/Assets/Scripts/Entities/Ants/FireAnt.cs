@@ -6,11 +6,12 @@ using UnityEngine;
 public class FireAnt : Ant
 {
     public static int Cost = 10;
-    private int maxHealth = 4;
+    public static string Name = "Fire Ant";
+    public static int maxHealth = 4;
     private int health = 4;
-    private int attackDamage = 1;
-    private int attackRange = 1;
-    private int movementSpeed = 5;
+    public static int attackDamage = 1;
+    public static int attackRange = 1;
+    public static int movementSpeed = 5;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
             { Unit.Faction.BEE };
 
