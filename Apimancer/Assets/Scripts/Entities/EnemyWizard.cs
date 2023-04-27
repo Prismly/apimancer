@@ -68,6 +68,10 @@ public class EnemyWizard : Wizard
 
     public override void BeginTurn()
     {
+        Vector3 position = this.transform.position;
+        position.z = 0;
+        CameraController.CameraTransform.position = position;
+        
         IsTurn = true;
         PlaySound(Sounds.Warcry);
 
@@ -130,7 +134,14 @@ public class EnemyWizard : Wizard
             GameManager.Instance.NextTurn();
             return;
         }
-        StartCoroutine(Units[_currentUnitIndex].DetermineMovement());
+
+        Unit unit = Units[_currentUnitIndex];
+
+        Vector3 position = unit.transform.position;
+        position.z = 0;
+        CameraController.CameraTransform.position = position;
+
+        StartCoroutine(unit.DetermineMovement());
     }
 
     public override int MaxHealth

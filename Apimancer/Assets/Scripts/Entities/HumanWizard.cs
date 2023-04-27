@@ -20,6 +20,10 @@ public class HumanWizard : Wizard
 
     public override void BeginTurn()
     {
+        Vector3 position = this.transform.position;
+        position.z = 0;
+        CameraController.CameraTransform.position = position;
+
         PlaySound(Sounds.Warcry);
         hasMoved = false;
         UIManager.Instance.TogglePlayerTurnUI(true);
