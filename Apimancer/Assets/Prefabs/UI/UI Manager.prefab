@@ -3535,6 +3535,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8784314
       objectReference: {fileID: 0}
+    - target: {fileID: 675067091813182506, guid: 9770129be3de66448bebc5e5b2a20683, type: 3}
+      propertyPath: m_text
+      value: Retry
+      objectReference: {fileID: 0}
     - target: {fileID: 8218118029293953442, guid: 9770129be3de66448bebc5e5b2a20683, type: 3}
       propertyPath: m_Name
       value: Lose Menu
