@@ -72,8 +72,8 @@ public class CellManager : MonoBehaviour
 
     public void ReplaceCell(Vector2Int location, CellType type) {
         Cell oldCell = GetCell(location);
-        if (oldCell.IsOccupied)
-            return;
+        //if (oldCell.IsOccupied)
+        //    return;
         GameObject newTile;
         switch (type)
         {
@@ -103,6 +103,7 @@ public class CellManager : MonoBehaviour
 
         newTile.transform.position = oldCell.transform.position;
         newCell.Location = oldCell.Location;
+        newCell.Occupant = oldCell.Occupant;
         _cellDictionary.Remove(location);
         _cellDictionary.Add(location, newCell);
         CellList.Remove(oldCell);

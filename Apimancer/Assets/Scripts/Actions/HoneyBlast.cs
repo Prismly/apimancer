@@ -16,8 +16,6 @@ public class HoneyBlast : SpellAction
 
     public override bool Execute(Cell cell)
     {
-        Debug.Log("HONEY BLAAAAAAAAAAAST!");
-
         if (!Validate(cell))
             return false;
 
@@ -27,9 +25,7 @@ public class HoneyBlast : SpellAction
             return false;
         }
 
-
-        //w.AttackTarget(dmg, (Unit)cell.Occupant);
-        ((Unit)cell.Occupant).setStatus(Status.Condition.HONEYED);
+        ((Unit)cell.Occupant).setStatus(Status.Condition.HONEYED, 2);
         return true;
     }
 }

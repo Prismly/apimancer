@@ -206,12 +206,12 @@ public abstract class Unit : Entity
                 case Status.Condition.HONEYED:
                     this.condition = new Honeyed(this, duration);
                     if (spriteRenderer != null)
-                        spriteRenderer.color = new Color(0.6f, 0.4f, 0.1f, 1);
+                        spriteRenderer.color = new Color(0.9f, 0.6f, 0.1f, 1);
                     break;
                 case Status.Condition.BURNED:
                     this.condition = new Burned(this, duration);
                     if (spriteRenderer != null)
-                        spriteRenderer.color = new Color(0.8f, 0.4f, 0.2f, 1);
+                        spriteRenderer.color = new Color(0.9f, 0.4f, 0.2f, 1);
                     break;
                 case Status.Condition.WET:
                     this.condition = new Wet(this, duration);
@@ -222,6 +222,12 @@ public abstract class Unit : Entity
         }
         else if (this.condition.condition == condition) { 
             this.condition.duration += duration;
+        }
+        else if (condition == Status.Condition.HONEYED) {
+            this.condition = new Honeyed(this, duration);
+            if (spriteRenderer != null) {
+                spriteRenderer.color = new Color(0.9f, 0.6f, 0.1f, 1);
+            }
         }
         else {
             this.condition = null;
