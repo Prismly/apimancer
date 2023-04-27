@@ -67,7 +67,7 @@ MonoBehaviour:
     Selected: []
   unitName: The Myrmidonist
   UnitFaction: 2
-  Type: 0
+  Type: 4
   State: 1
   Commander: {fileID: 0}
   mana: 30
