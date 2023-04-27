@@ -121,15 +121,20 @@ public abstract class Unit : Entity
     {
         UpdateDirection(target.GetCell());
 
-        if (target.UnitFaction == Unit.Faction.RESOURCE && Type != UnitType.ANT_FIRE)
+        if (target.UnitFaction == Unit.Faction.RESOURCE && Type == UnitType.ANT_WORKER || Type == UnitType.BEE_WORKER)
         {
-            int m = (target.Health >= dmg) ?
-                      (dmg) : (target.Health);
+            int m = (target.Health >= dmg * 3) ?
+                      (dmg * 3) : (target.Health);
             Commander.AddMana(m);
+            target.ReceiveDamage(m);
             PlaySound(Sounds.Harvest);
         }
-        else PlaySound(Sounds.Attack);
-        target.ReceiveDamage(dmg);
+        else
+        {
+            PlaySound(Sounds.Attack);
+            target.ReceiveDamage(dmg);
+        }
+
         SetAnimState(AnimState.UNIT_ACTION);
     }
 

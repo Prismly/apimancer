@@ -402,7 +402,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerControllerPrefab: {fileID: 5265668081669901724, guid: fa7e41e59fd9fe741a773292cfcf0176, type: 3}
   _levelPrefabs:
-  - {fileID: 4836369654159272934, guid: 8cadffa54a14e9541b15dc6cf4ec1cb5, type: 3}
+  - {fileID: 4836369654159272934, guid: b170f0b5b23afda4191e9dcc10a1ab76, type: 3}
+  - {fileID: 4836369654159272934, guid: da8e206eca69d754abf7d157245e782c, type: 3}
+  - {fileID: 4836369654159272934, guid: 14e04c330bea8fe4eb3c0395793707ac, type: 3}
   _wizardPrefabs:
   - {fileID: 3649754047789778013, guid: 9499715391fda914394b1605b67ac84f, type: 3}
   - {fileID: 3649754047789778013, guid: 0f0337d8eece40e439cab4d5ea902d42, type: 3}

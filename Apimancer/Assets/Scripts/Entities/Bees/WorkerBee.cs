@@ -6,9 +6,9 @@ using UnityEngine;
 public class WorkerBee : Bee
 {
     public static int Cost = 5;
-    private int maxHealth = 2;
-    private int health = 2;
-    private int attackDamage = 2;
+    private int maxHealth = 3;
+    private int health = 3;
+    private int attackDamage = 1;
     private int attackRange = 1;
     private int movementSpeed = 4;
     private List<Unit.Faction> targetPriorities = new List<Unit.Faction>
