@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
     public void LoadLevel()
     {
         if (LevelIndex >= _levelPrefabs.Count) {
-            // role credits
+            OpenScene("Credits");
             return;
         }
         Units.Add(Unit.Faction.RESOURCE, new List<Unit>());
@@ -354,7 +354,7 @@ public class GameManager : MonoBehaviour
         }
 
         _actionRange = action.unit.GetCell().GetCellsRange(action);
-        // Debug.Log("Range: " + action.range);
+
         Color color;
         switch (action.actionType)
         {
@@ -424,7 +424,6 @@ public class GameManager : MonoBehaviour
 
     public void OpenScene(string name)
     {
-        Debug.Log("Opening Scene " + name);
         SceneManager.LoadScene(name);
     }
 
