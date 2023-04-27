@@ -222,6 +222,11 @@ public abstract class Entity : MonoBehaviour
         {
             t += Time.deltaTime / 0.25f;
             transform.position = Vector3.Lerp(currentPos, target.transform.position + worldOffset, t);
+
+            Vector3 position = this.transform.position;
+            position.z = 0;
+            CameraController.CameraTransform.position = position;
+
             yield return null;
         }
         SetAnimState(AnimState.IDLE);

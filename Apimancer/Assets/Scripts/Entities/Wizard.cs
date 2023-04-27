@@ -25,10 +25,10 @@ public abstract class Wizard : Unit
         _currentUnitIndex++;
         if (_currentUnitIndex >= Units.Count)
         {
-            doStatus();
             GameManager.Instance.NextTurn();
             return;
         }
+        Debug.Log("Moving unit " + _currentUnitIndex);
         StartCoroutine(Units[_currentUnitIndex].DetermineMovement());
     }
 
