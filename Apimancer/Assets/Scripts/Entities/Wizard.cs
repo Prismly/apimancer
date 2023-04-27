@@ -49,6 +49,7 @@ public abstract class Wizard : Unit
             return false;
         
         Unit unit = GameManager.Instance.SummonUnit(type, cell);
+
         unit.UnitFaction = this.UnitFaction;
         unit.setLocation(cell);
         Units.Add(unit);

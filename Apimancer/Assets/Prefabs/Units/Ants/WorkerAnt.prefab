@@ -63,7 +63,7 @@ MonoBehaviour:
     Attack:
     - {fileID: 8300000, guid: 7af2075dd249ed442add9348ae9f863d, type: 3}
     Harvest:
-    - {fileID: 8300000, guid: 7af2075dd249ed442add9348ae9f863d, type: 3}
+    - {fileID: 8300000, guid: d5b77afd4f7b19748ba04c22a5aa1b79, type: 3}
     Warcry:
     - {fileID: 8300000, guid: 25b6937c04f77a24ebf1d8636e2c178d, type: 3}
     - {fileID: 8300000, guid: 9c6d91815640f79458d2bf7a92386c0a, type: 3}

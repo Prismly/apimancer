@@ -56,12 +56,14 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5138549314872730181}
   Sounds:
     Death: []
-    Walk: []
+    Walk:
+    - {fileID: 8300000, guid: d518b9e63e9651d48af66a8601915e54, type: 3}
     Summon:
     - {fileID: 8300000, guid: 6467fed6a0bd6bb46a8153bf466b262f, type: 3}
     Attack:
     - {fileID: 8300000, guid: 6ff940122af8ac74299e914c0afecc3e, type: 3}
-    Harvest: []
+    Harvest:
+    - {fileID: 8300000, guid: 067768d76f6ba3e469e1ce69d50193ff, type: 3}
     Warcry:
     - {fileID: 8300000, guid: 022365fcabc390a43b59b787d4be353e, type: 3}
     Selected: []

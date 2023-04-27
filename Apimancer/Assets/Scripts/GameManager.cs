@@ -329,7 +329,7 @@ public class GameManager : MonoBehaviour
         }
         factionList.Add(unit);
         unit.Commander = CurrentWizard;
-
+        CurrentWizard.PlaySound(CurrentWizard.Sounds.Harvest);
         return unit;
     }
 
