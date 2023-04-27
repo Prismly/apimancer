@@ -161,10 +161,18 @@ public abstract class Unit : Entity
         }
     }
 
-    public void Heal(int h) {
+    public void Heal(int h)
+    {
         if (h + Health > MaxHealth)
+        {
+            UIManager.Instance.SpawnDamageIndicator(-(MaxHealth - Health), transform.position);
             Health = MaxHealth;
-        else Health += h;
+        }
+        else
+        {
+            UIManager.Instance.SpawnDamageIndicator(-h, transform.position);
+            Health += h;
+        }
     }
 
     public virtual void setLocation(Vector2Int location)
