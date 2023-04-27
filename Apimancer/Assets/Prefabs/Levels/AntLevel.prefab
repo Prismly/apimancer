@@ -74,6 +74,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96143c312e904c241acdbd51ab87af5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  map: {fileID: 4836369654604776537}
+  CellPrefabs:
+    BoulderTile: {fileID: 1513276900747065057, guid: 765926d87c59c7d428ea62a9c96906db, type: 3}
+    DirtTile: {fileID: 1513276900747065057, guid: b82bf35acbc218f4ca57043703b98239, type: 3}
+    FlowerTile: {fileID: 1513276900747065057, guid: ae4cdc84e136ef34ab5c7cb244004019, type: 3}
+    HoneyTile: {fileID: 1513276900747065057, guid: de4ea2ccab1b81248a31625f164cc579, type: 3}
+    LavaTile: {fileID: 1513276900747065057, guid: 71d3b4cabec5f194aa55e80e761e37c4, type: 3}
+    WaterTile: {fileID: 1513276900747065057, guid: 5f83e757a1499be46bb720ffaa10e990, type: 3}
 --- !u!1 &4836369654604776540
 GameObject:
   m_ObjectHideFlags: 0

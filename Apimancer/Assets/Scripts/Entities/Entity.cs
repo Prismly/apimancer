@@ -10,7 +10,8 @@ public abstract class Entity : MonoBehaviour
     [SerializeField]
     public Vector2Int loc { get; set; }
 
-    [SerializeField] protected Vector3 worldOffset = new Vector3(0, 0, -0.04f);
+    [SerializeField] 
+    protected Vector3 worldOffset = new Vector3(0, 0, -0.04f);
 
     [SerializeField]
     protected Animator animator;
