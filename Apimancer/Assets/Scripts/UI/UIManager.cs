@@ -287,7 +287,6 @@ public class UIManager : MonoBehaviour
 
     public void IncrementSound(bool goingUp)
     {
-        Debug.Log(goingUp);
         AudioVolume.ChangeVolume(goingUp ? 25 : -25);
     }
 

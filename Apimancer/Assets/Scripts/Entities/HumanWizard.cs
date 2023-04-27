@@ -29,11 +29,6 @@ public class HumanWizard : Wizard
 
         IsTurn = true;
         GameManager.Instance.SetCurrentAction(null);
-        foreach(Unit u in Units)
-        {
-            Bee bee = u as Bee;
-            bee.BeginTurn();
-        }
     }
 
     public override void MoveUnits()

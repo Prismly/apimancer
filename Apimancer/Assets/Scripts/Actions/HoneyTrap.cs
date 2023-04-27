@@ -16,8 +16,6 @@ public class HoneyTrap : SpellAction
 
     public override bool Execute(Cell cell)
     {
-        Debug.Log("HONEY TRAAAAAAAAAAAAAAP!");
-
         if (!Validate(cell))
             return false;
 
