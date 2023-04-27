@@ -28,6 +28,7 @@ public class HoneyTrap : SpellAction
         }
 
         CellManager.Instance.ReplaceCell(cell.Location, CellType.HONEY);
+        CellManager.Instance.GetCell(cell.Location).SetColor(new Color(1, 1, 1, 1));
         return true;
     }
 }
