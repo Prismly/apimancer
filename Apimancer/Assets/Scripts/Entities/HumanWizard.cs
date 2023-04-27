@@ -20,7 +20,8 @@ public class HumanWizard : Wizard
     public override void BeginTurn()
     {
         // Add 1 passive mana on turn start, to prevent softlocks.
-        AddMana(1);
+        if (GetMana() < WorkerBee.Cost)
+            AddMana(1);
 
         Vector3 position = this.transform.position;
         position.z = 0;

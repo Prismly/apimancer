@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Wizard : Unit
 {
     [SerializeField] protected int mana = 30;
-    private int maxMana = 99;
+    private int maxMana = 40;
 
     public Color Color;
     public bool IsTurn {get; protected set;}
