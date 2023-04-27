@@ -295,12 +295,34 @@ public class UIManager : MonoBehaviour
         RectTransform indicRect = newDamageIndic.GetComponent<RectTransform>();
         Vector3 screenPoint = Camera.main.WorldToScreenPoint(worldPos);
 
+        if (dmgVal > 0)
+        {
+            // Red; damage
+            Debug.Log("Red");
+            newDamageIndic.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(67f / 255f, 12f / 255f, 12f / 255f, 255);
+            newDamageIndic.transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(236f / 255f, 88f / 255f, 61f / 255f, 255);
+        }
+        else if (dmgVal < 0)
+        {
+            // Green; healing
+            Debug.Log("Green");
+            newDamageIndic.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(12f / 255f, 67f / 255f, 13f / 255f, 255);
+            newDamageIndic.transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(132f / 255f, 236f / 255f, 61f / 255f, 255);
+        }
+        else
+        {
+            // Grey; no damage
+            Debug.Log("Grey");
+            newDamageIndic.transform.GetChild(0).GetComponent<TextMeshProUGUI>().color = new Color(58f / 255f, 58f / 255f, 58f / 255f, 255f);
+            newDamageIndic.transform.GetChild(1).GetComponent<TextMeshProUGUI>().color = new Color(137f / 255f, 137f / 255f, 137f / 255f, 255f);
+        }
+
         indicRect.localPosition = worldPos;
         //indicRect.localPosition = new Vector3(screenPoint.x - (targetCanvas.GetComponent<Canvas>().pixelRect.width / 2), screenPoint.y - (targetCanvas.GetComponent<Canvas>().pixelRect.height / 2), 0);
         for (int i = 0; i < newDamageIndic.transform.childCount; i++)
         {
             TextMeshProUGUI indicText = newDamageIndic.transform.GetChild(i).GetComponent<TextMeshProUGUI>();
-            indicText.text = dmgVal.ToString() + "!";
+            indicText.text = (dmgVal > 0 ? "-" : "+") + Mathf.Abs(dmgVal).ToString() + "!";
         }
     }
 
