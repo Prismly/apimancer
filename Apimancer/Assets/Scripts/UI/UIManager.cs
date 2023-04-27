@@ -30,6 +30,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject BODY_HOR;
     [SerializeField] public GameObject BODY_CURVE;
 
+    [SerializeField] private int volIncrement;
+
     [SerializeField] public GameObject summonMenuButton = null;
     [SerializeField] public GameObject spellsMenuButton = null;
     private GameObject summonMenu = null;
@@ -347,7 +349,8 @@ public class UIManager : MonoBehaviour
 
     public void IncrementSound(bool goingUp)
     {
-        AudioVolume.ChangeVolume(goingUp ? 25 : -25);
+        Debug.Log(goingUp);
+        AudioVolume.ChangeVolume(goingUp ? volIncrement : -volIncrement);
     }
 
     public void TogglePlayerTurnUI(bool val)
