@@ -74,6 +74,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96143c312e904c241acdbd51ab87af5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CellPrefabs:
+    BoulderTile: {fileID: 0}
+    DirtTile: {fileID: 0}
+    FlowerTile: {fileID: 0}
+    HoneyTile: {fileID: 0}
+    LavaTile: {fileID: 0}
+    WaterTile: {fileID: 0}
 --- !u!1 &4836369654604776540
 GameObject:
   m_ObjectHideFlags: 0
